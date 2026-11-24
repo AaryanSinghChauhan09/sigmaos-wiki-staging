@@ -158,8 +158,14 @@ Components connect through:
 
 ### Phase 2: Core System
 
+- [x] Wiki pages for declarative configuration system
+- [x] Wiki pages for reproducible build pipeline
+- [x] Wiki pages for system update mechanism
+- [x] Wiki pages for comprehensive logging system
+- [x] Wiki pages for security hardening
+- [x] Wiki pages for recovery and rollback system
 - [ ] Implement declarative configuration system
-- [ ] Create reproducible build pipeline
+- [ ] Implement reproducible build pipeline
 - [ ] Implement system update mechanism
 - [ ] Add comprehensive logging system
 - [ ] Implement security hardening
