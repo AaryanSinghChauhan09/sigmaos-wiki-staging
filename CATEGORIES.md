@@ -147,6 +147,10 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-rust](SigmaOS-rust/Home.md) - Rust runtime
 - [SigmaOS-go](SigmaOS-go/Home.md) - Go runtime
 - [SigmaOS-java](SigmaOS-java/Home.md) - Java runtime
+- [SigmaOS-gui-toolkit](SigmaOS-gui-toolkit/Home.md) - GUI toolkit collection
+- [SigmaOS-gui-frameworks](SigmaOS-gui-frameworks/Home.md) - GUI frameworks collection
+- [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
+- [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
 
 ## File Management
 

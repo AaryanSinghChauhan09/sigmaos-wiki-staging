@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 169 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 173 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -115,6 +115,12 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-elasticsearch](SigmaOS-elasticsearch/Home.md) - Elasticsearch search
 - [SigmaOS-grafana-loki](SigmaOS-grafana-loki/Home.md) - Grafana Loki logging
 - [SigmaOS-prometheus](SigmaOS-prometheus/Home.md) - Prometheus monitoring
+
+**Meta-Components (Collections):**
+- [SigmaOS-gui-toolkit](SigmaOS-gui-toolkit/Home.md) - GUI toolkit collection
+- [SigmaOS-gui-frameworks](SigmaOS-gui-frameworks/Home.md) - GUI frameworks collection
+- [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
+- [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
 
 ## Documentation
 

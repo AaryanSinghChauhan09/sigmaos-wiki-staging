@@ -117,6 +117,14 @@ Existing:
 - [SigmaOS-go](SigmaOS-go/Home.md) - Go runtime
 - [SigmaOS-java](SigmaOS-java/Home.md) - Java runtime
 
+## Meta-Components (Collections)
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-gui-toolkit](SigmaOS-gui-toolkit/Home.md) - GUI toolkit collection
+- [SigmaOS-gui-frameworks](SigmaOS-gui-frameworks/Home.md) - GUI frameworks collection
+- [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
+- [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
+
 ## Virtualization & Containerization
 
 **Wiki Pages Added (repositories pending rate limit):**
