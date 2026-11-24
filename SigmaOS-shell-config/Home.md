@@ -1,6 +1,19 @@
-# SigmaOS-shell-config
+# SigmaOS Shell Config
 
-SigmaOS-shell-config is a component of the SigmaOS operating system project that provides shell configuration management.
+Shell configuration management for SigmaOS, providing unified zsh and bash configuration with enhanced productivity features.
+
+## Overview
+
+SigmaOS Shell Config provides a unified shell configuration for zsh and bash with enhanced productivity features, aliases, and tools integration.
+
+## Features
+
+- **Enhanced zsh**: Larger history, better completion, AUTO_PUSHD
+- **Aliases**: Git, tmux, and productivity aliases
+- **Tools integration**: eza, zoxide, fzf, starship
+- **Fuzzy search**: fzf history search and file navigation
+- **Smart prompts**: Starship prompt with SigmaOS theme
+- **Directory jumping**: zoxide for intelligent directory navigation
 
 ## Structure
 
