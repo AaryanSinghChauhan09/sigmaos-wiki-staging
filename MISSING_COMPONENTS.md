@@ -30,19 +30,27 @@ Existing:
 Existing:
 - Various dev tools
 
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-jupyter](SigmaOS-jupyter/Home.md) - Jupyter Notebook/Lab
+- [SigmaOS-knime](SigmaOS-knime/Home.md) - KNIME Analytics Platform
+- [SigmaOS-apache-spark](SigmaOS-apache-spark/Home.md) - Apache Spark
+- [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink
+- [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB
+- [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
+
 Missing (from requirements):
 - Additional IDE support
 - More language runtimes
 
 ## Status
 
-Wiki pages have been added to the staging repository for all missing browsers and office suites. GitHub repositories for these components will be created when the rate limit resets. In the meantime, the centralized Wiki staging repository serves as the complete catalog.
+Wiki pages have been added to the staging repository for all missing browsers, office suites, and key data science tools. GitHub repositories for these components will be created when the rate limit resets. In the meantime, the centralized Wiki staging repository serves as the complete catalog.
 
 ## Priority
 
-1. **Completed**: Wiki pages for all browsers and office suites
+1. **Completed**: Wiki pages for browsers, office suites, and data science tools
 2. **Pending**: GitHub repository creation (rate limited)
-3. **Next**: Development tools and language runtimes
+3. **Next**: Additional development tools and language runtimes
 
 ## Links
 

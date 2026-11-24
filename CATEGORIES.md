@@ -80,6 +80,12 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-rdbms](SigmaOS-rdbms/Home.md) - Database tools
 - [SigmaOS-notebooks](SigmaOS-notebooks/Home.md) - Jupyter notebooks
 - [SigmaOS-ml-dl](SigmaOS-ml-dl/Home.md) - Machine learning tools
+- [SigmaOS-jupyter](SigmaOS-jupyter/Home.md) - Jupyter Notebook/Lab
+- [SigmaOS-knime](SigmaOS-knime/Home.md) - KNIME Analytics Platform
+- [SigmaOS-apache-spark](SigmaOS-apache-spark/Home.md) - Apache Spark
+- [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink
+- [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB
+- [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
 
 ## Development Tools
 
