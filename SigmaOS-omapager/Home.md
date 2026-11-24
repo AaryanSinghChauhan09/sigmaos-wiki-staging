@@ -1,8 +1,20 @@
-# SigmaOS-omapager
+# SigmaOS Omapager
 
-SigmaOS-omapager is a component of the SigmaOS operating system project.
+Terminal pager for SigmaOS - enhanced text pager with search and navigation features.
 
-> Forked from omacom/omapager (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Omapager provides an enhanced terminal pager for viewing text files and command output with search and navigation features.
+
+## Features
+
+- **Text viewing**: View text files and command output
+- **Search**: Search within text
+- **Navigation**: Easy navigation through large files
+- **Syntax highlighting**: Syntax highlighting for code
+- **Line numbers**: Line number display
+- **Scrolling**: Smooth scrolling
+- **Bookmarks**: Mark and jump to positions
 
 ## Links
 

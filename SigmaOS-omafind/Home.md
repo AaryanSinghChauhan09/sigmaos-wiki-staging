@@ -1,8 +1,20 @@
-# SigmaOS-omafind
+# SigmaOS Omafind
 
-SigmaOS-omafind is a component of the SigmaOS operating system project.
+File search and find utilities for SigmaOS - enhanced file searching and indexing.
 
-> Forked from omacom/omafind (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Omafind provides enhanced file search and find utilities for SigmaOS, with fast indexing and search capabilities.
+
+## Features
+
+- **Fast search**: Fast file and content search
+- **Indexing**: File indexing for quick searches
+- **Content search**: Search within file contents
+- **Filters**: Advanced search filters
+- **Preview**: File preview in search results
+- **Regex**: Regular expression support
+- **Integration**: Integration with file manager
 
 ## Links
 

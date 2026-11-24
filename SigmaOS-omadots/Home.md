@@ -1,8 +1,20 @@
-# SigmaOS-omadots
+# SigmaOS Omadots
 
-SigmaOS-omadots is a component of the SigmaOS operating system project.
+Dotfile management for SigmaOS - manage configuration files and dotfiles across systems.
 
-> Forked from omacom/omadots (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Omadots provides tools for managing configuration files and dotfiles across SigmaOS systems.
+
+## Features
+
+- **Dotfile management**: Manage configuration files
+- **Sync**: Sync dotfiles across systems
+- **Version control**: Git-based dotfile versioning
+- **Backup**: Automatic dotfile backups
+- **Templates**: Configuration file templates
+- **Encryption**: Encrypt sensitive configurations
+- **Deployment**: Deploy configurations to new systems
 
 ## Links
 
