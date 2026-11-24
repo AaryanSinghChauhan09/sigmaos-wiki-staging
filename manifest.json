@@ -4,7 +4,7 @@
   "description": "SigmaOS Wiki Staging Repository",
   "license": "GPL-3.0-or-later",
   "components": {
-    "total": 260,
+    "total": 261,
     "implemented": 104,
     "wiki_only": 140,
     "core_system": {
@@ -141,6 +141,15 @@
         "gog",
         "playnite",
         "retroarch"
+      ]
+    },
+    "desktop_experience": {
+      "total": 3,
+      "implemented": 2,
+      "components": [
+        "shell",
+        "shell-config",
+        "live-media"
       ]
     }
   },

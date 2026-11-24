@@ -41,3 +41,14 @@ clap CLIs, GPL-3.0-or-later.
 - GUI implementations for shell (Quickshell QML) — Rust cores done,
   QML frontends are a separate layer
 - Integration testing across components (tools-sigmaos.sh wiring)
+
+## Update — GUI layer + interconnect (latest)
+
+- **SigmaOS-shell** (new repo, local commit pending GitHub rate limit):
+  Quickshell QML layer — shell.qml entry, Bar/Dock/Launcher,
+  NotificationCenter, Theme, ConfigStore, AppIndex, 7 widgets.
+- **tools-sigmaos.sh v2** deployed to all 110 component repos:
+  new commands `deps`, `peers`, `link`, `status`; cargo-aware fallbacks.
+  109/110 pushed; 2 archived plugin-marketplace repos unarchived and pushed.
+- **SigmaOS-shell** GitHub repo creation blocked by rate limit —
+  committed locally at sigmaos-repos/SigmaOS-shell, push on next window.

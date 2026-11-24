@@ -167,6 +167,12 @@
 - **[Playnite](https://github.com/AaryanSinghChauhan09/SigmaOS-playnite)** - Game library
 - **[RetroArch](https://github.com/AaryanSinghChauhan09/SigmaOS-retroarch)** - Retro emulator
 
+## Desktop Experience (3 components)
+
+- [SigmaOS-shell](SigmaOS-shell/Home.md) — Quickshell QML bar/dock/launcher/notifications
+- [SigmaOS-shell-config](SigmaOS-shell-config/Home.md) — declarative bar/dock/theme config
+- [SigmaOS-live-media](SigmaOS-live-media/Home.md) — live wallpaper manager
+
 ## Summary
 
 - **Total Components**: 260+
