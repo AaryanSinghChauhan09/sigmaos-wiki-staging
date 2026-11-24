@@ -1,8 +1,6 @@
 # SigmaOS Omasnap
 
-> Forked from omacom/omasnap (MIT). See `SIGMAOS_FORK.md`.
-
-See the [releases](https://github.com/omacom/omasnap/releases) for what changed in each version.
+See the [releases](https://github.com/AaryanSinghChauhan09/SigmaOS-omasnap/releases) for what changed in each version.
 
 A native Wayland screenshot and annotation overlay designed for SigmaOS and Hyprland.
 It captures the focused monitor before mapping an exclusive layer-shell surface, so the

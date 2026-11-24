@@ -12,7 +12,7 @@ That path is a contract with SigmaOS core. The plugin still registers itself wit
 
 ## Origin and license
 
-This is a fork of Hypr Development's [BSD-licensed hyprbars](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars). The source was adapted from the Omarchy Windows 98 theme's `vendor/hyprbars` fork ([theme project](https://github.com/omacom/omarchy-98-theme)), which supplies Hyprland 0.56 Lua API support and safe coexistence with the earlier Windows XP fork. Colors, font, rounding, and actions are supplied by SigmaOS's configuration; no theme styling is embedded in the renderer.
+This is a fork of Hypr Development's [BSD-licensed hyprbars](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars). The source was adapted for SigmaOS to supply Hyprland 0.56 Lua API support and safe coexistence with other hyprbars forks. Colors, font, rounding, and actions are supplied by SigmaOS's configuration; no theme styling is embedded in the renderer.
 
 The original hyprbars license is in `LICENSE` (BSD-3-Clause). SigmaOS's changes are under the MIT license in `LICENSE.MIT`. The package installs both under `/usr/share/licenses/sigmaos-hyprland-titlebars/`.
 
@@ -74,7 +74,7 @@ To release, make a GitHub release tagged `vX.Y.Z` with notes on what changed. Th
 python3 tools/verify.py build/titlebars.so
 ```
 
-The verifier needs a running Hyprland session with exactly one Hyprland instance, plus `foot`, `grim`, `wayland-scanner`, and a C compiler. It starts a disposable nested Hyprland with its own runtime directory and never loads the candidate library into the parent compositor. It checks repeated load/reload/unload, interleaved with the Windows XP fork when `/usr/lib/omarchy-windows-xp/hyprbars.so` is installed, and that a loaded plugin the config no longer configures reserves no titlebar space. It then exercises real pointer titlebar dragging to the screen edges without snapping or losing the titlebar off the top, double-click maximize, and restoring a maximized window by dragging its titlebar. A two-window regression check deliberately delays button and double-click commands and changes focus before they run, to verify that actions keep the clicked window as their target. A final check confirms that `workspace_tag`-scoped titlebars release their space immediately when a window is tiled or untagged.
+The verifier needs a running Hyprland session with exactly one Hyprland instance, plus `foot`, `grim`, `wayland-scanner`, and a C compiler. It starts a disposable nested Hyprland with its own runtime directory and never loads the candidate library into the parent compositor. It checks repeated load/reload/unload, interleaved with other hyprbars forks, and that a loaded plugin the config no longer configures reserves no titlebar space. It then exercises real pointer titlebar dragging to the screen edges without snapping or losing the titlebar off the top, double-click maximize, and restoring a maximized window by dragging its titlebar. A two-window regression check deliberately delays button and double-click commands and changes focus before they run, to verify that actions keep the clicked window as their target. A final check confirms that `workspace_tag`-scoped titlebars release their space immediately when a window is tiled or untagged.
 
 Screenshots and logs go to `/tmp/sigmaos-hyprland-titlebars-verification` by default; pass `--artifacts DIR` to change it.
 
