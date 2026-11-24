@@ -1,8 +1,20 @@
-# SigmaOS-checkmate
+# SigmaOS Checkmate
 
-SigmaOS-checkmate is a component of the SigmaOS operating system project.
+Chess game and chess engine for SigmaOS - play chess with AI or multiplayer.
 
-> Forked from omacom/checkmate (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Checkmate provides a chess game interface with AI opponent and multiplayer capabilities for SigmaOS.
+
+## Features
+
+- **Chess engine**: Built-in chess AI opponent
+- **Multiplayer**: Play against other players locally or online
+- **Game analysis**: Analyze games and suggest moves
+- **Puzzle mode**: Chess puzzles and challenges
+- **Time controls**: Various time control options
+- **PGN support**: Import/export games in PGN format
+- **Themes**: Customizable board and piece themes
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-aether.nvim
+# SigmaOS Aether Neovim
 
-SigmaOS-aether.nvim is a component of the SigmaOS operating system project.
+Neovim configuration and plugins for SigmaOS - window management and productivity enhancements for Neovim.
 
-> Forked from omacom/aether.nvim (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Aether Neovim provides Neovim configuration and plugins that integrate with SigmaOS window management and themes.
+
+## Features
+
+- **Window management**: Integration with SigmaOS window management
+- **Theme support**: SigmaOS theme integration for Neovim
+- **Productivity plugins**: Enhanced editing and navigation
+- **LSP support**: Language Server Protocol configuration
+- **Auto-completion**: Intelligent code completion
+- **Fuzzy finder**: File and text search
+- **Git integration**: Git status and diff integration
 
 ## Links
 
