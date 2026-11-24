@@ -1,8 +1,27 @@
-# SigmaOS-notebooks
+# SigmaOS Notebooks
 
-SigmaOS-notebooks is a component of the SigmaOS operating system project.
+Jupyter Notebook and experimentation tools for SigmaOS - Jupyter Notebook, JupyterLab, Google Colab, and KNIME integration.
 
-SigmaOS component: notebooks.
+## Overview
+
+SigmaOS Notebooks provides tools for interactive computing, data exploration, and experimentation using Jupyter Notebooks and related tools.
+
+## Features
+
+- **Jupyter Notebook**: Interactive notebook environment
+- **JupyterLab**: Next-generation notebook interface
+- **Google Colab**: Cloud notebook integration
+- **KNIME**: Visual workflow for data science
+- **Multiple kernels**: Support for Python, R, Julia, and more
+- **Visualization**: Rich visualization support
+- **Collaboration**: Share and collaborate on notebooks
+
+## Supported Tools
+
+- Jupyter Notebook
+- JupyterLab
+- Google Colab
+- KNIME
 
 ## Links
 
