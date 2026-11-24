@@ -1,16 +1,30 @@
-# SigmaOS-quickshell
+# SigmaOS Quickshell
 
-> Forked from omacom/quickshell (MIT). See SIGMAOS_FORK.md.
+QML-based shell framework for Wayland compositors, providing a flexible framework for creating desktop widgets, bars, and overlays. This is the SigmaOS fork of quickshell.
 
-Quickshell is a QML-based shell for Wayland compositors, providing a flexible framework for creating desktop widgets, bars, and overlays. This repository contains the SigmaOS fork of quickshell.
+## Overview
+
+Quickshell allows creating desktop widgets, bars, and overlays using QML. SigmaOS uses Quickshell for its desktop shell components including bars, widgets, and system overlays.
+
+## Features
+
+- **QML-based**: Write desktop components in QML
+- **Wayland native**: Designed for Wayland compositors like Hyprland
+- **Flexible widgets**: Create bars, launchers, system monitors, and more
+- **Theme integration**: Follows SigmaOS theme automatically
+- **Low overhead**: Lightweight and efficient
+
+## Usage in SigmaOS
+
+SigmaOS uses Quickshell for:
+- Desktop bar (status bar, clock, system tray)
+- Launcher application
+- System widgets (volume, brightness, network)
+- Overlay components
+
+## Documentation
 
 For detailed information and installation instructions, see the [official quickshell website](https://quickshell.outfoxxed.me).
-
-## Upstream repositories
-
-This project is hosted at:
-- https://git.outfoxxed.me/quickshell/quickshell
-- https://github.com/quickshell-mirror/quickshell
 
 ## Development
 
@@ -20,9 +34,7 @@ This project is hosted at:
 
 ## License
 
-Licensed under the GNU LGPL 3.
-
-Unless you explicitly state otherwise, any contribution submitted for inclusion shall be licensed as above, without any additional terms or conditions.
+GNU LGPL 3
 
 ## Links
 
