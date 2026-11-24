@@ -1,8 +1,25 @@
-# SigmaOS-dkms
+# SigmaOS DKMS
 
-SigmaOS-dkms is a component of the SigmaOS operating system project.
+Dynamic Kernel Module Support for SigmaOS - out-of-tree kernel module building and management.
 
-SigmaOS component: dkms — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
+## Overview
+
+SigmaOS DKMS provides Dynamic Kernel Module Support, enabling out-of-tree kernel modules to be automatically rebuilt when kernel updates occur.
+
+## Features
+
+- **Automatic rebuilding**: Rebuilds modules on kernel updates
+- **Out-of-tree support**: Supports external kernel modules
+- **Driver management**: Manages third-party drivers
+- **Hardware support**: Enables hardware with proprietary drivers
+- **Version tracking**: Tracks module versions across kernel updates
+
+## Use Cases
+
+- Proprietary graphics drivers (NVIDIA, AMD)
+- Wireless card drivers
+- Virtualization modules
+- Specialized hardware drivers
 
 ## Links
 

@@ -1,8 +1,29 @@
-# SigmaOS-genoffice
+# SigmaOS GenOffice
 
-SigmaOS-genoffice is a component of the SigmaOS operating system project.
+General office suite for SigmaOS - Docs, HTML, Markdown, PDF, Sheet, and Slides.
 
-No GitHub description is set; component scope remains unclassified.
+## Overview
+
+SigmaOS GenOffice provides a general-purpose office suite for document creation, editing, and management on SigmaOS.
+
+## Features
+
+- **Docs**: Document creation and editing
+- **HTML**: HTML document tools
+- **Markdown**: Markdown editing and preview
+- **PDF**: PDF creation and manipulation
+- **Sheet**: Spreadsheet applications
+- **Slides**: Presentation software
+- **Format conversion**: Support for converting between document formats
+
+## Components
+
+- Docs: Document editor
+- HTML: HTML tools
+- Markdown: Markdown editor
+- PDF: PDF tools
+- Sheet: Spreadsheet
+- Slides: Presentation tool
 
 ## Links
 

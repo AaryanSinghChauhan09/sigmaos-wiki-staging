@@ -1,8 +1,20 @@
-# SigmaOS-fish
+# SigmaOS Fish
 
-SigmaOS-fish is a component of the SigmaOS operating system project.
+Fish shell configuration for SigmaOS with enhanced productivity features and auto-suggestions.
 
-> Forked from omacom/omarchy-fish (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Fish provides a comprehensive fish shell configuration with auto-suggestions, syntax highlighting, and productivity tools integration.
+
+## Features
+
+- **Auto-suggestions**: Intelligent command suggestions as you type
+- **Syntax highlighting**: Color-coded command syntax
+- **Tab completion**: Context-aware tab completion
+- **History search**: Interactive history search
+- **Productivity aliases**: Git, tmux, and system administration aliases
+- **Tool integration**: eza, zoxide, fzf, starship
+- **Custom prompts**: Starship prompt with SigmaOS theme
 
 ## Links
 

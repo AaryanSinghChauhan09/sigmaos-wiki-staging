@@ -1,8 +1,26 @@
-# SigmaOS-dos
+# SigmaOS DOS
 
-SigmaOS-dos is a component of the SigmaOS operating system project.
+DOS environment for SigmaOS - FreeDOS, MS-DOS, BASIC, and ReactOS integration.
 
-SigmaOS component: dos.
+## Overview
+
+SigmaOS DOS provides DOS environment emulation and compatibility, supporting FreeDOS, MS-DOS, BASIC, and ReactOS for legacy application compatibility.
+
+## Features
+
+- **FreeDOS**: FreeDOS environment
+- **MS-DOS**: MS-DOS compatibility
+- **BASIC**: BASIC programming environment
+- **ReactOS**: ReactOS for Windows compatibility
+- **Legacy application support**: Run legacy DOS applications
+- **Emulation**: DOS emulation environment
+
+## Supported Environments
+
+- FreeDOS
+- MS-DOS
+- BASIC
+- ReactOS
 
 ## Links
 

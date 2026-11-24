@@ -1,8 +1,19 @@
-# SigmaOS-chromium
+# SigmaOS Chromium
 
-SigmaOS-chromium is a component of the SigmaOS operating system project.
+Chromium browser for SigmaOS - privacy-focused Chromium with SigmaOS integration.
 
-> Forked from omacom/omarchy-chromium (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Chromium provides a privacy-focused Chromium browser integrated with SigmaOS themes and settings.
+
+## Features
+
+- **Privacy-focused**: Enhanced privacy protections and tracking prevention
+- **SigmaOS integration**: Seamless integration with SigmaOS themes and settings
+- **Performance**: Optimized for speed and efficiency
+- **Security**: Modern security features and sandboxing
+- **Extensions**: Chromium extension support
+- **Sync**: Cross-device synchronization
 
 ## Links
 
