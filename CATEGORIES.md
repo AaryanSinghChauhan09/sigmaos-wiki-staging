@@ -172,7 +172,7 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-live-media](SigmaOS-live-media/Home.md) - Live media tools
 - [SigmaOS-local-ai](SigmaOS-local-ai/Home.md) - Local AI tools
 - [SigmaOS-mesa](SigmaOS-mesa/Home.md) - Mesa graphics
-- [SigmaOS-state-of-omarchy](SigmaOS-state-of-omarchy/Home.md) - Historical archive
+- [SigmaOS-state-archive](SigmaOS-state-archive/Home.md) - Historical archive
 - [SigmaOS-tte-go](SigmaOS-tte-go/Home.md) - Time tracking
 - [SigmaOS-ttfx](SigmaOS-ttfx/Home.md) - Text transformation
 
@@ -187,7 +187,7 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-omaterm](SigmaOS-omaterm/Home.md) - Terminal (via console)
 - [SigmaOS-omachee](SigmaOS-omachee/Home.md) - Camera (via chee)
 - [SigmaOS-omacon](SigmaOS-omacon/Home.md) - Console (via con)
-- [SigmaOS-omarchy-mac-pkgs](SigmaOS-omarchy-mac-pkgs/Home.md) - Mac packages (via mac-pkgs)
+- [SigmaOS-mac-pkgs](SigmaOS-mac-pkgs/Home.md) - Mac packages (via mac-pkgs)
 - [SigmaOS-omarchy-mac-installer](SigmaOS-omarchy-mac-installer/Home.md) - Mac installer (via mac-installer)
 - [SigmaOS-omarchy-maclab](SigmaOS-omarchy-maclab/Home.md) - Mac lab (via maclab)
 - [SigmaOS-omarchy-amiga-screensaver](SigmaOS-amiga-screensaver/Home.md) - Amiga screensaver
