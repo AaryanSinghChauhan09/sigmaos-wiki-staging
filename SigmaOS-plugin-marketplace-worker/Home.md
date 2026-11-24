@@ -1,11 +1,14 @@
-# SigmaOS-plugin-marketplace-worker
+# SigmaOS Plugin Marketplace Worker
 
-SigmaOS-plugin-marketplace-worker is a component of the SigmaOS operating system project.
+Archived - Plugin marketplace background worker. Functionality moved to consolidated marketplace architecture.
 
-> Modular split of omacom/omarchy-plugin-marketplace (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+This repository was the background worker for the plugin marketplace. It has been archived as part of the plugin marketplace consolidation. The active marketplace functionality is now in `SigmaOS-plugin-marketplace`.
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace-worker)
+- [SigmaOS plugin marketplace](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)

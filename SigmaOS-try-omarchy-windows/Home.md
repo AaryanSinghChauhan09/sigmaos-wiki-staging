@@ -1,8 +1,18 @@
-# SigmaOS-try-omarchy-windows
+# SigmaOS Try Omarchy Windows
 
-SigmaOS-try-omarchy-windows is a component of the SigmaOS operating system project.
+Windows-based trial environment for SigmaOS - provides a way to try SigmaOS components on Windows.
 
-> Forked from omacom/try-omarchy-windows (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Try Omarchy Windows provides a Windows-based environment for testing SigmaOS components without requiring Linux installation.
+
+## Features
+
+- **Windows integration**: Run SigmaOS tools on Windows
+- **WSL support**: Windows Subsystem for Linux integration
+- **Virtual environment**: Virtual machine support
+- **Quick trial**: Fast trial experience
+- **Safe testing**: Safe testing environment
 
 ## Links
 

@@ -1,8 +1,19 @@
-# SigmaOS-try-omarchy
+# SigmaOS Try Omarchy
 
-SigmaOS-try-omarchy is a component of the SigmaOS operating system project.
+Trial environment for SigmaOS - provides a quick way to try SigmaOS without installation.
 
-> Forked from omacom/try-omarchy (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Try Omarchy provides a trial environment for testing SigmaOS without requiring installation.
+
+## Features
+
+- **Live environment**: Run SigmaOS without installation
+- **USB boot**: Boot from USB drive
+- **Quick trial**: Fast trial experience
+- **Persistent option**: Optional persistent storage
+- **Safe testing**: Safe testing environment
+- **Full experience**: Full SigmaOS experience
 
 ## Links
 
