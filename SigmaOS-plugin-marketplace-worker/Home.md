@@ -1,0 +1,11 @@
+# SigmaOS-plugin-marketplace-worker
+
+SigmaOS-plugin-marketplace-worker is a component of the SigmaOS operating system project.
+
+> Modular split of omacom/omarchy-plugin-marketplace (MIT). See SIGMAOS_FORK.md.
+
+## Links
+
+- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace-worker)
+- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
+- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
