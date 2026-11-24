@@ -21,7 +21,24 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 104 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 111 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+
+## Recently Added
+
+Wiki pages recently added for missing components (repositories pending rate limit):
+
+- [SigmaOS-firefox](SigmaOS-firefox/Home.md) - Firefox browser
+- [SigmaOS-brave](SigmaOS-brave/Home.md) - Brave browser
+- [SigmaOS-librewolf](SigmaOS-librewolf/Home.md) - LibreWolf browser
+- [SigmaOS-waterfox](SigmaOS-waterfox/Home.md) - Waterfox browser
+- [SigmaOS-zen](SigmaOS-zen/Home.md) - Zen browser
+- [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
+- [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
+
+## Documentation
+
+- [CATEGORIES.md](CATEGORIES.md) - Complete component catalog organized by category
+- [MISSING_COMPONENTS.md](MISSING_COMPONENTS.md) - Status of missing components
 
 ## Links
 
