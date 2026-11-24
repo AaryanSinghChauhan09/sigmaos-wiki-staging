@@ -1,8 +1,19 @@
-# SigmaOS-amiga-screensaver
+# SigmaOS Amiga Screensaver
 
-SigmaOS-amiga-screensaver is a component of the SigmaOS operating system project.
+Amiga-style screensaver for SigmaOS - retro screensaver effects inspired by the Amiga era.
 
-> Forked from omacom/omarchy-amiga-screensaver (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Amiga Screensaver provides retro screensaver effects inspired by the classic Amiga computing era.
+
+## Features
+
+- **Retro effects**: Classic Amiga-style visual effects
+- **Plasma effects**: Amiga plasma visualizations
+- **Copper bars**: Copper bar effects
+- **Pixel art**: Pixel art style animations
+- **Customizable**: Configurable effects and timing
+- **Low resource**: Minimal CPU/GPU usage when idle
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-cards
+# SigmaOS Cards
 
-SigmaOS-cards is a component of the SigmaOS operating system project.
+Card-based note-taking and organization tool for SigmaOS - Kanban-style cards and task management.
 
-> Forked from omacom/cards (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Cards provides a card-based interface for note-taking, task management, and organization on SigmaOS.
+
+## Features
+
+- **Kanban boards**: Kanban-style card organization
+- **Task management**: Create and manage tasks
+- **Note cards**: Card-based note-taking
+- **Drag and drop**: Intuitive drag-and-drop interface
+- **Categories**: Organize cards by category
+- **Search**: Search through cards
+- **Sync**: Sync across devices
 
 ## Links
 

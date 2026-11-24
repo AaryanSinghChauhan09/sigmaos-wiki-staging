@@ -1,8 +1,20 @@
-# SigmaOS-audio-tuner
+# SigmaOS Audio Tuner
 
-SigmaOS-audio-tuner is a component of the SigmaOS operating system project.
+Audio tuning and equalization tools for SigmaOS - system audio configuration and effects.
 
-> Forked from omacom/omarchy-audio-tuner (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Audio Tuner provides audio configuration, equalization, and effects for SigmaOS.
+
+## Features
+
+- **System equalizer**: System-wide audio equalization
+- **Audio effects**: Reverb, echo, and other audio effects
+- **Volume normalization**: Automatic volume leveling
+- **Preset management**: Save and load audio presets
+- **Per-app audio**: Configure audio per application
+- **Device management**: Audio device configuration
+- **Real-time visualization**: Audio spectrum visualization
 
 ## Links
 
