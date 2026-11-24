@@ -213,6 +213,9 @@ Existing:
 - [SigmaOS-gui-frameworks-complete](SigmaOS-gui-frameworks-complete/Home.md) - Complete GUI frameworks collection
 - [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
 - [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
+- [SigmaOS-creative-tools-complete](SigmaOS-creative-tools-complete/Home.md) - Complete creative tools collection
+- [SigmaOS-office-suites-complete](SigmaOS-office-suites-complete/Home.md) - Complete office suites collection
+- [SigmaOS-music-production-complete](SigmaOS-music-production-complete/Home.md) - Complete music production collection
 
 ## Virtualization & Containerization
 

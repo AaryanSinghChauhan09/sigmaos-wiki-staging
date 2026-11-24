@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 255 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 258 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -122,6 +122,9 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-gui-frameworks-complete](SigmaOS-gui-frameworks-complete/Home.md) - Complete GUI frameworks collection
 - [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
 - [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
+- [SigmaOS-creative-tools-complete](SigmaOS-creative-tools-complete/Home.md) - Complete creative tools collection
+- [SigmaOS-office-suites-complete](SigmaOS-office-suites-complete/Home.md) - Complete office suites collection
+- [SigmaOS-music-production-complete](SigmaOS-music-production-complete/Home.md) - Complete music production collection
 
 **Data Science & Visualization:**
 - [SigmaOS-altair](SigmaOS-altair/Home.md) - Altair visualization
