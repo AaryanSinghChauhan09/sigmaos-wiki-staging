@@ -1,8 +1,17 @@
-# SigmaOS-mac-installer
+# SigmaOS Mac Installer
 
-SigmaOS-mac-installer is a component of the SigmaOS operating system project.
+Installer for SigmaOS on macOS - provides automated installation and setup of SigmaOS components on macOS systems.
 
-> Forked from omacom/omarchy-mac-installer (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Mac Installer automates the installation of SigmaOS components on macOS, providing a seamless setup experience for macOS users.
+
+## Features
+
+- **Automated installation**: Installs SigmaOS components automatically
+- **Dependency management**: Handles required dependencies
+- **Configuration**: Sets up proper configuration files
+- **Verification**: Checks system compatibility before installation
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-tte-go
+# SigmaOS TTE Go
 
-SigmaOS-tte-go is a component of the SigmaOS operating system project.
+Time-to-event tracking for SigmaOS - Go implementation of time tracking and scheduling utilities.
 
-Component repository for the SigmaOS project.
+## Overview
+
+SigmaOS TTE Go provides time-to-event tracking and scheduling utilities implemented in Go for SigmaOS.
+
+## Features
+
+- **Time tracking**: Track time to events
+- **Scheduling**: Schedule tasks and events
+- **Event management**: Manage events and reminders
+- **Go implementation**: Written in Go for performance
+- **API**: RESTful API for integration
+- **Database**: Event storage and retrieval
+- **Notifications**: Event notifications
 
 ## Links
 

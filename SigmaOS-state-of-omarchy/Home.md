@@ -1,8 +1,10 @@
-# SigmaOS-state-of-omarchy
+# SigmaOS State of Omarchy
 
-SigmaOS-state-of-omarchy is a component of the SigmaOS operating system project.
+Historical archive of Omarchy project state - preserves historical information from the Omarchy project for reference.
 
-> Forked from omacom/state-of-omarchy (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS State of Omarchy is an archived repository preserving historical information from the Omarchy project for reference and comparison purposes.
 
 ## Links
 
