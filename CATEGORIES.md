@@ -28,6 +28,11 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-console](SigmaOS-console/Home.md) - Console application framework
 - [SigmaOS-quickshell](SigmaOS-quickshell/Home.md) - QML-based shell
 
+## Email
+
+- [SigmaOS-thunderbird](SigmaOS-thunderbird/Home.md) - Thunderbird email client
+- [SigmaOS-mailspring](SigmaOS-mailspring/Home.md) - Mailspring email client
+
 ## Theming
 
 - [SigmaOS-theme-marketplace](SigmaOS-theme-marketplace/Home.md) - Theme marketplace
@@ -60,7 +65,6 @@ Complete catalog of SigmaOS components organized by category.
 
 - [SigmaOS-betteroffice](SigmaOS-betteroffice/Home.md) - Office suite
 - [SigmaOS-genoffice](SigmaOS-genoffice/Home.md) - General office tools
-- [SigmaOS-email](SigmaOS-email/Home.md) - Email client
 - [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
 - [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
 
@@ -71,6 +75,7 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-flowtunes](SigmaOS-flowtunes/Home.md) - Music player
 - [SigmaOS-gliff](SigmaOS-gliff/Home.md) - Clipboard manager
 - [SigmaOS-herdr](SigmaOS-herdr/Home.md) - Process manager
+- [SigmaOS-blender](SigmaOS-blender/Home.md) - 3D creation suite
 
 ## Data Tools
 
@@ -86,6 +91,16 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink
 - [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB
 - [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
+- [SigmaOS-apache-superset](SigmaOS-apache-superset/Home.md) - Apache Superset BI
+- [SigmaOS-metabase](SigmaOS-metabase/Home.md) - Metabase BI
+- [SigmaOS-grafana](SigmaOS-grafana/Home.md) - Grafana analytics
+- [SigmaOS-lightdash](SigmaOS-lightdash/Home.md) - Lightdash BI
+- [SigmaOS-posthog](SigmaOS-posthog/Home.md) - PostHog analytics
+- [SigmaOS-airflow](SigmaOS-airflow/Home.md) - Apache Airflow
+- [SigmaOS-nifi](SigmaOS-nifi/Home.md) - Apache NiFi
+- [SigmaOS-dbt](SigmaOS-dbt/Home.md) - dbt transformation
+- [SigmaOS-pandas](SigmaOS-pandas/Home.md) - Pandas data analysis
+- [SigmaOS-polars](SigmaOS-polars/Home.md) - Polars DataFrame
 
 ## Development Tools
 
@@ -172,6 +187,8 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-live-media](SigmaOS-live-media/Home.md) - Live media tools
 - [SigmaOS-local-ai](SigmaOS-local-ai/Home.md) - Local AI tools
 - [SigmaOS-mesa](SigmaOS-mesa/Home.md) - Mesa graphics
+- [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
+- [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
 - [SigmaOS-state-archive](SigmaOS-state-archive/Home.md) - Historical archive
 - [SigmaOS-tte-go](SigmaOS-tte-go/Home.md) - Time tracking
 - [SigmaOS-ttfx](SigmaOS-ttfx/Home.md) - Text transformation

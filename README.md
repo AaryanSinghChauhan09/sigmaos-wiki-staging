@@ -21,21 +21,55 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 117 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 132 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
 Wiki pages recently added for missing components (repositories pending rate limit):
 
+**Browsers:**
 - [SigmaOS-firefox](SigmaOS-firefox/Home.md) - Firefox browser
 - [SigmaOS-brave](SigmaOS-brave/Home.md) - Brave browser
 - [SigmaOS-librewolf](SigmaOS-librewolf/Home.md) - LibreWolf browser
 - [SigmaOS-waterfox](SigmaOS-waterfox/Home.md) - Waterfox browser
 - [SigmaOS-zen](SigmaOS-zen/Home.md) - Zen browser
+
+**Office Suites:**
 - [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
 - [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
 
-\n**Data Science & Big Data:**\n- [SigmaOS-jupyter](SigmaOS-jupyter/Home.md) - Jupyter Notebook/Lab\n- [SigmaOS-knime](SigmaOS-knime/Home.md) - KNIME Analytics Platform\n- [SigmaOS-apache-spark](SigmaOS-apache-spark/Home.md) - Apache Spark\n- [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink\n- [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB\n- [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
+**Data Science & Big Data:**
+- [SigmaOS-jupyter](SigmaOS-jupyter/Home.md) - Jupyter Notebook/Lab
+- [SigmaOS-knime](SigmaOS-knime/Home.md) - KNIME Analytics Platform
+- [SigmaOS-apache-spark](SigmaOS-apache-spark/Home.md) - Apache Spark
+- [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink
+- [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB
+- [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
+
+**Business Intelligence & Analytics:**
+- [SigmaOS-apache-superset](SigmaOS-apache-superset/Home.md) - Apache Superset BI
+- [SigmaOS-metabase](SigmaOS-metabase/Home.md) - Metabase BI
+- [SigmaOS-grafana](SigmaOS-grafana/Home.md) - Grafana analytics
+- [SigmaOS-lightdash](SigmaOS-lightdash/Home.md) - Lightdash BI
+- [SigmaOS-posthog](SigmaOS-posthog/Home.md) - PostHog analytics
+
+**Data Wrangling & ETL:**
+- [SigmaOS-airflow](SigmaOS-airflow/Home.md) - Apache Airflow
+- [SigmaOS-nifi](SigmaOS-nifi/Home.md) - Apache NiFi
+- [SigmaOS-dbt](SigmaOS-dbt/Home.md) - dbt transformation
+- [SigmaOS-pandas](SigmaOS-pandas/Home.md) - Pandas data analysis
+- [SigmaOS-polars](SigmaOS-polars/Home.md) - Polars DataFrame
+
+**Email Clients:**
+- [SigmaOS-thunderbird](SigmaOS-thunderbird/Home.md) - Thunderbird email client
+- [SigmaOS-mailspring](SigmaOS-mailspring/Home.md) - Mailspring email client
+
+**Creative Tools:**
+- [SigmaOS-blender](SigmaOS-blender/Home.md) - 3D creation suite
+
+**Utilities:**
+- [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
+- [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
 
 ## Documentation
 

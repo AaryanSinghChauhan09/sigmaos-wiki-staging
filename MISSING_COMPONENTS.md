@@ -38,6 +38,41 @@ Existing:
 - [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB
 - [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
 
+## Business Intelligence & Analytics
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-apache-superset](SigmaOS-apache-superset/Home.md) - Apache Superset BI
+- [SigmaOS-metabase](SigmaOS-metabase/Home.md) - Metabase BI
+- [SigmaOS-grafana](SigmaOS-grafana/Home.md) - Grafana analytics
+- [SigmaOS-lightdash](SigmaOS-lightdash/Home.md) - Lightdash BI
+- [SigmaOS-posthog](SigmaOS-posthog/Home.md) - PostHog analytics
+
+## Data Wrangling & ETL
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-airflow](SigmaOS-airflow/Home.md) - Apache Airflow
+- [SigmaOS-nifi](SigmaOS-nifi/Home.md) - Apache NiFi
+- [SigmaOS-dbt](SigmaOS-dbt/Home.md) - dbt transformation
+- [SigmaOS-pandas](SigmaOS-pandas/Home.md) - Pandas data analysis
+- [SigmaOS-polars](SigmaOS-polars/Home.md) - Polars DataFrame
+
+## Email Clients
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-thunderbird](SigmaOS-thunderbird/Home.md) - Thunderbird email client
+- [SigmaOS-mailspring](SigmaOS-mailspring/Home.md) - Mailspring email client
+
+## Creative Tools
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-blender](SigmaOS-blender/Home.md) - 3D creation suite
+
+## Utilities
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
+- [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
+
 Missing (from requirements):
 - Additional IDE support
 - More language runtimes
