@@ -1,8 +1,18 @@
-# SigmaOS-configurator
+# SigmaOS Configurator
 
-SigmaOS-configurator is a component of the SigmaOS operating system project.
+System configuration tool for SigmaOS - provides a graphical interface for managing system settings and preferences.
 
-> Forked from omacom/omarchy-configurator (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Configurator offers a user-friendly graphical interface for configuring SigmaOS system settings, including desktop environment, hardware, and system preferences.
+
+## Features
+
+- **Graphical interface**: Easy-to-use configuration UI
+- **System settings**: Desktop, hardware, and system preferences
+- **Theme management**: Configure SigmaOS themes and appearance
+- **User management**: User account settings and permissions
+- **Network configuration**: Network and connectivity settings
 
 ## Links
 

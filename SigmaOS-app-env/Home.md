@@ -1,8 +1,30 @@
-# SigmaOS-app-env
+# SigmaOS App Environment
 
-SigmaOS-app-env is a component of the SigmaOS operating system project.
+Application environment management for SigmaOS - provides tools for running Windows and other applications in isolated environments.
 
-SigmaOS component: app-env.
+## Overview
+
+SigmaOS App Environment enables running Windows applications and other software in isolated environments on SigmaOS, supporting compatibility with non-native applications.
+
+## Features
+
+- **Windows compatibility**: Run Windows applications via Wine/Proton
+- **Isolated environments**: Containerized application environments
+- **Bottles support**: Bottles-like environment management
+- **CrossOver integration**: CrossOver compatibility layer support
+- **Lutris support**: Gaming platform integration
+- **Proton integration**: Steam Proton for Windows games
+
+## Supported Tools
+
+- Bottles
+- CrossOver
+- Lutris
+- Proton
+- Raven
+- VirtualBox
+- WinBoat
+- Wine
 
 ## Links
 

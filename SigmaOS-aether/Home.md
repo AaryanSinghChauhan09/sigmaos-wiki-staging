@@ -1,8 +1,17 @@
-# SigmaOS-aether
+# SigmaOS Aether
 
-SigmaOS-aether is a component of the SigmaOS operating system project.
+Lightweight window management and desktop environment utilities for SigmaOS.
 
-> Forked from omacom/aether (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Aether provides lightweight window management tools and desktop environment utilities designed for SigmaOS, focusing on efficiency and minimal resource usage.
+
+## Features
+
+- **Window management**: Efficient window tiling and positioning
+- **Desktop utilities**: Essential desktop environment tools
+- **Lightweight design**: Minimal resource footprint
+- **Keyboard-driven**: Keyboard-centric workflow
 
 ## Links
 

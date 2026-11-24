@@ -1,6 +1,17 @@
-# SigmaOS-browser
+# SigmaOS Browser
 
-Browser component for SigmaOS
+Browser component for SigmaOS - web browsing capabilities integrated with the SigmaOS desktop environment.
+
+## Overview
+
+SigmaOS Browser provides web browsing functionality as part of the SigmaOS desktop environment, built with Rust for performance and security.
+
+## Features
+
+- **Fast rendering**: Rust-based engine for performance
+- **Privacy-focused**: Built-in privacy protections
+- **SigmaOS integration**: Seamless integration with SigmaOS themes and settings
+- **Security**: Modern security features and sandboxing
 
 ## Category
 

@@ -1,8 +1,30 @@
-# SigmaOS-bi-analytics
+# SigmaOS BI Analytics
 
-SigmaOS-bi-analytics is a component of the SigmaOS operating system project.
+Business intelligence and analytics platforms for SigmaOS - Apache Superset, Metabase, Redash, Grafana, Lightdash, and PostHog integration.
 
-SigmaOS component: bi-analytics.
+## Overview
+
+SigmaOS BI Analytics provides a suite of business intelligence and analytics tools for data visualization, dashboards, and analytics on SigmaOS.
+
+## Features
+
+- **Apache Superset**: Open source BI and data visualization platform
+- **Metabase**: Open source business intelligence tool
+- **Redash**: Open source data visualization and dashboarding
+- **Grafana**: Open source analytics and monitoring platform
+- **Lightdash**: Open source BI platform with SQL editor
+- **PostHog**: Open source product analytics
+- **Data visualization**: Interactive charts and dashboards
+- **Real-time analytics**: Live data monitoring and analysis
+
+## Supported Tools
+
+- Apache Superset
+- Metabase
+- Redash
+- Grafana
+- Lightdash
+- PostHog
 
 ## Links
 

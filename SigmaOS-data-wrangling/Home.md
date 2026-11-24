@@ -1,8 +1,30 @@
-# SigmaOS-data-wrangling
+# SigmaOS Data Wrangling
 
-SigmaOS-data-wrangling is a component of the SigmaOS operating system project.
+Data wrangling and ETL tools for SigmaOS - Apache Airflow, Apache NiFi, dbt, Pandas, Polars, and Talend Open Studio integration.
 
-SigmaOS component: data-wrangling.
+## Overview
+
+SigmaOS Data Wrangling provides a comprehensive toolkit for data extraction, transformation, and loading (ETL), enabling data pipeline development and data processing on SigmaOS.
+
+## Features
+
+- **Apache Airflow**: Workflow orchestration for data pipelines
+- **Apache NiFi**: Data flow automation and integration
+- **dbt**: Data build tool for transformation
+- **Pandas**: Python data manipulation library
+- **Polars**: High-performance data processing
+- **Talend Open Studio**: Open source ETL tool
+- **Pipeline management**: End-to-end data pipeline support
+- **Data connectors**: Integration with various data sources
+
+## Supported Tools
+
+- Apache Airflow
+- Apache NiFi
+- dbt
+- Pandas
+- Polars
+- Talend Open Studio
 
 ## Links
 
