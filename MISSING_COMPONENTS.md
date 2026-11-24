@@ -112,7 +112,14 @@ Missing (from requirements):
 
 ## Status
 
-Wiki pages have been added to the staging repository for all missing browsers, office suites, and key data science tools. GitHub repositories for these components will be created when the rate limit resets. In the meantime, the centralized Wiki staging repository serves as the complete catalog.
+Wiki pages have been added to the staging repository for all missing browsers, office suites, data science tools, BI tools, ETL tools, email clients, creative tools, utilities, development tools, virtualization, and networking components.
+
+**GitHub Repository Creation Status:**
+- ✅ Created: SigmaOS-firefox, SigmaOS-thunderbird, SigmaOS-nodejs, SigmaOS-java, SigmaOS-vscode
+- ✅ Already existed: SigmaOS-python, SigmaOS-rust, SigmaOS-go, SigmaOS-virtualbox, SigmaOS-blender
+- ⏳ Pending rate limit: SigmaOS-brave, SigmaOS-librewolf, SigmaOS-waterfox, SigmaOS-zen, SigmaOS-libreoffice, SigmaOS-onlyoffice, SigmaOS-jupyter, SigmaOS-knime, SigmaOS-apache-spark, SigmaOS-apache-flink, SigmaOS-duckdb, SigmaOS-trino, SigmaOS-apache-superset, SigmaOS-metabase, SigmaOS-grafana, SigmaOS-lightdash, SigmaOS-posthog, SigmaOS-airflow, SigmaOS-nifi, SigmaOS-dbt, SigmaOS-pandas, SigmaOS-polars, SigmaOS-mailspring, SigmaOS-docker, SigmaOS-keepassxc, SigmaOS-neovim, SigmaOS-kate, SigmaOS-gedit, SigmaOS-idea, SigmaOS-vmware, SigmaOS-qemu, SigmaOS-kvm, SigmaOS-podman, SigmaOS-syncthing, SigmaOS-rustdesk
+
+In the meantime, the centralized Wiki staging repository serves as the complete catalog.
 
 ## Priority
 
