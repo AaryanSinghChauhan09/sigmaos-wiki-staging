@@ -210,6 +210,7 @@ Existing:
 **Wiki Pages Added (repositories pending rate limit):**
 - [SigmaOS-gui-toolkit](SigmaOS-gui-toolkit/Home.md) - GUI toolkit collection
 - [SigmaOS-gui-frameworks](SigmaOS-gui-frameworks/Home.md) - GUI frameworks collection
+- [SigmaOS-gui-frameworks-complete](SigmaOS-gui-frameworks-complete/Home.md) - Complete GUI frameworks collection
 - [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
 - [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
 
