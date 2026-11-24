@@ -52,3 +52,8 @@ plan new components inspired by other Linux/BSD distros.
 3. `sigmaos-initramfs` — mkinitcpio-style hook pipeline
 4. `sigmaos-pockets` — Debian-style release pockets for updates
 5. `sigmaos-jails` — BSD-jail-inspired sandbox profiles for app-env
+
+## Progress
+
+- `sigmaos-system-profile` — IMPLEMENTED locally (candidate #2 above).
+  Repo creation pending GitHub rate limit.
