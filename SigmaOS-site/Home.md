@@ -1,8 +1,17 @@
-# SigmaOS-site
+# SigmaOS Site
 
-SigmaOS-site is a component of the SigmaOS operating system project.
+Official website for SigmaOS - download page, documentation hub, and project information.
 
-SigmaOS component inspired by the corresponding omacom repository. See docs/OMARCHY_INSPIRATION.md in the main SigmaOS repository.
+## Overview
+
+SigmaOS Site is the official website for the SigmaOS project, providing the download page for the ISO, documentation hub, and project information.
+
+## Features
+
+- **Download page**: Links to ISO releases and verification instructions
+- **Documentation hub**: Central documentation navigation
+- **Project information**: About SigmaOS, architecture, and goals
+- **Responsive design**: Works on desktop and mobile devices
 
 ## Links
 

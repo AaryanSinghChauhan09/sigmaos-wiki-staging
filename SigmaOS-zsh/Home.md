@@ -1,8 +1,19 @@
-# SigmaOS-zsh
+# SigmaOS Zsh
 
-SigmaOS-zsh is a component of the SigmaOS operating system project.
+Zsh configuration framework for SigmaOS with enhanced productivity features and shell customization.
 
-> Forked from omacom/omarchy-zsh (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Zsh provides a comprehensive zsh configuration with enhanced history, completion, aliases, and productivity tools integration.
+
+## Features
+
+- **Enhanced history**: Larger history size with persistent history
+- **Smart completion**: Context-aware completion
+- **Productivity aliases**: Git, tmux, and system administration aliases
+- **Tool integration**: eza, zoxide, fzf, starship
+- **Fuzzy search**: fzf-based history and file search
+- **Custom prompts**: Starship prompt with SigmaOS theme
 
 ## Links
 
