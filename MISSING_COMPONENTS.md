@@ -99,6 +99,39 @@ Existing:
 - [SigmaOS-grafana-loki](SigmaOS-grafana-loki/Home.md) - Grafana Loki logging
 - [SigmaOS-prometheus](SigmaOS-prometheus/Home.md) - Prometheus monitoring
 
+## Data Science & Visualization
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-altair](SigmaOS-altair/Home.md) - Altair visualization
+- [SigmaOS-bokeh](SigmaOS-bokeh/Home.md) - Bokeh visualization
+- [SigmaOS-matplotlib](SigmaOS-matplotlib/Home.md) - Matplotlib plotting
+- [SigmaOS-seaborn](SigmaOS-seaborn/Home.md) - Seaborn visualization
+- [SigmaOS-plotly](SigmaOS-plotly/Home.md) - Plotly visualization
+- [SigmaOS-ggplot2](SigmaOS-ggplot2/Home.md) - ggplot2 visualization
+- [SigmaOS-pytorch](SigmaOS-pytorch/Home.md) - PyTorch ML framework
+- [SigmaOS-scikit-learn](SigmaOS-scikit-learn/Home.md) - scikit-learn ML library
+- [SigmaOS-tensorflow](SigmaOS-tensorflow/Home.md) - TensorFlow ML framework
+- [SigmaOS-statsmodels](SigmaOS-statsmodels/Home.md) - Statsmodels statistical modeling
+- [SigmaOS-julia](SigmaOS-julia/Home.md) - Julia language
+- [SigmaOS-r-lang](SigmaOS-r-lang/Home.md) - R language
+- [SigmaOS-scala](SigmaOS-scala/Home.md) - Scala language
+- [SigmaOS-sql](SigmaOS-sql/Home.md) - SQL tools
+- [SigmaOS-tableau](SigmaOS-tableau/Home.md) - Tableau BI
+- [SigmaOS-powerbi](SigmaOS-powerbi/Home.md) - PowerBI BI
+- [SigmaOS-excel](SigmaOS-excel/Home.md) - Excel spreadsheet
+- [SigmaOS-airbyte](SigmaOS-airbyte/Home.md) - Airbyte data integration
+- [SigmaOS-hadoop](SigmaOS-hadoop/Home.md) - Hadoop distributed computing
+- [SigmaOS-snowflake](SigmaOS-snowflake/Home.md) - Snowflake data warehouse
+- [SigmaOS-bigquery](SigmaOS-bigquery/Home.md) - BigQuery data warehouse
+- [SigmaOS-lookerstudio](SigmaOS-lookerstudio/Home.md) - Looker Studio BI
+- [SigmaOS-databricks](SigmaOS-databricks/Home.md) - Databricks analytics
+- [SigmaOS-fivetran](SigmaOS-fivetran/Home.md) - Fivetran data integration
+- [SigmaOS-skyvia](SigmaOS-skyvia/Home.md) - Skyvia data integration
+- [SigmaOS-sas](SigmaOS-sas/Home.md) - SAS statistical software
+- [SigmaOS-mongodb-compass](SigmaOS-mongodb-compass/Home.md) - MongoDB Compass GUI
+- [SigmaOS-dbeaver](SigmaOS-dbeaver/Home.md) - DBeaver database tool
+- [SigmaOS-superset](SigmaOS-superset/Home.md) - Apache Superset BI
+
 ## Development Tools (IDEs & Editors)
 
 **Wiki Pages Added (repositories pending rate limit):**

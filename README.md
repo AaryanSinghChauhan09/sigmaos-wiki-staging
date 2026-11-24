@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 173 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 202 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -121,6 +121,37 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-gui-frameworks](SigmaOS-gui-frameworks/Home.md) - GUI frameworks collection
 - [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
 - [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
+
+**Data Science & Visualization:**
+- [SigmaOS-altair](SigmaOS-altair/Home.md) - Altair visualization
+- [SigmaOS-bokeh](SigmaOS-bokeh/Home.md) - Bokeh visualization
+- [SigmaOS-matplotlib](SigmaOS-matplotlib/Home.md) - Matplotlib plotting
+- [SigmaOS-seaborn](SigmaOS-seaborn/Home.md) - Seaborn visualization
+- [SigmaOS-plotly](SigmaOS-plotly/Home.md) - Plotly visualization
+- [SigmaOS-ggplot2](SigmaOS-ggplot2/Home.md) - ggplot2 visualization
+- [SigmaOS-pytorch](SigmaOS-pytorch/Home.md) - PyTorch ML framework
+- [SigmaOS-scikit-learn](SigmaOS-scikit-learn/Home.md) - scikit-learn ML library
+- [SigmaOS-tensorflow](SigmaOS-tensorflow/Home.md) - TensorFlow ML framework
+- [SigmaOS-statsmodels](SigmaOS-statsmodels/Home.md) - Statsmodels statistical modeling
+- [SigmaOS-julia](SigmaOS-julia/Home.md) - Julia language
+- [SigmaOS-r-lang](SigmaOS-r-lang/Home.md) - R language
+- [SigmaOS-scala](SigmaOS-scala/Home.md) - Scala language
+- [SigmaOS-sql](SigmaOS-sql/Home.md) - SQL tools
+- [SigmaOS-tableau](SigmaOS-tableau/Home.md) - Tableau BI
+- [SigmaOS-powerbi](SigmaOS-powerbi/Home.md) - PowerBI BI
+- [SigmaOS-excel](SigmaOS-excel/Home.md) - Excel spreadsheet
+- [SigmaOS-airbyte](SigmaOS-airbyte/Home.md) - Airbyte data integration
+- [SigmaOS-hadoop](SigmaOS-hadoop/Home.md) - Hadoop distributed computing
+- [SigmaOS-snowflake](SigmaOS-snowflake/Home.md) - Snowflake data warehouse
+- [SigmaOS-bigquery](SigmaOS-bigquery/Home.md) - BigQuery data warehouse
+- [SigmaOS-lookerstudio](SigmaOS-lookerstudio/Home.md) - Looker Studio BI
+- [SigmaOS-databricks](SigmaOS-databricks/Home.md) - Databricks analytics
+- [SigmaOS-fivetran](SigmaOS-fivetran/Home.md) - Fivetran data integration
+- [SigmaOS-skyvia](SigmaOS-skyvia/Home.md) - Skyvia data integration
+- [SigmaOS-sas](SigmaOS-sas/Home.md) - SAS statistical software
+- [SigmaOS-mongodb-compass](SigmaOS-mongodb-compass/Home.md) - MongoDB Compass GUI
+- [SigmaOS-dbeaver](SigmaOS-dbeaver/Home.md) - DBeaver database tool
+- [SigmaOS-superset](SigmaOS-superset/Home.md) - Apache Superset BI
 
 ## Documentation
 
