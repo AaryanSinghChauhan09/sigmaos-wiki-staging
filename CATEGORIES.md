@@ -9,6 +9,11 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-rollback](SigmaOS-rollback/Home.md) - System rollback utility
 - [SigmaOS-sec-audit](SigmaOS-sec-audit/Home.md) - Security audit tools
 - [SigmaOS-zfs-integration](SigmaOS-zfs-integration/Home.md) - ZFS filesystem integration
+- [SigmaOS-config-system](SigmaOS-config-system/Home.md) - Declarative configuration system
+- [SigmaOS-build-system](SigmaOS-build-system/Home.md) - Reproducible build system
+- [SigmaOS-update-system](SigmaOS-update-system/Home.md) - Software update system
+- [SigmaOS-recovery-system](SigmaOS-recovery-system/Home.md) - System recovery and rollback
+- [SigmaOS-security-hardening](SigmaOS-security-hardening/Home.md) - Security hardening features
 
 ## Desktop Environment
 

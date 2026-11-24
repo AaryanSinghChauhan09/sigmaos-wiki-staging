@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 149 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 154 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 

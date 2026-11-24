@@ -112,7 +112,14 @@ Missing (from requirements):
 
 ## Status
 
-Wiki pages have been added to the staging repository for all missing browsers, office suites, data science tools, BI tools, ETL tools, email clients, creative tools, utilities, development tools, virtualization, and networking components.
+Wiki pages have been added to the staging repository for all missing browsers, office suites, data science tools, BI tools, ETL tools, email clients, creative tools, utilities, development tools, virtualization, networking components, and core system components.
+
+**Core System Components Added:**
+- [SigmaOS-config-system](SigmaOS-config-system/Home.md) - Declarative configuration system
+- [SigmaOS-build-system](SigmaOS-build-system/Home.md) - Reproducible build system
+- [SigmaOS-update-system](SigmaOS-update-system/Home.md) - Software update system
+- [SigmaOS-recovery-system](SigmaOS-recovery-system/Home.md) - System recovery and rollback
+- [SigmaOS-security-hardening](SigmaOS-security-hardening/Home.md) - Security hardening features
 
 **GitHub Repository Creation Status:**
 - ✅ Created: SigmaOS-firefox, SigmaOS-thunderbird, SigmaOS-nodejs, SigmaOS-java, SigmaOS-vscode
