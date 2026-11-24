@@ -1,29 +1,43 @@
 # Phase 3+ Implementation Progress
 
-Session date: 2026-11-24
+Session date: 2026-11-24 (updated)
 
-## Implemented this session (all compile, test, pushed to GitHub)
+## Status: ALL 109 COMPONENT REPOS IMPLEMENTED
+
+Every `SigmaOS-*` repository now contains a real implementation —
+no boilerplate stubs remain. All code is `#![forbid(unsafe_code)]`,
+thiserror-style errors, serde TOML/JSON persistence, atomic writes,
+clap CLIs, GPL-3.0-or-later.
+
+## Implemented this session (17 components)
 
 ### Desktop Experience (Phase 3)
-- **SigmaOS-shell-config** — declarative shell config manager (bar, dock, launcher, theme). TOML-validated, atomic apply, CLI with validate/default/apply/path.
-- **SigmaOS-live-media** — live wallpaper manager (video/shader/sequence/image kinds, battery-saver pause, atomic apply).
+- **shell-config** — declarative bar/dock/launcher/theme config
+- **live-media** — live wallpaper manager (video/shader/sequence/image)
 
-### Core System extensions (Phase 2 spillover)
-- **SigmaOS-pkg-core** — package DB, dependency resolution (cycle detection), conflicts, JSON persistence, install/remove/search.
-- **SigmaOS-ports** — ports tree manager: categories, build plans, per-port state machine.
-- **SigmaOS-platform** — hardware detection: CPU model/cores/features, memory, session type, init system, uptime.
-- **SigmaOS-dkms** — DKMS module manager with per-kernel-release build status tracking.
-- **SigmaOS-rebuild** — system rebuild orchestrator (dkms → initramfs → bootloader), dry-run, JSON step records.
-- **SigmaOS-zfs-integration** — ZFS dataset inventory, snapshot retention policy, scrub scheduling.
-- **SigmaOS-sec-audit** — security scanner: world-writable files, loose private keys, hardcoded secret patterns, setuid/setgid.
-- **SigmaOS-speedtest** — TCP latency (min/avg/max) and HTTP download throughput measurement.
+### Core system extensions
+- **pkg-core** — package DB, dep resolution, conflicts
+- **ports** — ports tree, build plans, state machine
+- **platform** — hardware detection (CPU/mem/session/init)
+- **dkms** — kernel module manager, per-kernel status
+- **rebuild** — rebuild orchestrator (dkms→initramfs→bootloader, dry-run)
+- **zfs-integration** — datasets, snapshot policy, scrub schedule
+- **sec-audit** — security scanner (perms, secrets, setuid)
+- **speedtest** — TCP latency + HTTP throughput
 
-## Remaining stubs (Phase 4 — Application Suite scope)
-- SigmaOS-app-env, SigmaOS-betteroffice, SigmaOS-bi-analytics, SigmaOS-bigdata,
-  SigmaOS-craft, SigmaOS-data-wrangling, SigmaOS-iloveapi, SigmaOS-site, SigmaOS-wiki-hub
+### Application suite (Phase 4)
+- **wiki-hub** — markdown wiki index, search, TOC
+- **site** — static site builder (md→HTML, templates, assets)
+- **iloveapi** — file conversion job manager, provider trait
+- **data-wrangling** — ETL pipelines (filter/map/aggregate/sort)
+- **bigdata** — partitioning (rr/hash/range), job store, stats
+- **bi-analytics** — metrics, aggregations, dashboards
+- **betteroffice** — document model (text/sheet/slides, .sdoc)
+- **craft** — crafting system (items, recipes, inventory)
+- **app-env** — sandboxed app environment profiles
 
-## Notes
-- All new code: `#![forbid(unsafe_code)]`, thiserror errors, serde TOML/JSON,
-  atomic file writes, clap CLIs, GPL-3.0-or-later.
-- GitHub repo creation remains rate-limited for Wiki-only components; all
-  implemented repos push to existing remotes successfully.
+## Remaining work
+- GitHub repo creation rate-limited for ~50 Wiki-only components
+- GUI implementations for shell (Quickshell QML) — Rust cores done,
+  QML frontends are a separate layer
+- Integration testing across components (tools-sigmaos.sh wiring)
