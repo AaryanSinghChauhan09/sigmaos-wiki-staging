@@ -1,8 +1,20 @@
-# SigmaOS-pixel.nvim
+# SigmaOS Pixel Neovim
 
-SigmaOS-pixel.nvim is a component of the SigmaOS operating system project.
+Pixel Neovim configuration for SigmaOS - a minimalist Neovim configuration with pixel-perfect aesthetics.
 
-> Forked from omacom/pixel.nvim (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Pixel Neovim provides a minimalist Neovim configuration with pixel-perfect aesthetics and SigmaOS theme integration.
+
+## Features
+
+- **Minimalist design**: Clean, minimal configuration
+- **Pixel aesthetics**: Pixel-perfect visual design
+- **Theme integration**: SigmaOS theme support
+- **LSP support**: Language Server Protocol configuration
+- **Auto-completion**: Intelligent code completion
+- **Fast startup**: Optimized for fast startup
+- **Productivity**: Essential productivity plugins
 
 ## Links
 

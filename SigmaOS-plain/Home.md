@@ -1,8 +1,20 @@
-# SigmaOS-plain
+# SigmaOS Plain
 
-SigmaOS-plain is a component of the SigmaOS operating system project.
+Plain text and Markdown tools for SigmaOS - minimal text processing and formatting utilities.
 
-> Forked from omacom (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Plain provides minimal text processing and formatting utilities for SigmaOS, focusing on plain text and Markdown.
+
+## Features
+
+- **Text processing**: Basic text processing tools
+- **Markdown support**: Markdown formatting and conversion
+- **Plain text**: Plain text editing and manipulation
+- **Format conversion**: Convert between text formats
+- **Text analysis**: Basic text analysis tools
+- **Template system**: Text template processing
+- **Integration**: Integration with SigmaOS applications
 
 ## Links
 

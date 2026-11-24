@@ -1,8 +1,20 @@
-# SigmaOS-omawrite
+# SigmaOS Omawrite
 
-SigmaOS-omawrite is a component of the SigmaOS operating system project.
+Text editor and writing tools for SigmaOS - enhanced text editor with writing assistance.
 
-> Forked from omacom/omawrite (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Omawrite provides a text editor with writing assistance features for SigmaOS.
+
+## Features
+
+- **Text editing**: Full-featured text editor
+- **Writing assistance**: Grammar and style suggestions
+- **Markdown support**: Markdown editing and preview
+- **Syntax highlighting**: Code syntax highlighting
+- **Auto-save**: Automatic saving
+- **Templates**: Document templates
+- **Export**: Export to various formats
 
 ## Links
 

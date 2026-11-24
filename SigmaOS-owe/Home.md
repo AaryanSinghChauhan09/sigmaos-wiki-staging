@@ -1,8 +1,20 @@
-# SigmaOS-owe
+# SigmaOS Owe
 
-SigmaOS-owe is a component of the SigmaOS operating system project.
+Window management and tiling for SigmaOS - advanced window tiling and management tools.
 
-> Forked from omacom/owe (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Owe provides advanced window tiling and management tools for SigmaOS, enabling efficient window organization.
+
+## Features
+
+- **Window tiling**: Automatic window tiling
+- **Layout management**: Multiple layout options
+- **Workspace management**: Manage workspaces
+- **Keyboard control**: Full keyboard control
+- **Window rules**: Configurable window behavior
+- **Focus management**: Smart focus handling
+- **Integration**: Integration with SigmaOS desktop
 
 ## Links
 
