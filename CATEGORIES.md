@@ -50,12 +50,19 @@ Complete catalog of SigmaOS components organized by category.
 
 - [SigmaOS-browser](SigmaOS-browser/Home.md) - Web browser
 - [SigmaOS-chromium](SigmaOS-chromium/Home.md) - Chromium configuration
+- [SigmaOS-firefox](SigmaOS-firefox/Home.md) - Firefox browser
+- [SigmaOS-brave](SigmaOS-brave/Home.md) - Brave browser
+- [SigmaOS-librewolf](SigmaOS-librewolf/Home.md) - LibreWolf browser
+- [SigmaOS-waterfox](SigmaOS-waterfox/Home.md) - Waterfox browser
+- [SigmaOS-zen](SigmaOS-zen/Home.md) - Zen browser
 
 ## Productivity Suites
 
 - [SigmaOS-betteroffice](SigmaOS-betteroffice/Home.md) - Office suite
 - [SigmaOS-genoffice](SigmaOS-genoffice/Home.md) - General office tools
 - [SigmaOS-email](SigmaOS-email/Home.md) - Email client
+- [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
+- [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
 
 ## Creative Tools
 
