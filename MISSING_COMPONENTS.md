@@ -73,6 +73,39 @@ Existing:
 - [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
 - [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
 
+## Development Tools (IDEs & Editors)
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-vscode](SigmaOS-vscode/Home.md) - VSCode editor
+- [SigmaOS-neovim](SigmaOS-neovim/Home.md) - Neovim editor
+- [SigmaOS-kate](SigmaOS-kate/Home.md) - Kate editor
+- [SigmaOS-gedit](SigmaOS-gedit/Home.md) - Gedit editor
+- [SigmaOS-idea](SigmaOS-idea/Home.md) - IntelliJ IDEA
+
+## Development Tools (Language Runtimes)
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-python](SigmaOS-python/Home.md) - Python runtime
+- [SigmaOS-nodejs](SigmaOS-nodejs/Home.md) - Node.js runtime
+- [SigmaOS-rust](SigmaOS-rust/Home.md) - Rust runtime
+- [SigmaOS-go](SigmaOS-go/Home.md) - Go runtime
+- [SigmaOS-java](SigmaOS-java/Home.md) - Java runtime
+
+## Virtualization & Containerization
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-virtualbox](SigmaOS-virtualbox/Home.md) - VirtualBox virtualization
+- [SigmaOS-vmware](SigmaOS-vmware/Home.md) - VMware virtualization
+- [SigmaOS-qemu](SigmaOS-qemu/Home.md) - QEMU emulator
+- [SigmaOS-kvm](SigmaOS-kvm/Home.md) - KVM virtualization
+- [SigmaOS-podman](SigmaOS-podman/Home.md) - Podman containers
+
+## Networking & Remote Access
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-syncthing](SigmaOS-syncthing/Home.md) - File synchronization
+- [SigmaOS-rustdesk](SigmaOS-rustdesk/Home.md) - Remote desktop
+
 Missing (from requirements):
 - Additional IDE support
 - More language runtimes

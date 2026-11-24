@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 132 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 149 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -70,6 +70,31 @@ Wiki pages recently added for missing components (repositories pending rate limi
 **Utilities:**
 - [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
 - [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
+
+**Development Tools (IDEs & Editors):**
+- [SigmaOS-vscode](SigmaOS-vscode/Home.md) - VSCode editor
+- [SigmaOS-neovim](SigmaOS-neovim/Home.md) - Neovim editor
+- [SigmaOS-kate](SigmaOS-kate/Home.md) - Kate editor
+- [SigmaOS-gedit](SigmaOS-gedit/Home.md) - Gedit editor
+- [SigmaOS-idea](SigmaOS-idea/Home.md) - IntelliJ IDEA
+
+**Development Tools (Language Runtimes):**
+- [SigmaOS-python](SigmaOS-python/Home.md) - Python runtime
+- [SigmaOS-nodejs](SigmaOS-nodejs/Home.md) - Node.js runtime
+- [SigmaOS-rust](SigmaOS-rust/Home.md) - Rust runtime
+- [SigmaOS-go](SigmaOS-go/Home.md) - Go runtime
+- [SigmaOS-java](SigmaOS-java/Home.md) - Java runtime
+
+**Virtualization & Containerization:**
+- [SigmaOS-virtualbox](SigmaOS-virtualbox/Home.md) - VirtualBox virtualization
+- [SigmaOS-vmware](SigmaOS-vmware/Home.md) - VMware virtualization
+- [SigmaOS-qemu](SigmaOS-qemu/Home.md) - QEMU emulator
+- [SigmaOS-kvm](SigmaOS-kvm/Home.md) - KVM virtualization
+- [SigmaOS-podman](SigmaOS-podman/Home.md) - Podman containers
+
+**Networking & Remote Access:**
+- [SigmaOS-syncthing](SigmaOS-syncthing/Home.md) - File synchronization
+- [SigmaOS-rustdesk](SigmaOS-rustdesk/Home.md) - Remote desktop
 
 ## Documentation
 

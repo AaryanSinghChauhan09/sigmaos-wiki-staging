@@ -110,6 +110,16 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-lumon.nvim](SigmaOS-lumon.nvim/Home.md) - Lumon Neovim config
 - [SigmaOS-pixel.nvim](SigmaOS-pixel.nvim/Home.md) - Pixel Neovim config
 - [SigmaOS-aether.nvim](SigmaOS-aether.nvim/Home.md) - Aether Neovim integration
+- [SigmaOS-vscode](SigmaOS-vscode/Home.md) - VSCode editor
+- [SigmaOS-neovim](SigmaOS-neovim/Home.md) - Neovim editor
+- [SigmaOS-kate](SigmaOS-kate/Home.md) - Kate editor
+- [SigmaOS-gedit](SigmaOS-gedit/Home.md) - Gedit editor
+- [SigmaOS-idea](SigmaOS-idea/Home.md) - IntelliJ IDEA
+- [SigmaOS-python](SigmaOS-python/Home.md) - Python runtime
+- [SigmaOS-nodejs](SigmaOS-nodejs/Home.md) - Node.js runtime
+- [SigmaOS-rust](SigmaOS-rust/Home.md) - Rust runtime
+- [SigmaOS-go](SigmaOS-go/Home.md) - Go runtime
+- [SigmaOS-java](SigmaOS-java/Home.md) - Java runtime
 
 ## File Management
 
@@ -189,6 +199,13 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-mesa](SigmaOS-mesa/Home.md) - Mesa graphics
 - [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
 - [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
+- [SigmaOS-virtualbox](SigmaOS-virtualbox/Home.md) - VirtualBox virtualization
+- [SigmaOS-vmware](SigmaOS-vmware/Home.md) - VMware virtualization
+- [SigmaOS-qemu](SigmaOS-qemu/Home.md) - QEMU emulator
+- [SigmaOS-kvm](SigmaOS-kvm/Home.md) - KVM virtualization
+- [SigmaOS-podman](SigmaOS-podman/Home.md) - Podman containers
+- [SigmaOS-syncthing](SigmaOS-syncthing/Home.md) - File synchronization
+- [SigmaOS-rustdesk](SigmaOS-rustdesk/Home.md) - Remote desktop
 - [SigmaOS-state-archive](SigmaOS-state-archive/Home.md) - Historical archive
 - [SigmaOS-tte-go](SigmaOS-tte-go/Home.md) - Time tracking
 - [SigmaOS-ttfx](SigmaOS-ttfx/Home.md) - Text transformation
