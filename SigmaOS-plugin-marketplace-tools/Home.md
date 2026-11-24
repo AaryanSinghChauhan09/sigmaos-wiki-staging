@@ -1,8 +1,21 @@
-# SigmaOS-plugin-marketplace-tools
+# SigmaOS Plugin Marketplace Tools
 
-SigmaOS-plugin-marketplace-tools is a component of the SigmaOS operating system project.
+Consolidated repository containing the plugin marketplace website, Cloudflare Worker engagement backend, registry data, build scripts, and policy documentation.
 
-> Consolidated fork of omacom/omarchy-plugin-marketplace (MIT). See SIGMAOS_FORK.md. > > This repo reunites the former SigmaOS-plugin-marketplace-site and > SigmaOS-plugin-marketplace-worker splits: site/ is the static > marketplace, worker/ the Cloudflare engagement backend, and the root > holds the registry, build scripts, and policy docs — matching the > upstream layout.
+## Overview
+
+This repository reunites the former SigmaOS-plugin-marketplace-site and SigmaOS-plugin-marketplace-worker splits into a single coherent repository:
+- `site/`: Static marketplace frontend
+- `worker/`: Cloudflare Worker engagement backend
+- `registry.json`: Curated registry data
+- `scripts/`: Build scripts, security baseline scanning, verification
+
+## Components
+
+- **Static marketplace**: Web interface for browsing and installing plugins
+- **Engagement backend**: Cloudflare Worker for tracking plugin usage and engagement
+- **Registry data**: Central registry of available plugins
+- **Build tools**: Scripts for building, validating, and publishing the marketplace
 
 ## Links
 
