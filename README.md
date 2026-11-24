@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 202 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 221 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -152,6 +152,27 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-mongodb-compass](SigmaOS-mongodb-compass/Home.md) - MongoDB Compass GUI
 - [SigmaOS-dbeaver](SigmaOS-dbeaver/Home.md) - DBeaver database tool
 - [SigmaOS-superset](SigmaOS-superset/Home.md) - Apache Superset BI
+
+**Tools:**
+- [SigmaOS-cline](SigmaOS-cline/Home.md) - AI coding assistant
+- [SigmaOS-codexcli](SigmaOS-codexcli/Home.md) - AI coding assistant CLI
+- [SigmaOS-command-code](SigmaOS-command-code/Home.md) - Command-line code editor
+- [SigmaOS-crewai](SigmaOS-crewai/Home.md) - Multi-agent AI framework
+- [SigmaOS-cryptomator](SigmaOS-cryptomator/Home.md) - Client-side encryption
+- [SigmaOS-deepseek-coder](SigmaOS-deepseek-coder/Home.md) - AI code generation
+- [SigmaOS-drawio](SigmaOS-drawio/Home.md) - Diagramming tool
+- [SigmaOS-element](SigmaOS-element/Home.md) - Matrix client
+- [SigmaOS-excalidraw](SigmaOS-excalidraw/Home.md) - Virtual whiteboard
+- [SigmaOS-free-file-sync](SigmaOS-free-file-sync/Home.md) - File synchronization
+- [SigmaOS-hermes-agent](SigmaOS-hermes-agent/Home.md) - AI agent framework
+- [SigmaOS-kde-connect](SigmaOS-kde-connect/Home.md) - Device integration
+- [SigmaOS-keepass](SigmaOS-keepass/Home.md) - Password manager
+- [SigmaOS-langchain](SigmaOS-langchain/Home.md) - LLM application framework
+- [SigmaOS-local-send](SigmaOS-local-send/Home.md) - Local file sharing
+- [SigmaOS-notepadpp](SigmaOS-notepadpp/Home.md) - Text and code editor
+- [SigmaOS-openboard](SigmaOS-openboard/Home.md) - Interactive whiteboard
+- [SigmaOS-openclaw](SigmaOS-openclaw/Home.md) - AI agent framework
+- [SigmaOS-warp](SigmaOS-warp/Home.md) - Modern terminal emulator
 
 ## Documentation
 
