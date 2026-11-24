@@ -1,8 +1,20 @@
-# SigmaOS-site-crt
+# SigmaOS Site CRT
 
-SigmaOS-site-crt is a component of the SigmaOS operating system project.
+SSL/TLS certificate management for SigmaOS sites - certificate generation and management.
 
-> Forked from omacom/omarchy-site-crt (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Site CRT provides SSL/TLS certificate management tools for SigmaOS websites and services.
+
+## Features
+
+- **Certificate generation**: Generate SSL/TLS certificates
+- **Certificate management**: Manage certificate lifecycle
+- **Let's Encrypt**: Let's Encrypt integration
+- **Auto-renewal**: Automatic certificate renewal
+- **Wildcard certs**: Wildcard certificate support
+- **CSR generation**: Certificate signing request generation
+- **Security**: Secure key storage
 
 ## Links
 

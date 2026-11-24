@@ -1,8 +1,20 @@
-# SigmaOS-port-forward
+# SigmaOS Port Forward
 
-SigmaOS-port-forward is a component of the SigmaOS operating system project.
+Port forwarding and tunneling tools for SigmaOS - network port forwarding and secure tunneling.
 
-> Forked from omacom/omarchy-port-forward-plugin (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Port Forward provides port forwarding and tunneling tools for SigmaOS, enabling network access to services.
+
+## Features
+
+- **Port forwarding**: Forward ports to local services
+- **Tunneling**: Secure SSH tunneling
+- **Reverse tunnels**: Reverse port forwarding
+- **SOCKS proxy**: SOCKS proxy support
+- **Auto-discovery**: Service auto-discovery
+- **Configuration**: Easy configuration management
+- **Security**: Secure tunnel establishment
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-sddm
+# SigmaOS SDDM
 
-SigmaOS-sddm is a component of the SigmaOS operating system project.
+SDDM display manager for SigmaOS - graphical login manager with SigmaOS theming.
 
-> Forked from omacom/sddm (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS SDDM provides the SDDM display manager with SigmaOS theming for graphical login.
+
+## Features
+
+- **Graphical login**: Modern graphical login interface
+- **SigmaOS theming**: Consistent SigmaOS theme
+- **Multi-user support**: Multi-user login support
+- **Autologin**: Configurable autologin
+- **Session selection**: Choose desktop sessions
+- **Wayland support**: Wayland session support
+- **Accessibility**: Accessibility features
 
 ## Links
 

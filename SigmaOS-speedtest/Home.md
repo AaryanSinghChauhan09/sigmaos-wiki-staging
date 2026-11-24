@@ -1,8 +1,20 @@
-# SigmaOS-speedtest
+# SigmaOS Speedtest
 
-SigmaOS-speedtest is a component of the SigmaOS operating system project.
+Network speed testing tool for SigmaOS - measure network speed and latency.
 
-SigmaOS component inspired by the corresponding omacom repository. See docs/OMARCHY_INSPIRATION.md in the main SigmaOS repository.
+## Overview
+
+SigmaOS Speedtest provides network speed testing tools to measure download/upload speeds and latency.
+
+## Features
+
+- **Speed measurement**: Measure download and upload speeds
+- **Latency testing**: Ping and latency measurements
+- **Multiple servers**: Test against multiple servers
+- **History**: Track speed test history
+- **Detailed stats**: Detailed connection statistics
+- **CLI and GUI**: Both command-line and graphical interfaces
+- **Export**: Export test results
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-screensaver
+# SigmaOS Screensaver
 
-SigmaOS-screensaver is a component of the SigmaOS operating system project.
+Screensaver for SigmaOS - configurable screensaver with various visual effects.
 
-> Forked from omacom/omarchy-screensaver (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Screensaver provides a configurable screensaver with various visual effects for SigmaOS.
+
+## Features
+
+- **Visual effects**: Multiple screensaver effects
+- **Configurable**: Customizable settings
+- **Low resource**: Minimal CPU/GPU usage
+- **Lock screen**: Lock screen integration
+- **Power management**: Power-saving features
+- **Timer**: Configurable activation timer
+- **Themes**: Screensaver theme support
 
 ## Links
 

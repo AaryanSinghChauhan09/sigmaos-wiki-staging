@@ -1,8 +1,20 @@
-# SigmaOS-signed
+# SigmaOS Signed
 
-SigmaOS-signed is a component of the SigmaOS operating system project.
+Code signing and verification tools for SigmaOS - sign packages and verify signatures.
 
-> Forked from omacom (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Signed provides code signing and verification tools for SigmaOS packages and files.
+
+## Features
+
+- **Code signing**: Sign packages and executables
+- **Signature verification**: Verify file signatures
+- **Key management**: Manage signing keys
+- **Batch signing**: Batch file signing
+- **Integration**: Integration with package manager
+- **Trust management**: Manage trusted keys
+- **Audit**: Signature audit logging
 
 ## Links
 
