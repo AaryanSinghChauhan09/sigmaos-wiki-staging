@@ -1,8 +1,19 @@
-# SigmaOS-elsewhen
+# SigmaOS Elsewhen
 
-SigmaOS-elsewhen is a component of the SigmaOS operating system project.
+Time tracking and scheduling utilities for SigmaOS.
 
-> Forked from omacom/elsewhen (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Elsewhen provides time tracking, scheduling, and time management utilities for SigmaOS.
+
+## Features
+
+- **Time tracking**: Track time spent on tasks and projects
+- **Scheduling**: Schedule tasks and events
+- **Pomodoro timer**: Pomodoro technique timer
+- **Calendar integration**: Calendar event management
+- **Reminders**: Task reminders and notifications
+- **Reports**: Time usage reports and analytics
 
 ## Links
 

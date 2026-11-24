@@ -1,8 +1,20 @@
-# SigmaOS-herdr
+# SigmaOS Herdr
 
-SigmaOS-herdr is a component of the SigmaOS operating system project.
+Process and service manager for SigmaOS - system daemon management and process monitoring.
 
-> Forked from omacom/herdr (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Herdr provides process and service management tools for SigmaOS, including daemon management and process monitoring.
+
+## Features
+
+- **Service management**: Start, stop, and manage system services
+- **Process monitoring**: Monitor system processes and resource usage
+- **Auto-restart**: Automatic service restart on failure
+- **Logging**: Centralized service logging
+- **Health checks**: Service health monitoring
+- **Resource limits**: Set resource limits for services
+- **Boot services**: Manage services that start at boot
 
 ## Links
 

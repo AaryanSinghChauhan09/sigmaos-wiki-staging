@@ -1,4 +1,4 @@
-# SigmaOS folio
+# SigmaOS Folio
 
 > Forked from omacom/folio (MIT). See SIGMAOS_FORK.md.
 
