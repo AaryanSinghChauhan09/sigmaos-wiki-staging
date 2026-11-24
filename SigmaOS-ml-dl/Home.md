@@ -1,8 +1,27 @@
-# SigmaOS-ml-dl
+# SigmaOS ML/DL
 
-SigmaOS-ml-dl is a component of the SigmaOS operating system project.
+Machine Learning and Deep Learning tools for SigmaOS - PyTorch, scikit-learn, Statsmodels, and TensorFlow integration.
 
-SigmaOS component: ml-dl.
+## Overview
+
+SigmaOS ML/DL provides a comprehensive suite of machine learning and deep learning tools for SigmaOS.
+
+## Features
+
+- **PyTorch**: Deep learning framework
+- **scikit-learn**: Machine learning library
+- **Statsmodels**: Statistical modeling
+- **TensorFlow**: Deep learning framework
+- **GPU acceleration**: CUDA/ROCm support
+- **Jupyter integration**: Notebook support
+- **Model deployment**: Deploy models as APIs
+
+## Supported Frameworks
+
+- PyTorch
+- scikit-learn
+- Statsmodels
+- TensorFlow
 
 ## Links
 

@@ -1,8 +1,19 @@
-# SigmaOS-live-media
+# SigmaOS Live Media
 
-SigmaOS-live-media is a component of the SigmaOS operating system project.
+Live media creation tools for SigmaOS - tools for creating live USB and live ISO images.
 
-SigmaOS component: live-media — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
+## Overview
+
+SigmaOS Live Media provides tools for creating bootable live media, including live USB drives and live ISO images for testing and installation.
+
+## Features
+
+- **Live USB creation**: Create bootable USB drives
+- **Live ISO creation**: Build live ISO images
+- **Persistence support**: Persistent storage on live media
+- **Multi-boot support**: Support for multiple distributions
+- **Verification**: Verify image integrity
+- **Compression**: Compressed images for smaller downloads
 
 ## Links
 

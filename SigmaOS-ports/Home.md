@@ -1,8 +1,20 @@
-# SigmaOS-ports
+# SigmaOS Ports
 
-SigmaOS-ports is a component of the SigmaOS operating system project.
+Ports system for SigmaOS - software porting and compilation framework for third-party applications.
 
-SigmaOS component: ports — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
+## Overview
+
+SigmaOS Ports provides a ports system for building and installing third-party software from source, similar to BSD ports systems.
+
+## Features
+
+- **Source building**: Build software from source
+- **Patches**: Apply custom patches for compatibility
+- **Dependencies**: Automatic dependency handling
+- **Options**: Build options and variants
+- **Testing**: Build-time testing
+- **Cleaning**: Clean build artifacts
+- **Upgrade**: Upgrade ports when new versions are available
 
 ## Links
 

@@ -1,8 +1,29 @@
-# SigmaOS-sec-audit
+# SigmaOS Security Audit
 
-SigmaOS-sec-audit is a component of the SigmaOS operating system project.
+Security auditing tools for SigmaOS - vulnerability scanning, dependency checking, and security compliance.
 
-SigmaOS component: sec-audit — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
+## Overview
+
+SigmaOS Security Audit provides tools for security auditing, vulnerability scanning, and ensuring security compliance across SigmaOS components.
+
+## Features
+
+- **Vulnerability scanning**: Scan for known vulnerabilities
+- **Dependency checking**: Check dependencies for security issues
+- **Code analysis**: Static code analysis for security
+- **Compliance checks**: Verify security compliance
+- **Secret detection**: Detect leaked secrets and credentials
+- **Audit logging**: Maintain security audit logs
+- **Reporting**: Generate security reports
+
+## Security Checks
+
+- CVE scanning
+- Dependency vulnerability checks
+- Secret detection (API keys, passwords, tokens)
+- Misconfiguration detection
+- Permission audits
+- Network security checks
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-wiki-hub
+# SigmaOS Wiki Hub
 
-SigmaOS-wiki-hub is a component of the SigmaOS operating system project.
+Central documentation hub for SigmaOS - aggregated documentation from all SigmaOS components.
 
-SigmaOS component: wiki-hub — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
+## Overview
+
+SigmaOS Wiki Hub provides a central documentation hub that aggregates documentation from all SigmaOS components, providing a unified interface for accessing project documentation.
+
+## Features
+
+- **Central aggregation**: Aggregate documentation from all components
+- **Search**: Full-text search across all documentation
+- **Navigation**: Easy navigation between component docs
+- **Indexing**: Automatic indexing of documentation
+- **Updates**: Automatic updates when components change
+- **Themes**: Consistent theming across all docs
+- **Offline support**: Offline documentation access
 
 ## Links
 
