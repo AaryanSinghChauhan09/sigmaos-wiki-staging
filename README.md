@@ -1,215 +1,362 @@
 # SigmaOS Wiki Staging
 
-Central staging repository for SigmaOS component Wiki documentation.
+Centralized staging repository for all SigmaOS component documentation. This repository contains comprehensive Wiki pages for every SigmaOS component, organized by category.
 
 ## Overview
 
-This repository contains Wiki pages for all SigmaOS components. The Wiki content is organized by component in subdirectories, each containing a `Home.md` file.
+SigmaOS is a modern Linux distribution combining the best of Arch Linux's transparency and user control with a cohesive, opinionated desktop experience. This Wiki staging repository serves as the central documentation hub for all SigmaOS components.
 
-## Standalone Wiki Repositories
+## Components
 
-Key components have dedicated standalone Wiki repositories for detailed documentation:
+### Core System (Phase 2)
 
-- [SigmaOS-ISO-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO-Wiki) - ISO build and installation
-- [SigmaOS-ui-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-ui-Wiki) - Cross-framework UI kit
-- [SigmaOS-plugin-marketplace-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace-Wiki) - Plugin marketplace
-- [SigmaOS-plugin-registry-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-registry-Wiki) - Plugin registry control plane
-- [SigmaOS-plugin-marketplace-tools-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace-tools-Wiki) - Plugin marketplace tools
-- [SigmaOS-theme-marketplace-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-marketplace-Wiki) - Theme marketplace
-- [SigmaOS-theme-registry-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-registry-Wiki) - Theme registry
-- [SigmaOS-theme-sync-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-sync-Wiki) - Theme synchronization
+- **Config System** - NixOS-like declarative configuration system
+- **Build System** - Reproducible build pipeline and packaging
+- **Update System** - Rolling release model with update management
+- **Recovery System** - System recovery and rollback capabilities
+- **Security Hardening** - Security hardening with SELinux/AppArmor
 
-## Component Wiki Pages
+### Desktop Environment (Phase 3)
 
-All 258 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+- **Desktop Environment** - Complete desktop environment framework
+- **Web Developer Tools** - Web development tools and IDEs
 
-## Recently Added
+### Development Tools
 
-Wiki pages recently added for missing components (repositories pending rate limit):
+- **VSCode** - Visual Studio Code integration
+- **Neovim** - Neovim editor with SigmaOS configuration
+- **Kate** - KDE text editor
+- **Gedit** - GNOME text editor
+- **IntelliJ IDEA** - JetBrains IDE
+- **Python** - Python programming language
+- **Node.js** - Node.js runtime
+- **Rust** - Rust programming language
+- **Go** - Go programming language
+- **Java** - Java programming language
 
-**Browsers:**
-- [SigmaOS-firefox](SigmaOS-firefox/Home.md) - Firefox browser
-- [SigmaOS-brave](SigmaOS-brave/Home.md) - Brave browser
-- [SigmaOS-librewolf](SigmaOS-librewolf/Home.md) - LibreWolf browser
-- [SigmaOS-waterfox](SigmaOS-waterfox/Home.md) - Waterfox browser
-- [SigmaOS-zen](SigmaOS-zen/Home.md) - Zen browser
+### Virtualization & Containerization
 
-**Office Suites:**
-- [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
-- [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
+- **VirtualBox** - VirtualBox virtualization
+- **VMware** - VMware Workstation/Player
+- **QEMU** - QEMU emulator
+- **KVM** - Kernel-based Virtual Machine
+- **Podman** - Podman container runtime
+- **Docker** - Docker container platform
+- **Syncthing** - File synchronization
+- **RustDesk** - Remote desktop
 
-**Data Science & Big Data:**
-- [SigmaOS-jupyter](SigmaOS-jupyter/Home.md) - Jupyter Notebook/Lab
-- [SigmaOS-knime](SigmaOS-knime/Home.md) - KNIME Analytics Platform
-- [SigmaOS-apache-spark](SigmaOS-apache-spark/Home.md) - Apache Spark
-- [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink
-- [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB
-- [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
+### App Environment
 
-**Business Intelligence & Analytics:**
-- [SigmaOS-apache-superset](SigmaOS-apache-superset/Home.md) - Apache Superset BI
-- [SigmaOS-metabase](SigmaOS-metabase/Home.md) - Metabase BI
-- [SigmaOS-grafana](SigmaOS-grafana/Home.md) - Grafana analytics
-- [SigmaOS-lightdash](SigmaOS-lightdash/Home.md) - Lightdash BI
-- [SigmaOS-posthog](SigmaOS-posthog/Home.md) - PostHog analytics
+- **Bottles** - Windows application runner
+- **Lutris** - Game launcher
+- **Proton** - Wine compatibility layer
+- **Wine** - Windows compatibility layer
+- **Raven** - Windows app runner
+- **WinBoat** - Windows app runner
+- **CrossOver** - Commercial Wine
+- **Deskland** - Desktop environment
+- **ReactOS** - Open-source Windows
 
-**Data Wrangling & ETL:**
-- [SigmaOS-airflow](SigmaOS-airflow/Home.md) - Apache Airflow
-- [SigmaOS-nifi](SigmaOS-nifi/Home.md) - Apache NiFi
-- [SigmaOS-dbt](SigmaOS-dbt/Home.md) - dbt transformation
-- [SigmaOS-pandas](SigmaOS-pandas/Home.md) - Pandas data analysis
-- [SigmaOS-polars](SigmaOS-polars/Home.md) - Polars DataFrame
+### Database & Monitoring
 
-**Email Clients:**
-- [SigmaOS-thunderbird](SigmaOS-thunderbird/Home.md) - Thunderbird email client
-- [SigmaOS-mailspring](SigmaOS-mailspring/Home.md) - Mailspring email client
+- **PostgreSQL** - PostgreSQL database
+- **MySQL** - MySQL database
+- **MongoDB** - MongoDB NoSQL database
+- **Redis** - Redis in-memory data store
+- **Elasticsearch** - Elasticsearch search engine
+- **Grafana Loki** - Grafana Loki log aggregation
+- **Prometheus** - Prometheus monitoring system
 
-**Creative Tools:**
-- [SigmaOS-blender](SigmaOS-blender/Home.md) - 3D creation suite
+### Data Science & Visualization
 
-**Utilities:**
-- [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
-- [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
+- **Altair** - Declarative visualization library
+- **Bokeh** - Interactive visualization library
+- **Matplotlib** - Matplotlib plotting library
+- **Seaborn** - Seaborn statistical visualization
+- **Plotly** - Plotly interactive plots
+- **ggplot2** - ggplot2 grammar of graphics
+- **PyTorch** - PyTorch deep learning framework
+- **scikit-learn** - scikit-learn machine learning
+- **TensorFlow** - TensorFlow deep learning
+- **Statsmodels** - Statsmodels statistical modeling
+- **Julia** - Julia scientific computing
+- **R** - R statistical computing
+- **Scala** - Scala JVM language
+- **SQL** - SQL database language
+- **Tableau** - Tableau BI platform
+- **PowerBI** - PowerBI business intelligence
+- **Excel** - Microsoft Excel spreadsheet
+- **Airbyte** - Airbyte data integration
+- **Hadoop** - Apache Hadoop big data
+- **Snowflake** - Snowflake cloud data warehouse
+- **BigQuery** - Google BigQuery
+- **Looker Studio** - Google Looker Studio
+- **Databricks** - Databricks data analytics
+- **Fivetran** - Fivetran data integration
+- **Skyvia** - Skyvia data integration
+- **SAS** - SAS analytics platform
+- **MongoDB Compass** - MongoDB GUI
+- **DBeaver** - DBeaver database tool
+- **Superset** - Apache Superset BI
 
-**Development Tools (IDEs & Editors):**
-- [SigmaOS-vscode](SigmaOS-vscode/Home.md) - VSCode editor
-- [SigmaOS-neovim](SigmaOS-neovim/Home.md) - Neovim editor
-- [SigmaOS-kate](SigmaOS-kate/Home.md) - Kate editor
-- [SigmaOS-gedit](SigmaOS-gedit/Home.md) - Gedit editor
-- [SigmaOS-idea](SigmaOS-idea/Home.md) - IntelliJ IDEA
+### Meta-Components
 
-**Development Tools (Language Runtimes):**
-- [SigmaOS-python](SigmaOS-python/Home.md) - Python runtime
-- [SigmaOS-nodejs](SigmaOS-nodejs/Home.md) - Node.js runtime
-- [SigmaOS-rust](SigmaOS-rust/Home.md) - Rust runtime
-- [SigmaOS-go](SigmaOS-go/Home.md) - Go runtime
-- [SigmaOS-java](SigmaOS-java/Home.md) - Java runtime
+- **GUI Toolkit** - GUI toolkit framework
+- **GUI Frameworks** - GUI framework collection
+- **Agent Skills** - AI agent skills
+- **AI Skills** - AI skills collection
+- **Creative Tools** - Creative tools collection
+- **Office Suites** - Office suite collection
+- **Music Production** - Music production collection
 
-**Virtualization & Containerization:**
-- [SigmaOS-virtualbox](SigmaOS-virtualbox/Home.md) - VirtualBox virtualization
-- [SigmaOS-vmware](SigmaOS-vmware/Home.md) - VMware virtualization
-- [SigmaOS-qemu](SigmaOS-qemu/Home.md) - QEMU emulator
-- [SigmaOS-kvm](SigmaOS-kvm/Home.md) - KVM virtualization
-- [SigmaOS-podman](SigmaOS-podman/Home.md) - Podman containers
+### Tools
 
-**Networking & Remote Access:**
-- [SigmaOS-syncthing](SigmaOS-syncthing/Home.md) - File synchronization
-- [SigmaOS-rustdesk](SigmaOS-rustdesk/Home.md) - Remote desktop
+- **Cline** - AI coding assistant
+- **CodexCLI** - AI coding assistant
+- **Command Code** - Command code
+- **CrewAI** - AI agent framework
+- **Cryptomator** - Encryption tool
+- **DeepSeek Coder** - AI coding model
+- **Draw.io** - Diagram tool
+- **Element** - Matrix client
+- **Excalidraw** - Drawing tool
+- **Free File Sync** - File synchronization
+- **Hermes Agent** - AI agent
+- **KDE Connect** - Device integration
+- **KeePass** - Password manager
+- **LangChain** - LLM framework
+- **Local Send** - File sharing
+- **Notepad++** - Text editor
+- **OpenBoard** - Whiteboard
+- **OpenClaw** - AI agent
+- **Warp** - Terminal
 
-**App Environment:**
-- [SigmaOS-bottles](SigmaOS-bottles/Home.md) - Windows application runner
-- [SigmaOS-lutris](SigmaOS-lutris/Home.md) - Gaming platform
-- [SigmaOS-proton](SigmaOS-proton/Home.md) - Wine-based compatibility layer
-- [SigmaOS-wine](SigmaOS-wine/Home.md) - Windows compatibility layer
-- [SigmaOS-raven](SigmaOS-raven/Home.md) - Windows application runner
-- [SigmaOS-winboat](SigmaOS-winboat/Home.md) - Windows application runner
+### Creative Tools
 
-**DOS & Legacy:**
-- [SigmaOS-reactos](SigmaOS-reactos/Home.md) - ReactOS Windows-compatible OS
+- **VLC** - VLC media player
+- **GIMP** - GIMP image editor
+- **Inkscape** - Inkscape vector graphics
+- **Darktable** - Darktable photo editor
+- **OBS Studio** - OBS Studio video recording
+- **Kdenlive** - Kdenlive video editor
+- **Handbrake** - Handbrake video transcoder
+- **Blender** - Blender 3D creation
 
-**Database & Monitoring:**
-- [SigmaOS-postgresql](SigmaOS-postgresql/Home.md) - PostgreSQL database
-- [SigmaOS-mysql](SigmaOS-mysql/Home.md) - MySQL database
-- [SigmaOS-mongodb](SigmaOS-mongodb/Home.md) - MongoDB database
-- [SigmaOS-redis](SigmaOS-redis/Home.md) - Redis in-memory store
-- [SigmaOS-elasticsearch](SigmaOS-elasticsearch/Home.md) - Elasticsearch search
-- [SigmaOS-grafana-loki](SigmaOS-grafana-loki/Home.md) - Grafana Loki logging
-- [SigmaOS-prometheus](SigmaOS-prometheus/Home.md) - Prometheus monitoring
+### Office Suite
 
-**Meta-Components (Collections):**
-- [SigmaOS-gui-toolkit](SigmaOS-gui-toolkit/Home.md) - GUI toolkit collection
-- [SigmaOS-gui-frameworks](SigmaOS-gui-frameworks/Home.md) - GUI frameworks collection
-- [SigmaOS-gui-frameworks-complete](SigmaOS-gui-frameworks-complete/Home.md) - Complete GUI frameworks collection
-- [SigmaOS-agent-skills](SigmaOS-agent-skills/Home.md) - AI agent skills collection
-- [SigmaOS-ai-skills](SigmaOS-ai-skills/Home.md) - AI skills collection
-- [SigmaOS-creative-tools-complete](SigmaOS-creative-tools-complete/Home.md) - Complete creative tools collection
-- [SigmaOS-office-suites-complete](SigmaOS-office-suites-complete/Home.md) - Complete office suites collection
-- [SigmaOS-music-production-complete](SigmaOS-music-production-complete/Home.md) - Complete music production collection
+- **LibreOffice Draw** - LibreOffice Draw vector graphics
+- **LibreOffice Impress** - LibreOffice Impress presentations
+- **LibreOffice Calc** - LibreOffice Calc spreadsheets
+- **LibreOffice Writer** - LibreOffice Writer word processor
+- **LibreOffice Base** - LibreOffice Base database
+- **LibreOffice Math** - LibreOffice Math equation editor
+- **ONLYOFFICE** - ONLYOFFICE office suite
+- **BetterOffice** - BetterOffice suite
+- **GenOffice** - GenOffice suite
 
-**Data Science & Visualization:**
-- [SigmaOS-altair](SigmaOS-altair/Home.md) - Altair visualization
-- [SigmaOS-bokeh](SigmaOS-bokeh/Home.md) - Bokeh visualization
-- [SigmaOS-matplotlib](SigmaOS-matplotlib/Home.md) - Matplotlib plotting
-- [SigmaOS-seaborn](SigmaOS-seaborn/Home.md) - Seaborn visualization
-- [SigmaOS-plotly](SigmaOS-plotly/Home.md) - Plotly visualization
-- [SigmaOS-ggplot2](SigmaOS-ggplot2/Home.md) - ggplot2 visualization
-- [SigmaOS-pytorch](SigmaOS-pytorch/Home.md) - PyTorch ML framework
-- [SigmaOS-scikit-learn](SigmaOS-scikit-learn/Home.md) - scikit-learn ML library
-- [SigmaOS-tensorflow](SigmaOS-tensorflow/Home.md) - TensorFlow ML framework
-- [SigmaOS-statsmodels](SigmaOS-statsmodels/Home.md) - Statsmodels statistical modeling
-- [SigmaOS-julia](SigmaOS-julia/Home.md) - Julia language
-- [SigmaOS-r-lang](SigmaOS-r-lang/Home.md) - R language
-- [SigmaOS-scala](SigmaOS-scala/Home.md) - Scala language
-- [SigmaOS-sql](SigmaOS-sql/Home.md) - SQL tools
-- [SigmaOS-tableau](SigmaOS-tableau/Home.md) - Tableau BI
-- [SigmaOS-powerbi](SigmaOS-powerbi/Home.md) - PowerBI BI
-- [SigmaOS-excel](SigmaOS-excel/Home.md) - Excel spreadsheet
-- [SigmaOS-airbyte](SigmaOS-airbyte/Home.md) - Airbyte data integration
-- [SigmaOS-hadoop](SigmaOS-hadoop/Home.md) - Hadoop distributed computing
-- [SigmaOS-snowflake](SigmaOS-snowflake/Home.md) - Snowflake data warehouse
-- [SigmaOS-bigquery](SigmaOS-bigquery/Home.md) - BigQuery data warehouse
-- [SigmaOS-lookerstudio](SigmaOS-lookerstudio/Home.md) - Looker Studio BI
-- [SigmaOS-databricks](SigmaOS-databricks/Home.md) - Databricks analytics
-- [SigmaOS-fivetran](SigmaOS-fivetran/Home.md) - Fivetran data integration
-- [SigmaOS-skyvia](SigmaOS-skyvia/Home.md) - Skyvia data integration
-- [SigmaOS-sas](SigmaOS-sas/Home.md) - SAS statistical software
-- [SigmaOS-mongodb-compass](SigmaOS-mongodb-compass/Home.md) - MongoDB Compass GUI
-- [SigmaOS-dbeaver](SigmaOS-dbeaver/Home.md) - DBeaver database tool
-- [SigmaOS-superset](SigmaOS-superset/Home.md) - Apache Superset BI
+### Gaming & Entertainment
 
-**Tools:**
-- [SigmaOS-cline](SigmaOS-cline/Home.md) - AI coding assistant
-- [SigmaOS-codexcli](SigmaOS-codexcli/Home.md) - AI coding assistant CLI
-- [SigmaOS-command-code](SigmaOS-command-code/Home.md) - Command-line code editor
-- [SigmaOS-crewai](SigmaOS-crewai/Home.md) - Multi-agent AI framework
-- [SigmaOS-cryptomator](SigmaOS-cryptomator/Home.md) - Client-side encryption
-- [SigmaOS-deepseek-coder](SigmaOS-deepseek-coder/Home.md) - AI code generation
-- [SigmaOS-drawio](SigmaOS-drawio/Home.md) - Diagramming tool
-- [SigmaOS-element](SigmaOS-element/Home.md) - Matrix client
-- [SigmaOS-excalidraw](SigmaOS-excalidraw/Home.md) - Virtual whiteboard
-- [SigmaOS-free-file-sync](SigmaOS-free-file-sync/Home.md) - File synchronization
-- [SigmaOS-hermes-agent](SigmaOS-hermes-agent/Home.md) - AI agent framework
-- [SigmaOS-kde-connect](SigmaOS-kde-connect/Home.md) - Device integration
-- [SigmaOS-keepass](SigmaOS-keepass/Home.md) - Password manager
-- [SigmaOS-langchain](SigmaOS-langchain/Home.md) - LLM application framework
-- [SigmaOS-local-send](SigmaOS-local-send/Home.md) - Local file sharing
-- [SigmaOS-notepadpp](SigmaOS-notepadpp/Home.md) - Text and code editor
-- [SigmaOS-openboard](SigmaOS-openboard/Home.md) - Interactive whiteboard
-- [SigmaOS-openclaw](SigmaOS-openclaw/Home.md) - AI agent framework
-- [SigmaOS-warp](SigmaOS-warp/Home.md) - Modern terminal emulator
+- **Steam** - Steam gaming platform
+- **Heroic** - Heroic Games Launcher
+- **Battle.net** - Battle.net launcher
+- **Epic Games** - Epic Games launcher
+- **GOG** - GOG launcher
+- **Playnite** - Playnite game library
+- **RetroArch** - RetroArch emulator
 
-**Creative Tools:**
-- [SigmaOS-vlc](SigmaOS-vlc/Home.md) - Media player
-- [SigmaOS-gimp](SigmaOS-gimp/Home.md) - Image editor
-- [SigmaOS-inkscape](SigmaOS-inkscape/Home.md) - Vector graphics editor
-- [SigmaOS-darktable](SigmaOS-darktable/Home.md) - Photo workflow
-- [SigmaOS-obs-studio](SigmaOS-obs-studio/Home.md) - Video recording/streaming
-- [SigmaOS-kdenlive](SigmaOS-kdenlive/Home.md) - Video editor
-- [SigmaOS-handbrake](SigmaOS-handbrake/Home.md) - Video transcoder
+### Browser
 
-**Office Suite Components:**
-- [SigmaOS-libreoffice-draw](SigmaOS-libreoffice-draw/Home.md) - LibreOffice Draw
-- [SigmaOS-libreoffice-impress](SigmaOS-libreoffice-impress/Home.md) - LibreOffice Impress
-- [SigmaOS-libreoffice-calc](SigmaOS-libreoffice-calc/Home.md) - LibreOffice Calc
-- [SigmaOS-libreoffice-writer](SigmaOS-libreoffice-writer/Home.md) - LibreOffice Writer
-- [SigmaOS-libreoffice-base](SigmaOS-libreoffice-base/Home.md) - LibreOffice Base
-- [SigmaOS-libreoffice-math](SigmaOS-libreoffice-math/Home.md) - LibreOffice Math
+- **Firefox** - Firefox web browser
+- **Chromium** - Chromium web browser
+- **Brave** - Brave web browser
+- **LibreWolf** - LibreWolf web browser
+- **Waterfox** - Waterfox web browser
+- **Zen** - Zen web browser
 
-**Gaming & Entertainment:**
-- [SigmaOS-steam](SigmaOS-steam/Home.md) - Steam game platform
-- [SigmaOS-heroic](SigmaOS-heroic/Home.md) - Epic Games launcher
-- [SigmaOS-battlenet](SigmaOS-battlenet/Home.md) - Battle.net launcher
-- [SigmaOS-epic-games](SigmaOS-epic-games/Home.md) - Epic Games Store
-- [SigmaOS-gog](SigmaOS-gog/Home.md) - GOG.com launcher
-- [SigmaOS-playnite](SigmaOS-playnite/Home.md) - Game library manager
-- [SigmaOS-retroarch](SigmaOS-retroarch/Home.md) - Retro gaming emulator
+### Email
 
-## Documentation
+- **Thunderbird** - Thunderbird email client
+- **Mailspring** - Mailspring email client
 
-- [CATEGORIES.md](CATEGORIES.md) - Complete component catalog organized by category
-- [MISSING_COMPONENTS.md](MISSING_COMPONENTS.md) - Status of missing components
+### App Environment
+
+- **App Environment** - Application environment framework
+
+### Big Data & Distributed Computing
+
+- **Apache Flink** - Apache Flink stream processing
+- **Apache Spark** - Apache Spark big data
+- **DuckDB** - DuckDB analytical database
+- **Trino** - Trino distributed SQL
+
+### Business Intelligence & Analytics
+
+- **Apache Superset** - Apache Superset BI
+- **Metabase** - Metabase BI
+- **Grafana** - Grafana monitoring
+- **Lightdash** - Lightdash BI
+- **PostHog** - PostHog analytics
+
+### Data Wrangling & ETL
+
+- **Apache Airflow** - Apache Airflow workflow
+- **Apache NiFi** - Apache NiFi data flow
+- **dbt** - dbt data transformation
+- **Pandas** - Pandas data analysis
+- **Polars** - Polars data analysis
+
+### Exploratory Data Analysis & Visualization
+
+- **Altair** - Altair visualization
+- **Bokeh** - Bokeh visualization
+- **ggplot2** - ggplot2 visualization
+- **Matplotlib** - Matplotlib visualization
+- **Seaborn** - Seaborn visualization
+- **Plotly** - Plotly visualization
+- **ydata-profiling** - ydata-profiling EDA
+
+### Machine Learning & Deep Learning
+
+- **PyTorch** - PyTorch ML framework
+- **scikit-learn** - scikit-learn ML library
+- **Statsmodels** - Statsmodels statistical modeling
+- **TensorFlow** - TensorFlow DL framework
+
+### Notebooks & Experimentation
+
+- **Jupyter Notebook** - Jupyter Notebook
+- **JupyterLab** - JupyterLab
+- **Google Colab** - Google Colab
+- **KNIME** - KNIME analytics
+
+### RDBMS
+
+- **PostgreSQL** - PostgreSQL database
+- **MySQL** - MySQL database
+- **MongoDB** - MongoDB database
+- **Redis** - Redis database
+- **Elasticsearch** - Elasticsearch search
+- **DBeaver** - DBeaver database tool
+- **Metabase** - Metabase BI
+- **Superset** - Apache Superset BI
+
+### Data Science Tools
+
+- **Airbyte** - Airbyte data integration
+- **Apache Hadoop** - Apache Hadoop big data
+- **Databricks** - Databricks analytics
+- **Fivetran** - Fivetran data integration
+- **Google BigQuery** - Google BigQuery
+- **Google Looker Studio** - Google Looker Studio
+- **Julia** - Julia language
+- **MS Access** - Microsoft Access
+- **MS Excel** - Microsoft Excel
+- **MS PowerBI** - Microsoft PowerBI
+- **MongoDB** - MongoDB database
+- **Python** - Python language
+- **R** - R language
+- **Scala** - Scala language
+- **Skyvia** - Skyvia data integration
+- **Snowflake** - Snowflake data warehouse
+- **SAS** - SAS analytics
+- **SQL** - SQL language
+- **Tableau** - Tableau BI
+
+### Platform
+
+- **GUI Toolkit** - GUI toolkit framework
+- **GUI Frameworks** - GUI framework collection
+- **Agent Skills** - AI agent skills
+- **AI Skills** - AI skills collection
+
+### Skills
+
+- **Agent Skills** - AI agent skills collection
+- **AI Skills** - AI skills collection
+
+### DOS & Legacy
+
+- **FreeDOS** - FreeDOS operating system
+- **MS-DOS** - MS-DOS compatibility
+- **BASIC** - BASIC programming language
+- **ReactOS** - ReactOS open-source Windows
+
+## Wiki Architecture
+
+This repository follows the **Option 2 + Option 3 Hybrid** architecture:
+
+- **Option 2**: Key components have standalone Wiki repositories
+- **Option 3**: Centralized staging contains all component Wiki pages
+
+All component READMEs link to the centralized Wiki staging repository.
+
+## Component Status
+
+- **Total Components**: 260+
+- **Implemented**: ~120 (with repositories)
+- **Wiki Only**: ~140 (Wiki pages ready, repositories pending)
+- **Missing**: ~0 (all major components have Wiki pages)
+
+## Development Phases
+
+### Phase 1: Foundation (Current)
+
+- ✅ Core system components
+- ✅ Development tools
+- ✅ Virtualization & containerization
+- ✅ App environment
+- ✅ Database & monitoring
+- ✅ Data science & visualization
+- ✅ Meta-components
+- ✅ Tools
+- ✅ Creative tools
+- ✅ Office suite
+- ✅ Gaming & entertainment
+
+### Phase 2: Core System Implementation
+
+- ⏳ Declarative configuration system
+- ⏳ Reproducible build pipeline
+- ⏳ Update mechanism
+- ⏳ Recovery system
+- ⏳ Security hardening
+- ⏳ Logging system
+- ⏳ Bootloader integration
+- ⏳ Hardware support framework
+
+### Phase 3: Desktop Experience
+
+- ⏳ Window management
+- ⏳ Compositor
+- ⏳ Display server
+- ⏳ Application launcher
+- ⏳ System settings
+- ⏳ Theming engine
+- ⏳ Widgets
+- ⏳ Notifications
+
+### Phase 4: Advanced Features
+
+- ⏳ AI integration
+- ⏳ Cloud integration
+- ⏳ Mobile support
+- ⏳ Enterprise features
+- ⏳ Developer tools
+- ⏳ Gaming optimization
+- ⏳ Creative tools
+- ⏳ Scientific computing
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+- [Development Plan](DEVELOPMENT_PLAN.md)
+- [Categories](CATEGORIES.md)
+- [Missing Components](MISSING_COMPONENTS.md)
+- [Manifest](manifest.json)
