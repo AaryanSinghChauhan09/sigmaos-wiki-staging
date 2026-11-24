@@ -52,3 +52,21 @@ clap CLIs, GPL-3.0-or-later.
   109/110 pushed; 2 archived plugin-marketplace repos unarchived and pushed.
 - **SigmaOS-shell** GitHub repo creation blocked by rate limit —
   committed locally at sigmaos-repos/SigmaOS-shell, push on next window.
+
+## Test sweep — all cargo repos (latest)
+
+`cargo test` across all 45 Rust component repos:
+
+- **PASS: 39** — all previously implemented components green
+- **ENV-BLOCKED: 5** (missing system libraries, not code bugs):
+  - `SigmaOS-gliff` — needs `wayland-server` (pkg-config)
+  - `SigmaOS-screensaver` — needs `xkbcommon`
+  - `SigmaOS-video` — needs `libavcodec` (ffmpeg)
+  - `SigmaOS-omafind` — needs libclang (bindgen) + optional llama.cpp engine
+  - `SigmaOS-herdr` — needs `zig` toolchain for vendored libghostty-vt
+- **HARNESS: 1** — `SigmaOS-ui` is a vendored multi-framework UI kit;
+  root `cargo test` exceeds 5 min. Use its own `bin/test` harness.
+- **NOCARGO: 65** — shell/QML/script repos (no Rust targets)
+
+Action required on a SigmaOS install host: install
+`wayland`, `libxkbcommon`, `ffmpeg`, `clang/llvm`, `zig` dev packages.
