@@ -1,8 +1,21 @@
-# SigmaOS-lumon.nvim
+# SigmaOS Lumon Neovim
 
-SigmaOS-lumon.nvim is a component of the SigmaOS operating system project.
+Lumon Neovim configuration for SigmaOS - a modern Neovim configuration with SigmaOS theme integration.
 
-Component repository for the SigmaOS project.
+## Overview
+
+SigmaOS Lumon Neovim provides a modern Neovim configuration with SigmaOS theme integration, productivity plugins, and optimized performance.
+
+## Features
+
+- **Modern configuration**: Up-to-date Neovim configuration
+- **Theme integration**: SigmaOS theme support
+- **LSP support**: Language Server Protocol configuration
+- **Auto-completion**: Intelligent code completion
+- **Git integration**: Git status and diff integration
+- **Fuzzy finder**: File and text search
+- **Tree-sitter**: Better syntax highlighting
+- **Productivity plugins**: Enhanced editing and navigation
 
 ## Links
 

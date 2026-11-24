@@ -1,8 +1,20 @@
-# SigmaOS-m1n1
+# SigmaOS M1n1
 
-SigmaOS-m1n1 is a component of the SigmaOS operating system project.
+M1n1 bootloader for Apple Silicon - bootloader for running Linux on Apple Silicon Macs.
 
-> Forked from omacom/m1n1 (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS M1n1 provides the m1n1 bootloader for booting Linux on Apple Silicon (M1/M2/M3) Macs, enabling SigmaOS support for Apple Silicon hardware.
+
+## Features
+
+- **Apple Silicon support**: Boot Linux on Apple Silicon Macs
+- **Bootloader**: M1n1 bootloader for Apple Silicon
+- **Device tree**: Apple Silicon device tree support
+- **Hardware init**: Initialize Apple Silicon hardware
+- **Compatibility**: Support for various Apple Silicon models
+- **Kernel loading**: Load and boot Linux kernel
+- **Debug support**: Debugging and development tools
 
 ## Links
 

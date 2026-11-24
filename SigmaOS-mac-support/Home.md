@@ -1,8 +1,20 @@
-# SigmaOS-mac-support
+# SigmaOS Mac Support
 
-SigmaOS-mac-support is a component of the SigmaOS operating system project.
+macOS support tools for SigmaOS - compatibility layer and helpers for running SigmaOS tools on macOS.
 
-SigmaOS macOS support helpers
+## Overview
+
+SigmaOS Mac Support provides compatibility tools and helpers for running SigmaOS components and tools on macOS systems.
+
+## Features
+
+- **Compatibility layer**: Run SigmaOS tools on macOS
+- **Package management**: macOS package management integration
+- **Shell configuration**: macOS shell configuration
+- **Hardware support**: macOS hardware integration
+- **Cross-platform**: Maintain compatibility across platforms
+- **Testing**: Test SigmaOS components on macOS
+- **Documentation**: macOS-specific documentation
 
 ## Links
 
