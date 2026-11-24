@@ -1,10 +1,10 @@
-# SigmaOS Try Omarchy Windows
+# SigmaOS Trial Windows
 
 Windows-based trial environment for SigmaOS - provides a way to try SigmaOS components on Windows.
 
 ## Overview
 
-SigmaOS Try Omarchy Windows provides a Windows-based environment for testing SigmaOS components without requiring Linux installation.
+SigmaOS Trial Windows provides a Windows-based environment for testing SigmaOS components without requiring Linux installation.
 
 ## Features
 
@@ -16,6 +16,6 @@ SigmaOS Try Omarchy Windows provides a Windows-based environment for testing Sig
 
 ## Links
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-try-omarchy-windows)
+- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-trial-windows)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)

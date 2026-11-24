@@ -59,6 +59,6 @@ MIT, as SigmaOS. See [LICENSE](LICENSE).
 
 ## Links
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-omarchy-mac-pkgs)
+- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-pkgs)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)

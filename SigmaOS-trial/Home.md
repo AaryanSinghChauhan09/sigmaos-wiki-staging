@@ -1,10 +1,10 @@
-# SigmaOS Try Omarchy
+# SigmaOS Trial
 
 Trial environment for SigmaOS - provides a quick way to try SigmaOS without installation.
 
 ## Overview
 
-SigmaOS Try Omarchy provides a trial environment for testing SigmaOS without requiring installation.
+SigmaOS Trial provides a trial environment for testing SigmaOS without requiring installation.
 
 ## Features
 
@@ -17,6 +17,6 @@ SigmaOS Try Omarchy provides a trial environment for testing SigmaOS without req
 
 ## Links
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-try-omarchy)
+- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-trial)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
