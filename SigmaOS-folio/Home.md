@@ -1,7 +1,5 @@
 # SigmaOS Folio
 
-> Forked from omacom/folio (MIT). See SIGMAOS_FORK.md.
-
 Files (`folio`) is SigmaOS's file manager. It's one quiet window that follows your SigmaOS theme and language, works from the keyboard, and never crawls your home folder in the background: folders are read when you open them, and thumbnails are made when a tile needs one, shared with every other app through `~/.cache/thumbnails`.
 
 - **Three views**: Finder-style columns, a list that opens folders in place as a tree, and a grid with real previews. Ctrl+1/2/3 switches.

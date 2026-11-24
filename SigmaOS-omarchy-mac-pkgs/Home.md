@@ -1,7 +1,5 @@
 # SigmaOS Mac Packages
 
-> Forked from [omacom/omarchy-mac-pkgs](https://github.com/omacom/omarchy-mac-pkgs) (MIT). See `SIGMAOS_FORK.md`.
-
 **Want SigmaOS on your Mac?** Use the [SigmaOS Mac Installer](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer). This repository holds the packages it installs. It is not an installer, and it is not a copy of SigmaOS.
 
 This is the home of the Apple Silicon add-on packages for [SigmaOS](https://github.com/AaryanSinghChauhan09/Sigma), the tooling that releases and qualifies them, and the Mac manual. The desktop on a Mac is SigmaOS's own; these packages add what the hardware needs on top of it.
