@@ -70,3 +70,12 @@ clap CLIs, GPL-3.0-or-later.
 
 Action required on a SigmaOS install host: install
 `wayland`, `libxkbcommon`, `ffmpeg`, `clang/llvm`, `zig` dev packages.
+
+## Update — hardware validation + UI kit test
+
+- **sigmaos-platform --validate**: new CLI mode checking RAM (≥2 GiB),
+  cores (≥2), sse4_2, session, systemd init, disk (≥20 GiB), kernel ≥6.
+  Verified PASS on dev host. Commit 0634d5e.
+- **SigmaOS-ui `bin/test`**: core suite green (29 tests); Qt/GTK/KDE/
+  web/Tauri/BubbleTea bindings skip cleanly when system deps absent —
+  the `available` check contract working as designed.
