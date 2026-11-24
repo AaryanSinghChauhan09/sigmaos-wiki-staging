@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 111 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 117 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -34,6 +34,8 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-zen](SigmaOS-zen/Home.md) - Zen browser
 - [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
 - [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
+
+\n**Data Science & Big Data:**\n- [SigmaOS-jupyter](SigmaOS-jupyter/Home.md) - Jupyter Notebook/Lab\n- [SigmaOS-knime](SigmaOS-knime/Home.md) - KNIME Analytics Platform\n- [SigmaOS-apache-spark](SigmaOS-apache-spark/Home.md) - Apache Spark\n- [SigmaOS-apache-flink](SigmaOS-apache-flink/Home.md) - Apache Flink\n- [SigmaOS-duckdb](SigmaOS-duckdb/Home.md) - DuckDB\n- [SigmaOS-trino](SigmaOS-trino/Home.md) - Trino SQL engine
 
 ## Documentation
 
