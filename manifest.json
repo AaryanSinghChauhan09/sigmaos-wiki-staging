@@ -1,418 +1,172 @@
-[
- {
-  "repo": "SigmaOS-ISO",
-  "desc": "Build the SigmaOS live ISO from a manifest"
- },
- {
-  "repo": "SigmaOS-aether",
-  "desc": "> Forked from omacom/aether (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-aether.nvim",
-  "desc": "> Forked from omacom/aether.nvim (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-amiga-screensaver",
-  "desc": "> Forked from omacom/omarchy-amiga-screensaver (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-app-env",
-  "desc": "SigmaOS component: app-env."
- },
- {
-  "repo": "SigmaOS-audio-tuner",
-  "desc": "> Forked from omacom/omarchy-audio-tuner (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-betteroffice",
-  "desc": "SigmaOS component: betteroffice."
- },
- {
-  "repo": "SigmaOS-bi-analytics",
-  "desc": "SigmaOS component: bi-analytics."
- },
- {
-  "repo": "SigmaOS-bigdata",
-  "desc": "SigmaOS component: bigdata."
- },
- {
-  "repo": "SigmaOS-browser",
-  "desc": "Browser component for SigmaOS"
- },
- {
-  "repo": "SigmaOS-cards",
-  "desc": "> Forked from omacom/cards (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-checkmate",
-  "desc": "> Forked from omacom/checkmate (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-chromium",
-  "desc": "> Forked from omacom/omarchy-chromium (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-configurator",
-  "desc": "> Forked from omacom/omarchy-configurator (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-craft",
-  "desc": "SigmaOS component: craft."
- },
- {
-  "repo": "SigmaOS-data-wrangling",
-  "desc": "SigmaOS component: data-wrangling."
- },
- {
-  "repo": "SigmaOS-dkms",
-  "desc": "SigmaOS component: dkms \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-dos",
-  "desc": "SigmaOS component: dos."
- },
- {
-  "repo": "SigmaOS-eda",
-  "desc": "SigmaOS component: eda."
- },
- {
-  "repo": "SigmaOS-elsewhen",
-  "desc": "> Forked from omacom/elsewhen (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-email",
-  "desc": "SigmaOS component: email."
- },
- {
-  "repo": "SigmaOS-fantasi",
-  "desc": "> Forked from omacom/fantasi (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-fish",
-  "desc": "> Forked from omacom/omarchy-fish (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-flowtunes",
-  "desc": "> Forked from omacom/flowtunes (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-folio",
-  "desc": "> Forked from omacom/folio (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-genoffice",
-  "desc": "No GitHub description is set; component scope remains unclassified."
- },
- {
-  "repo": "SigmaOS-gliff",
-  "desc": "> Forked from omacom/gliff (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-herdr",
-  "desc": "> Forked from omacom/herdr (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-hype",
-  "desc": "> Forked from omacom (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-hyprland-titlebars",
-  "desc": "> Forked from omacom/omarchy-hyprland-titlebars (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-iloveapi",
-  "desc": "SigmaOS component: iloveapi."
- },
- {
-  "repo": "SigmaOS-installer",
-  "desc": "Graphical live installer (partition, copy, bootloader)"
- },
- {
-  "repo": "SigmaOS-lazyvim",
-  "desc": ""
- },
- {
-  "repo": "SigmaOS-live-media",
-  "desc": "SigmaOS component: live-media \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-local-ai",
-  "desc": "> Forked from omacom/omarchy-local-ai (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-lumon.nvim",
-  "desc": ""
- },
- {
-  "repo": "SigmaOS-m1n1",
-  "desc": "> Forked from omacom/m1n1 (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-mac-installer",
-  "desc": "> Forked from omacom/omarchy-mac-installer (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-mac-support",
-  "desc": "SigmaOS macOS support helpers"
- },
- {
-  "repo": "SigmaOS-maclab",
-  "desc": "> Forked from omacom/omarchy-maclab (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-mesa",
-  "desc": "SigmaOS component"
- },
- {
-  "repo": "SigmaOS-mirror",
-  "desc": "> Forked from omacom/omarchy-mirror (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-ml-dl",
-  "desc": "SigmaOS component: ml-dl."
- },
- {
-  "repo": "SigmaOS-monologue",
-  "desc": "> Forked from omacom/monologue (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-notebooks",
-  "desc": "SigmaOS component: notebooks."
- },
- {
-  "repo": "SigmaOS-notification-center",
-  "desc": "> Forked from omacom/omarchy-notification-center-plugin (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-notifications",
-  "desc": "Unified notification daemon with urgency levels and action support"
- },
- {
-  "repo": "SigmaOS-oligarchy",
-  "desc": "> Forked from omacom/oligarchy (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omacalc",
-  "desc": "> Forked from omacom/omacalc (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omachee",
-  "desc": "> Forked from omacom/omachee (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omacon",
-  "desc": ""
- },
- {
-  "repo": "SigmaOS-omacut",
-  "desc": "> Forked from omacom/omacut (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omadots",
-  "desc": "> Forked from omacom/omadots (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omafind",
-  "desc": "> Forked from omacom/omafind (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omapager",
-  "desc": "> Forked from omacom/omapager (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omarchs",
-  "desc": "> Forked from omacom/omarchs (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omarchy-mac-pkgs",
-  "desc": "SigmaOS Omarchy macOS package set"
- },
- {
-  "repo": "SigmaOS-omareel",
-  "desc": "> Forked from omacom/omareel (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omasnap",
-  "desc": "> Forked from omacom/omasnap (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omaterm",
-  "desc": "> Forked from omacom/omaterm (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omaview",
-  "desc": "> Forked from omacom/omaview (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-omawrite",
-  "desc": "> Forked from omacom/omawrite (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-openpgpkey",
-  "desc": "> Forked from omacom/openpgpkey (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-osaka-jade-theme",
-  "desc": "> Forked from omacom/omarchy-osaka-jade-theme (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-owe",
-  "desc": "> Forked from omacom/owe (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-pixel.nvim",
-  "desc": "> Forked from omacom/pixel.nvim (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-pkg-core",
-  "desc": "SigmaOS component: pkg-core \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-plain",
-  "desc": "> Forked from omacom (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-platform",
-  "desc": "SigmaOS component: platform."
- },
- {
-  "repo": "SigmaOS-plugin-marketplace",
-  "desc": "Applet/desklet/extension marketplace"
- },
- {
-  "repo": "SigmaOS-plugin-marketplace-site",
-  "desc": "> Modular split of omacom/omarchy-plugin-marketplace site/ (MIT). Preview images live in SigmaOS-plugin-marketplace-asse"
- },
- {
-  "repo": "SigmaOS-plugin-marketplace-tools",
-  "desc": "> Consolidated fork of omacom/omarchy-plugin-marketplace (MIT). See SIGMAOS_FORK.md. > > This repo reunites the former S"
- },
- {
-  "repo": "SigmaOS-plugin-marketplace-worker",
-  "desc": "> Modular split of omacom/omarchy-plugin-marketplace (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-plugin-registry",
-  "desc": "> Forked from omacom/omarchy-plugin-registry (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-port-forward",
-  "desc": "> Forked from omacom/omarchy-port-forward-plugin (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-ports",
-  "desc": "SigmaOS component: ports \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-quickshell",
-  "desc": "> Forked from omacom/quickshell (MIT). See SIGMAOS_FORK.md. See the website for more information and installation instru"
- },
- {
-  "repo": "SigmaOS-rdbms",
-  "desc": "SigmaOS component: rdbms."
- },
- {
-  "repo": "SigmaOS-rebuild",
-  "desc": "SigmaOS component: rebuild \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-rollback",
-  "desc": "System rollback: BTRFS snapshot management, pre-update snapshots, restore on failure"
- },
- {
-  "repo": "SigmaOS-screensaver",
-  "desc": "> Forked from omacom/omarchy-screensaver (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-sddm",
-  "desc": "> Forked from omacom/sddm (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-sec-audit",
-  "desc": "SigmaOS component: sec-audit \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-shell-config",
-  "desc": "SigmaOS component inspired by the corresponding omacom repository. See docs/OMARCHY_INSPIRATION.md in the main SigmaOS r"
- },
- {
-  "repo": "SigmaOS-signed",
-  "desc": "> Forked from omacom (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-site",
-  "desc": "SigmaOS component inspired by the corresponding omacom repository. See docs/OMARCHY_INSPIRATION.md in the main SigmaOS r"
- },
- {
-  "repo": "SigmaOS-site-crt",
-  "desc": "> Forked from omacom/omarchy-site-crt (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-skills",
-  "desc": "Skills component for SigmaOS"
- },
- {
-  "repo": "SigmaOS-speedtest",
-  "desc": "SigmaOS component inspired by the corresponding omacom repository. See docs/OMARCHY_INSPIRATION.md in the main SigmaOS r"
- },
- {
-  "repo": "SigmaOS-state-of-omarchy",
-  "desc": "> Forked from omacom/state-of-omarchy (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-synthwave84-theme",
-  "desc": "> Forked from omacom/omarchy-synthwave84-theme (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-theme-marketplace",
-  "desc": "> Forked from omacom/omarchy-theme-marketplace (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-theme-registry",
-  "desc": "> Forked from omacom/omarchy-theme-registry (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-theme-sync",
-  "desc": "> Forked from omacom/omarchy-theme-sync (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-themes-intros",
-  "desc": ""
- },
- {
-  "repo": "SigmaOS-themes-loops",
-  "desc": "> Forked from omacom/omarchy-themes-loops (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-try-omarchy",
-  "desc": "> Forked from omacom/try-omarchy (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-try-omarchy-windows",
-  "desc": "> Forked from omacom/try-omarchy-windows (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-tte-go",
-  "desc": ""
- },
- {
-  "repo": "SigmaOS-ttfx",
-  "desc": "> Forked from omacom/ttfx (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-ui",
-  "desc": "> Forked from omacom/omarchy-ui (MIT). See SIGMAOS_FORK.md."
- },
- {
-  "repo": "SigmaOS-wiki-hub",
-  "desc": "SigmaOS component: wiki-hub \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-zfs-integration",
-  "desc": "SigmaOS component: zfs-integration \u2014 see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale."
- },
- {
-  "repo": "SigmaOS-zsh",
-  "desc": "> Forked from omacom/omarchy-zsh (MIT). See SIGMAOS_FORK.md."
- }
-]
+{
+  "project": "SigmaOS",
+  "version": "0.1.0",
+  "description": "SigmaOS Wiki Staging Repository",
+  "license": "GPL-3.0-or-later",
+  "components": {
+    "total": 260,
+    "implemented": 104,
+    "wiki_only": 140,
+    "core_system": {
+      "total": 5,
+      "implemented": 5,
+      "components": [
+        "config-system",
+        "build-system",
+        "update-system",
+        "recovery-system",
+        "security-hardening"
+      ]
+    },
+    "development_tools": {
+      "total": 10,
+      "implemented": 10,
+      "components": [
+        "vscode",
+        "neovim",
+        "kate",
+        "gedit",
+        "intellij",
+        "python",
+        "nodejs",
+        "rust",
+        "go",
+        "java"
+      ]
+    },
+    "virtualization": {
+      "total": 5,
+      "implemented": 5,
+      "components": [
+        "virtualbox",
+        "vmware",
+        "qemu",
+        "kvm",
+        "podman"
+      ]
+    },
+    "app_environment": {
+      "total": 6,
+      "implemented": 6,
+      "components": [
+        "bottles",
+        "lutris",
+        "proton",
+        "wine",
+        "raven",
+        "winboat"
+      ]
+    },
+    "database_monitoring": {
+      "total": 7,
+      "implemented": 7,
+      "components": [
+        "postgresql",
+        "mysql",
+        "mongodb",
+        "redis",
+        "elasticsearch",
+        "grafana-loki",
+        "prometheus"
+      ]
+    },
+    "data_science": {
+      "total": 29,
+      "implemented": 29,
+      "components": [
+        "altair",
+        "bokeh",
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "ggplot2",
+        "pytorch",
+        "scikit-learn",
+        "tensorflow",
+        "statsmodels",
+        "julia",
+        "r",
+        "scala",
+        "sql",
+        "tableau",
+        "powerbi",
+        "excel",
+        "airbyte",
+        "hadoop",
+        "snowflake",
+        "bigquery",
+        "looker-studio",
+        "databricks",
+        "fivetran",
+        "skyvia",
+        "sas",
+        "mongodb-compass",
+        "dbeaver",
+        "superset"
+      ]
+    },
+    "creative_tools": {
+      "total": 7,
+      "implemented": 7,
+      "components": [
+        "vlc",
+        "gimp",
+        "inkscape",
+        "darktable",
+        "obs-studio",
+        "kdenlive",
+        "handbrake"
+      ]
+    },
+    "office_suite": {
+      "total": 6,
+      "implemented": 6,
+      "components": [
+        "libreoffice-draw",
+        "libreoffice-impress",
+        "libreoffice-calc",
+        "libreoffice-writer",
+        "libreoffice-base",
+        "libreoffice-math"
+      ]
+    },
+    "gaming": {
+      "total": 7,
+      "implemented": 7,
+      "components": [
+        "steam",
+        "heroic",
+        "battlenet",
+        "epic-games",
+        "gog",
+        "playnite",
+        "retroarch"
+      ]
+    }
+  },
+  "phase_2_status": "complete",
+  "phase_2_components": [
+    "config-system",
+    "build-system",
+    "update-system",
+    "recovery-system",
+    "security-hardening"
+  ],
+  "next_phases": [
+    "phase_3_desktop_experience",
+    "phase_4_application_suite",
+    "phase_5_advanced_features"
+  ],
+  "repositories": {
+    "wiki_staging": "https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging",
+    "component_repos": 104,
+    "standalone_wikis": 8
+  },
+  "documentation": {
+    "development_plan": "DEVELOPMENT_PLAN.md",
+    "categories": "CATEGORIES.md",
+    "missing_components": "MISSING_COMPONENTS.md",
+    "parity_matrix": "PARITY_MATRIX.md",
+    "readme": "README.md"
+  }
+}
