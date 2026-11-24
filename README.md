@@ -1,362 +1,195 @@
-# SigmaOS Wiki Staging
-
-Centralized staging repository for all SigmaOS component documentation. This repository contains comprehensive Wiki pages for every SigmaOS component, organized by category.
+# SigmaOS Wiki
 
 ## Overview
 
-SigmaOS is a modern Linux distribution combining the best of Arch Linux's transparency and user control with a cohesive, opinionated desktop experience. This Wiki staging repository serves as the central documentation hub for all SigmaOS components.
+This repository contains the centralized Wiki staging for SigmaOS, documenting all components, features, and architectural decisions. This Wiki serves as the single source of truth for SigmaOS documentation.
 
-## Components
+## Component Categories
 
-### Core System (Phase 2)
+### Core System Components
 
-- **Config System** - NixOS-like declarative configuration system
-- **Build System** - Reproducible build pipeline and packaging
-- **Update System** - Rolling release model with update management
-- **Recovery System** - System recovery and rollback capabilities
-- **Security Hardening** - Security hardening with SELinux/AppArmor
-
-### Desktop Environment (Phase 3)
-
-- **Desktop Environment** - Complete desktop environment framework
-- **Web Developer Tools** - Web development tools and IDEs
+- **[SigmaOS Config System](https://github.com/AaryanSinghChauhan09/SigmaOS-config-system)** - Declarative configuration system with schema validation
+- **[SigmaOS Build System](https://github.com/AaryanSinghChauhan09/SigmaOS-build-system)** - Reproducible build system with package generation
+- **[SigmaOS Update System](https://github.com/AaryanSinghChauhan09/SigmaOS-update-system)** - Rolling release update system
+- **[SigmaOS Recovery System](https://github.com/AaryanSinghChauhan09/SigmaOS-recovery-system)** - System snapshots and rollback
+- **[SigmaOS Security Hardening](https://github.com/AaryanSinghChauhan09/SigmaOS-security-hardening)** - AppArmor, SELinux, firewall, and audit
 
 ### Development Tools
 
-- **VSCode** - Visual Studio Code integration
-- **Neovim** - Neovim editor with SigmaOS configuration
-- **Kate** - KDE text editor
-- **Gedit** - GNOME text editor
-- **IntelliJ IDEA** - JetBrains IDE
-- **Python** - Python programming language
-- **Node.js** - Node.js runtime
-- **Rust** - Rust programming language
-- **Go** - Go programming language
-- **Java** - Java programming language
+- **[VSCode](https://github.com/AaryanSinghChauhan09/SigmaOS-vscode)** - Visual Studio Code integration
+- **[Neovim](https://github.com/AaryanSinghChauhan09/SigmaOS-neovim)** - Neovim editor integration
+- **[Kate](https://github.com/AaryanSinghChauhan09/SigmaOS-kate)** - Kate text editor
+- **[Gedit](https://github.com/AaryanSinghChauhan09/SigmaOS-gedit)** - GNOME text editor
+- **[IntelliJ IDEA](https://github.com/AaryanSinghChauhan09/SigmaOS-intellij)** - IntelliJ IDEA IDE
+
+### Language Runtimes
+
+- **[Python](https://github.com/AaryanSinghChauhan09/SigmaOS-python)** - Python runtime and tools
+- **[Node.js](https://github.com/AaryanSinghChauhan09/SigmaOS-nodejs)** - Node.js runtime and npm
+- **[Rust](https://github.com/AaryanSinghChauhan09/SigmaOS-rust)** - Rust toolchain
+- **[Go](https://github.com/AaryanSinghChauhan09/SigmaOS-go)** - Go toolchain
+- **[Java](https://github.com/AaryanSinghChauhan09/SigmaOS-java)** - Java runtime and tools
 
 ### Virtualization & Containerization
 
-- **VirtualBox** - VirtualBox virtualization
-- **VMware** - VMware Workstation/Player
-- **QEMU** - QEMU emulator
-- **KVM** - Kernel-based Virtual Machine
-- **Podman** - Podman container runtime
-- **Docker** - Docker container platform
-- **Syncthing** - File synchronization
-- **RustDesk** - Remote desktop
+- **[VirtualBox](https://github.com/AaryanSinghChauhan09/SigmaOS-virtualbox)** - VirtualBox VM manager
+- **[VMware](https://github.com/AaryanSinghChauhan09/SigmaOS-vmware)** - VMware Workstation
+- **[QEMU](https://github.com/AaryanSinghChauhan09/SigmaOS-qemu)** - QEMU emulator
+- **[KVM](https://github.com/AaryanSinghChauhan09/SigmaOS-kvm)** - Kernel-based VM
+- **[Podman](https://github.com/AaryanSinghChauhan09/SigmaOS-podman)** - Podman containers
+
+### Networking & Remote Access
+
+- **[Syncthing](https://github.com/AaryanSinghChauhan09/SigmaOS-syncthing)** - File synchronization
+- **[RustDesk](https://github.com/AaryanSinghChauhan09/SigmaOS-rustdesk)** - Remote desktop
 
 ### App Environment
 
-- **Bottles** - Windows application runner
-- **Lutris** - Game launcher
-- **Proton** - Wine compatibility layer
-- **Wine** - Windows compatibility layer
-- **Raven** - Windows app runner
-- **WinBoat** - Windows app runner
-- **CrossOver** - Commercial Wine
-- **Deskland** - Desktop environment
-- **ReactOS** - Open-source Windows
-
-### Database & Monitoring
-
-- **PostgreSQL** - PostgreSQL database
-- **MySQL** - MySQL database
-- **MongoDB** - MongoDB NoSQL database
-- **Redis** - Redis in-memory data store
-- **Elasticsearch** - Elasticsearch search engine
-- **Grafana Loki** - Grafana Loki log aggregation
-- **Prometheus** - Prometheus monitoring system
-
-### Data Science & Visualization
-
-- **Altair** - Declarative visualization library
-- **Bokeh** - Interactive visualization library
-- **Matplotlib** - Matplotlib plotting library
-- **Seaborn** - Seaborn statistical visualization
-- **Plotly** - Plotly interactive plots
-- **ggplot2** - ggplot2 grammar of graphics
-- **PyTorch** - PyTorch deep learning framework
-- **scikit-learn** - scikit-learn machine learning
-- **TensorFlow** - TensorFlow deep learning
-- **Statsmodels** - Statsmodels statistical modeling
-- **Julia** - Julia scientific computing
-- **R** - R statistical computing
-- **Scala** - Scala JVM language
-- **SQL** - SQL database language
-- **Tableau** - Tableau BI platform
-- **PowerBI** - PowerBI business intelligence
-- **Excel** - Microsoft Excel spreadsheet
-- **Airbyte** - Airbyte data integration
-- **Hadoop** - Apache Hadoop big data
-- **Snowflake** - Snowflake cloud data warehouse
-- **BigQuery** - Google BigQuery
-- **Looker Studio** - Google Looker Studio
-- **Databricks** - Databricks data analytics
-- **Fivetran** - Fivetran data integration
-- **Skyvia** - Skyvia data integration
-- **SAS** - SAS analytics platform
-- **MongoDB Compass** - MongoDB GUI
-- **DBeaver** - DBeaver database tool
-- **Superset** - Apache Superset BI
-
-### Meta-Components
-
-- **GUI Toolkit** - GUI toolkit framework
-- **GUI Frameworks** - GUI framework collection
-- **Agent Skills** - AI agent skills
-- **AI Skills** - AI skills collection
-- **Creative Tools** - Creative tools collection
-- **Office Suites** - Office suite collection
-- **Music Production** - Music production collection
-
-### Tools
-
-- **Cline** - AI coding assistant
-- **CodexCLI** - AI coding assistant
-- **Command Code** - Command code
-- **CrewAI** - AI agent framework
-- **Cryptomator** - Encryption tool
-- **DeepSeek Coder** - AI coding model
-- **Draw.io** - Diagram tool
-- **Element** - Matrix client
-- **Excalidraw** - Drawing tool
-- **Free File Sync** - File synchronization
-- **Hermes Agent** - AI agent
-- **KDE Connect** - Device integration
-- **KeePass** - Password manager
-- **LangChain** - LLM framework
-- **Local Send** - File sharing
-- **Notepad++** - Text editor
-- **OpenBoard** - Whiteboard
-- **OpenClaw** - AI agent
-- **Warp** - Terminal
-
-### Creative Tools
-
-- **VLC** - VLC media player
-- **GIMP** - GIMP image editor
-- **Inkscape** - Inkscape vector graphics
-- **Darktable** - Darktable photo editor
-- **OBS Studio** - OBS Studio video recording
-- **Kdenlive** - Kdenlive video editor
-- **Handbrake** - Handbrake video transcoder
-- **Blender** - Blender 3D creation
-
-### Office Suite
-
-- **LibreOffice Draw** - LibreOffice Draw vector graphics
-- **LibreOffice Impress** - LibreOffice Impress presentations
-- **LibreOffice Calc** - LibreOffice Calc spreadsheets
-- **LibreOffice Writer** - LibreOffice Writer word processor
-- **LibreOffice Base** - LibreOffice Base database
-- **LibreOffice Math** - LibreOffice Math equation editor
-- **ONLYOFFICE** - ONLYOFFICE office suite
-- **BetterOffice** - BetterOffice suite
-- **GenOffice** - GenOffice suite
-
-### Gaming & Entertainment
-
-- **Steam** - Steam gaming platform
-- **Heroic** - Heroic Games Launcher
-- **Battle.net** - Battle.net launcher
-- **Epic Games** - Epic Games launcher
-- **GOG** - GOG launcher
-- **Playnite** - Playnite game library
-- **RetroArch** - RetroArch emulator
-
-### Browser
-
-- **Firefox** - Firefox web browser
-- **Chromium** - Chromium web browser
-- **Brave** - Brave web browser
-- **LibreWolf** - LibreWolf web browser
-- **Waterfox** - Waterfox web browser
-- **Zen** - Zen web browser
-
-### Email
-
-- **Thunderbird** - Thunderbird email client
-- **Mailspring** - Mailspring email client
-
-### App Environment
-
-- **App Environment** - Application environment framework
-
-### Big Data & Distributed Computing
-
-- **Apache Flink** - Apache Flink stream processing
-- **Apache Spark** - Apache Spark big data
-- **DuckDB** - DuckDB analytical database
-- **Trino** - Trino distributed SQL
-
-### Business Intelligence & Analytics
-
-- **Apache Superset** - Apache Superset BI
-- **Metabase** - Metabase BI
-- **Grafana** - Grafana monitoring
-- **Lightdash** - Lightdash BI
-- **PostHog** - PostHog analytics
-
-### Data Wrangling & ETL
-
-- **Apache Airflow** - Apache Airflow workflow
-- **Apache NiFi** - Apache NiFi data flow
-- **dbt** - dbt data transformation
-- **Pandas** - Pandas data analysis
-- **Polars** - Polars data analysis
-
-### Exploratory Data Analysis & Visualization
-
-- **Altair** - Altair visualization
-- **Bokeh** - Bokeh visualization
-- **ggplot2** - ggplot2 visualization
-- **Matplotlib** - Matplotlib visualization
-- **Seaborn** - Seaborn visualization
-- **Plotly** - Plotly visualization
-- **ydata-profiling** - ydata-profiling EDA
-
-### Machine Learning & Deep Learning
-
-- **PyTorch** - PyTorch ML framework
-- **scikit-learn** - scikit-learn ML library
-- **Statsmodels** - Statsmodels statistical modeling
-- **TensorFlow** - TensorFlow DL framework
-
-### Notebooks & Experimentation
-
-- **Jupyter Notebook** - Jupyter Notebook
-- **JupyterLab** - JupyterLab
-- **Google Colab** - Google Colab
-- **KNIME** - KNIME analytics
-
-### RDBMS
-
-- **PostgreSQL** - PostgreSQL database
-- **MySQL** - MySQL database
-- **MongoDB** - MongoDB database
-- **Redis** - Redis database
-- **Elasticsearch** - Elasticsearch search
-- **DBeaver** - DBeaver database tool
-- **Metabase** - Metabase BI
-- **Superset** - Apache Superset BI
-
-### Data Science Tools
-
-- **Airbyte** - Airbyte data integration
-- **Apache Hadoop** - Apache Hadoop big data
-- **Databricks** - Databricks analytics
-- **Fivetran** - Fivetran data integration
-- **Google BigQuery** - Google BigQuery
-- **Google Looker Studio** - Google Looker Studio
-- **Julia** - Julia language
-- **MS Access** - Microsoft Access
-- **MS Excel** - Microsoft Excel
-- **MS PowerBI** - Microsoft PowerBI
-- **MongoDB** - MongoDB database
-- **Python** - Python language
-- **R** - R language
-- **Scala** - Scala language
-- **Skyvia** - Skyvia data integration
-- **Snowflake** - Snowflake data warehouse
-- **SAS** - SAS analytics
-- **SQL** - SQL language
-- **Tableau** - Tableau BI
-
-### Platform
-
-- **GUI Toolkit** - GUI toolkit framework
-- **GUI Frameworks** - GUI framework collection
-- **Agent Skills** - AI agent skills
-- **AI Skills** - AI skills collection
-
-### Skills
-
-- **Agent Skills** - AI agent skills collection
-- **AI Skills** - AI skills collection
+- **[Bottles](https://github.com/AaryanSinghChauhan09/SigmaOS-bottles)** - Windows app compatibility
+- **[Lutris](https://github.com/AaryanSinghChauhan09/SigmaOS-lutris)** - Game launcher
+- **[Proton](https://github.com/AaryanSinghChauhan09/SigmaOS-proton)** - Steam compatibility layer
+- **[Wine](https://github.com/AaryanSinghChauhan09/SigmaOS-wine)** - Wine compatibility layer
+- **[Raven](https://github.com/AaryanSinghChauhan09/SigmaOS-raven)** - App streaming
+- **[WinBoat](https://github.com/AaryanSinghChauhan09/SigmaOS-winboat)** - Windows container runtime
 
 ### DOS & Legacy
 
-- **FreeDOS** - FreeDOS operating system
-- **MS-DOS** - MS-DOS compatibility
-- **BASIC** - BASIC programming language
-- **ReactOS** - ReactOS open-source Windows
+- **[ReactOS](https://github.com/AaryanSinghChauhan09/SigmaOS-reactos)** - DOS/legacy compatibility
 
-## Wiki Architecture
+### Database & Monitoring
 
-This repository follows the **Option 2 + Option 3 Hybrid** architecture:
+- **[PostgreSQL](https://github.com/AaryanSinghChauhan09/SigmaOS-postgresql)** - PostgreSQL database
+- **[MySQL](https://github.com/AaryanSinghChauhan09/SigmaOS-mysql)** - MySQL database
+- **[MongoDB](https://github.com/AaryanSinghChauhan09/SigmaOS-mongodb)** - MongoDB database
+- **[Redis](https://github.com/AaryanSinghChauhan09/SigmaOS-redis)** - Redis cache
+- **[Elasticsearch](https://github.com/AaryanSinghChauhan09/SigmaOS-elasticsearch)** - Elasticsearch search
+- **[Grafana Loki](https://github.com/AaryanSinghChauhan09/SigmaOS-grafana-loki)** - Log aggregation
+- **[Prometheus](https://github.com/AaryanSinghChauhan09/SigmaOS-prometheus)** - Metrics monitoring
 
-- **Option 2**: Key components have standalone Wiki repositories
-- **Option 3**: Centralized staging contains all component Wiki pages
+### Data Science & Visualization
 
-All component READMEs link to the centralized Wiki staging repository.
+- **[Altair](https://github.com/AaryanSinghChauhan09/SigmaOS-altair)** - Declarative visualization
+- **[Bokeh](https://github.com/AaryanSinghChauhan09/SigmaOS-bokeh)** - Interactive visualization
+- **[Matplotlib](https://github.com/AaryanSinghChauhan09/SigmaOS-matplotlib)** - Plotting library
+- **[Seaborn](https://github.com/AaryanSinghChauhan09/SigmaOS-seaborn)** - Statistical visualization
+- **[Plotly](https://github.com/AaryanSinghChauhan09/SigmaOS-plotly)** - Interactive charts
+- **[ggplot2](https://github.com/AaryanSinghChauhan09/SigmaOS-ggplot2)** - Grammar of graphics
+- **[PyTorch](https://github.com/AaryanSinghChauhan09/SigmaOS-pytorch)** - Deep learning framework
+- **[scikit-learn](https://github.com/AaryanSinghChauhan09/SigmaOS-scikit-learn)** - Machine learning
+- **[TensorFlow](https://github.com/AaryanSinghChauhan09/SigmaOS-tensorflow)** - ML/DL framework
+- **[Statsmodels](https://github.com/AaryanSinghChauhan09/SigmaOS-statsmodels)** - Statistical modeling
+- **[Julia](https://github.com/AaryanSinghChauhan09/SigmaOS-julia)** - Julia language
+- **[R](https://github.com/AaryanSinghChauhan09/SigmaOS-r)** - R language
+- **[Scala](https://github.com/AaryanSinghChauhan09/SigmaOS-scala)** - Scala language
+- **[SQL](https://github.com/AaryanSinghChauhan09/SigmaOS-sql)** - SQL tools
+- **[Tableau](https://github.com/AaryanSinghChauhan09/SigmaOS-tableau)** - BI visualization
+- **[PowerBI](https://github.com/AaryanSinghChauhan09/SigmaOS-powerbi)** - Business intelligence
+- **[Excel](https://github.com/AaryanSinghChauhan09/SigmaOS-excel)** - Spreadsheet analysis
+- **[Airbyte](https://github.com/AaryanSinghChauhan09/SigmaOS-airbyte)** - Data integration
+- **[Hadoop](https://github.com/AaryanSinghChauhan09/SigmaOS-hadoop)** - Big data processing
+- **[Snowflake](https://github.com/AaryanSinghChauhan09/SigmaOS-snowflake)** - Data warehouse
+- **[BigQuery](https://github.com/AaryanSinghChauhan09/SigmaOS-bigquery)** - Cloud data warehouse
+- **[Looker Studio](https://github.com/AaryanSinghChauhan09/SigmaOS-looker-studio)** - Data visualization
+- **[Databricks](https://github.com/AaryanSinghChauhan09/SigmaOS-databricks)** - Data analytics
+- **[Fivetran](https://github.com/AaryanSinghChauhan09/SigmaOS-fivetran)** - Data integration
+- **[Skyvia](https://github.com/AaryanSinghChauhan09/SigmaOS-skyvia)** - Data integration
+- **[SAS](https://github.com/AaryanSinghChauhan09/SigmaOS-sas)** - Statistical analysis
+- **[MongoDB Compass](https://github.com/AaryanSinghChauhan09/SigmaOS-mongodb-compass)** - MongoDB GUI
+- **[DBeaver](https://github.com/AaryanSinghChauhan09/SigmaOS-dbeaver)** - Database management
+- **[Superset](https://github.com/AaryanSinghChauhan09/SigmaOS-superset)** - Business intelligence
+
+### Meta-Components
+
+- **[GUI Toolkit](https://github.com/AaryanSinghChauhan09/SigmaOS-gui-toolkit)** - GUI development framework
+- **[GUI Frameworks](https://github.com/AaryanSinghChauhan09/SigmaOS-gui-frameworks)** - GUI framework collection
+- **[Agent Skills](https://github.com/AaryanSinghChauhan09/SigmaOS-agent-skills)** - AI agent capabilities
+- **[AI Skills](https://github.com/AaryanSinghChauhan09/SigmaOS-ai-skills)** - AI/ML capabilities
+
+### Tools & Utilities
+
+- **[Cline](https://github.com/AaryanSinghChauhan09/SigmaOS-cline)** - CLI tool
+- **[CodexCLI](https://github.com/AaryanSinghChauhan09/SigmaOS-codexcli)** - Code generation CLI
+- **[Command Code](https://github.com/AaryanSinghChauhan09/SigmaOS-command-code)** - Command execution
+- **[CrewAI](https://github.com/AaryanSinghChauhan09/SigmaOS-crewai)** - Multi-agent system
+- **[Cryptomator](https://github.com/AaryanSinghChauhan09/SigmaOS-cryptomator)** - File encryption
+- **[DeepSeek Coder](https://github.com/AaryanSinghChauhan09/SigmaOS-deepseek-coder)** - AI coding assistant
+- **[Draw.io](https://github.com/AaryanSinghChauhan09/SigmaOS-drawio)** - Diagramming tool
+- **[Element](https://github.com/AaryanSinghChauhan09/SigmaOS-element)** - Matrix client
+- **[Excalidraw](https://github.com/AaryanSinghChauhan09/SigmaOS-excalidraw)** - Hand-drawn diagrams
+- **[Free File Sync](https://github.com/AaryanSinghChauhan09/SigmaOS-free-file-sync)** - File synchronization
+- **[Hermes Agent](https://github.com/AaryanSinghChauhan09/SigmaOS-hermes-agent)** - AI agent
+- **[KDE Connect](https://github.com/AaryanSinghChauhan09/SigmaOS-kdeconnect)** - Device integration
+- **[KeePass](https://github.com/AaryanSinghChauhan09/SigmaOS-keepass)** - Password manager
+- **[LangChain](https://github.com/AaryanSinghChauhan09/SigmaOS-langchain)** - LLM framework
+- **[Local Send](https://github.com/AaryanSinghChauhan09/SigmaOS-localsend)** - Local file sharing
+- **[Notepad++](https://github.com/AaryanSinghChauhan09/SigmaOS-notepad-plus-plus)** - Text editor
+- **[OpenBoard](https://github.com/AaryanSinghChauhan09/SigmaOS-openboard)** - Interactive whiteboard
+- **[OpenClaw](https://github.com/AaryanSinghChauhan09/SigmaOS-openclaw)** - AI agent
+- **[Warp](https://github.com/AaryanSinghChauhan09/SigmaOS-warp)** - Terminal emulator
+
+### Creative Tools
+
+- **[VLC](https://github.com/AaryanSinghChauhan09/SigmaOS-vlc)** - Media player
+- **[GIMP](https://github.com/AaryanSinghChauhan09/SigmaOS-gimp)** - Image editor
+- **[Inkscape](https://github.com/AaryanSinghChauhan09/SigmaOS-inkscape)** - Vector graphics
+- **[Darktable](https://github.com/AaryanSinghChauhan09/SigmaOS-darktable)** - Photo workflow
+- **[OBS Studio](https://github.com/AaryanSinghChauhan09/SigmaOS-obs-studio)** - Screen recording
+- **[Kdenlive](https://github.com/AaryanSinghChauhan09/SigmaOS-kdenlive)** - Video editor
+- **[Handbrake](https://github.com/AaryanSinghChauhan09/SigmaOS-handbrake)** - Video transcoder
+
+### Office Suite Components
+
+- **[LibreOffice Draw](https://github.com/AaryanSinghChauhan09/SigmaOS-libreoffice-draw)** - Vector graphics
+- **[LibreOffice Impress](https://github.com/AaryanSinghChauhan09/SigmaOS-libreoffice-impress)** - Presentations
+- **[LibreOffice Calc](https://github.com/AaryanSinghChauhan09/SigmaOS-libreoffice-calc)** - Spreadsheets
+- **[LibreOffice Writer](https://github.com/AaryanSinghChauhan09/SigmaOS-libreoffice-writer)** - Word processing
+- **[LibreOffice Base](https://github.com/AaryanSinghChauhan09/SigmaOS-libreoffice-base)** - Database
+- **[LibreOffice Math](https://github.com/AaryanSinghChauhan09/SigmaOS-libreoffice-math)** - Equation editor
+
+### Gaming & Entertainment
+
+- **[Steam](https://github.com/AaryanSinghChauhan09/SigmaOS-steam)** - Game platform
+- **[Heroic](https://github.com/AaryanSinghChauhan09/SigmaOS-heroic)** - Game launcher
+- **[Battle.net](https://github.com/AaryanSinghChauhan09/SigmaOS-battlenet)** - Blizzard launcher
+- **[Epic Games](https://github.com/AaryanSinghChauhan09/SigmaOS-epic-games)** - Epic Games launcher
+- **[GOG](https://github.com/AaryanSinghChauhan09/SigmaOS-gog)** - GOG Galaxy
+- **[Playnite](https://github.com/AaryanSinghChauhan09/SigmaOS-playnite)** - Game library manager
+- **[RetroArch](https://github.com/AaryanSinghChauhan09/SigmaOS-retroarch)** - Retro game emulator
 
 ## Component Status
 
-- **Total Components**: 260+
-- **Implemented**: ~120 (with repositories)
-- **Wiki Only**: ~140 (Wiki pages ready, repositories pending)
-- **Missing**: ~0 (all major components have Wiki pages)
+### Implemented (104+ repositories)
 
-## Development Phases
+- Core system components (5)
+- Development tools (10)
+- Language runtimes (5)
+- Virtualization (5)
+- Networking (2)
+- App environment (6)
+- DOS/legacy (1)
+- Database (7)
+- Data science (29)
+- Meta-components (4)
+- Tools (19)
+- Creative tools (7)
+- Office suite (6)
+- Gaming (7)
 
-### Phase 1: Foundation (Current)
+### Wiki Only (140+ components)
 
-- ✅ Core system components
-- ✅ Development tools
-- ✅ Virtualization & containerization
-- ✅ App environment
-- ✅ Database & monitoring
-- ✅ Data science & visualization
-- ✅ Meta-components
-- ✅ Tools
-- ✅ Creative tools
-- ✅ Office suite
-- ✅ Gaming & entertainment
+All components have Wiki pages in this staging repository. GitHub repositories are being created as rate limits allow.
 
-### Phase 2: Core System Implementation
+## Documentation
 
-- ⏳ Declarative configuration system
-- ⏳ Reproducible build pipeline
-- ⏳ Update mechanism
-- ⏳ Recovery system
-- ⏳ Security hardening
-- ⏳ Logging system
-- ⏳ Bootloader integration
-- ⏳ Hardware support framework
-
-### Phase 3: Desktop Experience
-
-- ⏳ Window management
-- ⏳ Compositor
-- ⏳ Display server
-- ⏳ Application launcher
-- ⏳ System settings
-- ⏳ Theming engine
-- ⏳ Widgets
-- ⏳ Notifications
-
-### Phase 4: Advanced Features
-
-- ⏳ AI integration
-- ⏳ Cloud integration
-- ⏳ Mobile support
-- ⏳ Enterprise features
-- ⏳ Developer tools
-- ⏳ Gaming optimization
-- ⏳ Creative tools
-- ⏳ Scientific computing
+- **[Development Plan](DEVELOPMENT_PLAN.md)** - Comprehensive development roadmap
+- **[Categories](CATEGORIES.md)** - Component categorization
+- **[Missing Components](MISSING_COMPONENTS.md)** - Status tracking
+- **[Component List](COMPONENTS.md)** - Complete component inventory
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
 GPL-3.0-or-later
-
-## Links
-
-- [Development Plan](DEVELOPMENT_PLAN.md)
-- [Categories](CATEGORIES.md)
-- [Missing Components](MISSING_COMPONENTS.md)
-- [Manifest](manifest.json)
