@@ -89,3 +89,12 @@ Action required on a SigmaOS install host: install
 - **sigmaos-pkg-core** — Debian-style version constraints added:
   `=`, `>=`, `<=`, `<`, `^`, `~` in depends entries; resolve() now
   validates installed and candidate versions. 7 new tests. Pushed 29101a9.
+
+## Update — bootable OS track (latest)
+
+- **sigmaos-sigma-kernel** — stub replaced with real no_std kernel core:
+  MB2 parser, frame allocator, cpio VFS, UART16550, VirtIO-MMIO queues,
+  syscall ABI, framebuffer+font. 26 tests. Pushed afeb02c.
+- **sigmaos-sigma-bootloader** — stub replaced with real MB2 header/tag
+  generator (info/fb/address/module/end tags, checksum). 8 tests.
+  Pushed 5698efd.
