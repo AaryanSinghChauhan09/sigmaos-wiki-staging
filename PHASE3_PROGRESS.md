@@ -79,3 +79,13 @@ Action required on a SigmaOS install host: install
 - **SigmaOS-ui `bin/test`**: core suite green (29 tests); Qt/GTK/KDE/
   web/Tauri/BubbleTea bindings skip cleanly when system deps absent —
   the `available` check contract working as designed.
+
+## Update — distro-inspired improvements (latest)
+
+- **sigmaos-system-profile** — implemented locally (NixOS-style
+  declarative system.toml); repo pending rate limit.
+- **sigmaos-initramfs** — implemented locally (mkinitcpio-style hook
+  pipeline, topo-sorted plans); repo pending rate limit.
+- **sigmaos-pkg-core** — Debian-style version constraints added:
+  `=`, `>=`, `<=`, `<`, `^`, `~` in depends entries; resolve() now
+  validates installed and candidate versions. 7 new tests. Pushed 29101a9.
