@@ -1,8 +1,20 @@
-# SigmaOS-omacon
+# SigmaOS Omacon
 
-SigmaOS-omacon is a component of the SigmaOS operating system project.
+Console and terminal utilities for SigmaOS - enhanced terminal tools and console applications.
 
-Component repository for the SigmaOS project.
+## Overview
+
+SigmaOS Omacon provides enhanced console and terminal utilities for SigmaOS, improving the command-line experience.
+
+## Features
+
+- **Terminal tools**: Enhanced terminal utilities
+- **Console applications**: Console-based applications
+- **CLI tools**: Command-line interface tools
+- **Terminal emulation**: Terminal emulation features
+- **Color schemes**: Terminal color schemes
+- **Keyboard shortcuts**: Customizable keyboard shortcuts
+- **Productivity**: Productivity enhancements
 
 ## Links
 

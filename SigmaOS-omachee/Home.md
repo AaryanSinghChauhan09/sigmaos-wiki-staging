@@ -1,8 +1,20 @@
-# SigmaOS-omachee
+# SigmaOS Omachee
 
-SigmaOS-omachee is a component of the SigmaOS operating system project.
+Cheese and camera utilities for SigmaOS - camera management and image capture tools.
 
-> Forked from omacom/omachee (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Omachee provides camera management and image capture utilities for SigmaOS, including webcam support and image processing.
+
+## Features
+
+- **Camera management**: Manage camera devices
+- **Image capture**: Capture images from cameras
+- **Video recording**: Record video from cameras
+- **Image processing**: Basic image processing
+- **Effects**: Camera effects and filters
+- **Streaming**: Camera streaming support
+- **Configuration**: Camera configuration tools
 
 ## Links
 

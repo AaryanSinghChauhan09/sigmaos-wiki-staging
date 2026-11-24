@@ -1,8 +1,28 @@
-# SigmaOS-monologue
+# SigmaOS Monologue
 
-SigmaOS-monologue is a component of the SigmaOS operating system project.
+Voice-to-text and speech recognition for SigmaOS - convert speech to text with local processing.
 
-> Forked from omacom/monologue (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Monologue provides voice-to-text and speech recognition capabilities for SigmaOS, with local processing for privacy and offline use.
+
+## Features
+
+- **Voice-to-text**: Convert speech to text
+- **Local processing**: Privacy-focused local processing
+- **Offline capability**: Works without internet
+- **Multiple languages**: Support for multiple languages
+- **Real-time**: Real-time transcription
+- **Custom models**: Custom model training
+- **Integration**: Integration with SigmaOS applications
+
+## Use Cases
+
+- Dictation
+- Voice commands
+- Meeting transcription
+- Accessibility
+- Note-taking
 
 ## Links
 

@@ -1,8 +1,20 @@
-# SigmaOS-mirror
+# SigmaOS Mirror
 
-SigmaOS-mirror is a component of the SigmaOS operating system project.
+Package mirror infrastructure for SigmaOS - provides high-speed mirrors for package distribution.
 
-> Forked from omacom/omarchy-mirror (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Mirror provides mirror infrastructure for SigmaOS packages, ensuring fast and reliable package downloads through geographically distributed mirrors.
+
+## Features
+
+- **Geographic mirrors**: Multiple mirror locations worldwide
+- **Fast downloads**: High-speed package downloads
+- **Redundancy**: Redundant mirror infrastructure
+- **Sync automation**: Automatic mirror synchronization
+- **Monitoring**: Mirror health monitoring
+- **Load balancing**: Intelligent load balancing
+- **SSL/TLS**: Secure connections
 
 ## Links
 

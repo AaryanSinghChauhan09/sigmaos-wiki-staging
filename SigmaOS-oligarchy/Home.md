@@ -1,8 +1,20 @@
-# SigmaOS-oligarchy
+# SigmaOS Oligarchy
 
-SigmaOS-oligarchy is a component of the SigmaOS operating system project.
+System governance and policy management for SigmaOS - configuration management and policy enforcement.
 
-> Forked from omacom/oligarchy (MIT). See SIGMAOS_FORK.md.
+## Overview
+
+SigmaOS Oligarchy provides system governance and policy management tools for SigmaOS, enabling centralized configuration and policy enforcement.
+
+## Features
+
+- **Policy management**: Define and enforce system policies
+- **Configuration management**: Centralized configuration control
+- **Compliance checking**: Verify system compliance
+- **Audit logging**: Maintain policy audit logs
+- **Automated enforcement**: Automatic policy enforcement
+- **Rollback**: Revert policy changes
+- **Reporting**: Generate compliance reports
 
 ## Links
 
