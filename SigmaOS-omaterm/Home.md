@@ -1,8 +1,6 @@
-# SigmaOS Omaterm
+# SigmaOS Console
 
-> Forked from omacom/omaterm (MIT). See `SIGMAOS_FORK.md`.
-
-An Omakase Terminal Setup by DHH. Think of it as a headless [SigmaOS](https://sigmaos.org).
+An Omakase Terminal Setup by DHH. Think of it as a headless SigmaOS environment.
 
 ## What it sets up
 
