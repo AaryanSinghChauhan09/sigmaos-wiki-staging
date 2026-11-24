@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 234 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 240 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -190,6 +190,15 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-libreoffice-writer](SigmaOS-libreoffice-writer/Home.md) - LibreOffice Writer
 - [SigmaOS-libreoffice-base](SigmaOS-libreoffice-base/Home.md) - LibreOffice Base
 - [SigmaOS-libreoffice-math](SigmaOS-libreoffice-math/Home.md) - LibreOffice Math
+
+**Gaming & Entertainment:**
+- [SigmaOS-steam](SigmaOS-steam/Home.md) - Steam game platform
+- [SigmaOS-heroic](SigmaOS-heroic/Home.md) - Epic Games launcher
+- [SigmaOS-battlenet](SigmaOS-battlenet/Home.md) - Battle.net launcher
+- [SigmaOS-epic-games](SigmaOS-epic-games/Home.md) - Epic Games Store
+- [SigmaOS-gog](SigmaOS-gog/Home.md) - GOG.com launcher
+- [SigmaOS-playnite](SigmaOS-playnite/Home.md) - Game library manager
+- [SigmaOS-retroarch](SigmaOS-retroarch/Home.md) - Retro gaming emulator
 
 ## Documentation
 

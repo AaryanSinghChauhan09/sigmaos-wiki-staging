@@ -227,6 +227,13 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-cards](SigmaOS-cards/Home.md) - Card games
 - [SigmaOS-amiga-screensaver](SigmaOS-amiga-screensaver/Home.md) - Amiga screensaver
 - [SigmaOS-audio-tuner](SigmaOS-audio-tuner/Home.md) - Audio tuner
+- [SigmaOS-steam](SigmaOS-steam/Home.md) - Steam game platform
+- [SigmaOS-heroic](SigmaOS-heroic/Home.md) - Epic Games launcher
+- [SigmaOS-battlenet](SigmaOS-battlenet/Home.md) - Battle.net launcher
+- [SigmaOS-epic-games](SigmaOS-epic-games/Home.md) - Epic Games Store
+- [SigmaOS-gog](SigmaOS-gog/Home.md) - GOG.com launcher
+- [SigmaOS-playnite](SigmaOS-playnite/Home.md) - Game library manager
+- [SigmaOS-retroarch](SigmaOS-retroarch/Home.md) - Retro gaming emulator
 
 ## Security
 

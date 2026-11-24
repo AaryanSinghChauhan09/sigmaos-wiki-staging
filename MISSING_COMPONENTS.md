@@ -176,6 +176,17 @@ Existing:
 - [SigmaOS-libreoffice-base](SigmaOS-libreoffice-base/Home.md) - LibreOffice Base
 - [SigmaOS-libreoffice-math](SigmaOS-libreoffice-math/Home.md) - LibreOffice Math
 
+## Gaming & Entertainment
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-steam](SigmaOS-steam/Home.md) - Steam game platform
+- [SigmaOS-heroic](SigmaOS-heroic/Home.md) - Epic Games launcher
+- [SigmaOS-battlenet](SigmaOS-battlenet/Home.md) - Battle.net launcher
+- [SigmaOS-epic-games](SigmaOS-epic-games/Home.md) - Epic Games Store
+- [SigmaOS-gog](SigmaOS-gog/Home.md) - GOG.com launcher
+- [SigmaOS-playnite](SigmaOS-playnite/Home.md) - Game library manager
+- [SigmaOS-retroarch](SigmaOS-retroarch/Home.md) - Retro gaming emulator
+
 ## Development Tools (IDEs & Editors)
 
 **Wiki Pages Added (repositories pending rate limit):**
