@@ -87,6 +87,12 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-genoffice](SigmaOS-genoffice/Home.md) - General office tools
 - [SigmaOS-libreoffice](SigmaOS-libreoffice/Home.md) - LibreOffice suite
 - [SigmaOS-onlyoffice](SigmaOS-onlyoffice/Home.md) - OnlyOffice suite
+- [SigmaOS-libreoffice-draw](SigmaOS-libreoffice-draw/Home.md) - LibreOffice Draw
+- [SigmaOS-libreoffice-impress](SigmaOS-libreoffice-impress/Home.md) - LibreOffice Impress
+- [SigmaOS-libreoffice-calc](SigmaOS-libreoffice-calc/Home.md) - LibreOffice Calc
+- [SigmaOS-libreoffice-writer](SigmaOS-libreoffice-writer/Home.md) - LibreOffice Writer
+- [SigmaOS-libreoffice-base](SigmaOS-libreoffice-base/Home.md) - LibreOffice Base
+- [SigmaOS-libreoffice-math](SigmaOS-libreoffice-math/Home.md) - LibreOffice Math
 
 ## Creative Tools
 
@@ -96,6 +102,13 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-gliff](SigmaOS-gliff/Home.md) - Clipboard manager
 - [SigmaOS-herdr](SigmaOS-herdr/Home.md) - Process manager
 - [SigmaOS-blender](SigmaOS-blender/Home.md) - 3D creation suite
+- [SigmaOS-vlc](SigmaOS-vlc/Home.md) - Media player
+- [SigmaOS-gimp](SigmaOS-gimp/Home.md) - Image editor
+- [SigmaOS-inkscape](SigmaOS-inkscape/Home.md) - Vector graphics editor
+- [SigmaOS-darktable](SigmaOS-darktable/Home.md) - Photo workflow
+- [SigmaOS-obs-studio](SigmaOS-obs-studio/Home.md) - Video recording/streaming
+- [SigmaOS-kdenlive](SigmaOS-kdenlive/Home.md) - Video editor
+- [SigmaOS-handbrake](SigmaOS-handbrake/Home.md) - Video transcoder
 
 ## Data Tools
 

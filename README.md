@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 221 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 234 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -173,6 +173,23 @@ Wiki pages recently added for missing components (repositories pending rate limi
 - [SigmaOS-openboard](SigmaOS-openboard/Home.md) - Interactive whiteboard
 - [SigmaOS-openclaw](SigmaOS-openclaw/Home.md) - AI agent framework
 - [SigmaOS-warp](SigmaOS-warp/Home.md) - Modern terminal emulator
+
+**Creative Tools:**
+- [SigmaOS-vlc](SigmaOS-vlc/Home.md) - Media player
+- [SigmaOS-gimp](SigmaOS-gimp/Home.md) - Image editor
+- [SigmaOS-inkscape](SigmaOS-inkscape/Home.md) - Vector graphics editor
+- [SigmaOS-darktable](SigmaOS-darktable/Home.md) - Photo workflow
+- [SigmaOS-obs-studio](SigmaOS-obs-studio/Home.md) - Video recording/streaming
+- [SigmaOS-kdenlive](SigmaOS-kdenlive/Home.md) - Video editor
+- [SigmaOS-handbrake](SigmaOS-handbrake/Home.md) - Video transcoder
+
+**Office Suite Components:**
+- [SigmaOS-libreoffice-draw](SigmaOS-libreoffice-draw/Home.md) - LibreOffice Draw
+- [SigmaOS-libreoffice-impress](SigmaOS-libreoffice-impress/Home.md) - LibreOffice Impress
+- [SigmaOS-libreoffice-calc](SigmaOS-libreoffice-calc/Home.md) - LibreOffice Calc
+- [SigmaOS-libreoffice-writer](SigmaOS-libreoffice-writer/Home.md) - LibreOffice Writer
+- [SigmaOS-libreoffice-base](SigmaOS-libreoffice-base/Home.md) - LibreOffice Base
+- [SigmaOS-libreoffice-math](SigmaOS-libreoffice-math/Home.md) - LibreOffice Math
 
 ## Documentation
 
