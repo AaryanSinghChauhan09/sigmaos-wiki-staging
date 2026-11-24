@@ -21,7 +21,7 @@ Key components have dedicated standalone Wiki repositories for detailed document
 
 ## Component Wiki Pages
 
-All 154 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
+All 169 SigmaOS components have Wiki pages in this repository. Navigate to the component directory to view its documentation.
 
 ## Recently Added
 
@@ -95,6 +95,26 @@ Wiki pages recently added for missing components (repositories pending rate limi
 **Networking & Remote Access:**
 - [SigmaOS-syncthing](SigmaOS-syncthing/Home.md) - File synchronization
 - [SigmaOS-rustdesk](SigmaOS-rustdesk/Home.md) - Remote desktop
+
+**App Environment:**
+- [SigmaOS-bottles](SigmaOS-bottles/Home.md) - Windows application runner
+- [SigmaOS-lutris](SigmaOS-lutris/Home.md) - Gaming platform
+- [SigmaOS-proton](SigmaOS-proton/Home.md) - Wine-based compatibility layer
+- [SigmaOS-wine](SigmaOS-wine/Home.md) - Windows compatibility layer
+- [SigmaOS-raven](SigmaOS-raven/Home.md) - Windows application runner
+- [SigmaOS-winboat](SigmaOS-winboat/Home.md) - Windows application runner
+
+**DOS & Legacy:**
+- [SigmaOS-reactos](SigmaOS-reactos/Home.md) - ReactOS Windows-compatible OS
+
+**Database & Monitoring:**
+- [SigmaOS-postgresql](SigmaOS-postgresql/Home.md) - PostgreSQL database
+- [SigmaOS-mysql](SigmaOS-mysql/Home.md) - MySQL database
+- [SigmaOS-mongodb](SigmaOS-mongodb/Home.md) - MongoDB database
+- [SigmaOS-redis](SigmaOS-redis/Home.md) - Redis in-memory store
+- [SigmaOS-elasticsearch](SigmaOS-elasticsearch/Home.md) - Elasticsearch search
+- [SigmaOS-grafana-loki](SigmaOS-grafana-loki/Home.md) - Grafana Loki logging
+- [SigmaOS-prometheus](SigmaOS-prometheus/Home.md) - Prometheus monitoring
 
 ## Documentation
 

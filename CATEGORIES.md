@@ -24,6 +24,7 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-screensaver](SigmaOS-screensaver/Home.md) - Screensaver
 - [SigmaOS-notification-center](SigmaOS-notification-center/Home.md) - Notification center
 - [SigmaOS-notifications](SigmaOS-notifications/Home.md) - Notification daemon
+- [SigmaOS-deskland](SigmaOS-deskland/Home.md) - Desktop environment framework
 
 ## Shell & Terminal
 
@@ -66,6 +67,20 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-waterfox](SigmaOS-waterfox/Home.md) - Waterfox browser
 - [SigmaOS-zen](SigmaOS-zen/Home.md) - Zen browser
 
+## App Environment
+
+- [SigmaOS-bottles](SigmaOS-bottles/Home.md) - Windows application runner
+- [SigmaOS-lutris](SigmaOS-lutris/Home.md) - Gaming platform
+- [SigmaOS-proton](SigmaOS-proton/Home.md) - Wine-based compatibility layer
+- [SigmaOS-wine](SigmaOS-wine/Home.md) - Windows compatibility layer
+- [SigmaOS-raven](SigmaOS-raven/Home.md) - Windows application runner
+- [SigmaOS-winboat](SigmaOS-winboat/Home.md) - Windows application runner
+
+## DOS & Legacy
+
+- [SigmaOS-dos](SigmaOS-dos/Home.md) - DOS tools
+- [SigmaOS-reactos](SigmaOS-reactos/Home.md) - ReactOS Windows-compatible OS
+
 ## Productivity Suites
 
 - [SigmaOS-betteroffice](SigmaOS-betteroffice/Home.md) - Office suite
@@ -106,6 +121,13 @@ Complete catalog of SigmaOS components organized by category.
 - [SigmaOS-dbt](SigmaOS-dbt/Home.md) - dbt transformation
 - [SigmaOS-pandas](SigmaOS-pandas/Home.md) - Pandas data analysis
 - [SigmaOS-polars](SigmaOS-polars/Home.md) - Polars DataFrame
+- [SigmaOS-postgresql](SigmaOS-postgresql/Home.md) - PostgreSQL database
+- [SigmaOS-mysql](SigmaOS-mysql/Home.md) - MySQL database
+- [SigmaOS-mongodb](SigmaOS-mongodb/Home.md) - MongoDB database
+- [SigmaOS-redis](SigmaOS-redis/Home.md) - Redis in-memory store
+- [SigmaOS-elasticsearch](SigmaOS-elasticsearch/Home.md) - Elasticsearch search
+- [SigmaOS-grafana-loki](SigmaOS-grafana-loki/Home.md) - Grafana Loki logging
+- [SigmaOS-prometheus](SigmaOS-prometheus/Home.md) - Prometheus monitoring
 
 ## Development Tools
 

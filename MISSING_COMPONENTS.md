@@ -73,6 +73,32 @@ Existing:
 - [SigmaOS-docker](SigmaOS-docker/Home.md) - Docker containers
 - [SigmaOS-keepassxc](SigmaOS-keepassxc/Home.md) - Password manager
 
+## App Environment
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-bottles](SigmaOS-bottles/Home.md) - Windows application runner
+- [SigmaOS-lutris](SigmaOS-lutris/Home.md) - Gaming platform
+- [SigmaOS-proton](SigmaOS-proton/Home.md) - Wine-based compatibility layer
+- [SigmaOS-wine](SigmaOS-wine/Home.md) - Windows compatibility layer
+- [SigmaOS-raven](SigmaOS-raven/Home.md) - Windows application runner
+- [SigmaOS-winboat](SigmaOS-winboat/Home.md) - Windows application runner
+
+## DOS & Legacy
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-reactos](SigmaOS-reactos/Home.md) - ReactOS Windows-compatible OS
+
+## Database & Monitoring
+
+**Wiki Pages Added (repositories pending rate limit):**
+- [SigmaOS-postgresql](SigmaOS-postgresql/Home.md) - PostgreSQL database
+- [SigmaOS-mysql](SigmaOS-mysql/Home.md) - MySQL database
+- [SigmaOS-mongodb](SigmaOS-mongodb/Home.md) - MongoDB database
+- [SigmaOS-redis](SigmaOS-redis/Home.md) - Redis in-memory store
+- [SigmaOS-elasticsearch](SigmaOS-elasticsearch/Home.md) - Elasticsearch search
+- [SigmaOS-grafana-loki](SigmaOS-grafana-loki/Home.md) - Grafana Loki logging
+- [SigmaOS-prometheus](SigmaOS-prometheus/Home.md) - Prometheus monitoring
+
 ## Development Tools (IDEs & Editors)
 
 **Wiki Pages Added (repositories pending rate limit):**
