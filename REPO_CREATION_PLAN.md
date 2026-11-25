@@ -9,6 +9,7 @@
   screenshot/survey/video/windows-vm/console/mac-vm` pages were added for
   renamed current repos. Older `SigmaOS-oma*`/`trial`/`state-*` entries are
   legacy names superseded by those current repos, not new creation targets.
+  See `SUPERSEDED.md` for the legacy → current name mapping.
 - `SigmaOS-system-profile` was created and pushed on 2026-11-25; it is no
   longer pending.
 
