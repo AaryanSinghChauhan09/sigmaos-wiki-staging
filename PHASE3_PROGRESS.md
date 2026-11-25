@@ -266,27 +266,24 @@ kernel_info, time, rand, listdir.
 
 ## Distribution layer stubs (Omarchy parity — latest)
 
-Added foundational stubs for distribution-level features needed
-to achieve Omarchy parity:
+**Completed (this session):**
 
 - **sigma-sh** — job control stubs: `jobs`, `fg`, `bg` commands
   (full implementation requires process groups and signals)
-- **sigma-kernel** — window manager stub: `WindowManager`,
-  `Window` descriptor with `create_window()`, `tile_windows()`,
-  `focus_next()` (full implementation requires grid layout,
-  focus management, input handling, compositor integration)
-- **sigma-kernel** — theme system stub: `Theme` struct with
-  color scheme (background/foreground/accent), font config,
-  `apply()`, `load()`, `default_theme()` (full implementation
-  requires config file parsing, runtime switching)
-- **sigma-kernel** — agent integration: `Agent`, `AgentManager`
-  with `register()`, `execute()` (sandboxing, command dispatch)
-- **sigma-kernel** — plugin system: `Plugin`, `PluginManager`
-  with `load()`, `unload()` (dynamic loading, resource management)
+- **sigma-kernel** — window manager: functional tiling implementation
+  with `TilingMode` (Horizontal, Vertical, Grid), `tile_windows()`,
+  `focus_next()`, `focus_prev()`, `set_mode()`, integrated with compositor
+- **sigma-kernel** — theme system: functional implementation with
+  `color::parse_hex()`, `color::to_hex()`, `Theme::dark()`, `Theme::light()`,
+  `Theme::parse()`, `Theme::serialize()`, `ThemeRegistry` with built-in themes
+- **sigma-kernel** — agent integration: functional implementation with
+  `AgentResult`, `AgentManager::execute()` (status, list-caps, echo commands),
+  `enable()`, `disable()`, `find_by_capability()`
+- **sigma-kernel** — plugin system: functional implementation with
+  `PluginManager::load()`, `unload()`, `list_loaded()`, proper error handling
 - **sigma-kernel** — ISO installer stub: `IsoConfig` with
   `build()`, `install()` (GRUB config, multi-boot header,
   disk partitioning, bootloader installation)
 
-All stubs compile cleanly and are pushed to GitHub. These provide
-the scaffolding for future full implementations as the kernel
-matures toward a complete OS distribution.
+All implementations compile cleanly and are pushed to GitHub. These provide
+concrete functionality rather than just scaffolding for Omarchy parity.
