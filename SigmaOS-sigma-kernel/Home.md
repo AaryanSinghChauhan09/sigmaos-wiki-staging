@@ -69,7 +69,7 @@ The kernel now boots all the way into **ring-3 userspace**:
   `enter_user` (`mov cr3` + `iretq`).
 - **`/init` = sigma-init** (`SigmaOS-sigma-sh`): `no_std` static
   `ET_EXEC` at 0x200000 using `sigma-sys`; interactive shell
-  (`help`/`ls`/`cat`/`ver`/`time`/`mem`/`exit`) over PS/2 keyboard.
+  (`help`/`ls`/`cat`/`ver`/`time`/`mem`/`spawn`/`wait`/`exit`) over PS/2 keyboard.
 
 ### Interrupts
 
@@ -89,6 +89,35 @@ The kernel now boots all the way into **ring-3 userspace**:
   Linux-style) so IRQs can't land inside kernel syscall handling,
   and restores rdi/rsi/rdx/r10/r8/r9 before `sysret` (syscall_trap
   clobbers them; sysret does not).
+
+### Processes (SPAWN/WAIT/EXIT)
+
+Cooperative multitasking with per-process isolation — Linux
+`copy_process`/`context_switch`/`sched` inspired:
+
+- **Full context save**: `syscall_entry` saves all 15 GPRs + rip
+  (rcx) + rflags (r11) + user rsp + cr3 into a 17-u64 ctx slot.
+- **Process table** (`ProcSlot`, `NPROCS=4`): pid, parent, exit_code,
+  pml4, brk — the minimal `task_struct` analogue.
+- **SPAWN(path)**: reads an ELF from the VFS, `load_image` +
+  `build_user_tables` into a *fresh* address space, materializes
+  segments, installs a zeroed child ctx (rip=entry, fresh stack,
+  rflags=0x202, child CR3), then `switch_to` — the parent resumes
+  later with the child pid in `ctx.rax` (result is written to the
+  *entry* ctx before the switch loads the child ctx).
+- **EXIT(code)**: marks the slot exited, switches to the parent;
+  init exit halts the machine.
+- **WAIT(pid)**: returns the child's exit status; `EAGAIN` while the
+  child is still running (cooperative — no preemption yet).
+- `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
+  each process owns its page tables and heap break.
+- `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary
+  that prints its real pid (GETPID is now per-process) and exits 42.
+
+Verified in QEMU: init spawns `/child` -> child prints
+`sigma-child: alive, pid=2`, exits 42 -> parent resumes with
+`spawned pid=2`, `wait status=42`, shell prompt returns. 4/4 clean
+boots, 79 lib tests green.
 
 **Root-cause bug found via QEMU debugging**: STAR was built in RAX but
 `wrmsr` consumes EDX:EAX — EDX was never set, so `sysret` intermittently
