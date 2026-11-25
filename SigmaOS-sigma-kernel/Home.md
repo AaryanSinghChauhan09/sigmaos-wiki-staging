@@ -55,14 +55,15 @@ The kernel now boots all the way into **ring-3 userspace**:
   mapped, 4K U/S pages cover user regions (U/S flag required at *every*
   level). `IdentityPhysMem` in `arch.rs` writes real entries.
 - **Syscall ABI** (`syscall.rs`): `dispatch()` routes WRITE/EXIT/
-  GETPID/KERNEL_INFO/TIME/RAND/OPEN/READ/CLOSE/LISTDIR/BRK/MMAP;
+  GETPID/KERNEL_INFO/TIME/RAND/OPEN/READ/CLOSE/LISTDIR/BRK/MMAP/MUNMAP;
   unimplemented -> ENOSYS. `TrapSvc` (arch.rs) serves them via a
   global VFS, fd table, serial+VGA console, PS/2 keyboard input.
-- **Anonymous memory** (`usermem.rs::map_user_page`): BRK/MMAP map
-  demand-zero 4K frames into the live user CR3, splitting 2 MiB
-  supervisor slots into PTs on demand (Linux `pmd_install` model).
-  `flush_tlb()` reloads CR3 after installs so paging-structure caches
-  can't hold stale non-present translations.
+- **Anonymous memory** (`usermem.rs`): BRK/MMAP map demand-zero 4K
+  frames into the live user CR3 via `map_user_page` (splits 2 MiB
+  supervisor slots into PTs, Linux `pmd_install` model); MUNMAP
+  walks `user_pte` (PML4->PDPT->PD->PT), clears present U/S leaves
+  and returns frames to the allocator — supervisor/kernel pages are
+  never freed. `flush_tlb()` reloads CR3 after installs/teardowns.
 - **Asm transition** (`pvh.asm`): ring-3 GDT (user CS 0x33 / SS 0x2b),
   STAR/LSTAR/SFMASK MSRs, `syscall_entry`/`sysret` stubs,
   `enter_user` (`mov cr3` + `iretq`).
@@ -96,6 +97,6 @@ STAR/LSTAR/SFMASK are now written with explicit `edx:eax`.
 
 Verified in QEMU: PVH -> long mode -> IDT -> initramfs -> ELF load ->
 ring-3 CR3 -> `iretq` -> sigma-init runs a boot self-test that grows
-brk by a page, writes/reads it back (`last=90`), and mmaps — then
-reaches the `sigma$` prompt; timer IRQs fire in ring 3 with all
-registers preserved. 78 lib tests green.
+brk by a page, writes/reads it back (`last=90`), mmaps, and munmaps
+— then reaches the `sigma$` prompt; timer IRQs fire in ring 3 with
+all registers preserved. 79 lib tests green.
