@@ -138,13 +138,22 @@ mode** (cs RPL==3) now context-switch:
 progress ticks interleave; child exits 42, `wait status=42`, prompt
 returns. The code logic is correct.
 
-**Toolchain regression** (Rust 1.99.0): the kernel bin fails to build with
+**Toolchain regression** (Rust 1.99.0+): the kernel bin fails to build with
 "unwinding panics are not supported without std" despite adding
-`-C panic=abort` to rustflags. This affects even earlier working commits;
-the lib builds fine. The preemptive scheduling code at `6caf877`
-was verified working in QEMU before this regression hit. Fixing may
-require nightly `-Zbuild-std` or investigation of the core library
-precompilation. The implementation is sound.
+`-C panic=abort` to rustflags. Tested across Rust 1.96.1/1.97.1/1.99.1
+with the same error; the lib builds fine. The preemptive scheduling code
+at `6caf877` was verified working in QEMU before this regression hit.
+Fixing may require nightly `-Zbuild-std` or investigation of the core
+library precompilation. The implementation is sound; this is an
+environmental issue.
+
+**Next gaps** (once build is restored):
+- **Blocking WAIT** (sleep/wake queue) — implemented but not pushed:
+  `ProcSlot::sleeping`/`wait_pid`/`reaped` fields, `next_runnable`,
+  `sys_wait`/`sys_exit` rewritten to use Linux `wait`/`wake_up` analogue.
+- Process teardown (exited slots leak page tables/frames).
+- Per-process fd isolation (global fd table).
+- Framebuffer console, VirtIO blk/net/gpu probing.
 
 **Root-cause bug found via QEMU debugging**: STAR was built in RAX but
 `wrmsr` consumes EDX:EAX — EDX was never set, so `sysret` intermittently
