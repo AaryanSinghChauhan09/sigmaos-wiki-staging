@@ -242,3 +242,15 @@ VFS is published globally (`sys_vfs`) for the syscall path.
 Verified: sigma-init `open("/bin/sigma-sh")` + `read` returns
 the ELF magic bytes. Working syscall set: write, getpid,
 open, read, close, exit.
+
+## Interactive shell + VGA output (continued)
+
+`sigma-init` is now a real interactive rescue shell in ring 3:
+line editor over fd0 (PS/2 keyboard scancodes -> kernel ->
+user bytes), commands `help`, `ls <dir>` (LISTDIR syscall),
+`cat <file>` (open/read loop), `mem`, `exit`. New syscall
+nr::LISTDIR=20 joins VFS names newline-separated into a user
+buffer; sigma-sys gained `api::listdir`. Kernel publishes the
+VGA console globally so `write` echoes to both serial and the
+80x25 display — the shell is visible on screen. Verified: boot
+reaches the `sigma$` prompt with no faults.
