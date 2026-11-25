@@ -206,3 +206,28 @@ serial+VGA, exit() reports and halts, pid/kernel_version served.
 The syscall ABI is now wired end-to-end on the kernel side.
 Remaining: syscall MSRs + stubs and the iretq/sysret transition
 into /init — the final asm gate.
+
+## USERSAPCE LIVE: sigma-init runs in ring 3 with working syscalls
+
+SigmaOS now boots all the way to a running userspace process:
+
+```
+PVH -> long mode -> IDT -> initramfs cpio -> VGA/PS2 console
+-> ELF load (ET_EXEC/ET_DYN + bias) -> usermem ring-3 CR3
+-> enter_user (mov cr3 + iretq) -> sigma-init in ring 3
+-> syscall (write/getpid) -> syscall_entry -> syscall_trap
+-> dispatch -> TrapSvc -> serial+VGA -> sysret -> user continues
+```
+
+Verified in QEMU serial log:
+`sigma-init: PID 1 alive` / `sigma-init: pid=1` / `idle (halt)`.
+
+Key fixes this round:
+- U/S bit must be set at EVERY page-table level (PML4/PDPT/PD/PT)
+- GDT ordered for sysret math: user data 0x28, user code 0x30;
+  STAR=(0x18<<32)|(0x20<<48); user CS=0x33 SS=0x2b
+- ET_DYN needs relocation processing -> built sigma-init as
+  ET_EXEC (-no-pie) at 0x200000 instead
+- Segment page-align delta bug: file bytes land at dst[vaddr&0xfff],
+  frames sized for delta+memsz — was corrupting every unaligned seg
+- sigma-init is the real /init: no_std, sigma-sys ABI, no Linux deps
