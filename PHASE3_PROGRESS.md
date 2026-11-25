@@ -113,3 +113,15 @@ Action required on a SigmaOS install host: install
   sigma-sh, shell runs on host. Pushed 3f8c459.
 - GitHub repo-creation rate limit lifted; all three repos created
   and pushed.
+
+## Update — bootable kernel boots in QEMU (latest)
+
+- **sigmaos-sigma-kernel** — real bootable x86_64 kernel ELF:
+  PVH boot protocol (Xen ELF note) with a 32->64-bit transition stub
+  (PAE page tables, EFER.LME, far jump to long mode), 32-entry IDT
+  with serial exception reporter, bump allocator + panic handler,
+  `parse_pvh` -> BootInfo. New subsystems: `compositor` (windows,
+  z-order, damage), `virtio_blk`, `virtio_net`, `virtio_gpu`.
+  linker.ld keeps `.got` (rust-lld emits GOT-indirect calls).
+  **Verified: boots in QEMU to "9 memory regions ... idle".**
+  Pushed 4fe2d49. 46 lib tests passing.
