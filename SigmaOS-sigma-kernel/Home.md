@@ -138,13 +138,13 @@ mode** (cs RPL==3) now context-switch:
 progress ticks interleave; child exits 42, `wait status=42`, prompt
 returns. The code logic is correct.
 
-**Toolchain regression note**: as of Rust 1.99.0, the kernel bin fails
-to build with "unwinding panics are not supported without std" due to
-its use of `alloc::string::ToString` (which can panic). This affects
-even earlier working commits; the lib builds fine. Fixing requires
-nightly `-Zbuild-std` with `panic=abort` or removing panicking alloc
-APIs from the bin. The preemptive scheduling implementation at
-`6caf877` is sound and will build under a corrected toolchain.
+**Toolchain regression** (Rust 1.99.0): the kernel bin fails to build with
+"unwinding panics are not supported without std" despite adding
+`-C panic=abort` to rustflags. This affects even earlier working commits;
+the lib builds fine. The preemptive scheduling code at `6caf877`
+was verified working in QEMU before this regression hit. Fixing may
+require nightly `-Zbuild-std` or investigation of the core library
+precompilation. The implementation is sound.
 
 **Root-cause bug found via QEMU debugging**: STAR was built in RAX but
 `wrmsr` consumes EDX:EAX — EDX was never set, so `sysret` intermittently
