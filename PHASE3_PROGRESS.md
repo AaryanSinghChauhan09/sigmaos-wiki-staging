@@ -231,3 +231,14 @@ Key fixes this round:
 - Segment page-align delta bug: file bytes land at dst[vaddr&0xfff],
   frames sized for delta+memsz — was corrupting every unaligned seg
 - sigma-init is the real /init: no_std, sigma-sys ABI, no Linux deps
+
+## File I/O syscalls live (continued)
+
+`sigma-kernel` syscall layer now serves real file I/O:
+`KernelServices` gained open/read/close (default ENOSYS);
+`TrapSvc` implements an 8-slot fd table (path+offset), fd0 =
+nonblocking 16550 serial RX, fd>=3 = VFS file reads at offset.
+VFS is published globally (`sys_vfs`) for the syscall path.
+Verified: sigma-init `open("/bin/sigma-sh")` + `read` returns
+the ELF magic bytes. Working syscall set: write, getpid,
+open, read, close, exit.
