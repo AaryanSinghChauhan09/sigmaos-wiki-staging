@@ -83,9 +83,10 @@ Action required on a SigmaOS install host: install
 ## Update — distro-inspired improvements (latest)
 
 - **sigmaos-system-profile** — implemented locally (NixOS-style
-  declarative system.toml); repo pending rate limit.
-- **sigmaos-initramfs** — implemented locally (mkinitcpio-style hook
-  pipeline, topo-sorted plans); repo pending rate limit.
+  declarative system.toml); cleaned for push, repo creation still
+  pending GitHub rate limit.
+- **sigmaos-initramfs** — merged hook pipeline (topo-sorted plans)
+  with canonical cpio/pack image builder; pushed to GitHub.
 - **sigmaos-pkg-core** — Debian-style version constraints added:
   `=`, `>=`, `<=`, `<`, `^`, `~` in depends entries; resolve() now
   validates installed and candidate versions. 7 new tests. Pushed 29101a9.
@@ -311,3 +312,15 @@ All implementations compile cleanly and are pushed to GitHub. These provide
 concrete functionality for Omarchy parity across window management, theming,
 agent/plugin infrastructure, installation, essential userland utilities, and
 kernel IPC primitives for pipelines and process control.
+
+## Update — GitHub sync + wiki refresh (2026-11-25)
+
+- **SigmaOS-sigma-bootloader** — added Multiboot1 header support for
+  QEMU `-kernel` boot path; 10 tests passing. Pushed `f149305`.
+- **SigmaOS-initramfs** — reconciled diverged local orphan commit with
+  canonical remote history: kept cpio/pack image builder, added hook
+  pipeline + CLI, 17 tests passing. Pushed `87b05f2`.
+- **SigmaOS-system-profile** — removed accidentally tracked `target/`
+  artifacts, added `.gitignore` and Rust `AGENTS.md`; repo creation
+  still blocked by GitHub rate limit.
+- Wiki staging updated for initramfs/system-profile/sigma-bootloader.

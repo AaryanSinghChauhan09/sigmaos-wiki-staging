@@ -1,15 +1,16 @@
 # SigmaOS Initramfs
 
-Hook-based initramfs image builder — mkinitcpio-style pipeline where
-each hook declares kernel modules, binaries, and files to embed.
+Initramfs builder with `cpio`/`pack` image generation plus a
+mkinitcpio-style hook pipeline for kernel modules, binaries, and files.
 
 ## Capabilities
 
+- `newc` cpio archive writer and deterministic directory-tree packer
 - TOML hook definitions with `depends` and `order`
 - Deterministic topological ordering (Kahn's algorithm)
 - Cycle and missing-dependency detection
 - JSON build plan for `sigmaos-rebuild` to execute
-- `--dry-run` hook listing via CLI
+- `--dry-run` / `--json` CLI output
 
 ## Interconnectivity
 
@@ -21,5 +22,5 @@ each hook declares kernel modules, binaries, and files to embed.
 
 ## Status
 
-Implemented locally (Rust crate, 3 tests passing). GitHub repo creation
-pending rate-limit window.
+Implemented and pushed to `SigmaOS-initramfs/main` (merged with the
+canonical cpio/pack history; 17 tests passing).

@@ -20,5 +20,6 @@ that composes every component's config into one system definition.
 
 ## Status
 
-Implemented locally (Rust crate, 3 tests passing). GitHub repo creation
-pending rate-limit window.
+Implemented locally (Rust crate, 3 tests passing) and cleaned for
+push (`.gitignore`, Rust `AGENTS.md`, no build artifacts). GitHub repo
+creation is still pending the repository-creation rate-limit window.

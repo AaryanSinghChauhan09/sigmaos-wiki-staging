@@ -1,6 +1,7 @@
 # SigmaOS Bootloader (sigma-bootloader)
 
-Multiboot2 boot header and tag generator embedded in the kernel image.
+Multiboot2 boot header and tag generator embedded in the kernel image,
+plus a Multiboot1 header for loaders such as QEMU `-kernel`.
 
 ## Capabilities
 
@@ -9,6 +10,7 @@ Multiboot2 boot header and tag generator embedded in the kernel image.
 - Framebuffer request tag (any resolution, 32bpp)
 - Kernel address tag + module tags (initramfs etc.)
 - Checksum verification, 8-byte tag alignment
+- `Mb1Header` — magic/flags/checksum serialization for Multiboot1
 - `to_bytes()` serialization for linking into the kernel ELF
 
 ## Interconnectivity
@@ -21,5 +23,5 @@ Multiboot2 boot header and tag generator embedded in the kernel image.
 
 ## Status
 
-Real implementation (was stub). 8 tests passing, `#![no_std]`,
+Real implementation (was stub). 10 tests passing, `#![no_std]`,
 `#![forbid(unsafe_code)]`, GPL-3.0.
