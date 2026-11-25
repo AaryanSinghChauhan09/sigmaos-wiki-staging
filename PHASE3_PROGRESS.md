@@ -98,3 +98,18 @@ Action required on a SigmaOS install host: install
 - **sigmaos-sigma-bootloader** — stub replaced with real MB2 header/tag
   generator (info/fb/address/module/end tags, checksum). 8 tests.
   Pushed 5698efd.
+
+## Update — bootable OS track continued (latest)
+
+- **sigmaos-sigma-sys** — userspace syscall shim: Syscall trait,
+  register/active/raw dispatch, errno, safe API wrappers, x86_64
+  syscall instruction behind feature flag. 4 tests. Pushed eef874c.
+- **sigmaos-sigma-sh** — rescue shell: parser + 10 builtins, trait
+  backends, real std binary packed into initramfs as /init.
+  7 tests. Pushed 6717999.
+- **sigmaos-xtask** — QEMU orchestrator: build-kernel,
+  build-userspace, initramfs (cpio newc), kernel-elf (MB2 header),
+  qemu/qemu-debug/test-qemu/status. Verified: initramfs packs
+  sigma-sh, shell runs on host. Pushed 3f8c459.
+- GitHub repo-creation rate limit lifted; all three repos created
+  and pushed.
