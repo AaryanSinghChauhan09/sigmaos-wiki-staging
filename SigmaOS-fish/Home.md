@@ -4,7 +4,7 @@ Fish shell configuration for SigmaOS with enhanced productivity features and aut
 
 ## Overview
 
-SigmaOS Fish provides a comprehensive fish shell configuration with auto-suggestions, syntax highlighting, and productivity tools integration.
+SigmaOS Fish provides a comprehensive fish shell configuration with auto-suggestions, syntax highlighting, and productivity tools integration. The config content is consolidated into `SigmaOS-dots` (`config/fish`, `bin`); this repo is kept for package builds until packaging migrates.
 
 ## Features
 

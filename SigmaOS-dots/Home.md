@@ -1,6 +1,6 @@
 # SigmaOS Omadots
 
-Shared configs between all the Omacoms.
+Shared user dotfiles and shell configs for SigmaOS: starship, tmux, git, mise, shared bash/zsh shell config, fish config, zsh templates, and helper scripts. Consolidates the former `SigmaOS-fish` and `SigmaOS-zsh` split repos.
 
 ## Capabilities
 

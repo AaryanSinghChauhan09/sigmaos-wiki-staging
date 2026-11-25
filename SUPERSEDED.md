@@ -21,3 +21,5 @@ should not be treated as new repo-creation targets.
 | `SigmaOS-trial` | `SigmaOS-mac-vm` |
 | `SigmaOS-trial-windows` | `SigmaOS-windows-vm` |
 | `SigmaOS-state-archive` / `SigmaOS-state-of-omarchy` | `SigmaOS-survey` |
+| `SigmaOS-fish` | `SigmaOS-dots` (`config/fish`, `bin`) |
+| `SigmaOS-zsh` | `SigmaOS-dots` (`config/zsh`, `config/shell` zoptions/completions, `bin`) |

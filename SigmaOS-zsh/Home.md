@@ -4,7 +4,7 @@ Zsh configuration framework for SigmaOS with enhanced productivity features and 
 
 ## Overview
 
-SigmaOS Zsh provides a comprehensive zsh configuration with enhanced history, completion, aliases, and productivity tools integration.
+SigmaOS Zsh provides a comprehensive zsh configuration with enhanced history, completion, aliases, and productivity tools integration. The config content is consolidated into `SigmaOS-dots` (`config/zsh`, `config/shell` zoptions/completions, `bin`); this repo is kept for package builds until packaging migrates.
 
 ## Features
 
