@@ -254,3 +254,12 @@ buffer; sigma-sys gained `api::listdir`. Kernel publishes the
 VGA console globally so `write` echoes to both serial and the
 80x25 display — the shell is visible on screen. Verified: boot
 reaches the `sigma$` prompt with no faults.
+
+## KERNEL_INFO/TIME/RAND syscalls (continued)
+
+Real implementations: kernel_info copies the version string
+into the user buffer, time returns rdtsc ticks, rand fills
+user memory via xorshift64* seeded from rdtsc. sigma-init
+gained `ver` and `time` shell commands. Working syscall set
+now: read, write, open, close, exit, getpid, gettid,
+kernel_info, time, rand, listdir.
