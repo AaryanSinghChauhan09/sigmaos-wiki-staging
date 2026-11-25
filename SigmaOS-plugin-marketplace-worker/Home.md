@@ -4,7 +4,7 @@ Archived - Plugin marketplace background worker. Functionality moved to consolid
 
 ## Overview
 
-This repository was the background worker for the plugin marketplace. It has been archived as part of the plugin marketplace consolidation. The active marketplace functionality is now in `SigmaOS-plugin-marketplace`.
+This repository was the background worker for the plugin marketplace. It has been archived on GitHub as part of the plugin marketplace consolidation. The active marketplace functionality is now in `SigmaOS-plugin-marketplace-tools` (`worker/`).
 
 ## Links
 

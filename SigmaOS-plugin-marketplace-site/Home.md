@@ -4,7 +4,7 @@ Archived - Plugin marketplace website frontend. Functionality moved to consolida
 
 ## Overview
 
-This repository was the frontend site for the plugin marketplace. It has been archived as part of the plugin marketplace consolidation. The active marketplace functionality is now in `SigmaOS-plugin-marketplace`.
+This repository was the frontend site for the plugin marketplace. It has been archived on GitHub as part of the plugin marketplace consolidation. The active marketplace functionality is now in `SigmaOS-plugin-marketplace-tools` (`site/`).
 
 ## Links
 
