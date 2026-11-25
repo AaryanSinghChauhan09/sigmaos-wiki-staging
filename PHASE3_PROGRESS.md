@@ -143,3 +143,15 @@ on Linux binfmt_elf. `boot_ok` now parses `/init` from the
 initramfs and reports entry point + mapped span. Verified:
 sigma-sh loads as ELF64, entry 0x1c840, 4 PT_LOAD segments,
 span 0..0x6faaa. 64 lib tests green.
+
+## User-space image loader (continued)
+
+`sigma-kernel` gained `process.rs` — the memory half of `exec`:
+`load_image()` parses an ELF64, allocates contiguous physical
+frames per PT_LOAD segment plus a 32 KiB user stack,
+`user_mappings()` emits the (vaddr, phys, flags) triples a user
+page table needs, and `materialize_with_offset()` copies file
+bytes into caller-provided frame slices (raw physical access
+stays in the unsafe-permitted arch/bin layer, preserving
+`#![forbid(unsafe_code)]`). Modeled on Linux `load_elf_binary`
+and rust-vmm `GuestMemory`. 69 lib tests green.
