@@ -108,16 +108,35 @@ Cooperative multitasking with per-process isolation — Linux
 - **EXIT(code)**: marks the slot exited, switches to the parent;
   init exit halts the machine.
 - **WAIT(pid)**: returns the child's exit status; `EAGAIN` while the
-  child is still running (cooperative — no preemption yet).
+  child is still running — callers retry (each retry is a syscall
+  boundary the scheduler can preempt at).
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary
-  that prints its real pid (GETPID is now per-process) and exits 42.
+  that prints its real pid (GETPID is now per-process), spins
+  ~20M iterations printing progress, and exits 42.
 
-Verified in QEMU: init spawns `/child` -> child prints
-`sigma-child: alive, pid=2`, exits 42 -> parent resumes with
-`spawned pid=2`, `wait status=42`, shell prompt returns. 4/4 clean
-boots, 79 lib tests green.
+### Preemptive scheduling
+
+Timer IRQs (PIT vec `0x20`, LAPIC vec `0x30`) arriving **from user
+mode** (cs RPL==3) now context-switch:
+
+- `irq_common` saves the interrupted context — all GPRs plus rcx/r11
+  in ctx slots 17/18 — into the current proc's slot, calls
+  `sched_tick()` (Rust, `scheduler_tick` analogue), then rebuilds an
+  `iret` frame from the *target* ctx and returns into its address
+  space. Kernel-mode interrupts keep the plain save/EOI/`iret` path.
+- `sched_tick` picks the next `used && !exited` process round-robin
+  and swaps `USER_PML4`/`USER_BRK`/`cur_ctx` — the same globals
+  `switch_to` maintains for the syscall path.
+- ctx is now 19 u64s: slots 0-16 written by `syscall_entry`
+  (rcx/r11 are implicitly rip/rflags there), slots 17/18 written by
+  the IRQ path for the GPRs an interrupt doesn't preserve.
+
+Verified in QEMU: ~600 preemptions while `sigma-child` spins — the
+parent's WAIT-retry loop and the child's progress ticks interleave;
+child exits 42, `wait status=42`, prompt returns. 3/3 clean boots,
+79 lib tests green.
 
 **Root-cause bug found via QEMU debugging**: STAR was built in RAX but
 `wrmsr` consumes EDX:EAX — EDX was never set, so `sysret` intermittently
