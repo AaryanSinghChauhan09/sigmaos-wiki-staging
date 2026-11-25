@@ -272,6 +272,12 @@ kernel_info, time, rand, listdir.
   (full implementation requires process groups and signals)
 - **sigma-sh** — pipeline parsing: `Pipeline` struct, `parse_pipeline()`,
   `execute_pipeline()` stub (sequential execution, full piping requires pipe syscall)
+- **sigma-sh** — pkg utility: command parsing, install/remove/search/list/update/upgrade
+  (full integration requires pkg-core std library support)
+- **sigma-sh** — kill utility: signal parsing (SIGTERM, SIGKILL), PID parsing
+  (full signal support requires kernel signal implementation)
+- **sigma-sh** — mount utility: mount/umount with -t type and -o options
+  (full mount support requires kernel mount syscall)
 - **sigma-kernel** — window manager: functional tiling implementation
   with `TilingMode` (Horizontal, Vertical, Grid), `tile_windows()`,
   `focus_next()`, `focus_prev()`, `set_mode()`, integrated with compositor
@@ -289,4 +295,4 @@ kernel_info, time, rand, listdir.
 
 All implementations compile cleanly and are pushed to GitHub. These provide
 concrete functionality for Omarchy parity across window management, theming,
-agent/plugin infrastructure, and installation.
+agent/plugin infrastructure, installation, and essential userland utilities.
