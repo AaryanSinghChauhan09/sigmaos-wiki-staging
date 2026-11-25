@@ -134,3 +134,12 @@ and runs an interactive VGA/PS2 console. Added `console.rs`
 `ps2.rs` (i8042 scancode-set-1 keyboard). `xtask` cpio writer
 fixed (ASCII hex fields, ino=0 trailer). Verified: kernel mounts
 initramfs (4 nodes), `/init` present, 58 lib tests green.
+
+## ELF loader + /init probe (continued)
+
+`sigma-kernel` gained `elf.rs` — an ELF64 parser producing a
+load plan (ElfHeader, PT_LOAD LoadSegments, image_span), modeled
+on Linux binfmt_elf. `boot_ok` now parses `/init` from the
+initramfs and reports entry point + mapped span. Verified:
+sigma-sh loads as ELF64, entry 0x1c840, 4 PT_LOAD segments,
+span 0..0x6faaa. 64 lib tests green.
