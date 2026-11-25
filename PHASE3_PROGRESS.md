@@ -166,3 +166,15 @@ unimplemented numbers return ENOSYS. The trait mirrors
 `sigma-sys` so userspace and kernel share one ABI. 73 tests
 green. Remaining: ring-3 GDT + syscall MSRs + entry stub +
 user page tables to actually enter /init.
+
+## User page tables + ET_DYN relocation (continued)
+
+`sigma-kernel` gained `usermem.rs` — builds a ring-3 CR3 over a
+`PhysMem` trait (keeps `#![forbid(unsafe_code)]`): PML4->PDPT->PD
+with supervisor 2 MiB identity pages preserving the kernel map,
+plus 4K U/S user pages grouped by 2 MiB slot; rejects overlap
+with the kernel slot. `process.rs` now relocates ET_DYN (PIE)
+images to `USER_LOAD_BIAS = 4 MiB` so user vaddrs never collide
+with kernel physical memory. 77 lib tests green. Remaining:
+ring-3 GDT segments, syscall MSRs + entry stub, arch PhysMem
+impl, and the iretq/sysret transition into /init.
