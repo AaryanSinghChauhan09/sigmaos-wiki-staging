@@ -125,3 +125,12 @@ Action required on a SigmaOS install host: install
   linker.ld keeps `.got` (rust-lld emits GOT-indirect calls).
   **Verified: boots in QEMU to "9 memory regions ... idle".**
   Pushed 4fe2d49. 46 lib tests passing.
+
+## Console + initramfs boot path (continued)
+
+`sigma-kernel` now mounts the initramfs cpio into its VFS at boot
+and runs an interactive VGA/PS2 console. Added `console.rs`
+(TextConsole over a ScreenBuf trait, VGA 0xB8000 backing) and
+`ps2.rs` (i8042 scancode-set-1 keyboard). `xtask` cpio writer
+fixed (ASCII hex fields, ino=0 trailer). Verified: kernel mounts
+initramfs (4 nodes), `/init` present, 58 lib tests green.
