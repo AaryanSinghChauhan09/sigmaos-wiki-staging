@@ -17,6 +17,13 @@
 | `virtio_blk` | VirtIO block device: request protocol, sector I/O |
 | `virtio_net` | VirtIO net: eth header + packet codec |
 | `virtio_gpu` | VirtIO gpu: control message codec |
+| `virtio_mmio` | VirtIO MMIO transport probing/helpers |
+| `fat32` | FAT32 filesystem support for block devices |
+| `fb_console` | Framebuffer console output path |
+| `window_manager` | Tiling window management over the compositor |
+| `theme` | Kernel-side theme parsing/registry |
+| `agent` | Agent capability/result plumbing |
+| `installer` | ISO install planning: partitions, filesystems, GRUB config |
 
 ## Constants
 
@@ -40,8 +47,10 @@ reporter), then calls `pvh_kernel_entry` -> `parse_pvh` -> `boot_ok`.
 ## Status
 
 Bootable kernel ELF (linked at 0x100000 via `linker.ld` + rust-lld).
-Verified booting in QEMU. 46 tests passing, `#![no_std]`,
-`#![forbid(unsafe_code)]`, GPL-3.0.
+Verified booting in QEMU. `#![no_std]`, `#![forbid(unsafe_code)]`,
+GPL-3.0. Latest commits add FAT32, framebuffer console, VirtIO MMIO,
+tiling window manager, theme registry, agent plumbing, and ISO
+installer planning on top of the ring-3 userspace path below.
 
 ## Userspace & Interrupts (latest)
 
