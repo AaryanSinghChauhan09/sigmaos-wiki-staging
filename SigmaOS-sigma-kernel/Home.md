@@ -55,9 +55,14 @@ The kernel now boots all the way into **ring-3 userspace**:
   mapped, 4K U/S pages cover user regions (U/S flag required at *every*
   level). `IdentityPhysMem` in `arch.rs` writes real entries.
 - **Syscall ABI** (`syscall.rs`): `dispatch()` routes WRITE/EXIT/
-  GETPID/KERNEL_INFO/TIME/RAND/OPEN/READ/CLOSE/LISTDIR; unimplemented
-  -> ENOSYS. `TrapSvc` (arch.rs) serves them via a global VFS, fd
-  table, serial+VGA console, PS/2 keyboard input.
+  GETPID/KERNEL_INFO/TIME/RAND/OPEN/READ/CLOSE/LISTDIR/BRK/MMAP;
+  unimplemented -> ENOSYS. `TrapSvc` (arch.rs) serves them via a
+  global VFS, fd table, serial+VGA console, PS/2 keyboard input.
+- **Anonymous memory** (`usermem.rs::map_user_page`): BRK/MMAP map
+  demand-zero 4K frames into the live user CR3, splitting 2 MiB
+  supervisor slots into PTs on demand (Linux `pmd_install` model).
+  `flush_tlb()` reloads CR3 after installs so paging-structure caches
+  can't hold stale non-present translations.
 - **Asm transition** (`pvh.asm`): ring-3 GDT (user CS 0x33 / SS 0x2b),
   STAR/LSTAR/SFMASK MSRs, `syscall_entry`/`sysret` stubs,
   `enter_user` (`mov cr3` + `iretq`).
@@ -72,10 +77,17 @@ The kernel now boots all the way into **ring-3 userspace**:
   to vec 8 = #DF handler).
 - **Timers**: PIT ch0 (~1 kHz) + x2APIC LAPIC timer (vec 0x30, periodic,
   MSR 0x80b EOI). IDT extended to 64 entries.
-- IRQ path in `isr_common`: saves all GPRs, ticks, sends proper EOI
-  (x2APIC vs PIC), `iretq` resumes the interrupted context.
+- IRQ path (`irq_common`): IRQ stubs (vec >= 32) save user `rax`
+  *before* loading the vector into `eax` — previously `mov $vec,%eax`
+  destroyed user `rax`, so every IRQ returned `0x20` to userspace
+  (the root cause of intermittent syscall-result corruption and the
+  sigma-init `rep movsb` flake). `irq_common` saves the other 14
+  GPRs, ticks, sends proper EOI (x2APIC vs PIC), restores all regs
+  + user `rax`, `iretq` resumes the interrupted context.
 - `syscall_entry` does `cli` + `SFMASK=0x200` (clear IF on entry,
-  Linux-style) so IRQs can't land inside kernel syscall handling.
+  Linux-style) so IRQs can't land inside kernel syscall handling,
+  and restores rdi/rsi/rdx/r10/r8/r9 before `sysret` (syscall_trap
+  clobbers them; sysret does not).
 
 **Root-cause bug found via QEMU debugging**: STAR was built in RAX but
 `wrmsr` consumes EDX:EAX — EDX was never set, so `sysret` intermittently
@@ -83,6 +95,7 @@ loaded `CS=0x13/SS=0x0b`, which then poisoned IRQ frames -> `iretq` #GP.
 STAR/LSTAR/SFMASK are now written with explicit `edx:eax`.
 
 Verified in QEMU: PVH -> long mode -> IDT -> initramfs -> ELF load ->
-ring-3 CR3 -> `iretq` -> sigma-init runs, makes write/getpid/open/read/
-close/listdir syscalls, reaches the `sigma$` prompt; timer IRQs fire in
-ring 3 and resume cleanly. 77 lib tests green.
+ring-3 CR3 -> `iretq` -> sigma-init runs a boot self-test that grows
+brk by a page, writes/reads it back (`last=90`), and mmaps — then
+reaches the `sigma$` prompt; timer IRQs fire in ring 3 with all
+registers preserved. 78 lib tests green.
