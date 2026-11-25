@@ -178,3 +178,13 @@ images to `USER_LOAD_BIAS = 4 MiB` so user vaddrs never collide
 with kernel physical memory. 77 lib tests green. Remaining:
 ring-3 GDT segments, syscall MSRs + entry stub, arch PhysMem
 impl, and the iretq/sysret transition into /init.
+
+## Ring-3 GDT segments (continued)
+
+`sigma-kernel` GDT extended with ring-3 segments: user code
+(selector 0x2b, index5|RPL3, L=1 DPL=3) and user data (0x23,
+index4|RPL3), plus a kernel 64-bit data entry at 0x20. Kernel
+keeps 0x18 code / 0x10 data. Verified: kernel still boots clean
+to the /init ELF probe. Remaining for user entry: syscall MSRs
+(STAR/LSTAR/SFMASK), syscall/sysret asm stubs, arch PhysMem
+impl, and the iretq transition.
