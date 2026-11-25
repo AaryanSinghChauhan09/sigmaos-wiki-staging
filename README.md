@@ -158,7 +158,7 @@ This repository contains the centralized Wiki staging for SigmaOS, documenting a
 
 ## Component Status
 
-### Implemented (104+ repositories)
+### Implemented (117 repositories)
 
 - Core system components (5)
 - Development tools (10)
@@ -175,7 +175,7 @@ This repository contains the centralized Wiki staging for SigmaOS, documenting a
 - Office suite (6)
 - Gaming (7)
 
-### Wiki Only (140+ components)
+### Wiki Only (154 components)
 
 All components have Wiki pages in this staging repository. GitHub repositories are being created as rate limits allow.
 
