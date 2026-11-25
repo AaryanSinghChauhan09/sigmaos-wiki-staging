@@ -146,6 +146,25 @@ This document tracks the parity between SigmaOS and other Linux distributions, s
 3. **Phase 5**: Add advanced features
 4. **Continuous**: Create remaining GitHub repositories
 
+## Omarchy parity progress — 2026-11-25
+
+Recent work moved SigmaOS closer to Omarchy's integrated-desktop model:
+
+- **Bootable OS track**: `sigma-kernel` now reaches ring-3 userspace with
+  ELF loading, user page tables, syscall dispatch, file I/O, interactive
+  shell, processes (`SPAWN`/`WAIT`/`EXIT`), anonymous memory
+  (`BRK`/`MMAP`/`MUNMAP`), and preemptive round-robin scheduling.
+- **Kernel surface expansion**: FAT32, framebuffer console, VirtIO MMIO,
+  tiling window manager, theme registry, agent plumbing, and ISO install
+  planning were added on top of the userspace path.
+- **Userland utilities**: `sigma-sh` gained `cat`, `ls`, `kill`, `mount`,
+  `pkg`, `ps`, pipeline parsing, and job-control stubs.
+- **Initramfs**: hook pipeline merged with the canonical cpio/pack image
+  builder and pushed to GitHub.
+- **Still pending**: `SigmaOS-system-profile` repo creation is blocked by
+  GitHub rate limit; per-repo GitHub Wikis still require one-time browser
+  initialization before `push-wikis.sh` can push `.wiki.git` content.
+
 ## License
 
 GPL-3.0-or-later
