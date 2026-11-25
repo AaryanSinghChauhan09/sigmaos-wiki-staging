@@ -293,6 +293,15 @@ kernel_info, time, rand, listdir.
   `BootloaderConfig`, `DiskConfig`, `Partition`, `Filesystem`,
   `generate_grub_config()`, `validate()`, `build()`, `install()`, `plan_install()`
 
+**Kernel syscall additions (this session):**
+- PIPE=23, DUP=24, DUP2=25, KILL=26, MOUNT=27, UMOUNT=28 syscall numbers
+- KernelServices trait methods for all new syscalls
+- sigma-sys wrappers: pipe(), dup(), dup2(), kill(), mount(), umount()
+- **pipe() implementation**: 4KB circular buffer pipes (MAX_PIPES=4),
+  FdEnt kind field (FD_FILE/FD_PIPE_READ/FD_PIPE_WRITE), sys_pipe_read/write,
+  EAGAIN semantics for nonblocking, EOF on write-end close
+
 All implementations compile cleanly and are pushed to GitHub. These provide
 concrete functionality for Omarchy parity across window management, theming,
-agent/plugin infrastructure, installation, and essential userland utilities.
+agent/plugin infrastructure, installation, essential userland utilities, and
+kernel IPC primitives for pipelines.
