@@ -270,6 +270,8 @@ kernel_info, time, rand, listdir.
 
 - **sigma-sh** — job control stubs: `jobs`, `fg`, `bg` commands
   (full implementation requires process groups and signals)
+- **sigma-sh** — pipeline parsing: `Pipeline` struct, `parse_pipeline()`,
+  `execute_pipeline()` stub (sequential execution, full piping requires pipe syscall)
 - **sigma-kernel** — window manager: functional tiling implementation
   with `TilingMode` (Horizontal, Vertical, Grid), `tile_windows()`,
   `focus_next()`, `focus_prev()`, `set_mode()`, integrated with compositor
@@ -281,9 +283,10 @@ kernel_info, time, rand, listdir.
   `enable()`, `disable()`, `find_by_capability()`
 - **sigma-kernel** — plugin system: functional implementation with
   `PluginManager::load()`, `unload()`, `list_loaded()`, proper error handling
-- **sigma-kernel** — ISO installer stub: `IsoConfig` with
-  `build()`, `install()` (GRUB config, multi-boot header,
-  disk partitioning, bootloader installation)
+- **sigma-kernel** — ISO installer: functional implementation with
+  `BootloaderConfig`, `DiskConfig`, `Partition`, `Filesystem`,
+  `generate_grub_config()`, `validate()`, `build()`, `install()`, `plan_install()`
 
 All implementations compile cleanly and are pushed to GitHub. These provide
-concrete functionality rather than just scaffolding for Omarchy parity.
+concrete functionality for Omarchy parity across window management, theming,
+agent/plugin infrastructure, and installation.
