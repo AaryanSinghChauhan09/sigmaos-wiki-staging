@@ -9,6 +9,7 @@ that composes every component's config into one system definition.
 - Resolve enabled components and read their config files
 - JSON output of the effective system view
 - `--list` enabled components, `--validate` warnings
+- `--init` writes a default `sigmaos-desktop` profile
 
 ## Interconnectivity
 
