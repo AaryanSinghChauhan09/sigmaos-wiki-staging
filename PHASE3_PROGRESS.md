@@ -263,3 +263,30 @@ user memory via xorshift64* seeded from rdtsc. sigma-init
 gained `ver` and `time` shell commands. Working syscall set
 now: read, write, open, close, exit, getpid, gettid,
 kernel_info, time, rand, listdir.
+
+## Distribution layer stubs (Omarchy parity — latest)
+
+Added foundational stubs for distribution-level features needed
+to achieve Omarchy parity:
+
+- **sigma-sh** — job control stubs: `jobs`, `fg`, `bg` commands
+  (full implementation requires process groups and signals)
+- **sigma-kernel** — window manager stub: `WindowManager`,
+  `Window` descriptor with `create_window()`, `tile_windows()`,
+  `focus_next()` (full implementation requires grid layout,
+  focus management, input handling, compositor integration)
+- **sigma-kernel** — theme system stub: `Theme` struct with
+  color scheme (background/foreground/accent), font config,
+  `apply()`, `load()`, `default_theme()` (full implementation
+  requires config file parsing, runtime switching)
+- **sigma-kernel** — agent integration: `Agent`, `AgentManager`
+  with `register()`, `execute()` (sandboxing, command dispatch)
+- **sigma-kernel** — plugin system: `Plugin`, `PluginManager`
+  with `load()`, `unload()` (dynamic loading, resource management)
+- **sigma-kernel** — ISO installer stub: `IsoConfig` with
+  `build()`, `install()` (GRUB config, multi-boot header,
+  disk partitioning, bootloader installation)
+
+All stubs compile cleanly and are pushed to GitHub. These provide
+the scaffolding for future full implementations as the kernel
+matures toward a complete OS distribution.
