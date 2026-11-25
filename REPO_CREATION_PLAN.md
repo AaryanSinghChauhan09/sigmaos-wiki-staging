@@ -2,9 +2,15 @@
 
 ## Status
 
-- **Total SigmaOS components (Wiki)**: 261
-- **GitHub repos**: ~373 (298+ confirmed `SigmaOS-*`)
-- **Pending creation**: 125 repos (Wiki pages ready, rate-limited)
+- **Total SigmaOS wiki component dirs**: 271 (2026-11-25 snapshot)
+- **Local implemented repos**: 117 under `~/sigmaos-repos/`
+- **Wiki dirs without a GitHub repo**: 81
+- **Notes**: `SigmaOS-write/view/dots/archs/calc/chee/con/cut/pager/
+  screenshot/survey/video/windows-vm/console/mac-vm` pages were added for
+  renamed current repos. Older `SigmaOS-oma*`/`trial`/`state-*` entries are
+  legacy names superseded by those current repos, not new creation targets.
+- `SigmaOS-system-profile` is implemented locally and ready to push, but
+  GitHub `createRepository` is still rate-limited.
 
 GitHub enforces a secondary rate limit on repository creation
 (~a few per hour). Bulk creation resumes when the window resets.
