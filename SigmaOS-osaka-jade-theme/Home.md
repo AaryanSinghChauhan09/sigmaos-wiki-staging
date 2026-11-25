@@ -4,7 +4,7 @@ Osaka Jade theme for SigmaOS - a green/jade color theme for the SigmaOS desktop 
 
 ## Overview
 
-SigmaOS Osaka Jade Theme provides a green/jade color theme for the SigmaOS desktop environment, offering a calming aesthetic.
+SigmaOS Osaka Jade Theme provides a green/jade color theme for the SigmaOS desktop environment, offering a calming aesthetic. It is listed in `SigmaOS-theme-registry` as `sigmaos-osaka-jade` (pending catalog build).
 
 ## Features
 

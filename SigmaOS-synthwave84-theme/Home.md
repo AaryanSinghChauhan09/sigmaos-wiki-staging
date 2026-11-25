@@ -4,7 +4,7 @@ Synthwave84 theme for SigmaOS - a retro 1980s synthwave-inspired color theme.
 
 ## Overview
 
-SigmaOS Synthwave84 Theme provides a retro 1980s synthwave-inspired color theme for the SigmaOS desktop environment.
+SigmaOS Synthwave84 Theme provides a retro 1980s synthwave-inspired color theme for the SigmaOS desktop environment. It is listed in `SigmaOS-theme-registry` as `sigmaos-synthwave84` (pending catalog build).
 
 ## Features
 
