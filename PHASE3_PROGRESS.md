@@ -155,3 +155,14 @@ bytes into caller-provided frame slices (raw physical access
 stays in the unsafe-permitted arch/bin layer, preserving
 `#![forbid(unsafe_code)]`). Modeled on Linux `load_elf_binary`
 and rust-vmm `GuestMemory`. 69 lib tests green.
+
+## Syscall dispatch layer (continued)
+
+`sigma-kernel` `syscall.rs` gained `KernelServices` trait +
+`dispatch()` — the policy half of the syscall ABI (Linux
+`sys_call_table`/`do_syscall_64` style). WRITE validates fd
+1/2, EXIT/GETPID/GETTID/KERNEL_INFO route to services,
+unimplemented numbers return ENOSYS. The trait mirrors
+`sigma-sys` so userspace and kernel share one ABI. 73 tests
+green. Remaining: ring-3 GDT + syscall MSRs + entry stub +
+user page tables to actually enter /init.
