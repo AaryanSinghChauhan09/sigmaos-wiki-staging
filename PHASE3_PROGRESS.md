@@ -303,6 +303,9 @@ kernel_info, time, rand, listdir.
 - **dup() implementation**: duplicate fd to new slot
 - **dup2() implementation**: duplicate fd to specific fd, close existing
 - **kill() implementation**: SIGKILL/SIGTERM process termination
+- **VFS mount table**: FsKind (Initramfs/Fat32/Other), MountEntry,
+  Vfs.mounts BTreeMap, mount()/umount()/is_mount_point() methods
+  (enables future block-backed filesystem mounting)
 
 All implementations compile cleanly and are pushed to GitHub. These provide
 concrete functionality for Omarchy parity across window management, theming,
