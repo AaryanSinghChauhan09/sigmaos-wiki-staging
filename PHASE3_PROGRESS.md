@@ -188,3 +188,12 @@ keeps 0x18 code / 0x10 data. Verified: kernel still boots clean
 to the /init ELF probe. Remaining for user entry: syscall MSRs
 (STAR/LSTAR/SFMASK), syscall/sysret asm stubs, arch PhysMem
 impl, and the iretq transition.
+
+## PhysMem impl (continued)
+
+`sigma-kernel` arch layer gained `IdentityPhysMem` implementing
+`usermem::PhysMem` over the low-1GiB identity map (volatile u64
+accessors), so `build_user_tables` can construct ring-3 page
+tables. Remaining for user entry: syscall MSRs (STAR/LSTAR/
+SFMASK), syscall/sysret stubs, KernelServices arch impl, and the
+iretq/sysret transition into /init.
