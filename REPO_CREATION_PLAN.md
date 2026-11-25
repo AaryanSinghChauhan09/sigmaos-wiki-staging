@@ -9,8 +9,8 @@
   screenshot/survey/video/windows-vm/console/mac-vm` pages were added for
   renamed current repos. Older `SigmaOS-oma*`/`trial`/`state-*` entries are
   legacy names superseded by those current repos, not new creation targets.
-- `SigmaOS-system-profile` is implemented locally and ready to push, but
-  GitHub `createRepository` is still rate-limited.
+- `SigmaOS-system-profile` was created and pushed on 2026-11-25; it is no
+  longer pending.
 
 GitHub enforces a secondary rate limit on repository creation
 (~a few per hour). Bulk creation resumes when the window resets.

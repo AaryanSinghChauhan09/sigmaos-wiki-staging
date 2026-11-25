@@ -55,7 +55,7 @@ plan new components inspired by other Linux/BSD distros.
 
 ## Progress
 
-- `sigmaos-system-profile` — IMPLEMENTED locally (candidate #2 above).
-  Cleaned for push; repo creation pending GitHub rate limit.
+- `sigmaos-system-profile` — IMPLEMENTED and pushed to GitHub
+  (candidate #2 above; declarative `system.toml` profile).
 - `sigmaos-initramfs` — IMPLEMENTED and pushed (Arch mkinitcpio hooks
   merged with cpio/pack image builder).

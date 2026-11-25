@@ -82,9 +82,8 @@ Action required on a SigmaOS install host: install
 
 ## Update — distro-inspired improvements (latest)
 
-- **sigmaos-system-profile** — implemented locally (NixOS-style
-  declarative system.toml); cleaned for push, repo creation still
-  pending GitHub rate limit.
+- **sigmaos-system-profile** — implemented locally and pushed to GitHub
+  (NixOS-style declarative `system.toml`; load/resolve/validate/list).
 - **sigmaos-initramfs** — merged hook pipeline (topo-sorted plans)
   with canonical cpio/pack image builder; pushed to GitHub.
 - **sigmaos-pkg-core** — Debian-style version constraints added:
@@ -321,6 +320,6 @@ kernel IPC primitives for pipelines and process control.
   canonical remote history: kept cpio/pack image builder, added hook
   pipeline + CLI, 17 tests passing. Pushed `87b05f2`.
 - **SigmaOS-system-profile** — removed accidentally tracked `target/`
-  artifacts, added `.gitignore` and Rust `AGENTS.md`; repo creation
-  still blocked by GitHub rate limit.
+  artifacts, added `.gitignore` and Rust `AGENTS.md`; GitHub repo created
+  and `main` pushed (`d598192`).
 - Wiki staging updated for initramfs/system-profile/sigma-bootloader.

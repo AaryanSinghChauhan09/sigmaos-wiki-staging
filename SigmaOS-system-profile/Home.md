@@ -20,6 +20,5 @@ that composes every component's config into one system definition.
 
 ## Status
 
-Implemented locally (Rust crate, 3 tests passing) and cleaned for
-push (`.gitignore`, Rust `AGENTS.md`, no build artifacts). GitHub repo
-creation is still pending the repository-creation rate-limit window.
+Implemented and pushed to `SigmaOS-system-profile/main` (declarative
+`system.toml` profile loader/resolver/validator; 3 tests passing).
