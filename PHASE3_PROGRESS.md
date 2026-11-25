@@ -300,8 +300,11 @@ kernel_info, time, rand, listdir.
 - **pipe() implementation**: 4KB circular buffer pipes (MAX_PIPES=4),
   FdEnt kind field (FD_FILE/FD_PIPE_READ/FD_PIPE_WRITE), sys_pipe_read/write,
   EAGAIN semantics for nonblocking, EOF on write-end close
+- **dup() implementation**: duplicate fd to new slot
+- **dup2() implementation**: duplicate fd to specific fd, close existing
+- **kill() implementation**: SIGKILL/SIGTERM process termination
 
 All implementations compile cleanly and are pushed to GitHub. These provide
 concrete functionality for Omarchy parity across window management, theming,
 agent/plugin infrastructure, installation, essential userland utilities, and
-kernel IPC primitives for pipelines.
+kernel IPC primitives for pipelines and process control.
