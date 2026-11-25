@@ -197,3 +197,12 @@ accessors), so `build_user_tables` can construct ring-3 page
 tables. Remaining for user entry: syscall MSRs (STAR/LSTAR/
 SFMASK), syscall/sysret stubs, KernelServices arch impl, and the
 iretq/sysret transition into /init.
+
+## KernelServices impl (continued)
+
+`sigma-kernel` arch layer gained `KernelSvc` implementing
+`syscall::KernelServices`: write() echoes user buffers to
+serial+VGA, exit() reports and halts, pid/kernel_version served.
+The syscall ABI is now wired end-to-end on the kernel side.
+Remaining: syscall MSRs + stubs and the iretq/sysret transition
+into /init — the final asm gate.
