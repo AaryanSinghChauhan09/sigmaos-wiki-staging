@@ -1,6 +1,6 @@
 # SigmaOS Themes Intros
 
-Archived - This repository was intended for theme introspection tools but was not implemented. The active theme ecosystem uses SigmaOS-theme-registry and SigmaOS-theme-marketplace.
+Archived on GitHub — this repository was intended for theme introspection tools but was not implemented. The active theme ecosystem uses SigmaOS-theme-registry, SigmaOS-theme-marketplace, SigmaOS-themes-loops, and SigmaOS-theme-sync.
 
 ## Overview
 
