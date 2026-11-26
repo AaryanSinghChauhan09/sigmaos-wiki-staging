@@ -112,7 +112,11 @@ stdout is substituted with trailing newlines stripped. The tokenizer
 and all metachar splitters are now paren-aware so `$(echo a; echo b)`
 doesn't split, and pipelines preserve an outer capture so
 `"$(echo x | cat)"` yields `x`. Single quotes still suppress it.
-52 lib tests.
+Commit `6d11343` adds shell functions: `name() { ...; }` defs
+(functions override builtins, `command` bypasses), `return [n]`,
+`shift`, and positional params `$1..$N`/`$#`/`$@`/`$*` — bodies run
+through the full executor so pipelines/substitution compose.
+Also fixed trailing `;`/`&&`/`||` leaking into args. 54 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
