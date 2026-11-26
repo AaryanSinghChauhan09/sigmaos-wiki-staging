@@ -9,6 +9,10 @@ that composes every component's config into one system definition.
 - Resolve enabled components and read their config files
 - JSON output of the effective system view
 - `--list` enabled components, `--validate` warnings
+- `--doctor` health-checks each enabled component's config path
+  (exists + parses as TOML), Omarchy-style diagnostics
+- `--enable NAME` / `--disable NAME` toggle a component and save the
+  profile in place (unknown names are rejected)
 - `--init` writes a default `sigmaos-desktop` profile
 
 ## Interconnectivity
@@ -22,4 +26,4 @@ that composes every component's config into one system definition.
 ## Status
 
 Implemented and pushed to `SigmaOS-system-profile/main` (declarative
-`system.toml` profile loader/resolver/validator; 3 tests passing).
+`system.toml` profile loader/resolver/validator; 6 tests passing).
