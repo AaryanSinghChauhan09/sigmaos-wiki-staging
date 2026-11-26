@@ -83,7 +83,9 @@ launch→builtin drains the pipe to stdin. Verified in QEMU:
 `launch /child gen | launch /child pipe > /p.txt` streams the
 producer's output through the pipe. This also fixed a latent kernel
 bug where `pipe()` returned two fds pointing at the same slot —
-the write end overwrote the read end.
+the write end overwrote the read end. Multi-stage pipelines
+(`a | b | c`), >4KiB payloads through the 4KiB buffer, and
+launch→builtin drains are all verified in QEMU.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 36 lib tests.
