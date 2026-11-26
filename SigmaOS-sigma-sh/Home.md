@@ -49,7 +49,9 @@ boots to an interactive `sigma>` prompt after `/init` spawns it.
 Console input works over serial RX and the PS/2 keyboard; `ps`, `mem`,
 `uname`, `time`, `launch`/`wait` are backed by real syscalls — verified
 in QEMU (`launch /child` runs concurrently, `wait` reports exit status
-42, `ps` shows live process states).
+42, `ps` shows live process states). `launch` forwards the shell's
+exported variables as the child's envp — `export FOO=bar` then
+`launch /child` delivers `env0=FOO=bar` (commit `7c17c7d`).
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
-to 16 bytes before calling Rust main. 29 lib tests.
+to 16 bytes before calling Rust main. 30 lib tests.
