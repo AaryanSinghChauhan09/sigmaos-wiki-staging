@@ -1,30 +1,30 @@
 # SigmaOS ZFS Integration
 
-ZFS filesystem integration for SigmaOS - ZFS support for advanced storage features.
+ZFS dataset state tracker for SigmaOS — records datasets, snapshot
+policy, and scrub schedule. Actual `zfs(8)` operations are delegated
+by callers; this component owns the JSON-backed state.
 
 ## Overview
 
-SigmaOS ZFS Integration provides ZFS filesystem support for SigmaOS, enabling advanced storage features like snapshots, compression, deduplication, and data integrity.
+`SigmaOS-zfs-integration` maintains a `ZfsState`: a map of `Dataset`
+records (name, kind, mountpoint, compression, snapshot enablement and
+retention), an optional `ScrubSchedule` (cron expression + optional
+dataset subset), and `last_scrub`. Dataset names must contain `/`
+(pool-qualified). State saves atomically (temp + rename) under the
+XDG data dir.
 
 ## Features
 
-- **ZFS support**: Full ZFS filesystem support
-- **Snapshots**: Point-in-time snapshots
-- **Compression**: Transparent compression
-- **Deduplication**: Data deduplication
-- **Data integrity**: End-to-end data integrity checks
-- **RAID-Z**: ZFS RAID implementation
-- **Pool management**: ZFS pool management tools
-- **Send/Receive**: ZFS send and receive for backup
-
-## ZFS Benefits
-
-- Data integrity verification
-- Self-healing filesystem
-- Efficient compression
-- Snapshot-based backups
-- Scalable storage pools
-- Built-in RAID
+- **Dataset registry**: add/remove with name validation
+- **Queries**: `snapshot_targets` (snapshots enabled), `by_pool`
+  (pool-prefix filter)
+- **Scrub validation**: `validate` rejects scrub schedules that name
+  unknown datasets; an empty dataset list means "all" and always
+  validates
+- **Persistence**: `save`/`load` JSON roundtrip preserving
+  `last_scrub`
+- **Tests**: 4 unit tests cover validation, queries, scrub reference
+  checking, and persistence
 
 ## Links
 

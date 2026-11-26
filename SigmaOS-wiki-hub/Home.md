@@ -1,20 +1,29 @@
 # SigmaOS Wiki Hub
 
-Central documentation hub for SigmaOS - aggregated documentation from all SigmaOS components.
+Searchable documentation index for SigmaOS — scans a tree of markdown
+files and builds a categorized, full-text-searchable index with JSON
+export.
 
 ## Overview
 
-SigmaOS Wiki Hub provides a central documentation hub that aggregates documentation from all SigmaOS components, providing a unified interface for accessing project documentation.
+`SigmaOS-wiki-hub` walks a directory for `.md` files (no symlink
+following) and builds a `WikiIndex` of `WikiPage`s: title extracted
+from the first `# ` heading (filename fallback), category from the
+first directory under the root (`general` for root-level files), and
+full content. Pages sort by title. The index saves/loads as JSON
+under the XDG cache dir.
 
 ## Features
 
-- **Central aggregation**: Aggregate documentation from all components
-- **Search**: Full-text search across all documentation
-- **Navigation**: Easy navigation between component docs
-- **Indexing**: Automatic indexing of documentation
-- **Updates**: Automatic updates when components change
-- **Themes**: Consistent theming across all docs
-- **Offline support**: Offline documentation access
+- **Indexing**: recursive markdown scan with title/category extraction
+- **Search**: case-insensitive substring match over title + content
+- **Grouping**: `by_category` into a sorted map; `toc` renders a
+  markdown table of contents
+- **Persistence**: `save`/`load` JSON roundtrip
+- **Tests**: 5 unit tests cover markdown-only indexing, title
+  fallback, search, category grouping, toc, and persistence — and
+  caught a real bug where root-level files were categorized by their
+  own filename instead of `general`
 
 ## Links
 

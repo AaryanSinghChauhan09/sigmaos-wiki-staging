@@ -1,19 +1,27 @@
 # SigmaOS Live Media
 
-Live media creation tools for SigmaOS - tools for creating live USB and live ISO images.
+Live wallpaper / animated background manager for the SigmaOS desktop —
+declarative TOML config, atomic apply, battery-saver pause policy.
 
 ## Overview
 
-SigmaOS Live Media provides tools for creating bootable live media, including live USB drives and live ISO images for testing and installation.
+`SigmaOS-live-media` manages animated wallpapers of four kinds:
+`video` (mp4/webm), `shader` (GLSL), `sequence` (image frame
+directory), and `image` (static fallback). A `LiveMediaConfig` lists
+wallpapers with per-entry `Playback` options (loop, volume,
+pause-on-battery). Config is TOML, validated on load (non-empty
+list, known active wallpaper, non-empty names), and `apply` writes it
+atomically (temp file + rename) to the XDG config dir.
 
 ## Features
 
-- **Live USB creation**: Create bootable USB drives
-- **Live ISO creation**: Build live ISO images
-- **Persistence support**: Persistent storage on live media
-- **Multi-boot support**: Support for multiple distributions
-- **Verification**: Verify image integrity
-- **Compression**: Compressed images for smaller downloads
+- **Validation**: rejects empty wallpaper lists, unknown `active`
+  names, and empty wallpaper names
+- **Path resolution**: relative media paths join `wallpapers_dir`,
+  absolute paths pass through
+- **Persistence**: `to_toml`/`load`/`apply` roundtrip
+- **Tests**: 4 unit tests cover validation, resolution, and the
+  TOML/apply/load roundtrip
 
 ## Links
 
