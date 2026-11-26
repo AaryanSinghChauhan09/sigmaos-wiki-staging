@@ -1,26 +1,26 @@
 # SigmaOS Shell Config
 
-Shell configuration management for SigmaOS, providing unified zsh and bash configuration with enhanced productivity features.
+Declarative manager for the SigmaOS desktop shell (Quickshell-based):
+bar, dock, launcher, and theme configuration as validated TOML.
 
-## Overview
+## Capabilities
 
-SigmaOS Shell Config provides a unified shell configuration for zsh and bash with enhanced productivity features, aliases, and tools integration.
-
-## Features
-
-- **Enhanced zsh**: Larger history, better completion, AUTO_PUSHD
-- **Aliases**: Git, tmux, and productivity aliases
-- **Tools integration**: eza, zoxide, fzf, starship
-- **Fuzzy search**: fzf history search and file navigation
-- **Smart prompts**: Starship prompt with SigmaOS theme
-- **Directory jumping**: zoxide for intelligent directory navigation
+- `ShellConfig` model: `bar` (position/height/modules/autohide),
+  `dock` (position/icon size/pinned apps), `launcher`
+  (provider/max results/fuzzy), `theme` (#RRGGBB colors + font)
+- Strict validation: bar height 1–200, icon size 1–256, hex colors
+  must be `#RRGGBB` with valid digits, launcher results 1–500
+- `sigmaos-system-profile`-style subcommands: `validate`, `default`,
+  `apply` (atomic write to `~/.config/sigmaos/shell.toml`), `path`
+- `module <name> on|off` toggles a bar module in the user config —
+  Omarchy-style live shell customization
+- `ShellConfig::set_module_enabled` for programmatic edits
 
 ## Structure
 
-- `src/lib.rs` - library implementation
+- `src/lib.rs` - config model, validation, defaults, apply
 - `src/main.rs` - CLI entry point
-- `docs/` - architecture, principles, testing, security docs
-- `COMPONENT.tomL` - component manifest
+- `COMPONENT.toml` - component manifest
 - `tools-sigmaos.sh` - interconnect helper
 
 ## Build & Test
@@ -31,6 +31,8 @@ cargo test
 cargo clippy -- -D warnings
 cargo fmt --check
 ```
+
+2 unit tests (hex color validation, module toggling).
 
 ## License
 
