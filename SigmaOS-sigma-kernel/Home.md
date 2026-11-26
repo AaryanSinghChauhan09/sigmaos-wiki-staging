@@ -187,7 +187,9 @@ fixed a latent panic where `open`/`pipe` initialized fd slots through
 `fd_get`, which requires `used`). MKDIR/UNLINK/RMDIR syscalls (nr
 31-33) expose VFS create_dir/unlink/remove_dir with POSIX errno
 mapping — `mkdir`, `rmdir`, `rm`, `touch`, `cp`/`mv` all verified in
-QEMU (commit `aac1a95`). PS/2 keyboard input
+QEMU (commit `aac1a95`). STAT (nr 4) now returns real metadata —
+{u64 mode, u64 size} with Linux-ish mode bits — powering `ls -l`
+(commit `5326ddf`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 87 lib tests green.
