@@ -1,80 +1,53 @@
 # SigmaOS Configuration System
 
-Declarative configuration system for SigmaOS - NixOS-inspired configuration management.
+Typed, validated system configuration — a NixOS-inspired `Config`
+model covering desktop, window manager, terminal, shell, network,
+power, accessibility, performance, security, updates, and logging.
 
-## Overview
+## Capabilities
 
-SigmaOS Configuration System provides a declarative configuration management system inspired by NixOS. System configuration is expressed as code, enabling reproducible, version-controlled system state.
-
-## Features
-
-- **Declarative**: Describe what the system should look like, not how to get there
-- **Reproducible**: Same configuration produces same system state
-- **Version-controlled**: Configuration in git for rollback and audit
-- **Atomic**: Changes are applied atomically
-- **Rollback**: Easy rollback to previous configurations
-- **Modular**: Configuration split into modules
-- **Type-safe**: Type checking for configuration values
-- **Validation**: Configuration validation before application
-
-## Configuration Language
-
-SigmaOS uses a TOML-based configuration language for simplicity and familiarity:
-
-```toml
-# /etc/sigmaos/config.toml
-
-[system]
-hostname = "sigmaos-desktop"
-timezone = "UTC"
-locale = "en_US.UTF-8"
-
-[network]
-dhcp = true
-wifi = true
-
-[desktop]
-environment = "hyprland"
-theme = "sigmaos-dark"
-
-[security]
-firewall = true
-automatic_updates = true
-
-[packages]
-included = ["firefox", "thunderbird", "vscode"]
-```
-
-## Modules
-
-Configuration is split into modules for organization:
-
-- **system**: Core system settings
-- **network**: Network configuration
-- **desktop**: Desktop environment settings
-- **security**: Security policies
-- **packages**: Package management
-- **users**: User configuration
-- **services**: Service configuration
+- `Config` schema with per-section structs and secure defaults
+  (`apply_defaults` fills theme/WM/shell/terminal)
+- `ConfigValidator` — per-section checks: font sizes, transparency/
+  opacity 0–1, WM/shell type allowlists, power profiles, log levels,
+  update channels, and "at least one of SELinux/AppArmor" for security
+- Dotted-key get/set: `desktop.theme`, `window_manager.gaps`,
+  `updates.check_interval`, … via `set_value`/`get_value`
+- `ConfigManager` + `ConfigLoader` for file load/validate/generate
 
 ## Commands
 
 ```bash
-# Apply configuration
-sudo sigmaos-config apply
-
-# Validate configuration
-sudo sigmaos-config validate
-
-# Rollback to previous configuration
-sudo sigmaos-config rollback
-
-# List configurations
-sudo sigmaos-config list
-
-# Show current configuration
-sudo sigmaos-config show
+sigmaos-config load [--file F] [--config-dir D]
+sigmaos-config validate --file F
+sigmaos-config generate [--output DIR]
+sigmaos-config show [--file F]
+sigmaos-config set <section.key> <value> [--file F]
+sigmaos-config get <section.key> [--file F]
 ```
+
+## Structure
+
+- `src/schema.rs` - Config model, defaults, dotted-key accessors
+- `src/validator.rs` - per-section validation rules
+- `src/config.rs` / `loader.rs` - manager + TOML loader
+- `src/main.rs` - CLI entry point
+
+## Build & Test
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+6 unit tests (defaults validate, set/get round-trip, invalid key/value
+rejection, validator range/security rules).
+
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
