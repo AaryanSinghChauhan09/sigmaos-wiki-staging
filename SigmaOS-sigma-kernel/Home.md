@@ -213,7 +213,11 @@ args and close-on-spawns any pipe end not referenced by a redirect
 `sys_pipe` bug: both `fd_alloc` calls ran before either slot was
 marked used, so they returned the same slot and the write end
 overwrote the read end — `pipe()` never actually produced two fds.
-PS/2 keyboard input
+Fd/pipe capacity was raised for real workloads (commit `55e10a7`):
+MAX_FDS 8 -> 32 and MAX_PIPES 4 -> 8 — fd inheritance, pipeline
+plumbing, and redirects can all consume slots in one process — plus
+an off-by-one fix in SPAWN's redirect-fd validation (`< 3+MAX_FDS`
+now matches `fd_get`'s range). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 87 lib tests green.
