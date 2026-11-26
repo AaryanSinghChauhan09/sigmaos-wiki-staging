@@ -1,20 +1,25 @@
 # SigmaOS Speedtest
 
-Network speed testing tool for SigmaOS - measure network speed and latency.
+Network latency and throughput measurement for SigmaOS — dependency-free
+(std + serde only), safe code only.
 
 ## Overview
 
-SigmaOS Speedtest provides network speed testing tools to measure download/upload speeds and latency.
+`SigmaOS-speedtest` measures TCP connect latency (`ping`) and download
+throughput (`download`, capped at `max_bytes`) against a host:port,
+plus `ping_stats` for min/avg/max over N samples. Results are serde-
+serializable structs (`PingResult`, `ThroughputResult`). All sockets
+use `connect_timeout`/`set_read_timeout` so tests and CLI runs are
+bounded.
 
 ## Features
 
-- **Speed measurement**: Measure download and upload speeds
-- **Latency testing**: Ping and latency measurements
-- **Multiple servers**: Test against multiple servers
-- **History**: Track speed test history
-- **Detailed stats**: Detailed connection statistics
-- **CLI and GUI**: Both command-line and graphical interfaces
-- **Export**: Export test results
+- **TCP ping**: connect latency in ms with typed errors
+  (`InvalidAddr`, `NoAddr`, `Timeout`)
+- **Throughput**: bytes downloaded, duration, and computed Mbps
+- **Statistics**: min/avg/max latency over repeated pings
+- **Tests**: 5 unit tests run entirely on loopback listeners — no
+  external network required
 
 ## Links
 
