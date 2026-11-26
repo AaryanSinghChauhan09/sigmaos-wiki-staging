@@ -34,7 +34,7 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-2 unit tests (kernel boundary checks, live `detect()`).
+4 unit tests (kernel boundary checks, memory formatting, cpu_feature vs /proc/cpuinfo, live `detect()`).
 
 ## License
 

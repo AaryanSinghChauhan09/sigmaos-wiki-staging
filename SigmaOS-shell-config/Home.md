@@ -32,7 +32,7 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-2 unit tests (hex color validation, module toggling).
+5 unit tests (hex color validation, module toggling, range checks, TOML roundtrip, malformed-input rejection).
 
 ## License
 
