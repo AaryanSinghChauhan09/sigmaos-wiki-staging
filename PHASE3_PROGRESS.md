@@ -381,3 +381,14 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
 - Blocked by missing host system libraries (not code): `screensaver`
   needs `xkbcommon`; `video` needs `gbm` + `libavcodec`.
 - Still pending clippy: `ttfx` (~570 lints, needs dedicated pass), `ui`.
+
+## Update — ttfx + ui clippy cleanup (2026-11-25)
+
+- **SigmaOS-ttfx** `00783cc` — `cargo clippy --fix` plus manual fixes took
+  the crate from ~570 lints to zero: `clippy --all-targets -D warnings`
+  clean, tests pass.
+- **SigmaOS-ui** `2ed2fcf` — fixed 6 clippy errors in `omarchy-rune`
+  (manual_contains, type_complexity aliases, same-type cast,
+  collapsible_if). `cargo clippy --workspace -D warnings` clean.
+- Still blocked by missing host system libraries: `screensaver`
+  (`xkbcommon`), `video` (`gbm` + `libavcodec`).
