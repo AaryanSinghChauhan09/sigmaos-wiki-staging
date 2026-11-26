@@ -405,3 +405,14 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
   are not installed on this host. Needs the `-dev` packages.
 - The repo-wide clippy/fmt/test sweep is now complete for every Rust
   component except `SigmaOS-video`.
+
+## Update — wiki-only repo creation resumed (2026-11-25)
+
+- GitHub repo-creation rate limit reset; created 8 missing wiki-only
+  component repos: `SigmaOS-librewolf`, `-lightdash`, `-local-send`,
+  `-lookerstudio`, `-mailspring`, `-notepadpp`, `-openboard`, `-openclaw`.
+- ~35 remain (`SigmaOS-pandas` … `SigmaOS-zen`); a background retry
+  script (`/tmp/create_missing_repos.sh`, log `/tmp/create_missing_repos.log`)
+  creates them as the rate-limit window allows.
+- Note: `gh repo list` caps at 1000; the account has >1000 repos, so
+  missing-repo checks must use `gh repo view` per name.
