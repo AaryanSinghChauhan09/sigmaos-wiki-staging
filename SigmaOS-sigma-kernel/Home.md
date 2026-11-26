@@ -184,10 +184,13 @@ environment: `export FOO=bar` then `launch /child` prints
 honors O_CREAT/O_TRUNC/O_APPEND, WRITE reaches file fds, and
 `echo hi > /f` + `>>` append work in-guest (commit `3d31bbe`; also
 fixed a latent panic where `open`/`pipe` initialized fd slots through
-`fd_get`, which requires `used`). PS/2 keyboard input
+`fd_get`, which requires `used`). MKDIR/UNLINK/RMDIR syscalls (nr
+31-33) expose VFS create_dir/unlink/remove_dir with POSIX errno
+mapping — `mkdir`, `rmdir`, `rm`, `touch`, `cp`/`mv` all verified in
+QEMU (commit `aac1a95`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
-(commit `0643701`). 82 lib tests green.
+(commit `0643701`). 87 lib tests green.
 
 **Next gaps** (once build is restored):
 - **Blocking WAIT** (sleep/wake queue) — implemented but not pushed:
