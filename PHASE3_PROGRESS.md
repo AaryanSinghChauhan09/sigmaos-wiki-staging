@@ -416,3 +416,16 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
   creates them as the rate-limit window allows.
 - Note: `gh repo list` caps at 1000; the account has >1000 repos, so
   missing-repo checks must use `gh repo view` per name.
+
+## Update — CI workflows added (2026-11-26)
+
+- Added `.github/workflows/rust-validation.yml` (fmt --check, clippy
+  `-D warnings`, `cargo test --all-targets`, with transitive
+  `SigmaOS-*` path-dependency checkout) to 34 Rust component repos that
+  lacked CI: app-env, betteroffice, bi-analytics, bigdata,
+  config-system, craft, data-wrangling, dkms, dos, eda, email, iloveapi,
+  live-media, ml-dl, notebooks, omafind, pkg-core, platform, ports, rdbms,
+  rebuild, recovery-system, screensaver, sec-audit, security-hardening,
+  shell-config, sigma-sh, sigma-sys, site, speedtest, system-profile, ui,
+  update-system, wiki-hub, xtask, zfs-integration.
+- `SigmaOS-notifications` skipped (archived stub).
