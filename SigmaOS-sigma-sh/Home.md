@@ -46,6 +46,10 @@ binary is not packed). The `no_std` utility bins are gated behind
 `sigmaos-target`. `sh` (`/sh`) is a bare-metal interactive shell: it
 wires the Shell engine to console fd 0/1 and the initramfs VFS, and
 boots to an interactive `sigma>` prompt after `/init` spawns it.
+Console input works over serial RX and the PS/2 keyboard; `ps`, `mem`,
+`uname`, `time`, `launch`/`wait` are backed by real syscalls — verified
+in QEMU (`launch /child` runs concurrently, `wait` reports exit status
+42, `ps` shows live process states).
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 29 lib tests.
