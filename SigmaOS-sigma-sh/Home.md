@@ -102,7 +102,10 @@ and `paste` (`-d` delimiter, multi-file/stdin column join), and fixes
 `io.write` directly) — `printf ... | cmd` and `printf ... > file` now
 behave like POSIX. Commit `0bceb75` adds `2>&1` (stderr follows
 stdout's redirect target — shares the fd with `> out`, flows into
-pipes via the kernel stderr->stdout fallback). 48 lib tests.
+pipes via the kernel stderr->stdout fallback). Commit `0a04fc5`
+adds `od` (hex+ASCII / `-c` char dump), `fold -w`, and
+`expand`/`unexpand -t` tab/space conversion — all reading file or
+piped stdin via a shared `input_bytes` helper. 51 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
