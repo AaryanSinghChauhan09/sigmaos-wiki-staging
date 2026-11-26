@@ -365,3 +365,19 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
 `ISO`, `ml-dl`, `notebooks`, `plugin-marketplace`, `rdbms`,
 `security-hardening`, `shell`, `skills`, `sigma-kernel`, `ttfx`, `ui`,
 `video`.
+
+## Update — kernel + ISO clippy cleanup (2026-11-25)
+
+- **SigmaOS-sigma-kernel** `a1ac7e4` — fixed 33 clippy lints across
+  agent/compositor/console/fat32/fb/installer/mm/process/syscall/theme/
+  usermem/vfs/virtio_*/window_manager; also repaired a real test bug in
+  `fat32::boot_sector_parse_minimal` (bytes-per-sector written as u16 LE).
+  `cargo clippy --lib -D warnings` clean, `cargo fmt --check` clean,
+  81 lib tests pass.
+- **SigmaOS-ISO** `45e2027` — fixed remaining 20 clippy errors
+  (standalone_test feature, misplaced `#![no_std]`, vec-init-then-push,
+  explicit-counter-loop, field-reassign-with-default across installer
+  modules). `cargo clippy --lib -D warnings` clean, 99 lib tests pass.
+- Blocked by missing host system libraries (not code): `screensaver`
+  needs `xkbcommon`; `video` needs `gbm` + `libavcodec`.
+- Still pending clippy: `ttfx` (~570 lints, needs dedicated pass), `ui`.
