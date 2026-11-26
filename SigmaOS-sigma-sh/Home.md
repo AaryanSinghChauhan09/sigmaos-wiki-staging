@@ -68,7 +68,9 @@ into the file via the SPAWN stdout_fd arg (commit `9ed41ae`).
 `069d539`). `launch prog 2> file` / `2>> file` (including inline
 `2>file`) routes the child's stderr alone via the stderr_fd SPAWN
 arg (commits `9bd90f0`/`f53384f`/`62b849a`), verified in QEMU with
-the sigma-child `stderr` marker arg.
+the sigma-child `stderr` marker arg. `&>`/`&>>` (incl. inline
+`&>file`) redirects both streams; launch shares one fd so stdout and
+stderr interleave in the file (commit `baa2625`).
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
-to 16 bytes before calling Rust main. 32 lib tests.
+to 16 bytes before calling Rust main. 34 lib tests.
