@@ -17,10 +17,12 @@ runs the second command only when the first fails. `*` globs expand in
 arguments against the filesystem (`echo /*`, `cat /boot/vmlinuz*`);
 unmatched patterns pass through unchanged. `true`/`:`/`false`/`clear`
 are builtins (`false` fails for `&&`/`||`), and `launch` resolves bare
-program names through the PATH dirs.
+program names through the PATH dirs. `cmd > file` truncates and
+`cmd >> file` appends via `Fs::write_file` — all builtin output routes
+through the redirect-aware `emit` path.
 `src/bin/sigma-sh.rs`
 is the std host frontend; SigmaOS-native `sigma-init` (`/init`) and
 `sigma-child` are built with the `sigmaos-target` feature for
 x86_64-unknown-none and packed by `SigmaOS-xtask` (the host `sigma-sh`
 binary is not packed). The `no_std` utility bins are gated behind
-`sigmaos-target`. 18 lib tests.
+`sigmaos-target`. 19 lib tests.
