@@ -30,10 +30,13 @@ manipulation and number sequences. `env [NAME]` reads variables and
 `sleep <secs>` pauses via `System::sleep`. `kill [-9] <pid>` terminates a
 process via `System::kill` (host shells out to `kill`). Failing builtins
 (`cd`, `ls`, `cat`, `which`, `env` misses, `kill` misses, `false`, unknown
-commands) set the status used by `&&`/`||`.
+commands) set the status used by `&&`/`||`. `cmd1 | cmd2` pipes stdout of
+each stage into the next stage's stdin — `cat`, `head`/`tail`, `wc`,
+`grep`, `sort`, and `uniq` read piped input when given no file argument,
+so `seq 3 | grep 2` and `cat /var/log/x | wc` work like a real shell.
 `src/bin/sigma-sh.rs`
 is the std host frontend; SigmaOS-native `sigma-init` (`/init`) and
 `sigma-child` are built with the `sigmaos-target` feature for
 x86_64-unknown-none and packed by `SigmaOS-xtask` (the host `sigma-sh`
 binary is not packed). The `no_std` utility bins are gated behind
-`sigmaos-target`. 26 lib tests.
+`sigmaos-target`. 27 lib tests.
