@@ -1,37 +1,19 @@
 # SigmaOS Installer
 
-Graphical live installer for SigmaOS (partition, copy, bootloader installation).
+Installer component for SigmaOS — installation state machine for the partition/copy/bootloader flow.
 
 ## Overview
 
-The SigmaOS installer provides a graphical interface for installing SigmaOS to disk. It handles disk partitioning, file system setup, system copy, and bootloader configuration in a user-friendly way.
+`SigmaOS-installer` is a Rust library that models the installation flow as an explicit state machine: `Welcome → Language → Location → Partitioning → UserSetup → Installation → Complete`, with `Failed` and `Cancelled` terminal states. It tracks per-installation configuration (language, timezone, keyboard, hostname, username, partitioning mode, target disk, filesystem) and progress.
+
+This is the installer backend/state layer. Actual disk partitioning, file copy, and bootloader installation are future work; see `COMPONENT.toml` (`next_milestone = "Hardware and runtime integration"`).
 
 ## Features
 
-- **Graphical interface**: Easy-to-use GUI for installation
-- **Disk partitioning**: Automatic and manual partitioning options
-- **File system support**: BTRFS with subvolumes for system and home
-- **Bootloader**: Configures systemd-boot for UEFI or syslinux for BIOS
-- **Safety checks**: Dry-run mode to preview changes before applying
-- **Rollback support**: BTRFS snapshot integration for safe recovery
-
-## Usage
-
-The installer is available on the SigmaOS live ISO. Run it from the live session:
-
-```bash
-sigmaos-install
-```
-
-Dry-run mode (default):
-```bash
-sigmaos-install --dry-run
-```
-
-Destructive installation:
-```bash
-sigmaos-install --destructive
-```
+- **State machine**: explicit install states with `advance_step`, `start_installation`, `update_progress`, `complete_installation`, `cancel_installation`, `fail_installation`.
+- **Config tracking**: per-installation `InstallConfig` with partitioning mode, target disk, filesystem, and progress.
+- **Global instance**: `init_sigmainstaller` / `get_sigmainstaller` singleton for embedding in the desktop or live environment.
+- **Safe Rust**: `#![forbid(unsafe_code)]`, `missing_docs` warnings enabled.
 
 ## Build & Test
 
