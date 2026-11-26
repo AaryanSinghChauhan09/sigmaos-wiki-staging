@@ -429,3 +429,13 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
   shell-config, sigma-sh, sigma-sys, site, speedtest, system-profile, ui,
   update-system, wiki-hub, xtask, zfs-integration.
 - `SigmaOS-notifications` skipped (archived stub).
+
+## Update — CI fixes (2026-11-26)
+
+- `SigmaOS-screensaver` + `SigmaOS-ui`: install `libxkbcommon-dev` in CI
+  (smithay-client-toolkit / rune test binaries link `-lxkbcommon`).
+- `SigmaOS-omafind`: CI fetches the pinned llama.cpp engine via
+  `scripts/fetch-engine.sh cpu` and scopes clippy/test to
+  `--workspace --exclude omafind-app` (GPUI Kit needs a long tail of
+  system GUI libs). All green.
+- All other 31 repos passed `rust-validation` on first run.
