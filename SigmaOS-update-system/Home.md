@@ -1,52 +1,56 @@
 # SigmaOS Update System
 
-Software update system for SigmaOS - automatic updates and security patches.
+Rolling-release update manager — checks an update server, downloads
+signed packages, installs via pacman, and supports rollback.
 
-## Overview
+## Capabilities
 
-SigmaOS Update System provides automatic software updates, security patches, and version management. Integrates with pacman and provides a unified update experience.
-
-## Features
-
-- **Automatic updates**: Scheduled automatic updates
-- **Security updates**: Prioritized security patches
-- **Rolling release**: Continuous updates without version locks
-- **Notification**: Update notifications
-- **Rollback**: Rollback capability for failed updates
-- **Testing**: Update testing before deployment
-- **Bandwidth control**: Limit update bandwidth
-- **Package groups**: Group updates by category
+- `check` — query `updates.sigmaos.org` for the channel
+  (`stable`/`beta`/`nightly`/custom), rate-limited by
+  `check_interval` unless `--force`
+- `update` — fetch, verify signature (TODO), install via
+  `sudo pacman -U`, record version; `--dry-run` lists pending updates
+- `rollback [--version V | --list]` — version history with
+  backup-before-rollback
+- `status [--detailed]` — current version, channel, last check,
+  auto-update flag, and pending updates persisted from the last check
+- `config --channel/--auto-update/--interval` — update settings in
+  `~/.config/sigmaos/update.toml`
+- Pending updates are stored in `update-state.json` so `status`
+  reports what `check` last found without re-querying the server
 
 ## Commands
 
 ```bash
-# Check for updates
-sigmaos-update check
-
-# Apply updates
-sigmaos-update apply
-
-# Automatic updates
-sigmaos-update auto
-
-# Rollback update
-sigmaos-update rollback
-
-# List available updates
-sigmaos-update list
+sigmaos-update check [--channel stable] [--force]
+sigmaos-update update [--channel stable] [--dry-run] [--force]
+sigmaos-update rollback [--version X.Y.Z | --list]
+sigmaos-update status [--detailed]
+sigmaos-update config [--channel C] [--auto-update BOOL] [--interval SECS]
 ```
 
-## Configuration
+## Structure
 
-Edit `/etc/sigmaos/update.conf` for configuration:
+- `src/updater.rs` - UpdateManager: check/apply/rollback/state
+- `src/channel.rs` - UpdateChannel enum (stable/beta/nightly/custom)
+- `src/notifier.rs` - desktop notification hook
+- `src/main.rs` - CLI entry point
 
-```ini
-[updates]
-automatic = true
-security_only = false
-notify = true
-rollback_enabled = true
+## Build & Test
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
 ```
+
+2 unit tests (update-state JSON round-trip incl. legacy files without
+`pending`).
+
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
