@@ -169,9 +169,10 @@ exits 42, `wait status=42`), then spawns `/sh` — the bare-metal
 interactive shell reaches a live `sigma>` prompt. **Console input
 works end-to-end**: fd0 reads the 16550 serial RX FIFO, so typed
 commands echo, `help`/`ls`/builtins execute, and `command not found`
-errors print correctly (commit `0e3c736`). The PS/2 i8042 path is
-kept but disabled — `Keyboard::new`'s controller-init sequence wedges
-under QEMU; revisit for bare metal. 82 lib tests green.
+errors print correctly (commit `0e3c736`). PS/2 keyboard input
+also works: `Keyboard::attached` skips the i8042 init sequence that
+wedged under QEMU, and `sendkey` types commands into the live prompt
+(commit `0643701`). 82 lib tests green.
 
 **Next gaps** (once build is restored):
 - **Blocking WAIT** (sleep/wake queue) — implemented but not pushed:
