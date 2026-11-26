@@ -348,3 +348,20 @@ across the implemented Rust component repos and pushed fixes.
   (`osaka-jade`, `synthwave84`) left for owner review per repo rules.
 
 All non-archived local repos are clean and synced with `origin`.
+
+## Update — clippy sweep continued (2026-11-25)
+
+`cargo clippy -- -D warnings` + `cargo test` results for the next batch:
+
+- Passed clean: `wiki-hub`, `site`, `rebuild`, `zfs-integration`,
+  `app-env`, `browser` (8 tests), `craft`, `betteroffice`, `bigdata`,
+  `data-wrangling`, `dos` (5 tests), `eda` (3 tests), `email` (4 tests),
+  `genoffice` (5 tests).
+- Fixed and pushed: `bi-analytics` `81d5498` (cmp_owned lint).
+- Blocked by host dependency: `screensaver` needs system `xkbcommon`
+  (`smithay-client-toolkit` pkg-config); not a code issue.
+
+Remaining formatted repos still pending clippy verification: `iloveapi`,
+`ISO`, `ml-dl`, `notebooks`, `plugin-marketplace`, `rdbms`,
+`security-hardening`, `shell`, `skills`, `sigma-kernel`, `ttfx`, `ui`,
+`video`.
