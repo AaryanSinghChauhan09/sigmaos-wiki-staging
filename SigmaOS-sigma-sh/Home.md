@@ -86,6 +86,14 @@ bug where `pipe()` returned two fds pointing at the same slot —
 the write end overwrote the read end. Multi-stage pipelines
 (`a | b | c`), >4KiB payloads through the 4KiB buffer, and
 launch→builtin drains are all verified in QEMU.
+New coreutils builtins (commit `d26a8e5`): `printf` (format specs +
+escapes), `test`/`[` (recursive-descent expression parser with
+`-e`/`-f`/`-d`/`-s`/`-n`/`-z`, string and integer comparisons, `!`,
+`-a`/`-o`, parens), `tr` (`-d`, `a-z` ranges), `cut` (`-d`/`-f`/`-c`,
+attached getopt forms, open ranges), `nl`, and `tee`. The parser
+now handles single quotes everywhere and splits pipelines/`;`/`&&`/
+`||` quote-aware, so `echo "a|b"` and `'quoted args'` behave like
+POSIX sh. 42 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
-to 16 bytes before calling Rust main. 36 lib tests.
+to 16 bytes before calling Rust main. 42 lib tests.
