@@ -1,49 +1,47 @@
 # SigmaOS Build System
 
-Reproducible build system for SigmaOS - containerized, deterministic builds.
+Reproducible build orchestration library — TOML `BuildManifest` →
+per-package builds → verification, Arch `PKGBUILD`-aware.
 
-## Overview
+## Capabilities
 
-SigmaOS Build System provides a reproducible build pipeline for creating SigmaOS ISO images and packages. Uses containerization and deterministic build practices to ensure consistent, verifiable artifacts.
+- `BuildManifest`: name/version/description + package list +
+  `BuildOptions` (parallel, clean, verbose, reproducible)
+- `BuildSystem::build()` — optional clean (`build/` + `target/` wipe),
+  builds each package via `PackageBuilder`, then runs
+  `BuildVerifier::verify_build`
+- `BuildVerifier` — manifest sanity (name/version non-empty),
+  per-package `packages/<name>/` + `PKGBUILD` presence, and
+  `build/<name>/` output checks; collects errors/warnings into
+  `VerificationResult { valid, errors, warnings }`
+- `verify_build_at(manifest, root)` — verify against an explicit root
+  for tests/chroots; `verify_build` defaults to `.`
+- `PackageBuilder` supports multiple `PackageFormat`s
 
-## Features
+## Structure
 
-- **Reproducible builds**: Bit-for-bit identical outputs
-- **Containerized**: Builds run in containers for isolation
-- **Multi-architecture**: Support for x86_64, aarch64, and more
-- **Parallel builds**: Parallel compilation for speed
-- **Caching**: Build cache for faster rebuilds
-- **Verification**: Automatic verification of build artifacts
-- **Signing**: Package signing for security
-- **Rolling release**: Continuous integration for packages
+- `src/builder.rs` - manifest, options, BuildSystem orchestration
+- `src/package.rs` - package build formats
+- `src/verifier.rs` - manifest/package/checksum verification
+- `src/main.rs` - thin CLI stub (library is the product)
 
-## Build Process
+## Build & Test
 
-```bash
-# Build ISO image
-sudo sigmaos-build iso
-
-# Build specific package
-sudo sigmaos-build package firefox
-
-# Build all packages
-sudo sigmaos-build all
-
-# Verify build artifacts
-sudo sigmaos-build verify
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
 ```
 
-## Architecture
+3 verifier unit tests (valid tree, missing package dir, empty name).
 
-The build system uses:
-- **Docker**: Containerized builds
-- **mkarchiso**: Arch Linux ISO creation
-- **pacman**: Package management
-- **make**: Build orchestration
-- **CI/CD**: Automated builds on GitHub
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-build-system)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
