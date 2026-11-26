@@ -323,3 +323,28 @@ kernel IPC primitives for pipelines and process control.
   artifacts, added `.gitignore` and Rust `AGENTS.md`; GitHub repo created
   and `main` pushed (`d598192`).
 - Wiki staging updated for initramfs/system-profile/sigma-bootloader.
+
+## Update — Rust verification sweep (2026-11-25)
+
+Ran `cargo fmt --check`, `cargo clippy -- -D warnings`, and `cargo test`
+across the implemented Rust component repos and pushed fixes.
+
+- Core/system repos verified clean: `xtask`, `sigma-sh`, `sigma-sys`,
+  `initramfs`, `sigma-bootloader`, `system-profile`, `shell-config`.
+- Clippy/fmt fixes pushed for: `config-system`, `build-system`,
+  `pkg-core`, `platform`, `update-system`, `rollback`,
+  `recovery-system`, `installer`, `speedtest`, `ports`, `dkms`,
+  `sec-audit`, `live-media`.
+- `cargo fmt` applied and pushed for the remaining Rust repos:
+  `app-env`, `betteroffice`, `bi-analytics`, `bigdata`, `browser`,
+  `craft`, `data-wrangling`, `dos`, `eda`, `email`, `genoffice`,
+  `iloveapi`, `ISO`, `ml-dl`, `notebooks`, `plugin-marketplace`,
+  `rdbms`, `rebuild`, `screensaver`, `security-hardening`, `shell`,
+  `sigma-kernel`, `site`, `skills`, `ttfx`, `ui`, `video`, `wiki-hub`,
+  `zfs-integration`.
+- `SigmaOS-notifications` remains archived (stub superseded by
+  `notification-center`); skipped in the fmt sweep.
+- `SigmaOS-theme-registry` still has two uncommitted theme JSONs
+  (`osaka-jade`, `synthwave84`) left for owner review per repo rules.
+
+All non-archived local repos are clean and synced with `origin`.
