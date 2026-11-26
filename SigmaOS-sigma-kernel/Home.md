@@ -190,7 +190,10 @@ mapping — `mkdir`, `rmdir`, `rm`, `touch`, `cp`/`mv` all verified in
 QEMU (commit `aac1a95`). STAT (nr 4) now returns real metadata —
 {u64 mode, u64 size} with Linux-ish mode bits — powering `ls -l`
 (commit `5326ddf`). CHDIR/GETCWD (nr 34/35) give each ProcSlot a
-cwd that children inherit at SPAWN (commit `0190476`). PS/2 keyboard input
+cwd that children inherit at SPAWN (commit `0190476`). Reap now
+frees user data frames via `free_user_frames` (P_USER leaves only)
+before releasing page tables, and NPROCS grew to 8 so multiple
+children run concurrently (commit `1c8a4cb`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 87 lib tests green.
