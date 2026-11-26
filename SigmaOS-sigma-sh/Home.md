@@ -93,7 +93,9 @@ escapes), `test`/`[` (recursive-descent expression parser with
 attached getopt forms, open ranges), `nl`, and `tee`. The parser
 now handles single quotes everywhere and splits pipelines/`;`/`&&`/
 `||` quote-aware, so `echo "a|b"` and `'quoted args'` behave like
-POSIX sh. 42 lib tests.
+POSIX sh. Expansion is quote-aware (commit `6218679`): single quotes
+suppress `$` and globbing, double quotes suppress globbing only —
+`echo /c*` globs while `'/c*'`/`"/c*"` print literally. 43 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
-to 16 bytes before calling Rust main. 42 lib tests.
+to 16 bytes before calling Rust main. 43 lib tests.
