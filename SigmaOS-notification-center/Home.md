@@ -1,27 +1,26 @@
 # SigmaOS Notification Center
 
-Notification center plugin for Quickshell, providing a unified interface for managing desktop notifications.
+Bar widget for reviewing notifications handled by SigmaOS's built-in notification service.
 
 ## Overview
 
-The SigmaOS Notification Center is a Quickshell plugin that displays and manages desktop notifications in a unified interface. It provides urgency levels, action buttons, and notification history.
+`SigmaOS-notification-center` is an optional Quickshell bar widget forked from the Omarchy notification-center plugin. It adds a popup for browsing notifications; the daemon, toast popups, history storage, DND state, and the standard DND indicator remain part of SigmaOS itself.
 
 ## Features
 
-- **Unified interface**: All notifications in one place
-- **Urgency levels**: Low, normal, critical notification priorities
-- **Action buttons**: Interactive notification actions
-- **Notification history**: View past notifications
-- **Quickshell integration**: Native Quickshell plugin
-- **Theme support**: Follows SigmaOS theme
+- **Pending tab** — unseen notifications.
+- **Recently tab** — notifications already shown.
+- **Per-notification dismissal** and **Mark All as Seen** / **Clear Recent** actions.
+- **Do Not Disturb toggle** in the bar popup.
 
 ## Usage
 
-The notification center integrates with the SigmaOS desktop shell via Quickshell. Notifications appear in the center panel and can be dismissed or acted upon.
+```bash
+omarchy plugin add https://github.com/SigmaOS-io/sigmaos-notification-center-plugin.git --enable
+omarchy bar plugin move SigmaOS.notification-center --section right
+```
 
-## Integration
-
-Works with SigmaOS notification daemon (SigmaOS-notifications) and libnotify for standard notification support.
+After changing plugin files: `omarchy plugin rescan` then `omarchy restart shell`.
 
 ## Links
 

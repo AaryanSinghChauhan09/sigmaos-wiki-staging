@@ -1,50 +1,16 @@
-# SigmaOS Notifications
+# SigmaOS Notifications (Archived)
 
-Unified notification daemon with urgency levels and action support for SigmaOS.
+> **Archived.** This scaffold repository is superseded and archived on GitHub.
 
-## Overview
+`SigmaOS-notifications` was a placeholder for a unified notification daemon, but it never grew beyond a stub (`src/lib.rs` + `docs/SPEC.md`). SigmaOS's notification surface is covered by:
 
-SigmaOS Notifications is a notification daemon that provides desktop notification capabilities following the freedesktop.org notification specification. It supports urgency levels, action buttons, and integrates with the SigmaOS desktop environment.
+- SigmaOS core — notification daemon, toast popups, history storage, and Do Not Disturb state.
+- [`SigmaOS-notification-center`](https://github.com/AaryanSinghChauhan09/SigmaOS-notification-center) — bar widget for browsing pending/recent notifications.
 
-## Features
-
-- **Unified daemon**: Single notification daemon for all applications
-- **Urgency levels**: Low, normal, critical notification priorities
-- **Action support**: Interactive notification buttons
-- **libnotify compatible**: Standard freedesktop.org notification API
-- **Theme integration**: Follows SigmaOS theme for notification appearance
-- **Sound support**: Notification sounds with optional mute
-
-## Usage
-
-Applications send notifications using libnotify or the D-Bus notification API:
-
-```bash
-notify-send "Title" "Message"
-```
-
-## Integration
-
-Works with:
-- SigmaOS Notification Center (Quickshell plugin)
-- Desktop applications (libnotify-based)
-- System services (systemd timers, etc.)
-
-## Build & Test
-
-```sh
-cargo build
-cargo test
-cargo clippy -- -D warnings
-cargo fmt --check
-```
-
-## License
-
-GPL-3.0-or-later
+If a standalone daemon is needed later, recreate it as a real component rather than reviving this scaffold.
 
 ## Links
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-notifications)
+- [Archived repository](https://github.com/AaryanSinghChauhan09/SigmaOS-notifications)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
