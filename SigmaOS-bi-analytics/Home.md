@@ -1,33 +1,16 @@
 # SigmaOS BI Analytics
 
-Business intelligence and analytics platforms for SigmaOS - Apache Superset, Metabase, Redash, Grafana, Lightdash, and PostHog integration.
+Business-intelligence metrics and dashboards for SigmaOS — define metrics over JSON record datasets, compute aggregations, and render dashboards. Safe Rust, serde-based.
 
-## Overview
+## Capabilities
 
-SigmaOS BI Analytics provides a suite of business intelligence and analytics tools for data visualization, dashboards, and analytics on SigmaOS.
-
-## Features
-
-- **Apache Superset**: Open source BI and data visualization platform
-- **Metabase**: Open source business intelligence tool
-- **Redash**: Open source data visualization and dashboarding
-- **Grafana**: Open source analytics and monitoring platform
-- **Lightdash**: Open source BI platform with SQL editor
-- **PostHog**: Open source product analytics
-- **Data visualization**: Interactive charts and dashboards
-- **Real-time analytics**: Live data monitoring and analysis
-
-## Supported Tools
-
-- Apache Superset
-- Metabase
-- Redash
-- Grafana
-- Lightdash
-- PostHog
+- `Metric` definitions: field + aggregation (`count`/`sum`/`avg`/`min`/`max`), optional `group_by`, optional field/value filter
+- `compute()` returns `Scalar` or `Grouped` results; group keys are unquoted strings (commit `07ecb6b` fixed keys rendering as `"us"`)
+- `Dashboard`/`Widget` model with `save_dashboard`/`load_dashboard` JSON persistence and `render_widget` text output
+- CLI: `metric <dataset> <field> --agg --group-by`, `dashboard <file>`, `inspect <dataset>`
+- 5 unit tests covering aggregations, group-by, filters, error paths, and round-trips
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-bi-analytics)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
