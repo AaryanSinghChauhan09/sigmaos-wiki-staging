@@ -52,6 +52,9 @@ in QEMU (`launch /child` runs concurrently, `wait` reports exit status
 42, `ps` shows live process states). `launch` forwards the shell's
 exported variables as the child's envp — `export FOO=bar` then
 `launch /child` delivers `env0=FOO=bar` (commit `7c17c7d`).
+`SysFs::write_file` uses open/write/close against the writable VFS,
+so `>`/`>>` redirects, `touch`, `cp`/`mv` file writes all work
+in-guest (commit `266490e`).
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 30 lib tests.

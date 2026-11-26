@@ -180,7 +180,11 @@ initial stack — `launch /child foo bar` yields argc=3 in QEMU
 (commit `434f5ff`). The descriptor grew an envp section
 (`{argc, args..., envc, envs...}`) so children receive a real
 environment: `export FOO=bar` then `launch /child` prints
-`env0=FOO=bar` (commit `378edde`). PS/2 keyboard input
+`env0=FOO=bar` (commit `378edde`). The VFS is writable: `open(2)`
+honors O_CREAT/O_TRUNC/O_APPEND, WRITE reaches file fds, and
+`echo hi > /f` + `>>` append work in-guest (commit `3d31bbe`; also
+fixed a latent panic where `open`/`pipe` initialized fd slots through
+`fd_get`, which requires `used`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 82 lib tests green.
