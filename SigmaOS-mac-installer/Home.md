@@ -1,17 +1,24 @@
 # SigmaOS Mac Installer
 
-Installer for SigmaOS on macOS - provides automated installation and setup of SigmaOS components on macOS systems.
+A macOS app that installs [SigmaOS](https://github.com/AaryanSinghChauhan09/SigmaOS) on an Apple Silicon Mac, next to macOS. The app is named **SigmaOS Installer** (`org.sigmaos.installer`).
 
-## Overview
+## What it does
 
-SigmaOS Mac Installer automates the installation of SigmaOS components on macOS, providing a seamless setup experience for macOS users.
+- Inspects the Mac model, macOS version, power, FileVault state, and free disk space before asking for credentials.
+- Plans the partition layout and disk allocation, requires an explicit backup confirmation, installs through a privileged helper, and finishes setup in macOS Recovery.
+- Reads signed release catalogs and channels; released apps default to the `stable` channel offering SigmaOS 4.5.
 
-## Features
+## Supported Macs
 
-- **Automated installation**: Installs SigmaOS components automatically
-- **Dependency management**: Handles required dependencies
-- **Configuration**: Sets up proper configuration files
-- **Verification**: Checks system compatibility before installation
+Support is decided by each release's signed catalog (`scripts/supported-models.json`), not by the app alone. Covered families include M1, M2, and M3 boards plus MacBook Neo. M3 Ultra and M4-and-later boards stay fail-closed until officially supported and physically qualified.
+
+## Install
+
+```sh
+brew install SigmaOS/mac/omarchy
+```
+
+Or download `SigmaOS-Mac-Installer-<version>.dmg` plus its `.sha256` from the [releases page](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer/releases), verify the digest, and move the app to `/Applications`.
 
 ## Links
 

@@ -1,20 +1,13 @@
 # SigmaOS Mac VM
 
-Try SigmaOS is a Mac app that runs stock SigmaOS in a fast virtual machine deeply integrated with macOS. Use it as your daily driver, or give SigmaOS a try and migrate to a native install. Integrations include Apple's universal clipboard, AirPods, Touch ID, the Retina display, Super shortcuts, Mac clipboard, audio, camera, battery, and a shared folder. The official SigmaOS Mac image is used, so it behaves and...
+Runs stock SigmaOS in a fast virtual machine on an Apple Silicon Mac, bridged to macOS so it can be used as a daily driver or as a low-commitment way to try SigmaOS before a native install.
 
 ## Capabilities
 
-- Component implementation lives in `SigmaOS-mac-vm`
-- Canonical branch: `main`
-- See the repository README for usage, screenshots, and component-specific details
-
-## Interconnectivity
-
-| Repo | Relationship |
-|------|-------------|
-| `Sigma` | Main SigmaOS release and integration surface |
-| `SigmaOS-ISO` | Bootable ISO / desktop image |
-| `SigmaOS-config-system` | Shared declarative configuration patterns |
+- Guest is stock SigmaOS; the repo holds the Mac-side app, VM runtime, and the single `sigmaos-mac-vm` guest package — no SigmaOS files are modified.
+- macOS integrations include universal clipboard, AirPods, Touch ID, Retina display, Super shortcuts, clipboard, audio, camera, battery, and a shared folder.
+- Package upgrades must work offline; the guest is treated as untrusted and everything the Mac side receives from it is validated.
+- Canonical branch: `main`. See the repository README, `manual/`, and `docs/architecture.md` for usage and design.
 
 ## Links
 

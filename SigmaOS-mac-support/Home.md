@@ -1,23 +1,16 @@
-# SigmaOS Mac Support
+# SigmaOS Mac Support (Archived)
 
-macOS support tools for SigmaOS - compatibility layer and helpers for running SigmaOS tools on macOS.
+> **Archived.** This repository is superseded and archived on GitHub. Use the focused Mac repositories below.
 
-## Overview
+This repo previously tracked generic macOS compatibility helpers. The Mac support surface is now split into dedicated components:
 
-SigmaOS Mac Support provides compatibility tools and helpers for running SigmaOS components and tools on macOS systems.
-
-## Features
-
-- **Compatibility layer**: Run SigmaOS tools on macOS
-- **Package management**: macOS package management integration
-- **Shell configuration**: macOS shell configuration
-- **Hardware support**: macOS hardware integration
-- **Cross-platform**: Maintain compatibility across platforms
-- **Testing**: Test SigmaOS components on macOS
-- **Documentation**: macOS-specific documentation
+- [`SigmaOS-mac-installer`](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer) — macOS app that installs SigmaOS on Apple Silicon next to macOS.
+- [`SigmaOS-mac-pkgs`](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-pkgs) — Apple Silicon add-on packages, release/qualification tooling, and the Mac manual.
+- [`SigmaOS-mac-vm`](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-vm) — runs stock SigmaOS in a VM on Apple Silicon Macs with macOS integration.
+- [`SigmaOS-maclab`](https://github.com/AaryanSinghChauhan09/SigmaOS-maclab) — hardware test lab for SigmaOS on real Apple Silicon Macs.
 
 ## Links
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-support)
+- [Archived repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-support)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
