@@ -27,8 +27,9 @@ searches file contents (substring match) with `-i` `-v` `-n` `-c`.
 `sort [-r]`, `uniq`, and recursive `find [dir]` round out the text
 and filesystem tools. `basename`, `dirname`, and `seq` cover path
 manipulation and number sequences. `env [NAME]` reads variables and
-`sleep <secs>` pauses via `System::sleep`. `kill [-9] <pid>` terminates a
-process via `System::kill` (host shells out to `kill`). Failing builtins
+`sleep <secs>` pauses via `System::sleep`. `kill [-SIG] <pid>` sends a
+signal via `System::kill(pid, sig)` — `-9`/`-KILL`/`-SIGKILL` select the
+signal (default SIGTERM; host runs `kill -s <sig> <pid>`). Failing builtins
 (`cd`, `ls`, `cat`, `which`, `env` misses, `kill` misses, `false`, unknown
 commands) set the status used by `&&`/`||`. `cmd1 | cmd2` pipes stdout of
 each stage into the next stage's stdin — `cat`, `head`/`tail`, `wc`,
