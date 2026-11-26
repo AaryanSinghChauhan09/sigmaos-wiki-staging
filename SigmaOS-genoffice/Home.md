@@ -1,32 +1,38 @@
 # SigmaOS GenOffice
 
-General office suite for SigmaOS - Docs, HTML, Markdown, PDF, Sheet, and Slides.
+Offline-capable document suite integration layer for SigmaOS —
+a document model covering ODF, OOXML, PDF, Markdown, HTML, CSV/TSV,
+and SVG, plus an app registry for the suite's components.
 
-## Overview
+## Capabilities
 
-SigmaOS GenOffice provides a general-purpose office suite for document creation, editing, and management on SigmaOS.
+- `DocumentFormat` — Odf, Ooxml, Pdf, Markdown, Html, Csv, Svg with
+  `mime_type()` mapping
+- `DocumentFormat::from_extension` / `from_path` — format detection
+  from file extensions (case-insensitive; `odt/ods/odp` → Odf,
+  `docx/xlsx/pptx` → Ooxml, etc.)
+- `GenOfficeDocument` — path, format, title, `offline_ready` flag for
+  documents verified to work without network access
+- `GenOfficeSuite` — registry of suite app names (`register_app`,
+  `has_app`, `apps`)
 
-## Features
+## Build & Test
 
-- **Docs**: Document creation and editing
-- **HTML**: HTML document tools
-- **Markdown**: Markdown editing and preview
-- **PDF**: PDF creation and manipulation
-- **Sheet**: Spreadsheet applications
-- **Slides**: Presentation software
-- **Format conversion**: Support for converting between document formats
+```sh
+cargo build
+cargo test
+cargo clippy --all-targets -- -D warnings
+cargo fmt --check
+```
 
-## Components
+6 tests covering mime types, format detection, and suite registry.
 
-- Docs: Document editor
-- HTML: HTML tools
-- Markdown: Markdown editor
-- PDF: PDF tools
-- Sheet: Spreadsheet
-- Slides: Presentation tool
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-genoffice)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
