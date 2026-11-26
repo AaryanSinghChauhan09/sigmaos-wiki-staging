@@ -95,7 +95,12 @@ now handles single quotes everywhere and splits pipelines/`;`/`&&`/
 `||` quote-aware, so `echo "a|b"` and `'quoted args'` behave like
 POSIX sh. Expansion is quote-aware (commit `6218679`): single quotes
 suppress `$` and globbing, double quotes suppress globbing only —
-`echo /c*` globs while `'/c*'`/`"/c*"` print literally. 43 lib tests.
+`echo /c*` globs while `'/c*'`/`"/c*"` print literally.
+Commit `5c8c531` adds `xargs` (`-I STR` replacement, `-n N` grouping)
+and `paste` (`-d` delimiter, multi-file/stdin column join), and fixes
+`printf` bypassing pipeline capture and `>` redirection (it wrote via
+`io.write` directly) — `printf ... | cmd` and `printf ... > file` now
+behave like POSIX. 47 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
