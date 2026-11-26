@@ -71,6 +71,19 @@ arg (commits `9bd90f0`/`f53384f`/`62b849a`), verified in QEMU with
 the sigma-child `stderr` marker arg. `&>`/`&>>` (incl. inline
 `&>file`) redirects both streams; launch shares one fd so stdout and
 stderr interleave in the file (commit `baa2625`).
+`cmd1 | cmd2` pipelines now use real kernel pipes when a `launch`
+stage is involved (commit `eb4381a`): the producer's stdout_fd and
+the consumer's stdin_fd point at opposite ends of a `pipe()` pair,
+the shell closes its copies after spawning, and blocking pipe
+read/write in the kernel (commit `9522487`) handles empty/full
+sleeps, EOF on last-writer close, and EPIPE on last-reader close.
+Builtin→launch feeds captured text through a deferred pipe write;
+launch→builtin drains the pipe to stdin. Verified in QEMU:
+`echo pipe-data | launch /child pipe` echoes then EOF, and
+`launch /child gen | launch /child pipe > /p.txt` streams the
+producer's output through the pipe. This also fixed a latent kernel
+bug where `pipe()` returned two fds pointing at the same slot —
+the write end overwrote the read end.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
-to 16 bytes before calling Rust main. 34 lib tests.
+to 16 bytes before calling Rust main. 36 lib tests.

@@ -202,7 +202,18 @@ per-process stdout_fd that reroutes fd 1/2 writes — `launch > file`
 works (commit `8d4fe00`). SPAWN arg5 sets stdin_fd symmetrically —
 `launch prog < in` feeds child fd 0 (commit `f56cc10`). SPAWN arg6
 sets stderr_fd, routing fd 2 alone — `launch prog 2> file` works
-(commit `9bd90f0`). PS/2 keyboard input
+(commit `9bd90f0`). Pipe I/O is now genuinely blocking (commit
+`9522487`): readers sleep while the pipe is empty with writers
+alive, writers sleep while full, and `wake_pipe_waiters` resumes
+them with EAGAIN so userspace retries — EOF when the last write
+end closes, EPIPE when the last read end closes, and close()/exit()
+wake both directions. SPAWN accepts pipe fds for all three redirect
+args and close-on-spawns any pipe end not referenced by a redirect
+(the fork/dup2 pipeline plumbing). This surfaced and fixed a latent
+`sys_pipe` bug: both `fd_alloc` calls ran before either slot was
+marked used, so they returned the same slot and the write end
+overwrote the read end — `pipe()` never actually produced two fds.
+PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 87 lib tests green.
