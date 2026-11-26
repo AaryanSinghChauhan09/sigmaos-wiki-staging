@@ -15,10 +15,12 @@ shell environment, and `$NAME` / `${NAME}` expand in command args.
 known builtin that didn't hit "command not found". `cmd1 || cmd2`
 runs the second command only when the first fails. `*` globs expand in
 arguments against the filesystem (`echo /*`, `cat /boot/vmlinuz*`);
-unmatched patterns pass through unchanged.
+unmatched patterns pass through unchanged. `true`/`:`/`false`/`clear`
+are builtins (`false` fails for `&&`/`||`), and `launch` resolves bare
+program names through the PATH dirs.
 `src/bin/sigma-sh.rs`
 is the std host frontend; SigmaOS-native `sigma-init` (`/init`) and
 `sigma-child` are built with the `sigmaos-target` feature for
 x86_64-unknown-none and packed by `SigmaOS-xtask` (the host `sigma-sh`
 binary is not packed). The `no_std` utility bins are gated behind
-`sigmaos-target`. 16 lib tests.
+`sigmaos-target`. 18 lib tests.
