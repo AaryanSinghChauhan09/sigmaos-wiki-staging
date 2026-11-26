@@ -24,9 +24,11 @@ through the redirect-aware `emit` path. `mkdir`, `rmdir`, `rm`, and
 `write_file`. `cp`/`mv` copy via read+write (`mv` removes the source),
 and `head -n N`, `tail -n N`, `wc` work on file contents. `grep`
 searches file contents (substring match) with `-i` `-v` `-n` `-c`.
+`sort [-r]`, `uniq`, and recursive `find [dir]` round out the text
+and filesystem tools.
 `src/bin/sigma-sh.rs`
 is the std host frontend; SigmaOS-native `sigma-init` (`/init`) and
 `sigma-child` are built with the `sigmaos-target` feature for
 x86_64-unknown-none and packed by `SigmaOS-xtask` (the host `sigma-sh`
 binary is not packed). The `no_std` utility bins are gated behind
-`sigmaos-target`. 22 lib tests.
+`sigmaos-target`. 23 lib tests.
