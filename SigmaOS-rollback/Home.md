@@ -1,62 +1,61 @@
 # SigmaOS Rollback
 
-System rollback utility for SigmaOS: BTRFS snapshot management, pre-update snapshots, restore on failure.
+Pacman-style transaction journal: records the changes each transaction
+made and plans the inverse steps needed to undo the most recent one.
 
-## Overview
+## Capabilities
 
-SigmaOS Rollback provides automatic BTRFS snapshot management for safe system updates and recovery. It creates snapshots before and after pacman transactions, allowing easy rollback if something goes wrong.
+- `RollbackManager::record(id, steps)` — journals a completed
+  transaction; duplicate ids rejected, bounded capacity evicts oldest
+- `Step { action, target }` — `Action::Install`, `Action::Remove`, or
+  `Action::Modify { backup }` (backup = path to the pre-change copy)
+- `rollback_last()` — returns `Vec<InverseStep>` for the most recent
+  non-rolled-back transaction, in reverse order (Install→Remove,
+  Remove→Install, Modify→restore-from-backup)
+- `mark_rolled_back(id)` — flag a transaction undone when the rollback
+  was performed by an external tool (e.g. the package manager itself)
+- `next_id()` — `txn-N` id generator
+- `history()` / `len()` / `is_empty()` — journal inspection
 
-## Features
-
-- **Automatic snapshots**: Pre- and post-transaction snapshots via pacman hooks
-- **Easy rollback**: Simple command to restore previous system state
-- **BTRFS integration**: Native BTRFS subvolume and snapshot support
-- **Space-efficient**: Uses BTRFS snapshot deduplication
-- **Safety first**: Dry-run mode and confirmation prompts
+The manager plans; the caller executes the inverse steps — keeping the
+crate free of filesystem and package-manager coupling.
 
 ## Usage
 
-List available snapshots:
-```bash
-sigmaos-snapshot list
+```rust
+use rollback::{Action, RollbackManager, Step};
+
+let mut m = RollbackManager::new(16);
+let id = m.next_id();
+m.record(id.clone(), vec![
+    Step { action: Action::Install, target: "firefox".into() },
+    Step { action: Action::Modify { backup: "/var/backups/hosts".into() },
+           target: "/etc/hosts".into() },
+])?;
+
+for step in m.rollback_last()? {
+    // execute the inverse: remove firefox, restore /etc/hosts
+}
 ```
-
-Rollback to a previous snapshot:
-```bash
-sigmaos-snapshot rollback <snapshot-name>
-```
-
-Create a manual snapshot:
-```bash
-sigmaos-snapshot create <name>
-```
-
-Delete a snapshot:
-```bash
-sigmaos-snapshot delete <snapshot-name>
-```
-
-## Integration
-
-SigmaOS Rollback integrates with pacman through hooks:
-- `pre_transaction`: Creates snapshot before package changes
-- `post_transaction`: Creates snapshot after successful changes
 
 ## Build & Test
 
 ```sh
 cargo build
 cargo test
-cargo clippy -- -D warnings
+cargo clippy --all-targets -- -D warnings
 cargo fmt --check
 ```
 
+9 tests covering step inversion order, rolled-back skipping, capacity
+eviction, and duplicate-id rejection.
+
 ## License
 
-GPL-3.0-or-later
+Apache-2.0
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-rollback)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
