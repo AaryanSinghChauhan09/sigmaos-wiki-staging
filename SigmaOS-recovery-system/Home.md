@@ -1,52 +1,52 @@
 # SigmaOS Recovery System
 
-System recovery and rollback system for SigmaOS - BTRFS snapshots and recovery tools.
+File-based system snapshots with selective restore — backs up system
+config, user data, and package lists into per-snapshot directories
+under the XDG data dir.
 
-## Overview
+## Capabilities
 
-SigmaOS Recovery System provides automatic BTRFS snapshots, system rollback, and recovery tools. Ensures system reliability and quick recovery from failures.
-
-## Features
-
-- **BTRFS snapshots**: Automatic snapshots before updates
-- **Rollback**: Rollback to previous snapshots
-- **Boot recovery**: Recovery from boot failures
-- **File recovery**: Recover deleted files
-- **System repair**: Automated system repair
-- **Backup integration**: Integration with backup tools
-- **Snapshot management**: Manage and clean up snapshots
-- **Emergency mode**: Emergency recovery mode
+- `RecoveryManager::create_snapshot` — writes `metadata.json`
+  (id/name/description/timestamps/flags) plus payload backups:
+  `backup_system_config` always, `backup_user_data` and
+  `backup_package_list` when requested
+- `list_snapshots` / `get_snapshot_info` — metadata-driven listing,
+  newest first
+- `restore_snapshot` — restores config/user-data/packages selectively
+  per snapshot flags; takes an automatic `pre-restore` snapshot unless
+  `force`
+- `delete_snapshot` — `--force` removes, otherwise moves to trash
+- `RestoreManager::verify_snapshot` — validates a snapshot dir
+  (parseable `metadata.json`, id matches dir name, has payload files)
+- `RestoreManager::restore` intentionally errors — destructive restore
+  must go through `restore_snapshot` for the safety backup
+- `get_status` — snapshot count, total size, last snapshot time
 
 ## Commands
 
 ```bash
-# Create snapshot
-sudo sigmaos-recovery snapshot create
-
-# List snapshots
-sudo sigmaos-recovery snapshot list
-
-# Rollback to snapshot
-sudo sigmaos-recovery rollback <snapshot-id>
-
-# Restore files
-sudo sigmaos-recovery restore <path>
-
-# System repair
-sudo sigmaos-recovery repair
+sigmaos-recovery snapshot <name> [-d DESC] [-u] [-p]
+sigmaos-recovery list [-v]
+sigmaos-recovery restore <name|id> [--dry-run] [--force]
+sigmaos-recovery delete <name|id> [--force]
+sigmaos-recovery status [-v]
 ```
 
-## Configuration
+## Build & Test
 
-Edit `/etc/sigmaos/recovery.conf` for configuration:
-
-```ini
-[recovery]
-automatic_snapshots = true
-snapshot_frequency = daily
-keep_snapshots = 7
-rollback_enabled = true
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
 ```
+
+3 `RestoreManager` tests (valid snapshot, rejection cases, loud
+restore failure).
+
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
