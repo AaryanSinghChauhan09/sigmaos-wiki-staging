@@ -105,7 +105,14 @@ stdout's redirect target — shares the fd with `> out`, flows into
 pipes via the kernel stderr->stdout fallback). Commit `0a04fc5`
 adds `od` (hex+ASCII / `-c` char dump), `fold -w`, and
 `expand`/`unexpand -t` tab/space conversion — all reading file or
-piped stdin via a shared `input_bytes` helper. 51 lib tests.
+piped stdin via a shared `input_bytes` helper.
+Commit `1c1d131` adds POSIX command substitution `$(...)`: the inner
+line runs through the full executor (pipelines, `;` lists) and its
+stdout is substituted with trailing newlines stripped. The tokenizer
+and all metachar splitters are now paren-aware so `$(echo a; echo b)`
+doesn't split, and pipelines preserve an outer capture so
+`"$(echo x | cat)"` yields `x`. Single quotes still suppress it.
+52 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
