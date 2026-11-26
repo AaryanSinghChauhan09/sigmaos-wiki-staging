@@ -200,7 +200,9 @@ a Linux-style auxv — AT_PAGESZ/ENTRY/UID/EUID/GID/EGID/SECURE/RANDOM
 + AT_NULL — after envp (commit `22118c7`). SPAWN arg4 sets a
 per-process stdout_fd that reroutes fd 1/2 writes — `launch > file`
 works (commit `8d4fe00`). SPAWN arg5 sets stdin_fd symmetrically —
-`launch prog < in` feeds child fd 0 (commit `f56cc10`). PS/2 keyboard input
+`launch prog < in` feeds child fd 0 (commit `f56cc10`). SPAWN arg6
+sets stderr_fd, routing fd 2 alone — `launch prog 2> file` works
+(commit `9bd90f0`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 87 lib tests green.

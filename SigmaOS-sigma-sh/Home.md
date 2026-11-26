@@ -65,7 +65,10 @@ CHDIR so spawned children inherit it (commit `f5892d4`). A trailing
 `launch prog > file` / `>> file` redirects the child's stdout/stderr
 into the file via the SPAWN stdout_fd arg (commit `9ed41ae`).
 `launch prog < in` feeds the child's stdin via stdin_fd (commit
-`069d539`).
+`069d539`). `launch prog 2> file` / `2>> file` (including inline
+`2>file`) routes the child's stderr alone via the stderr_fd SPAWN
+arg (commits `9bd90f0`/`f53384f`/`62b849a`), verified in QEMU with
+the sigma-child `stderr` marker arg.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 32 lib tests.
