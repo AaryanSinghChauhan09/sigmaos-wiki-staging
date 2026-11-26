@@ -39,8 +39,13 @@ so `seq 3 | grep 2` and `cat /var/log/x | wc` work like a real shell.
 `wc < file`), overriding any piped input for that command. `uname`
 prints the OS name via `System::uname` (host reports `std::env::consts::OS`).
 `src/bin/sigma-sh.rs`
-is the std host frontend; SigmaOS-native `sigma-init` (`/init`) and
-`sigma-child` are built with the `sigmaos-target` feature for
+is the std host frontend; SigmaOS-native `sigma-init` (`/init`),
+`sigma-child`, and `sh` are built with the `sigmaos-target` feature for
 x86_64-unknown-none and packed by `SigmaOS-xtask` (the host `sigma-sh`
 binary is not packed). The `no_std` utility bins are gated behind
-`sigmaos-target`. 29 lib tests.
+`sigmaos-target`. `sh` (`/sh`) is a bare-metal interactive shell: it
+wires the Shell engine to console fd 0/1 and the initramfs VFS, and
+boots to an interactive `sigma>` prompt after `/init` spawns it.
+All three user binaries link non-PIE at image base 0x600000
+(`.cargo/config.toml`) and use naked `_start` stubs that align RSP
+to 16 bytes before calling Rust main. 29 lib tests.

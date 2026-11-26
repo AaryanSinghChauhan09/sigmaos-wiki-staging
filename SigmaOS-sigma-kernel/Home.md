@@ -147,14 +147,26 @@ mode** (cs RPL==3) now context-switch:
 progress ticks interleave; child exits 42, `wait status=42`, prompt
 returns. The code logic is correct.
 
-**Toolchain regression** (Rust 1.99.0+): the kernel bin fails to build with
-"unwinding panics are not supported without std" despite adding
-`-C panic=abort` to rustflags. Tested across Rust 1.96.1/1.97.1/1.99.1
-with the same error; the lib builds fine. The preemptive scheduling code
-at `6caf877` was verified working in QEMU before this regression hit.
-Fixing may require nightly `-Zbuild-std` or investigation of the core
-library precompilation. The implementation is sound; this is an
-environmental issue.
+**Ring-3 crash fixes** (commit `64297b3`, verified in QEMU): three bugs
+kept user binaries faulting —
+
+- `mm::FrameAllocator::alloc_contiguous` only guaranteed contiguous
+  frame *indices*; across `MemRegion` boundaries physical addresses
+  jump, so `phys + i*4096` produced phantom mappings. User stacks
+  landed partly in the ISA hole `0xa0000-0xfffff` (reads `0xff`,
+  writes dropped) -> `ret` popped `-1` -> #PF at `RIP=-1`. Now requires
+  physical contiguity (regression test added).
+- `usermem::alloc_table` never zeroed table pages; dirty frames gave
+  garbage PTEs -> reserved-bit #PF. Pages are memset via `PhysMem`.
+- User images at vaddr `0x200000` overlapped the kernel image
+  (`0x100000-0x5333b0`). All images now bias to `USER_LOAD_BASE`
+  (`0x600000`); `kernel_image_end()` reserves the full kernel span
+  including `.bss`, the ISA hole is reserved, and user stacks are
+  zeroed on spawn/boot.
+
+**Verified in QEMU**: `/init` boots, spawns `/child` (prints pid,
+exits 42, `wait status=42`), then spawns `/sh` — the bare-metal
+interactive shell reaches a live `sigma>` prompt. 82 lib tests green.
 
 **Next gaps** (once build is restored):
 - **Blocking WAIT** (sleep/wake queue) — implemented but not pushed:
