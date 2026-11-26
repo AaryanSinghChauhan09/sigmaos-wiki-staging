@@ -5,7 +5,11 @@ Shared user dotfiles and shell configs for SigmaOS: starship, tmux, git, mise, s
 ## Capabilities
 
 - Component implementation lives in `SigmaOS-dots`
-- Canonical branch: `main`
+- `install.sh` copies `config/` to `~/.config` and `bin/` to
+  `~/.local/bin`, then writes shell rc files for zsh/bash (fish uses
+  the installed `~/.config/fish`). LazyVim is **opt-in** via
+  `--with-lazyvim` — it is no longer cloned (or `~/.config/nvim`
+  removed) on a plain install (commit `67b4e4b`).
 - See the repository README for usage, screenshots, and component-specific details
 
 ## Interconnectivity
