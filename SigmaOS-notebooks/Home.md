@@ -1,30 +1,15 @@
 # SigmaOS Notebooks
 
-Jupyter Notebook and experimentation tools for SigmaOS - Jupyter Notebook, JupyterLab, Google Colab, and KNIME integration.
+Dependency-free `.ipynb` (Jupyter notebook) parser and inspector for SigmaOS — parses notebook JSON with a minimal hand-rolled JSON parser (no serde), extracts cells, and reports statistics.
 
-## Overview
+## Capabilities
 
-SigmaOS Notebooks provides tools for interactive computing, data exploration, and experimentation using Jupyter Notebooks and related tools.
-
-## Features
-
-- **Jupyter Notebook**: Interactive notebook environment
-- **JupyterLab**: Next-generation notebook interface
-- **Google Colab**: Cloud notebook integration
-- **KNIME**: Visual workflow for data science
-- **Multiple kernels**: Support for Python, R, Julia, and more
-- **Visualization**: Rich visualization support
-- **Collaboration**: Share and collaborate on notebooks
-
-## Supported Tools
-
-- Jupyter Notebook
-- JupyterLab
-- Google Colab
-- KNIME
+- `parse_notebook()` parses nbformat JSON into typed cells (`code`, `markdown`, `raw`) with execution counts
+- `Notebook::counts()`, `line_count()`, `code_source()`, and `source_of(CellType)` for export/lint
+- CLI `sigmaos-notebooks <file.ipynb> [--code|--markdown|--stats]` — default prints cell counts and line totals; `--code`/`--markdown` dump concatenated cell sources (commit `2053532`)
+- `#![forbid(unsafe_code)]`, 4 unit tests covering parsing, cell separation, and escape/unicode handling
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-notebooks)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
