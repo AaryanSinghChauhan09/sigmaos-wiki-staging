@@ -173,7 +173,11 @@ errors print correctly (commit `0e3c736`). A `MEMINFO` syscall (nr 29)
 reports frame-allocator totals to guests, so `/sh`'s `mem` builtin shows
 real usage (commit `3d45180`). `PROCINFO` (nr 30) exposes the process
 table — pid, exited/sleeping/reaped flags, exit code — powering `/sh`'s
-`ps` builtin (commit `e0813d9`). PS/2 keyboard input
+`ps` builtin (commit `e0813d9`). SPAWN now delivers a real argv:
+the third arg points at a `{argc,{ptr,len}}` descriptor, and the
+kernel builds the standard `{argc, argv[], NULL, envp NULL, strings}`
+initial stack — `launch /child foo bar` yields argc=3 in QEMU
+(commit `434f5ff`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 82 lib tests green.
