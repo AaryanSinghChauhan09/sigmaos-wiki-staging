@@ -169,7 +169,9 @@ exits 42, `wait status=42`), then spawns `/sh` — the bare-metal
 interactive shell reaches a live `sigma>` prompt. **Console input
 works end-to-end**: fd0 reads the 16550 serial RX FIFO, so typed
 commands echo, `help`/`ls`/builtins execute, and `command not found`
-errors print correctly (commit `0e3c736`). PS/2 keyboard input
+errors print correctly (commit `0e3c736`). A `MEMINFO` syscall (nr 29)
+reports frame-allocator totals to guests, so `/sh`'s `mem` builtin shows
+real usage (commit `3d45180`). PS/2 keyboard input
 also works: `Keyboard::attached` skips the i8042 init sequence that
 wedged under QEMU, and `sendkey` types commands into the live prompt
 (commit `0643701`). 82 lib tests green.
