@@ -60,7 +60,8 @@ MKDIR/UNLINK/RMDIR syscalls, so `mkdir`, `rmdir`, `rm` work too
 STAT syscall (commit `b2d6c76`). `jobs`/`fg`/`bg` are real: launch
 records jobs, fg waits on a pid or `[n]` selector, jobs marks reaped
 entries done (commit `3289ff8`). `cd` syncs the kernel cwd via
-CHDIR so spawned children inherit it (commit `f5892d4`).
+CHDIR so spawned children inherit it (commit `f5892d4`). A trailing
+`&` is accepted as a background marker (commit `becf3e5`).
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
-to 16 bytes before calling Rust main. 31 lib tests.
+to 16 bytes before calling Rust main. 32 lib tests.
