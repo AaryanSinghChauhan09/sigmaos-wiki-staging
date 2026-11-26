@@ -1,30 +1,15 @@
 # SigmaOS RDBMS
 
-Relational Database Management System tools for SigmaOS - Apache, PostgreSQL, and database management integration.
+Database interoperability primitives for SigmaOS — SQL identifier quoting per dialect and libpq-style connection-string parsing/building. Safe Rust, no unsafe code.
 
-## Overview
+## Capabilities
 
-SigmaOS RDBMS provides tools for managing relational databases, including PostgreSQL, Apache databases, and database management interfaces.
-
-## Features
-
-- **PostgreSQL**: PostgreSQL database support
-- **Apache DB**: Apache database integration
-- **Metabase**: Database management and visualization
-- **Admin tools**: Database administration tools
-- **Backup/restore**: Database backup and recovery
-- **Query tools**: SQL query editors and analyzers
-- **Connection management**: Database connection pooling
-
-## Supported Databases
-
-- PostgreSQL
-- Apache DB
-- Metabase
-- Superset
+- `quote_ident`/`quote_qualified`: per-dialect quoting — Postgres/Standard `"..."`, MySQL `` `...` ``, SQL Server `[...]` — with correct embedded-delimiter escaping and NUL/empty rejection
+- `parse_conn_string`: libpq `key=value` pairs with single-quote values (`''` escape), `host`/`port`/`dbname`|`database`/`user`/`password` keys plus verbatim extras
+- `build_conn_string`: serializes `ConnParams` back to `key=value` form
+- 7 unit tests covering dialects, escapes, aliases, and round-trips (commit `c5ad6f2`)
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-rdbms)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
