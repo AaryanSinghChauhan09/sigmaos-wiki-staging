@@ -1,31 +1,44 @@
 # SigmaOS Platform
 
-Cross-platform GUI framework integration for SigmaOS - support for multiple GUI frameworks and platforms.
+Hardware and platform capability detection — reads `/proc`, `/sys`, and
+`os-release` to report what the machine can do. Pure safe reads, no
+`unsafe`.
 
-## Overview
+## Capabilities
 
-SigmaOS Platform provides integration and support for multiple cross-platform GUI frameworks, enabling application development across different platforms.
+- `detect()` → `PlatformInfo`: OS name/version, kernel release, arch,
+  CPU model + core count, total memory, session type (Wayland/X11),
+  init system (systemd/runit/sysvinit), hostname, uptime
+- `gpu_driver` — DRM driver of the first GPU under `/sys/class/drm`
+  (`amdgpu`, `i915`, `nouveau`, …), `None` when no GPU is present
+- `cpu_feature(name)` — checks `/proc/cpuinfo` flags (e.g. `avx2`)
+- `kernel_supported(release)` — SigmaOS targets kernel ≥ 6.1 LTS
+- `memory_human()` — GiB formatting
+- `--validate` — installer-style hardware check (≥2 GiB RAM, ≥2 cores,
+  `sse4_2`, graphical session, systemd, ≥20 GiB free, kernel ≥ 6.1)
+- `--cpu-feature NAME`, `--json` output
 
-## Features
+## Structure
 
-- **Framework support**: Integration with multiple GUI frameworks
-- **Cross-platform**: Build applications for multiple platforms
-- **Unified API**: Common API across different frameworks
-- **Theme integration**: SigmaOS theme support for all frameworks
-- **Package management**: Package and distribute applications
-- **Build tools**: Build and compilation tools
+- `src/lib.rs` - detection logic + tests
+- `src/main.rs` - CLI entry point
+- `COMPONENT.toml` - component manifest
+- `tools-sigmaos.sh` - interconnect helper
 
-## Supported Frameworks
+## Build & Test
 
-- Tauri
-- Electron
-- Flutter
-- Qt
-- GTK
-- Fyne
-- Avalonia
-- Wails
-- And many more
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+2 unit tests (kernel boundary checks, live `detect()`).
+
+## License
+
+GPL-3.0-or-later
 
 ## Links
 
