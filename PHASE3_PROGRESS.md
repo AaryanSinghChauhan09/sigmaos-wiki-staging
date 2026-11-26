@@ -392,3 +392,16 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
   collapsible_if). `cargo clippy --workspace -D warnings` clean.
 - Still blocked by missing host system libraries: `screensaver`
   (`xkbcommon`), `video` (`gbm` + `libavcodec`).
+
+## Update — screensaver verified, video blocked (2026-11-25)
+
+- **SigmaOS-screensaver** — `cargo clippy -D warnings` clean, fmt clean,
+  4 tests pass. The `xkbcommon` pkg-config probe was satisfied with a
+  local `~/.local/lib/pkgconfig/xkbcommon.pc` + `libxkbcommon.so`
+  symlink (runtime lib already present; no system changes).
+- **SigmaOS-video** — still blocked: `omareel_core`/`omareel_record`
+  build.rs compile C sources against FFmpeg (`libavcodec`, `libavformat`,
+  `libavfilter`, `libavutil`, `libswscale`) and `gbm` **headers**, which
+  are not installed on this host. Needs the `-dev` packages.
+- The repo-wide clippy/fmt/test sweep is now complete for every Rust
+  component except `SigmaOS-video`.
