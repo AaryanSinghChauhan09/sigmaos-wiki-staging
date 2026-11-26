@@ -13,10 +13,12 @@ lists the last 100 commands. `export NAME=value` / `unset NAME` manage a
 shell environment, and `$NAME` / `${NAME}` expand in command args.
 `cmd1 && cmd2` runs the second command only when the first is a
 known builtin that didn't hit "command not found". `cmd1 || cmd2`
-runs the second command only when the first fails.
+runs the second command only when the first fails. `*` globs expand in
+arguments against the filesystem (`echo /*`, `cat /boot/vmlinuz*`);
+unmatched patterns pass through unchanged.
 `src/bin/sigma-sh.rs`
 is the std host frontend; SigmaOS-native `sigma-init` (`/init`) and
 `sigma-child` are built with the `sigmaos-target` feature for
 x86_64-unknown-none and packed by `SigmaOS-xtask` (the host `sigma-sh`
 binary is not packed). The `no_std` utility bins are gated behind
-`sigmaos-target`. 15 lib tests.
+`sigmaos-target`. 16 lib tests.
