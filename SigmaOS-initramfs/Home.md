@@ -12,6 +12,8 @@ mkinitcpio-style hook pipeline for kernel modules, binaries, and files.
 - JSON build plan for `sigmaos-rebuild` to execute
 - `--dry-run` / `--json` CLI output
 - `--rootfs <dir> --out <img>` packs a directory into a cpio `newc` image
+- `--compress gzip` (or `none`) compresses the packed image via flate2 —
+  the mkinitcpio/archiso default
 
 ## Interconnectivity
 
@@ -24,4 +26,4 @@ mkinitcpio-style hook pipeline for kernel modules, binaries, and files.
 ## Status
 
 Implemented and pushed to `SigmaOS-initramfs/main` (merged with the
-canonical cpio/pack history; 17 tests passing).
+canonical cpio/pack history; 19 tests passing).
