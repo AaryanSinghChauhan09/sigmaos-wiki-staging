@@ -64,6 +64,8 @@ CHDIR so spawned children inherit it (commit `f5892d4`). A trailing
 `&` is accepted as a background marker (commit `becf3e5`).
 `launch prog > file` / `>> file` redirects the child's stdout/stderr
 into the file via the SPAWN stdout_fd arg (commit `9ed41ae`).
+`launch prog < in` feeds the child's stdin via stdin_fd (commit
+`069d539`).
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 32 lib tests.
