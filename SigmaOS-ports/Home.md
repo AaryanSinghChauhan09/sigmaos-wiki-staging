@@ -1,20 +1,29 @@
 # SigmaOS Ports
 
-Ports system for SigmaOS - software porting and compilation framework for third-party applications.
+Ports tree database for SigmaOS — a categorized, dependency-aware
+registry of buildable software entries, inspired by BSD ports.
 
 ## Overview
 
-SigmaOS Ports provides a ports system for building and installing third-party software from source, similar to BSD ports systems.
+`SigmaOS-ports` is a Rust library + CLI (`sigmaos-ports`) that manages
+a ports collection: each `Port` has a name, category, version,
+description, dependency list, license, maintainer, and build state
+(`available` / `building` / `installed` / `failed`). The database is
+JSON-backed with atomic save (write-temp-then-rename) and lives under
+the XDG data dir by default.
 
 ## Features
 
-- **Source building**: Build software from source
-- **Patches**: Apply custom patches for compatibility
-- **Dependencies**: Automatic dependency handling
-- **Options**: Build options and variants
-- **Testing**: Build-time testing
-- **Cleaning**: Clean build artifacts
-- **Upgrade**: Upgrade ports when new versions are available
+- **Categories**: ports grouped into named categories
+- **Dependency-ordered build plans**: `build_plan` topologically sorts
+  a target's dependencies (deps before dependents) and reports cycles
+  and missing ports as typed errors
+- **State tracking**: mark ports `building`/`installed`/`failed` and
+  query by state
+- **Search**: case-insensitive match on name and description
+- **Persistence**: `save`/`load` JSON roundtrip
+- **Tests**: 5 unit tests cover categories, build-plan ordering,
+  cycle/missing detection, state transitions, search, and persistence
 
 ## Links
 
