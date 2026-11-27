@@ -130,7 +130,10 @@ by loop depth. Commit `8fc6c8b` adds `$(( ))` arithmetic expansion
 (`+ - * / %`, unary signs, parens, literals, env-var names) — the
 tokenizer and splitters now count all unquoted parens inside a
 substitution so nested `$(( ))` doesn't split args. QEMU-verified
-counting `while` loops (`i=$((i+1))`). 60 lib tests.
+counting `while` loops (`i=$((i+1))`). Commit `69dcc3a` adds
+`case WORD in pat[|pat]) LIST ;; ... esac` — glob patterns via
+glob_match, `|` alternation, `$`-expanded word, bodies through the
+full executor. QEMU-verified. 61 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
