@@ -13,7 +13,7 @@
 
 ## Implemented Component Repositories (326)
 
-### Other Components (27)
+### Other Components (24)
 - [SigmaOS-ISO](./SigmaOS-ISO/Home)
 - [SigmaOS-bottles](./SigmaOS-bottles/Home)
 - [SigmaOS-browser](./SigmaOS-browser/Home)
@@ -22,7 +22,6 @@
 - [SigmaOS-genoffice](./SigmaOS-genoffice/Home)
 - [SigmaOS-initramfs](./SigmaOS-initramfs/Home)
 - [SigmaOS-installer](./SigmaOS-installer/Home)
-- [SigmaOS-keepassxc](./SigmaOS-keepassxc/Home)
 - [SigmaOS-mac-pkgs](./SigmaOS-mac-pkgs/Home)
 - [SigmaOS-mac-support](./SigmaOS-mac-support/Home)
 - [SigmaOS-mesa](./SigmaOS-mesa/Home)
@@ -36,10 +35,8 @@
 - [SigmaOS-sigma-sh](./SigmaOS-sigma-sh/Home)
 - [SigmaOS-sigma-sys](./SigmaOS-sigma-sys/Home)
 - [SigmaOS-skills](./SigmaOS-skills/Home)
-- [SigmaOS-syncthing](./SigmaOS-syncthing/Home)
 - [SigmaOS-system-profile](./SigmaOS-system-profile/Home)
 - [SigmaOS-update-system](./SigmaOS-update-system/Home)
-- [SigmaOS-vlc](./SigmaOS-vlc/Home)
 - [SigmaOS-xtask](./SigmaOS-xtask/Home)
 
 ### System Services (1)
@@ -213,8 +210,12 @@
 - [SigmaOS-statsmodels](./SigmaOS-statsmodels/Home)
 - [SigmaOS-tensorflow](./SigmaOS-tensorflow/Home)
 
-### networking (1)
+### multimedia (1)
+- [SigmaOS-vlc](./SigmaOS-vlc/Home)
+
+### networking (2)
 - [SigmaOS-network-manager](./SigmaOS-network-manager)
+- [SigmaOS-syncthing](./SigmaOS-syncthing/Home)
 
 ### notebooks (3)
 - [SigmaOS-google-colab](./SigmaOS-google-colab/Home)
@@ -280,10 +281,11 @@
 ### reference (1)
 - [SigmaOS-linux-mint](./SigmaOS-linux-mint)
 
-### security (5)
+### security (6)
 - [SigmaOS-audit-log](./SigmaOS-audit-log)
 - [SigmaOS-crypto-keys](./SigmaOS-crypto-keys)
 - [SigmaOS-jails](./SigmaOS-jails)
+- [SigmaOS-keepassxc](./SigmaOS-keepassxc/Home)
 - [SigmaOS-pf-firewall](./SigmaOS-pf-firewall)
 - [SigmaOS-pledge-caps](./SigmaOS-pledge-caps)
 
