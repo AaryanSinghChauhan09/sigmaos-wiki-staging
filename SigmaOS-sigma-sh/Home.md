@@ -138,7 +138,10 @@ builtin (line-at-a-time from pipes or console, multi-var field
 splitting, POSIX EOF semantics) and compound pipeline stages —
 `prod | while read l; do ...; done` now works via a persistent
 `stdin_rest` cursor and pre-`;` pipeline detection. QEMU-verified.
-62 lib tests.
+Commit `aca1c23` adds `${var op word}` expansion —
+`:-`/`-` defaults, `:=`/`=` assign+default, `:+`/`+` alternates,
+`:?`/`?` errors, `${#var}` length, with recursive word expansion
+and nested `${...}` matching. QEMU-verified. 63 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
