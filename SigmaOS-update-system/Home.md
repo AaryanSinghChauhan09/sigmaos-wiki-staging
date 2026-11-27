@@ -8,6 +8,11 @@ SigmaOS rolling release update system with automatic updates and rollback capabi
 ## Architecture
 - **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
 - **Modules (`src/lib.rs`):** `channel`, `error`, `notifier`, `updater`
+- **Key Capabilities:**
+  - `UpdateManager::with_paths()` for isolated config/state management
+  - `UpdateManager::validate_package_artifact()` for non-empty archive and signature checks
+  - `UpdateManager::rollback()` / `rollback_to_previous()` / `apply_rollback()` for persisted state restoration
+  - `SIGMA_PKG_BIN` environment override (defaults to `sigma-pkg`)
 
 ## Design Principles
 - **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
