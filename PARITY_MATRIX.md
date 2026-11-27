@@ -394,3 +394,6 @@ Generated: 2026-10-15
   blocked-wait children are now reaped at exit (was leaking page
   tables/frames/slot). QEMU-verified via bare `wait`.
 - sigma-sh bare `wait` -> Sys::wait_any -> sigma_sys::wait_any.
+- sigma-sh uname flags: -a/-s/-n/-r/-m/-o with Sys::kernel_release/
+  machine/os_name; guest uname() fixed to return kernel name not
+  version. QEMU-verified.
