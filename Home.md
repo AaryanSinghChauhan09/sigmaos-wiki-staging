@@ -8,6 +8,7 @@
 - [Security Model](./Security) — Memory safety, sandboxing, AppArmor, and cryptographic signing
 - [Rolling Release](./Rolling-Release) — Continuous delivery, mirrors, ZFS snapshots, and rollback
 - [Component Map](./Component-Map) — Visual Mermaid dependency map
+- [Distro Comparison](./Distro-Comparison) — How SigmaOS compares to Arch, Omarchy, Debian, and Linux Mint
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
 ## Implemented Component Repositories (326)
