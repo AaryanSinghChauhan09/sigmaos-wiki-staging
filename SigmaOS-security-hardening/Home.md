@@ -56,3 +56,7 @@ secure_boot = true
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-security-hardening)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+
+Security hardening: AppArmor/SELinux/firewall/audit/FDE/secure-boot
+orchestration, vulnerability audit, CIS/STIG compliance checks.
+5 lib tests.
