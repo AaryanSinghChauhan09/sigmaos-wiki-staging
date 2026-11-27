@@ -124,6 +124,16 @@ Cooperative multitasking with per-process isolation — Linux
   inherited fork-style. The child is picked up by the timer
   round-robin scheduler — no immediate switch. Reaping flows through
   the existing WAIT/reap_process path.
+- **EXEC(path, path_len, args_ptr, ...)**: replaces the calling
+  process image — the `do_execve` analogue. Loads the ELF from the
+  VFS, builds fresh page tables, materializes segments and the
+  argv/envp stack (same packed descriptor ABI as SPAWN), installs a
+  new ctx (rip=entry, fresh stack, new CR3), then frees the old
+  address space. All fallible work completes before any frame is
+  freed, so a failed exec leaves the caller untouched. pid, cwd,
+  and the fd table are preserved; brk resets. QEMU-verified via the
+  sigma-sh `exec` builtin (`exec /child` → shell pid became
+  sigma-child, exited 42, reaped by init).
 - **WAIT(pid)**: returns the child's exit status; `EAGAIN` while the
   child is still running — callers retry (each retry is a syscall
   boundary the scheduler can preempt at).
