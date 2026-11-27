@@ -31,3 +31,7 @@ SigmaOS Data Wrangling provides a comprehensive toolkit for data extraction, tra
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-data-wrangling)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+
+ETL pipeline engine: filter/map/sort/limit/dedup/countBy/sum over
+JSON records. Fixed CountBy/Dedup group keys (strings were
+JSON-quoted). 7 lib tests.
