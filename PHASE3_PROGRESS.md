@@ -439,3 +439,47 @@ Remaining formatted repos still pending clippy verification: `iloveapi`,
   `--workspace --exclude omafind-app` (GPUI Kit needs a long tail of
   system GUI libs). All green.
 - All other 31 repos passed `rust-validation` on first run.
+
+## Update — full process model + shell parity (2026-11-27)
+
+The bootable kernel track crossed from "single process + syscalls" to a
+real multitasking OS:
+
+- **fork(2)** — full address-space copy; **exec(2)** — process image
+  replacement; **wait(2)** including wait-any-child.
+- **spawn(2)** — argv/envp passing, auxv on the initial stack, fd-table
+  inheritance, stdin/stdout/stderr redirection args.
+- **Round-robin scheduler** — timer-tick `sched_tick`, per-process
+  CR3/brk save+restore, process table grown to 8 slots, user frames
+  reclaimed on reap.
+- **Signals** — `kill(2)` with fatal-by-default table
+  (HUP INT QUIT ABRT KILL USR1 USR2 ALRM TERM); wait-status decoding.
+- **Blocking pipes** — `pipe/dup/dup2` with reader/writer wakeups and
+  EAGAIN semantics; pipeline fd plumbing end-to-end.
+- **Writable VFS** — open(2) create/write/truncate flags,
+  `mkdir/unlink/rmdir`, `stat`, per-process `chdir/getcwd`.
+- **Virtual filesystems** — `/proc` (cpuinfo, meminfo, mounts, stat,
+  uptime, version; EROFS writes), mount table with
+  `mount/umount/mountlist`, `statfs` longest-prefix lookup.
+- **Observability** — `meminfo`, `procinfo`, `dmesg` (16 KiB kernel log
+  ring buffer).
+- Working syscall surface is now ~35 calls (nr 0–38 minus
+  ioctl/mmap-family placeholders).
+
+`sigma-sh` grew into a POSIX-ish shell in the same window:
+
+- Compound commands: `if/for/while/until`, `case..in..esac`,
+  `break/continue`, `VAR=value` prefixes, `[[ ]]` with `&&/||/!`,
+  glob `==/!=`, `=~`, `-v`; `$(( ))` arithmetic; `${var op word}` and
+  affix trimming.
+- ~100 builtins (`BUILTIN_NAMES`): alias/unalias, functions, history,
+  trap/EXIT, read, select loop, `.`/source, exec, fork, wait (any-child),
+  pushd/popd/dirs, mount/umount/df/dmesg/free/nproc/ps, coreutils-style
+  text tools (grep/sed-lite via tr/cut/fold/paste/expand...), yes/seq.
+- Pipelines now run real child processes concurrently with fd plumbing
+  (was sequential builtin-only).
+- Signal names table matches the kernel's fatal set; `kill -l`,
+  signaled wait-status text.
+
+Verified in QEMU: kernel boots PVH -> initramfs -> ring-3 sigma-init ->
+interactive shell with working syscalls, process spawning, and pipes.

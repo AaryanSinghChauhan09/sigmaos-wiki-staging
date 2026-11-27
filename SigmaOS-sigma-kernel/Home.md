@@ -3,11 +3,11 @@
 > Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
-SigmaOS kernel — no_std operating system core. Modules: boot info parsing (Multiboot2/Limine), physical memory management, VFS with cpio initramfs, 16550 UART, VirtIO-MMIO queues, syscall ABI, and linear framebuffer output. SigmaOS sigma-kernel - modular Rust crate for the SigmaOS system
+SigmaOS kernel — no_std bare-metal OS core, bootable in QEMU via PVH. Boots Multiboot2/PVH start info, mounts a cpio initramfs into a writable VFS (with /proc), loads ELF64 userspace into ring 3 with per-process page tables, and runs a multitasking process model: fork/exec/spawn/wait, round-robin scheduler, signals, blocking pipes, fd redirection, and ~35 syscalls (nr 0-38). Includes VirtIO block/net/gpu/MMIO drivers, PS/2 + serial console, and a linear-framebuffer drawing library.
 
 ## Architecture
 - **Language / Runtime:** `rust` (Tier: `2`, Stability: `scaffold`)
-- **Modules (`src/lib.rs`):** `agent`, `boot`, `compositor`, `console`, `elf`, `error`, `fat32`, `fb`, `fb_console`, `installer`, `mm`, `process`, `ps2`, `syscall`, `theme`
+- **Modules (`src/lib.rs`):** `agent`, `boot`, `compositor`, `console`, `elf`, `error`, `fat32`, `fb`, `fb_console`, `installer`, `mm`, `process`, `ps2`, `syscall`, `theme`, `uart`, `usermem`, `vfs`, `virtio`, `virtio_blk`, `virtio_gpu`, `virtio_mmio`, `virtio_net`, `window_manager`
 - **Provides:** `component`
 
 ## Design Principles
