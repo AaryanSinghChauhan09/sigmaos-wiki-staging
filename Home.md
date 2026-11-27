@@ -11,7 +11,7 @@
 - [Distro Comparison](./Distro-Comparison) — How SigmaOS compares to Arch, Omarchy, Debian, and Linux Mint
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
-## Implemented Component Repositories (346)
+## Implemented Component Repositories (351)
 
 ### Desktop (7)
 - [SigmaOS-clipboard-manager](./SigmaOS-clipboard-manager)
@@ -57,18 +57,23 @@
 ### Packaging (1)
 - [SigmaOS-pkg-mirror](./SigmaOS-pkg-mirror)
 
-### Security (2)
+### Security (3)
 - [SigmaOS-app-sandbox](./SigmaOS-app-sandbox)
 - [SigmaOS-boot-verify](./SigmaOS-boot-verify)
+- [SigmaOS-mount-namespace](./SigmaOS-mount-namespace)
 
 ### Storage (1)
 - [SigmaOS-filesystem-manager](./SigmaOS-filesystem-manager)
 
-### System (6)
+### System (10)
+- [SigmaOS-cgroup-manager](./SigmaOS-cgroup-manager)
+- [SigmaOS-dbus-broker](./SigmaOS-dbus-broker)
 - [SigmaOS-live-patch](./SigmaOS-live-patch)
 - [SigmaOS-locale-manager](./SigmaOS-locale-manager)
 - [SigmaOS-power-manager](./SigmaOS-power-manager)
 - [SigmaOS-service-supervisor](./SigmaOS-service-supervisor)
+- [SigmaOS-sleep-inhibitor](./SigmaOS-sleep-inhibitor)
+- [SigmaOS-sysctl-manager](./SigmaOS-sysctl-manager)
 - [SigmaOS-telemetry-local](./SigmaOS-telemetry-local)
 - [SigmaOS-time-sync](./SigmaOS-time-sync)
 
