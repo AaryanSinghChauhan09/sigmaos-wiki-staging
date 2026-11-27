@@ -419,3 +419,7 @@ Generated: 2026-10-15
 - sigma-sh `[[ EXPR ]]`: bash conditional expressions — &&/||/!,
   glob ==/!=/=~, -v VAR; splitters shield [[...]] regions.
   QEMU-verified. 71 lib tests.
+- KERNEL /proc: FsKind::Proc virtual fs auto-mounted at boot —
+  cpuinfo/meminfo/mounts/stat/uptime/version generated per read;
+  EROFS writes; kind=4 in statfs/mountlist. QEMU-verified
+  (`cat /proc/meminfo`, `ls /proc`, `df /proc`).

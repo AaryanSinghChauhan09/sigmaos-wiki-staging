@@ -162,6 +162,13 @@ Cooperative multitasking with per-process isolation — Linux
   per-mount statfs, not separate backing stores yet. QEMU-verified:
   `mount /dev/sda1 /mnt fat32` -> `mount` lists it, `df /mnt` reports
   fat32, `umount /mnt` removes it.
+- **/proc virtual filesystem**: `FsKind::Proc` (statfs kind=4) with
+  real VFS nodes for `cpuinfo`, `meminfo`, `mounts`, `stat`, `uptime`,
+  `version`, mounted at boot. `sys_read` generates contents per read
+  (meminfo from the frame allocator, mounts from the VFS mount table,
+  stat from PROCS, uptime from TSC); writes return EROFS; `mount -t
+  proc` works. QEMU-verified: `cat /proc/meminfo`, `ls /proc`,
+  `mount`/`df /proc` all live.
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary
