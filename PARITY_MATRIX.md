@@ -402,3 +402,5 @@ Generated: 2026-10-15
 - sigma-sh builtins: id/whoami/groups/tty/printenv/set/yes added.
   QEMU-verified (id -> uid=0(root), whoami -> root).
 - sigma-sh free [-m|-g] + nproc builtins (MEMINFO-backed). QEMU-verified.
+- sigma-sh pushd/popd/dirs + alias/unalias (dir stack + first-word
+  expansion). QEMU-verified alias; 70 lib tests.
