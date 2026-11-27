@@ -136,7 +136,14 @@ Cooperative multitasking with per-process isolation — Linux
   sigma-child, exited 42, reaped by init).
 - **WAIT(pid)**: returns the child's exit status; `EAGAIN` while the
   child is still running — callers retry (each retry is a syscall
-  boundary the scheduler can preempt at).
+  boundary the scheduler can preempt at). `pid == u64::MAX` waits for
+  ANY child (POSIX `wait`/`waitpid(-1)`): reaps the first exited
+  unreaped child or blocks until any child exits.
+- **Reaping**: a child whose parent is blocked in WAIT is reclaimed
+  (`reap_process`) at exit time — the parent already holds the status.
+  Non-blocked parents leave a zombie until WAIT collects it. This
+  fixed a leak where blocked-wait children kept their page tables,
+  frames, and proc slot forever.
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary
