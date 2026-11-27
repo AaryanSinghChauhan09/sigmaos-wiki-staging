@@ -409,3 +409,6 @@ Generated: 2026-10-15
 - sigma-sh fc/times builtins. QEMU-verified fc rerun.
 - sigma-sh type + builtin via BUILTIN_NAMES table (97 builtins).
   QEMU-verified.
+- KERNEL STATFS(37): Vfs::statfs longest-prefix mount lookup ->
+  (FsKind, node_count); sigma-sys statfs(); sigma-sh `df [path]`.
+  QEMU-verified (`df /bin` -> initramfs, 10 nodes).

@@ -149,6 +149,10 @@ Cooperative multitasking with per-process isolation — Linux
   circular ring (`log_read` returns the newest bytes in order) —
   the `syslog`/dmesg read analogue. QEMU-verified via sigma-sh
   `dmesg` replaying the boot log.
+- **STATFS(path, buf)**: `Vfs::statfs` picks the longest mount-point
+  prefix covering `path` and returns `(FsKind, node_count)` — the
+  statfs(2)/df analogue. kind codes: 1=initramfs, 2=fat32, 3=other.
+  QEMU-verified via sigma-sh `df` (`df /bin` -> initramfs, 10 nodes).
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary
