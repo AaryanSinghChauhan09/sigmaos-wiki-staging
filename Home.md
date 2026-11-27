@@ -10,7 +10,7 @@
 - [Component Map](./Component-Map) — Visual Mermaid dependency map
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
-## Implemented Component Repositories (313)
+## Implemented Component Repositories (314)
 
 ### Other Components (27)
 - [SigmaOS-ISO](./SigmaOS-ISO/Home)
@@ -265,6 +265,9 @@
 
 ### reference (1)
 - [SigmaOS-linux-mint](./SigmaOS-linux-mint)
+
+### security (1)
+- [SigmaOS-jails](./SigmaOS-jails)
 
 ### sigmaos (91)
 - [SigmaOS-aether](./SigmaOS-aether/Home)
