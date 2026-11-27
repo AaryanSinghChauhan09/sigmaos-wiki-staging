@@ -10,7 +10,7 @@
 - [Component Map](./Component-Map) — Visual Mermaid dependency map
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
-## Implemented Component Repositories (320)
+## Implemented Component Repositories (326)
 
 ### Other Components (27)
 - [SigmaOS-ISO](./SigmaOS-ISO/Home)
@@ -212,6 +212,9 @@
 - [SigmaOS-statsmodels](./SigmaOS-statsmodels/Home)
 - [SigmaOS-tensorflow](./SigmaOS-tensorflow/Home)
 
+### networking (1)
+- [SigmaOS-network-manager](./SigmaOS-network-manager)
+
 ### notebooks (3)
 - [SigmaOS-google-colab](./SigmaOS-google-colab/Home)
 - [SigmaOS-jupyter](./SigmaOS-jupyter/Home)
@@ -276,7 +279,9 @@
 ### reference (1)
 - [SigmaOS-linux-mint](./SigmaOS-linux-mint)
 
-### security (3)
+### security (5)
+- [SigmaOS-audit-log](./SigmaOS-audit-log)
+- [SigmaOS-crypto-keys](./SigmaOS-crypto-keys)
 - [SigmaOS-jails](./SigmaOS-jails)
 - [SigmaOS-pf-firewall](./SigmaOS-pf-firewall)
 - [SigmaOS-pledge-caps](./SigmaOS-pledge-caps)
@@ -373,6 +378,11 @@
 - [SigmaOS-write](./SigmaOS-write/Home)
 - [SigmaOS-zfs-integration](./SigmaOS-zfs-integration/Home)
 - [SigmaOS-zsh](./SigmaOS-zsh/Home)
+
+### system (3)
+- [SigmaOS-generations](./SigmaOS-generations)
+- [SigmaOS-process-manager](./SigmaOS-process-manager)
+- [SigmaOS-user-manager](./SigmaOS-user-manager)
 
 ### tools (22)
 - [SigmaOS-blender](./SigmaOS-blender/Home)
