@@ -106,7 +106,7 @@ Cooperative multitasking with per-process isolation — Linux
 
 - **Full context save**: `syscall_entry` saves all 15 GPRs + rip
   (rcx) + rflags (r11) + user rsp + cr3 into a 17-u64 ctx slot.
-- **Process table** (`ProcSlot`, `NPROCS=4`): pid, parent, exit_code,
+- **Process table** (`ProcSlot`, `NPROCS=8`): pid, parent, exit_code,
   pml4, brk — the minimal `task_struct` analogue.
 - **SPAWN(path)**: reads an ELF from the VFS, `load_image` +
   `build_user_tables` into a *fresh* address space, materializes
@@ -116,6 +116,14 @@ Cooperative multitasking with per-process isolation — Linux
   *entry* ctx before the switch loads the child ctx).
 - **EXIT(code)**: marks the slot exited, switches to the parent;
   init exit halts the machine.
+- **FORK**: duplicates the calling process — every present `P_USER`
+  4K page is copied into fresh frames (phys identity-map copy), a
+  private page-table set is built via `build_user_tables`, and the
+  saved ctx is cloned with a private CR3 and `rax=0` (child side).
+  Parent receives the child pid; fd table, cwd, std fds, and brk are
+  inherited fork-style. The child is picked up by the timer
+  round-robin scheduler — no immediate switch. Reaping flows through
+  the existing WAIT/reap_process path.
 - **WAIT(pid)**: returns the child's exit status; `EAGAIN` while the
   child is still running — callers retry (each retry is a syscall
   boundary the scheduler can preempt at).
