@@ -10,7 +10,7 @@
 - [Component Map](./Component-Map) — Visual Mermaid dependency map
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
-## Implemented Component Repositories (314)
+## Implemented Component Repositories (320)
 
 ### Other Components (27)
 - [SigmaOS-ISO](./SigmaOS-ISO/Home)
@@ -72,6 +72,10 @@
 - [SigmaOS-flink](./SigmaOS-flink)
 - [SigmaOS-spark](./SigmaOS-spark)
 
+### boot (2)
+- [SigmaOS-atomic-root](./SigmaOS-atomic-root)
+- [SigmaOS-efi-boot](./SigmaOS-efi-boot)
+
 ### browser (6)
 - [SigmaOS-brave](./SigmaOS-brave/Home)
 - [SigmaOS-chromium](./SigmaOS-chromium/Home)
@@ -79,6 +83,9 @@
 - [SigmaOS-librewolf](./SigmaOS-librewolf/Home)
 - [SigmaOS-waterfox](./SigmaOS-waterfox/Home)
 - [SigmaOS-zen-browser](./SigmaOS-zen-browser/Home)
+
+### config (1)
+- [SigmaOS-sys-declare](./SigmaOS-sys-declare)
 
 ### craft (20)
 - [SigmaOS-craft-3d](./SigmaOS-craft-3d/Home)
@@ -135,6 +142,9 @@
 - [SigmaOS-rdbms-metabase](./SigmaOS-rdbms-metabase)
 - [SigmaOS-rdbms-postgresql](./SigmaOS-rdbms-postgresql)
 - [SigmaOS-rdbms-superset](./SigmaOS-rdbms-superset)
+
+### desktop (1)
+- [SigmaOS-wayland-portal](./SigmaOS-wayland-portal)
 
 ### desktop-environment (1)
 - [SigmaOS-deskland](./SigmaOS-deskland/Home)
@@ -266,8 +276,10 @@
 ### reference (1)
 - [SigmaOS-linux-mint](./SigmaOS-linux-mint)
 
-### security (1)
+### security (3)
 - [SigmaOS-jails](./SigmaOS-jails)
+- [SigmaOS-pf-firewall](./SigmaOS-pf-firewall)
+- [SigmaOS-pledge-caps](./SigmaOS-pledge-caps)
 
 ### sigmaos (91)
 - [SigmaOS-aether](./SigmaOS-aether/Home)
