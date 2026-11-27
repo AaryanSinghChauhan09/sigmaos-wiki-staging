@@ -21,3 +21,7 @@ SigmaOS Rebuild provides tools for rebuilding packages and system components fro
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-rebuild)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+
+Rebuild orchestrator: ordered steps (dkms/initramfs/bootloader) with
+dry-run, per-step records, required-vs-optional failure semantics.
+8 lib tests.
