@@ -423,3 +423,6 @@ Generated: 2026-10-15
   cpuinfo/meminfo/mounts/stat/uptime/version generated per read;
   EROFS writes; kind=4 in statfs/mountlist. QEMU-verified
   (`cat /proc/meminfo`, `ls /proc`, `df /proc`).
+- KERNEL signals: sys_kill fatal table — HUP/INT/QUIT/ABRT/KILL/
+  USR1/USR2/ALRM/TERM -> exit status 128+sig. sigma-sh `trap EXIT`,
+  `kill -l`, wait SIG-name decoding. QEMU-verified end-to-end.

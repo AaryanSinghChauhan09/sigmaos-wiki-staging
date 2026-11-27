@@ -169,6 +169,10 @@ Cooperative multitasking with per-process isolation — Linux
   stat from PROCS, uptime from TSC); writes return EROFS; `mount -t
   proc` works. QEMU-verified: `cat /proc/meminfo`, `ls /proc`,
   `mount`/`df /proc` all live.
+- **Signals (fatal-by-default)**: `sys_kill` accepts HUP/INT/QUIT/
+  ABRT/KILL/USR1/USR2/ALRM/TERM — all terminate the target with
+  status `128+sig` (shell convention). No user-space handlers yet;
+  `trap` in sigma-sh covers EXIT only.
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary
