@@ -144,6 +144,11 @@ Cooperative multitasking with per-process isolation — Linux
   Non-blocked parents leave a zombie until WAIT collects it. This
   fixed a leak where blocked-wait children kept their page tables,
   frames, and proc slot forever.
+- **DMESG(ptr, len)**: copies the most recent kernel log bytes into
+  the user buffer. `arch::log` mirrors every line into a 16KiB
+  circular ring (`log_read` returns the newest bytes in order) —
+  the `syslog`/dmesg read analogue. QEMU-verified via sigma-sh
+  `dmesg` replaying the boot log.
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary

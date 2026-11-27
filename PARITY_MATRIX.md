@@ -397,3 +397,5 @@ Generated: 2026-10-15
 - sigma-sh uname flags: -a/-s/-n/-r/-m/-o with Sys::kernel_release/
   machine/os_name; guest uname() fixed to return kernel name not
   version. QEMU-verified.
+- KERNEL DMESG(36): 16KiB log ring in arch::log + log_read; sigma-sys
+  dmesg()/DMESG_CAP; sigma-sh `dmesg` builtin. QEMU-verified.
