@@ -416,3 +416,6 @@ Generated: 2026-10-15
   fstype->FsKind mapping, mount-point validation, mount listing.
   sigma-sh `mount`/`umount` builtins. QEMU-verified full cycle
   (mount -> list -> df per-mount kind -> umount).
+- sigma-sh `[[ EXPR ]]`: bash conditional expressions — &&/||/!,
+  glob ==/!=/=~, -v VAR; splitters shield [[...]] regions.
+  QEMU-verified. 71 lib tests.
