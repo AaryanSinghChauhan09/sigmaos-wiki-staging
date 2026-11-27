@@ -407,3 +407,5 @@ Generated: 2026-10-15
 - sigma-sh echo -n/-e/-E/-- + escapes; pushd/popd/dirs + alias.
   QEMU-verified.
 - sigma-sh fc/times builtins. QEMU-verified fc rerun.
+- initramfs /bin layout: binaries packed under /bin/ (FHS) in
+  addition to flat / entries; which/ls/launch verified in QEMU.
