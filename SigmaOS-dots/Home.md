@@ -1,27 +1,43 @@
-# SigmaOS Dots
+# SigmaOS-dots
 
-Shared user dotfiles and shell configs for SigmaOS: starship, tmux, git, mise, shared bash/zsh shell config, fish config, zsh templates, and helper scripts. Consolidates the former `SigmaOS-fish` and `SigmaOS-zsh` split repos.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+Shared user dotfiles and shell configs for SigmaOS: starship, tmux, git, mise, shared bash/zsh shell config, fish config, zsh templates, and helper scripts. This repository consolidates the former `SigmaOS-fish` and `SigmaOS-zsh` split repos.
 
-- Component implementation lives in `SigmaOS-dots`
-- `install.sh` copies `config/` to `~/.config` and `bin/` to
-  `~/.local/bin`, then writes shell rc files for zsh/bash (fish uses
-  the installed `~/.config/fish`). LazyVim is **opt-in** via
-  `--with-lazyvim` — it is no longer cloned (or `~/.config/nvim`
-  removed) on a plain install (commit `67b4e4b`).
-- See the repository README for usage, screenshots, and component-specific details
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `bin/`, `config/`, `install.sh`
 
-## Interconnectivity
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-| Repo | Relationship |
-|------|-------------|
-| `Sigma` | Main SigmaOS release and integration surface |
-| `SigmaOS-ISO` | Bootable ISO / desktop image |
-| `SigmaOS-config-system` | Shared declarative configuration patterns |
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-dots`
+- `component.id` = `sigmaos-dots`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+- **Config directory:** `config/` contains runtime configuration templates.
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-dots)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

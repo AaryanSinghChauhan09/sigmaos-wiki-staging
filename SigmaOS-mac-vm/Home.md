@@ -1,16 +1,42 @@
-# SigmaOS Mac VM
+# SigmaOS-mac-vm
 
-Runs stock SigmaOS in a fast virtual machine on an Apple Silicon Mac, bridged to macOS so it can be used as a daily driver or as a low-commitment way to try SigmaOS before a native install.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+Try SigmaOS is a Mac app that runs stock SigmaOS in a fast virtual machine deeply integrated with macOS. Use it as your daily driver, or give SigmaOS a try and migrate to a native install. Integrations include Apple's universal clipboard, AirPods, Touch ID, the Retina display, Super shortcuts, Mac clipboard, audio, camera, battery, and a shared folder. The official SigmaOS Mac image is used, so it behaves and updates like any other SigmaOS install.
 
-- Guest is stock SigmaOS; the repo holds the Mac-side app, VM runtime, and the single `sigmaos-mac-vm` guest package — no SigmaOS files are modified.
-- macOS integrations include universal clipboard, AirPods, Touch ID, Retina display, Super shortcuts, clipboard, audio, camera, battery, and a shared folder.
-- Package upgrades must work offline; the guest is treated as untrusted and everything the Mac side receives from it is validated.
-- Canonical branch: `main`. See the repository README, `manual/`, and `docs/architecture.md` for usage and design.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `Makefile`, `agents/`, `docs/`, `guest/`, `macos/`, `manual/`, `scripts/`, `tests/`
 
-## Links
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-vm)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-mac-vm`
+- `component.id` = `sigmaos-mac-vm`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Build and test using Make:
+
+```sh
+make
+make test
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

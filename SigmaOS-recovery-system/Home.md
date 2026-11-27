@@ -1,55 +1,64 @@
-# SigmaOS Recovery System
+# SigmaOS-recovery-system
 
-File-based system snapshots with selective restore — backs up system
-config, user data, and package lists into per-snapshot directories
-under the XDG data dir.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS system recovery and rollback system with snapshot management.
 
-- `RecoveryManager::create_snapshot` — writes `metadata.json`
-  (id/name/description/timestamps/flags) plus payload backups:
-  `backup_system_config` always, `backup_user_data` and
-  `backup_package_list` when requested
-- `list_snapshots` / `get_snapshot_info` — metadata-driven listing,
-  newest first
-- `restore_snapshot` — restores config/user-data/packages selectively
-  per snapshot flags; takes an automatic `pre-restore` snapshot unless
-  `force`
-- `delete_snapshot` — `--force` removes, otherwise moves to trash
-- `RestoreManager::verify_snapshot` — validates a snapshot dir
-  (parseable `metadata.json`, id matches dir name, has payload files)
-- `RestoreManager::restore` intentionally errors — destructive restore
-  must go through `restore_snapshot` for the safety backup
-- `get_status` — snapshot count, total size, last snapshot time
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Modules (`src/lib.rs`):** `error`, `recovery`, `restore`, `snapshot`
 
-## Commands
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-```bash
-sigmaos-recovery snapshot <name> [-d DESC] [-u] [-p]
-sigmaos-recovery list [-v]
-sigmaos-recovery restore <name|id> [--dry-run] [--force]
-sigmaos-recovery delete <name|id> [--force]
-sigmaos-recovery status [-v]
+## CLI Reference
+- **Binary:** `sigmaos-recovery-system`
+- **Subcommands / Actions:** `snapshot`, `list`, `restore`, `delete`, `status`
+
+```sh
+sigmaos-recovery-system --help
 ```
 
-## Build & Test
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-recovery-system`
+- `component.license` = `GPL-3.0-or-later`
+- **Feature flags:** `default`, `compression`, `encryption`, `incremental`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `toml` (`0.8`)
+- `anyhow` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `walkdir` (`2.0`)
+- `sha2` (`0.10`)
+- `hex` (`0.4`)
+- `directories` (`5.0`)
+- `rand` (`0.10.4`)
+- `chrono` (`0.4.45`)
+
+**Dev Dependencies:** `tempfile`
+
+**SigmaOS Component Dependencies:** `sigmaos-config-system`, `sigmaos-update-system`
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
 cargo test
-cargo clippy -- -D warnings
-cargo fmt --check
+cargo clippy
+cargo fmt
 ```
 
-3 `RestoreManager` tests (valid snapshot, rejection cases, loud
-restore failure).
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-recovery-system)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

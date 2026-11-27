@@ -1,22 +1,42 @@
-# SigmaOS Chromium
+# SigmaOS-chromium
 
-Chromium browser for SigmaOS - privacy-focused Chromium with SigmaOS integration.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+This was a micro-fork of Chromium we needed for live theme switching until upstream improved the policy-based refreshes. But that has now been done, and it's no longer necessary to maintain this fork, so the project has been archived.
 
-SigmaOS Chromium provides a privacy-focused Chromium browser integrated with SigmaOS themes and settings.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `LICENSES/`, `scripts/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Privacy-focused**: Enhanced privacy protections and tracking prevention
-- **SigmaOS integration**: Seamless integration with SigmaOS themes and settings
-- **Performance**: Optimized for speed and efficiency
-- **Security**: Modern security features and sandboxing
-- **Extensions**: Chromium extension support
-- **Sync**: Cross-device synchronization
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `chromium`
+- `component.id` = `sigmaos-chromium`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-chromium)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

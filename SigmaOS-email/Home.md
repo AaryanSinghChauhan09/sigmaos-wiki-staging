@@ -1,27 +1,52 @@
-# SigmaOS Email
+# SigmaOS-email
 
-Email client for SigmaOS - Thunderbird and Mailspring integration.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS email component — RFC 5322 message parsing utilities. Safe, allocation-conscious parsing of internet message headers and MIME-lite body separation. No network access; pure parsing. SigmaOS component: **email**.
 
-SigmaOS Email provides email client functionality for SigmaOS, supporting Thunderbird and Mailspring for email management.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Message`
+- **Key Enums:** `EmailError`
+- **Public Functions:** `header`, `from`, `subject`, `is_multipart`, `parse`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Thunderbird**: Mozilla Thunderbird email client
-- **Mailspring**: Modern email client with intelligent features
-- **Multiple accounts**: Support for multiple email accounts
-- **Encryption**: Email encryption support
-- **Calendar integration**: Calendar and scheduling features
-- **Spam filtering**: Built-in spam protection
+## CLI Reference
+- **Binary:** `sigmaos-email`
 
-## Supported Clients
+```sh
+sigmaos-email --help
+```
 
-- Thunderbird
-- Mailspring
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `email`
+- `component.id` = `sigmaos-email`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Links
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-email)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

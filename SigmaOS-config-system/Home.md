@@ -1,56 +1,60 @@
-# SigmaOS Configuration System
+# SigmaOS-config-system
 
-Typed, validated system configuration — a NixOS-inspired `Config`
-model covering desktop, window manager, terminal, shell, network,
-power, accessibility, performance, security, updates, and logging.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS declarative configuration system providing declarative configuration management.
 
-- `Config` schema with per-section structs and secure defaults
-  (`apply_defaults` fills theme/WM/shell/terminal)
-- `ConfigValidator` — per-section checks: font sizes, transparency/
-  opacity 0–1, WM/shell type allowlists, power profiles, log levels,
-  update channels, and "at least one of SELinux/AppArmor" for security
-- Dotted-key get/set: `desktop.theme`, `window_manager.gaps`,
-  `updates.check_interval`, … via `set_value`/`get_value`
-- `ConfigManager` + `ConfigLoader` for file load/validate/generate
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Modules (`src/lib.rs`):** `config`, `error`, `loader`, `schema`, `validator`
 
-## Commands
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-```bash
-sigmaos-config load [--file F] [--config-dir D]
-sigmaos-config validate --file F
-sigmaos-config generate [--output DIR]
-sigmaos-config show [--file F]
-sigmaos-config set <section.key> <value> [--file F]
-sigmaos-config get <section.key> [--file F]
+## CLI Reference
+- **Binary:** `sigmaos-config-system`
+- **Subcommands / Actions:** `load`, `validate`, `generate`, `show`, `set`, `get`
+
+```sh
+sigmaos-config-system --help
 ```
 
-## Structure
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-config-system`
+- `component.license` = `GPL-3.0-or-later`
+- **Feature flags:** `default`, `toml`, `json`, `yaml`
 
-- `src/schema.rs` - Config model, defaults, dotted-key accessors
-- `src/validator.rs` - per-section validation rules
-- `src/config.rs` / `loader.rs` - manager + TOML loader
-- `src/main.rs` - CLI entry point
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `serde_yaml` (`0.9`)
+- `toml` (`0.8`)
+- `anyhow` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
 
-## Build & Test
+**Dev Dependencies:** `tempfile`
+
+**SigmaOS Component Dependencies:** `sigmaos-build-system`, `sigmaos-update-system`
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
 cargo test
-cargo clippy -- -D warnings
-cargo fmt --check
+cargo clippy
+cargo fmt
 ```
 
-6 unit tests (defaults validate, set/get round-trip, invalid key/value
-rejection, validator range/security rules).
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-config-system)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

@@ -1,59 +1,64 @@
-# SigmaOS Update System
+# SigmaOS-update-system
 
-Rolling-release update manager — checks an update server, downloads
-signed packages, installs via pacman, and supports rollback.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS rolling release update system with automatic updates and rollback capabilities.
 
-- `check` — query `updates.sigmaos.org` for the channel
-  (`stable`/`beta`/`nightly`/custom), rate-limited by
-  `check_interval` unless `--force`
-- `update` — fetch, verify signature (TODO), install via
-  `sudo pacman -U`, record version; `--dry-run` lists pending updates
-- `rollback [--version V | --list]` — version history with
-  backup-before-rollback
-- `status [--detailed]` — current version, channel, last check,
-  auto-update flag, and pending updates persisted from the last check
-- `config --channel/--auto-update/--interval` — update settings in
-  `~/.config/sigmaos/update.toml`
-- Pending updates are stored in `update-state.json` so `status`
-  reports what `check` last found without re-querying the server
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Modules (`src/lib.rs`):** `channel`, `error`, `notifier`, `updater`
 
-## Commands
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-```bash
-sigmaos-update check [--channel stable] [--force]
-sigmaos-update update [--channel stable] [--dry-run] [--force]
-sigmaos-update rollback [--version X.Y.Z | --list]
-sigmaos-update status [--detailed]
-sigmaos-update config [--channel C] [--auto-update BOOL] [--interval SECS]
+## CLI Reference
+- **Binary:** `sigmaos-update-system`
+- **Subcommands / Actions:** `check`, `update`, `rollback`, `status`, `config`
+
+```sh
+sigmaos-update-system --help
 ```
 
-## Structure
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-update-system`
+- `component.license` = `GPL-3.0-or-later`
+- **Feature flags:** `default`, `stable`, `beta`, `nightly`, `auto-update`
 
-- `src/updater.rs` - UpdateManager: check/apply/rollback/state
-- `src/channel.rs` - UpdateChannel enum (stable/beta/nightly/custom)
-- `src/notifier.rs` - desktop notification hook
-- `src/main.rs` - CLI entry point
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `toml` (`0.8`)
+- `anyhow` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `reqwest` (`0.11`)
+- `tokio` (`1.0`)
+- `semver` (`1.0`)
+- `directories` (`5.0`)
+- `notify` (`6.0`)
+- `chrono` (`0.4.45`)
 
-## Build & Test
+**Dev Dependencies:** `tempfile`, `mockito`
+
+**SigmaOS Component Dependencies:** `sigmaos-config-system`, `sigmaos-build-system`
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
 cargo test
-cargo clippy -- -D warnings
-cargo fmt --check
+cargo clippy
+cargo fmt
 ```
 
-2 unit tests (update-state JSON round-trip incl. legacy files without
-`pending`).
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-update-system)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

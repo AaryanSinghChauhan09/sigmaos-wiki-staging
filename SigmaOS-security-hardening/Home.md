@@ -1,62 +1,56 @@
-# SigmaOS Security Hardening
+# SigmaOS-security-hardening
 
-Security hardening for SigmaOS - AppArmor, kernel hardening, and security policies.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS security hardening system with compliance checking and audit capabilities.
 
-SigmaOS Security Hardening provides comprehensive security features including AppArmor enforcement, kernel hardening, secure defaults, and security auditing.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Modules (`src/lib.rs`):** `audit`, `compliance`, `error`, `hardening`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **AppArmor**: Mandatory Access Control enforcement
-- **Kernel hardening**: Hardened kernel parameters
-- **Secure defaults**: Security enabled by default
-- **Security updates**: Automatic security patching
-- **Audit logging**: Comprehensive security logging
-- **Firewall**: Firewall enabled by default
-- **SELinux**: Optional SELinux support
-- **Signed packages**: Package signature verification
-- **Secure boot**: Secure boot support
-- **Encrypted storage**: Encrypted filesystem support
+## CLI Reference
+- **Binary:** `sigmaos-security-hardening`
+- **Subcommands / Actions:** `compliancechecker`
 
-## Commands
-
-```bash
-# Check security status
-sudo sigmaos-security status
-
-# Run security audit
-sudo sigmaos-security audit
-
-# Apply security policies
-sudo sigmaos-security apply
-
-# Update security policies
-sudo sigmaos-security update
-
-# View security logs
-sudo sigmaos-security logs
+```sh
+sigmaos-security audit --audit-type all
+sigmaos-security audit --audit-type network --format json
+sigmaos-security audit --audit-type filesystem
 ```
 
 ## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-security-hardening`
+- `component.license` = `GPL-3.0-or-later`
+- **Feature flags:** `default`, `selinux`, `apparmor`, `firewall`, `audit`, `encryption`, `compliance`
 
-Edit `/etc/sigmaos/security.conf` for configuration:
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `chrono` (`0.4`)
 
-```ini
-[security]
-apparmor = true
-kernel_hardening = true
-firewall = true
-audit_logging = true
-secure_boot = true
+**SigmaOS Component Dependencies:** `sigmaos-config-system`, `sigmaos-update-system`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy
+cargo fmt
 ```
 
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-security-hardening)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
-
-Security hardening: AppArmor/SELinux/firewall/audit/FDE/secure-boot
-orchestration, vulnerability audit, CIS/STIG compliance checks.
-5 lib tests.
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

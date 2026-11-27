@@ -1,61 +1,47 @@
-# SigmaOS Rollback
+# SigmaOS-rollback
 
-Pacman-style transaction journal: records the changes each transaction
-made and plans the inverse steps needed to undo the most recent one.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS rollback component. Pacman-style transaction journal: callers record the changes a transaction made, and `rollback_last` yields the inverse steps so the most recent transaction can be undone. SigmaOS System rollback: BTRFS snapshot management, pre-update snapshots, restore on failure.
 
-- `RollbackManager::record(id, steps)` — journals a completed
-  transaction; duplicate ids rejected, bounded capacity evicts oldest
-- `Step { action, target }` — `Action::Install`, `Action::Remove`, or
-  `Action::Modify { backup }` (backup = path to the pre-change copy)
-- `rollback_last()` — returns `Vec<InverseStep>` for the most recent
-  non-rolled-back transaction, in reverse order (Install→Remove,
-  Remove→Install, Modify→restore-from-backup)
-- `mark_rolled_back(id)` — flag a transaction undone when the rollback
-  was performed by an external tool (e.g. the package manager itself)
-- `next_id()` — `txn-N` id generator
-- `history()` / `len()` / `is_empty()` — journal inspection
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `2`, Stability: `scaffold`)
+- **Key Structs:** `Step`, `InverseStep`, `Transaction`, `RollbackManager`
+- **Key Enums:** `ComponentError`, `Action`
+- **Public Functions:** `new`, `record`
+- **Provides:** `component`
 
-The manager plans; the caller executes the inverse steps — keeping the
-crate free of filesystem and package-manager coupling.
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-## Usage
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-```rust
-use rollback::{Action, RollbackManager, Step};
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-rollback`
+- `component.tier` = `2`
+- `component.stability` = `scaffold`
+- `component.language` = `rust`
 
-let mut m = RollbackManager::new(16);
-let id = m.next_id();
-m.record(id.clone(), vec![
-    Step { action: Action::Install, target: "firefox".into() },
-    Step { action: Action::Modify { backup: "/var/backups/hosts".into() },
-           target: "/etc/hosts".into() },
-])?;
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `thiserror` (`1`)
 
-for step in m.rollback_last()? {
-    // execute the inverse: remove firefox, restore /etc/hosts
-}
-```
-
-## Build & Test
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
 cargo test
-cargo clippy --all-targets -- -D warnings
+cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-9 tests covering step inversion order, rolled-back skipping, capacity
-eviction, and duplicate-id rejection.
-
-## License
-
-Apache-2.0
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-rollback)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

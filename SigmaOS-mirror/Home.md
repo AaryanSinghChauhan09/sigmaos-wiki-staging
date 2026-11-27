@@ -1,23 +1,43 @@
-# SigmaOS Mirror
+# SigmaOS-mirror
 
-Package mirror infrastructure for SigmaOS - provides high-speed mirrors for package distribution.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Dedicated mirror of core/extra/multilib repositories for SigmaOS hosted on Cloudflare R2.
 
-SigmaOS Mirror provides mirror infrastructure for SigmaOS packages, ensuring fast and reliable package downloads through geographically distributed mirrors.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `bin/`, `config/`, `tests/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Geographic mirrors**: Multiple mirror locations worldwide
-- **Fast downloads**: High-speed package downloads
-- **Redundancy**: Redundant mirror infrastructure
-- **Sync automation**: Automatic mirror synchronization
-- **Monitoring**: Mirror health monitoring
-- **Load balancing**: Intelligent load balancing
-- **SSL/TLS**: Secure connections
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `mirror`
+- `component.id` = `sigmaos-mirror`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+- **Config directory:** `config/` contains runtime configuration templates.
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mirror)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

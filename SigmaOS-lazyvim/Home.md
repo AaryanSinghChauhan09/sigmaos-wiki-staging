@@ -1,24 +1,42 @@
-# SigmaOS LazyVim
+# SigmaOS-lazyvim
 
-LazyVim configuration for SigmaOS - optimized Neovim configuration with lazy loading and productivity features.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Neovim configuration optimized for SigmaOS with LazyVim distribution.
 
-SigmaOS LazyVim provides an optimized Neovim configuration based on LazyVim, with lazy loading for fast startup and productivity enhancements for SigmaOS.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `lua/`, `plugin/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Lazy loading**: Fast startup with lazy-loaded plugins
-- **Theme integration**: SigmaOS theme support
-- **LSP support**: Language Server Protocol configuration
-- **Auto-completion**: Intelligent code completion
-- **Git integration**: Git status and diff integration
-- **Fuzzy finder**: File and text search
-- **Tree-sitter**: Better syntax highlighting
-- **Productivity plugins**: Enhanced editing and navigation
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `lazyvim`
+- `component.id` = `sigmaos-lazyvim`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-lazyvim)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

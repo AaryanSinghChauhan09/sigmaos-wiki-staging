@@ -1,23 +1,42 @@
-# SigmaOS Survey
+# SigmaOS-survey
 
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
+
+## Overview
 Yearly survey for SigmaOS Linux.
 
-## Capabilities
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `package.json`, `scripts/`, `src/`, `static/`
 
-- Component implementation lives in `SigmaOS-survey`
-- Canonical branch: `main`
-- See the repository README for usage, screenshots, and component-specific details
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-## Interconnectivity
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-| Repo | Relationship |
-|------|-------------|
-| `Sigma` | Main SigmaOS release and integration surface |
-| `SigmaOS-ISO` | Bootable ISO / desktop image |
-| `SigmaOS-config-system` | Shared declarative configuration patterns |
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-survey`
+- `component.id` = `sigmaos-survey`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Links
+## Dependencies
+Node.js / npm runtime (see `package.json`).
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-survey)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

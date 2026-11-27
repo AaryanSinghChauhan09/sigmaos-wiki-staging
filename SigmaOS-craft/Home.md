@@ -1,16 +1,62 @@
-# SigmaOS Craft
+# SigmaOS-craft
 
-Crafting system for SigmaOS — item registry, recipes (ingredients → output), inventory management, and craft operations with atomic JSON state persistence.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS craft — crafting system. Item registry, recipes (ingredient -> output), inventory management, and craft operations with atomic state persistence. SigmaOS component: **craft**.
 
-- `CraftState`: item + recipe registries (`BTreeMap`), `Inventory` with add/remove/has-ingredients
-- `can_craft`, `craft` (consumes ingredients, produces output), `craftable` listing
-- Validation rejects empty item/recipe ids; `Insufficient`/`RecipeNotFound` errors
-- `save`/`load` via temp-file + rename for atomic persistence; `starter_state()` seeds wood/plank/stick/stone/torch examples
-- CLI in `src/main.rs`; 6 unit tests cover inventory, crafting atomicity, craftable, validation, and round-trips (commit `f5d5df3`)
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Item`, `Recipe`, `Inventory`, `CraftState`
+- **Key Enums:** `CraftError`
+- **Public Functions:** `add`, `remove`, `has_ingredients`
 
-## Links
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-craft)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
+## CLI Reference
+- **Binary:** `sigmaos-craft`
+- **Subcommands / Actions:** `inventory`, `recipes`, `craftable`, `craft`, `give`, `init`, `path`
+
+```sh
+sigmaos-craft --help
+```
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `craft`
+- `component.id` = `sigmaos-craft`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

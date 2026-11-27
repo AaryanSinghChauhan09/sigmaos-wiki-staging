@@ -1,31 +1,42 @@
-# SigmaOS Local AI
+# SigmaOS-local-ai
 
-Local AI and LLM tools for SigmaOS - run AI models locally for privacy and offline capabilities.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+The local-model engine, recipe catalog and internals reference for SigmaOS. The system package `sigmaos-local-ai` installs this tree to `/usr/share/sigmaos-local-ai` and symlinks `/usr/bin/sigmaos-local-ai` to its executable entry script. SigmaOS's thin `sigmaos-models` wrapper exposes it as `sigmaos models <command>`.
 
-SigmaOS Local AI provides tools for running AI models locally on SigmaOS, enabling privacy-focused AI capabilities without cloud dependencies.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `bench/`, `docs/`, `images/`, `measurements/`, `recipes/`, `reviews/`, `runtimes/`, `system/`, `tests/`, `tools/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Local LLMs**: Run large language models locally
-- **Privacy-first**: No data sent to cloud services
-- **Offline capability**: Works without internet connection
-- **GPU acceleration**: CUDA/ROCm support for faster inference
-- **Model management**: Download and manage AI models
-- **API compatibility**: OpenAI-compatible API for local models
-- **Integration**: Integration with SigmaOS applications
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Use Cases
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `local-ai`
+- `component.id` = `sigmaos-local-ai`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- Local code assistance
-- Privacy-focused chat
-- Offline AI capabilities
-- Custom model fine-tuning
-- Local text generation
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-## Links
+## Testing
+Verify component integrity and scripts in the repository root:
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-local-ai)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

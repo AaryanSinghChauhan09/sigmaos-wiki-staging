@@ -1,23 +1,43 @@
-# SigmaOS Gliff
+# SigmaOS-gliff
 
-Clipboard manager and snippet tool for SigmaOS - enhanced clipboard history and text snippets.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+gliff is a remote desktop for Hyprland. It shows the Hyprland session of another machine in a window on yours, and all it needs between the two is ssh: no open ports, no accounts, no relay.
 
-SigmaOS Gliff provides a clipboard manager with history tracking and text snippet management for SigmaOS.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `Cargo.toml`, `bin/`, `crates/`, `docs/`, `pkgbuild/`, `scripts/`, `target/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Clipboard history**: Track clipboard history with configurable size
-- **Text snippets**: Save and organize text snippets
-- **Search**: Search through clipboard history and snippets
-- **Sync**: Sync clipboard across devices
-- **Privacy**: Password protection for sensitive clips
-- **Templates**: Text templates for common tasks
-- **Hotkeys**: Global hotkeys for quick access
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `gliff`
+- `component.id` = `sigmaos-gliff`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-gliff)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Run the Rust test suite and Clippy checks:
+
+```sh
+cargo build
+cargo test
+cargo clippy --all-targets -- -D warnings
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

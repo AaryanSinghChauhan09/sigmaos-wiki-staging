@@ -1,30 +1,62 @@
-# SigmaOS Big Data
+# SigmaOS-bigdata
 
-Big data and distributed computing tools for SigmaOS - Apache Flink, Apache Spark, DuckDB, and Trino integration.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS bigdata — distributed data processing primitives. Partitioning strategies, job tracking, and dataset statistics for large-scale data processing. JSON-backed job store. SigmaOS component: **bigdata**.
 
-SigmaOS Big Data provides tools for big data processing and distributed computing, enabling large-scale data analytics on SigmaOS.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Enums:** `BigDataError`, `PartitionStrategy`
+- **Public Functions:** `partition`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Apache Flink**: Stream processing framework
-- **Apache Spark**: Unified analytics engine for big data
-- **DuckDB**: In-process SQL OLAP database
-- **Trino**: Distributed SQL query engine
-- **Batch processing**: Large-scale batch data processing
-- **Stream processing**: Real-time data stream processing
-- **Distributed computing**: Cluster computing capabilities
+## CLI Reference
+- **Binary:** `sigmaos-bigdata`
+- **Subcommands / Actions:** `roundrobin`, `hash`, `range`, `stats`, `partition`, `create`, `run`, `list`, `path`
 
-## Supported Tools
+```sh
+sigmaos-bigdata --help
+```
 
-- Apache Flink
-- Apache Spark
-- DuckDB
-- Trino
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `bigdata`
+- `component.id` = `sigmaos-bigdata`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Links
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+- `uuid` (`1.0`)
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-bigdata)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

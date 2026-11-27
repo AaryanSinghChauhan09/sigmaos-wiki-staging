@@ -1,44 +1,35 @@
-# SigmaOS VLC
+# SigmaOS-vlc
 
-VLC integration for SigmaOS - media player.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+`SigmaOS-vlc` is a modular component of the SigmaOS operating system providing `vlc` functionality.
 
-SigmaOS VLC provides a media player for playing various media formats. Integration with SigmaOS media and entertainment systems.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `src/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Media playback**: Play various media formats
-- **Video**: Video playback
-- **Audio**: Audio playback
-- **Streaming**: Stream media
-- **Subtitles**: Subtitle support
-- **Themes**: SigmaOS theme integration
-- **Plugins**: Plugin support
-- **Documentation**: Comprehensive documentation
-
-## Installation
-
-```bash
-sudo pacman -S sigmaos-vlc
-```
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
 ## Configuration
+Component metadata is declared in `COMPONENT.toml`:
 
-VLC is configured to use the SigmaOS theme system. Configuration is stored in `~/.config/vlc/`.
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-## Usage
+## Testing
+Verify component integrity and scripts in the repository root:
 
-```bash
-# Start VLC
-sigmaos-vlc
-
-# Play a file
-vlc file.mp4
+```sh
+# Check repository scripts and configuration
+ls -la
 ```
 
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-vlc)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

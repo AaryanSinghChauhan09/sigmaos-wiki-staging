@@ -1,38 +1,45 @@
-# SigmaOS GenOffice
+# SigmaOS-genoffice
 
-Offline-capable document suite integration layer for SigmaOS —
-a document model covering ODF, OOXML, PDF, Markdown, HTML, CSV/TSV,
-and SVG, plus an app registry for the suite's components.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+- **Category:** Office - **Engine:** office - **Language:** Rust
 
-- `DocumentFormat` — Odf, Ooxml, Pdf, Markdown, Html, Csv, Svg with
-  `mime_type()` mapping
-- `DocumentFormat::from_extension` / `from_path` — format detection
-  from file extensions (case-insensitive; `odt/ods/odp` → Odf,
-  `docx/xlsx/pptx` → Ooxml, etc.)
-- `GenOfficeDocument` — path, format, title, `offline_ready` flag for
-  documents verified to work without network access
-- `GenOfficeSuite` — registry of suite app names (`register_app`,
-  `has_app`, `apps`)
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `3`, Stability: `beta`)
+- **Key Structs:** `GenOfficeDocument`, `GenOfficeSuite`
+- **Key Enums:** `DocumentFormat`
+- **Public Functions:** `from_extension`, `from_path`, `new`, `mark_offline_ready`, `mime_type`, `new`, `register_app`, `has_app`, `apps`
+- **Provides:** `genoffice-suite`, `format-registry`
 
-## Build & Test
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
+
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-genoffice`
+- `component.tier` = `3`
+- `component.stability` = `beta`
+- `component.language` = `rust`
+
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
 cargo test
-cargo clippy --all-targets -- -D warnings
+cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-6 tests covering mime types, format detection, and suite registry.
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-genoffice)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

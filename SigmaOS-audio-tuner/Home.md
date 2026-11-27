@@ -1,23 +1,42 @@
-# SigmaOS Audio Tuner
+# SigmaOS-audio-tuner
 
-Audio tuning and equalization tools for SigmaOS - system audio configuration and effects.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Tools for authoring laptop speaker tunings for [SigmaOS](https://github.com/basecamp/sigmaos).
 
-SigmaOS Audio Tuner provides audio configuration, equalization, and effects for SigmaOS.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `compare/`, `fit/`, `generate/`, `measure/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **System equalizer**: System-wide audio equalization
-- **Audio effects**: Reverb, echo, and other audio effects
-- **Volume normalization**: Automatic volume leveling
-- **Preset management**: Save and load audio presets
-- **Per-app audio**: Configure audio per application
-- **Device management**: Audio device configuration
-- **Real-time visualization**: Audio spectrum visualization
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `audio-tuner`
+- `component.id` = `sigmaos-audio-tuner`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-audio-tuner)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

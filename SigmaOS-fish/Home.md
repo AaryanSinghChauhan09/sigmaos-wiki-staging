@@ -1,23 +1,42 @@
-# SigmaOS Fish
+# SigmaOS-fish
 
-Fish shell configuration for SigmaOS with enhanced productivity features and auto-suggestions.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+sudo pacman -S sigmaos-fish
 
-SigmaOS Fish provides a comprehensive fish shell configuration with auto-suggestions, syntax highlighting, and productivity tools integration. The config content is consolidated into `SigmaOS-dots` (`config/fish`, `bin`); this repo is kept for package builds until packaging migrates.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `bin/`, `completions/`, `conf.d/`, `functions/`, `templates/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Auto-suggestions**: Intelligent command suggestions as you type
-- **Syntax highlighting**: Color-coded command syntax
-- **Tab completion**: Context-aware tab completion
-- **History search**: Interactive history search
-- **Productivity aliases**: Git, tmux, and system administration aliases
-- **Tool integration**: eza, zoxide, fzf, starship
-- **Custom prompts**: Starship prompt with SigmaOS theme
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `fish`
+- `component.id` = `sigmaos-fish`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-fish)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

@@ -1,23 +1,42 @@
-# SigmaOS Fantasi
+# SigmaOS-fantasi
 
-Fantasy game engine and game development tools for SigmaOS.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Make images, video clips and songs on your own machine with SigmaOS's local AI models.
 
-SigmaOS Fantasi provides game development tools and a game engine for creating fantasy and RPG games on SigmaOS.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `bin/`, `docs/`, `share/`, `src/`, `tests/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Game engine**: 2D/3D game rendering engine
-- **Asset management**: Game asset and resource management
-- **Scripting support**: Lua/Python scripting for game logic
-- **Physics engine**: Built-in physics simulation
-- **Audio system**: Game audio and music support
-- **Level editor**: Visual level design tools
-- **RPG framework**: Role-playing game framework
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `fantasi`
+- `component.id` = `sigmaos-fantasi`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-fantasi)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

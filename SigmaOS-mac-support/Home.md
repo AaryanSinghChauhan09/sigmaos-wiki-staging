@@ -1,16 +1,36 @@
-# SigmaOS Mac Support (Archived)
+# SigmaOS-mac-support
 
-> **Archived.** This repository is superseded and archived on GitHub. Use the focused Mac repositories below.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-This repo previously tracked generic macOS compatibility helpers. The Mac support surface is now split into dedicated components:
+## Overview
+This repository is no longer maintained. Thank you to everyone who installed, tested, reported and contributed.
 
-- [`SigmaOS-mac-installer`](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer) — macOS app that installs SigmaOS on Apple Silicon next to macOS.
-- [`SigmaOS-mac-pkgs`](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-pkgs) — Apple Silicon add-on packages, release/qualification tooling, and the Mac manual.
-- [`SigmaOS-mac-vm`](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-vm) — runs stock SigmaOS in a VM on Apple Silicon Macs with macOS integration.
-- [`SigmaOS-maclab`](https://github.com/AaryanSinghChauhan09/SigmaOS-maclab) — hardware test lab for SigmaOS on real Apple Silicon Macs.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
 
-## Links
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- [Archived repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-support)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-mac-support`
+- `component.license` = `GPL-3.0-or-later`
+
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

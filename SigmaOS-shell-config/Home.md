@@ -1,29 +1,54 @@
-# SigmaOS Shell Config
+# SigmaOS-shell-config
 
-Declarative manager for the SigmaOS desktop shell (Quickshell-based):
-bar, dock, launcher, and theme configuration as validated TOML.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS shell-config — declarative shell configuration manager. Manages bar, dock, launcher, and theming configuration for the SigmaOS desktop shell (Quickshell-based). All configuration is declarative TOML; this crate validates, merges, and applies it idempotently. SigmaOS component inspired by the corresponding SigmaOS repository.
 
-- `ShellConfig` model: `bar` (position/height/modules/autohide),
-  `dock` (position/icon size/pinned apps), `launcher`
-  (provider/max results/fuzzy), `theme` (#RRGGBB colors + font)
-- Strict validation: bar height 1–200, icon size 1–256, hex colors
-  must be `#RRGGBB` with valid digits, launcher results 1–500
-- `sigmaos-system-profile`-style subcommands: `validate`, `default`,
-  `apply` (atomic write to `~/.config/sigmaos/shell.toml`), `path`
-- `module <name> on|off` toggles a bar module in the user config —
-  Omarchy-style live shell customization
-- `ShellConfig::set_module_enabled` for programmatic edits
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `BarConfig`, `BarModule`, `DockConfig`, `LauncherConfig`, `ThemeConfig`, `ShellConfig`
+- **Key Enums:** `ShellConfigError`, `BarPosition`
 
-## Structure
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- `src/lib.rs` - config model, validation, defaults, apply
-- `src/main.rs` - CLI entry point
-- `COMPONENT.toml` - component manifest
-- `tools-sigmaos.sh` - interconnect helper
+## CLI Reference
+- **Binary:** `sigmaos-shell-config`
+- **Subcommands / Actions:** `validate`, `default`, `apply`, `path`, `module`
 
-## Build & Test
+```sh
+sigmaos-shell-config --help
+```
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `shell-config`
+- `component.id` = `sigmaos-shell-config`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `toml` (`0.8`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
@@ -32,14 +57,5 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-5 unit tests (hex color validation, module toggling, range checks, TOML roundtrip, malformed-input rejection).
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-shell-config)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

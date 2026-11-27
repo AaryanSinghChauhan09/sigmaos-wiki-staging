@@ -1,22 +1,42 @@
-# SigmaOS Amiga Screensaver
+# SigmaOS-amiga-screensaver
 
-Amiga-style screensaver for SigmaOS - retro screensaver effects inspired by the Amiga era.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+The demos SigmaOS plays when Amiga Demos is chosen as the screensaver, in Appearance > Branding > Screensaver. They are packaged as `sigmaos-amiga-screensaver`, which installs them under `/usr/share/sigmaos-amiga-screensaver/demos` and pulls in FS-UAE to play them.
 
-SigmaOS Amiga Screensaver provides retro screensaver effects inspired by the classic Amiga computing era.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `demos/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Retro effects**: Classic Amiga-style visual effects
-- **Plasma effects**: Amiga plasma visualizations
-- **Copper bars**: Copper bar effects
-- **Pixel art**: Pixel art style animations
-- **Customizable**: Configurable effects and timing
-- **Low resource**: Minimal CPU/GPU usage when idle
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `amiga-screensaver`
+- `component.id` = `sigmaos-amiga-screensaver`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-amiga-screensaver)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

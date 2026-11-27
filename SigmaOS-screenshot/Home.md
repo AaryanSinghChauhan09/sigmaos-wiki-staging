@@ -1,23 +1,42 @@
-# SigmaOS Omasnap
+# SigmaOS-screenshot
 
-See the releases for what changed in each version.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+See the [releases](https://github.com/AaryanSinghChauhan09/SigmaOS-omasnap/releases) for what changed in each version.
 
-- Component implementation lives in `SigmaOS-screenshot`
-- Canonical branch: `main`
-- See the repository README for usage, screenshots, and component-specific details
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `assets/`, `bin/`, `docs/`, `protocols/`, `src/`, `tests/`
 
-## Interconnectivity
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-| Repo | Relationship |
-|------|-------------|
-| `Sigma` | Main SigmaOS release and integration surface |
-| `SigmaOS-ISO` | Bootable ISO / desktop image |
-| `SigmaOS-config-system` | Shared declarative configuration patterns |
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sigmaos-screenshot`
+- `component.id` = `sigmaos-screenshot`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-screenshot)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

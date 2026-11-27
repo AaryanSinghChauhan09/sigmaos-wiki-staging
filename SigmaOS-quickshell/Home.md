@@ -1,44 +1,42 @@
-# SigmaOS Quickshell
+# SigmaOS-quickshell
 
-QML-based shell framework for Wayland compositors, providing a flexible framework for creating desktop widgets, bars, and overlays. This is the SigmaOS fork of quickshell.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+See the [website](https://quickshell.outfoxxed.me) for more information and installation instructions.
 
-Quickshell allows creating desktop widgets, bars, and overlays using QML. SigmaOS uses Quickshell for its desktop shell components including bars, widgets, and system overlays.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `assets/`, `changelog/`, `ci/`, `cmake/`, `src/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **QML-based**: Write desktop components in QML
-- **Wayland native**: Designed for Wayland compositors like Hyprland
-- **Flexible widgets**: Create bars, launchers, system monitors, and more
-- **Theme integration**: Follows SigmaOS theme automatically
-- **Low overhead**: Lightweight and efficient
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Usage in SigmaOS
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `quickshell`
+- `component.id` = `sigmaos-quickshell`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-SigmaOS uses Quickshell for:
-- Desktop bar (status bar, clock, system tray)
-- Launcher application
-- System widgets (volume, brightness, network)
-- Overlay components
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
 
-## Documentation
+## Testing
+Verify component integrity and scripts in the repository root:
 
-For detailed information and installation instructions, see the [official quickshell website](https://quickshell.outfoxxed.me).
+```sh
+# Check repository scripts and configuration
+ls -la
+```
 
-## Development
-
-- [HACKING.md](HACKING.md) - Development instructions and policy
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution policy
-- [BUILD.md](BUILD.md) - Packaging and build instructions
-
-## License
-
-GNU LGPL 3
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-quickshell)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
-- [Quickshell website](https://quickshell.outfoxxed.me)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

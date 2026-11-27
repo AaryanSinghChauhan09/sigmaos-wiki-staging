@@ -1,47 +1,57 @@
-# SigmaOS TTFX
+# SigmaOS-ttfx
 
-Terminal text effects as a single static binary — pipe text in, pick an
-effect, get ASCII-art output. Bit-exact Python-parity port of the
-ttfx effect set with golden tests.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+Terminal text effects as a single static binary. Pipe text in, pick an effect:
+
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Modules (`src/lib.rs`):** `cli`, `effects`, `engine`, `fx`, `utils`
+- **Public Functions:** `install_sigint_handler`, `interrupted`, `install_sigterm_handler`, `terminated`, `die_from_sigterm`, `install_sigwinch_handler`
+
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
+
+## CLI Reference
+- **Binary:** `ttfx`
 
 ```sh
-ls -la | ttfx decrypt
-cat banner.txt | ttfx beams
-fortune | ttfx --random-effect
-git log --oneline -10 | ttfx matrix
+<producer> | ttfx [terminal options] <effect> [effect options]
+
+ttfx --help                 # all 37 effects and the terminal options
+ttfx <effect> --help        # options for one effect
+ttfx --random-effect        # surprise me (--include-effects / --exclude-effects to filter)
+ttfx --print-completion bash|zsh
 ```
 
-- Dozens of effects (decrypt, beams, matrix, …) plus `--random-effect`
-- Single static binary — no runtime deps, pipe-friendly
-- Golden tests assert bit-exact output parity with the Python original
-  (easing math uses `min`/`max` NaN semantics, not `f64::clamp`)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `ttfx`
+- `component.id` = `sigmaos-ttfx`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Structure
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `clap` (`4`)
+- `clap_complete` (`4.6.9`)
+- `terminal_size` (`0.4`)
+- `unicode-width` (`0.2`)
 
-- `src/` - effect implementations + CLI
-- golden test fixtures - expected outputs per effect
-- `SIGMAOS_FORK.md` - fork provenance (MIT, from SigmaOS/ttfx)
-
-## Build & Test
+## Testing
+Run the Rust test suite and Clippy checks:
 
 ```sh
 cargo build
 cargo test
-cargo clippy -- -D warnings
-cargo fmt --check
+cargo clippy --all-targets -- -D warnings
 ```
 
-Note: the easing golden test failure is pre-existing upstream drift,
-not a regression.
-
-## License
-
-GPL-3.0-or-later (fork: MIT upstream)
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-ttfx)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

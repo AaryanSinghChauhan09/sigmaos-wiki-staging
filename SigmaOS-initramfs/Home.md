@@ -1,30 +1,62 @@
-# SigmaOS Initramfs
+# SigmaOS-initramfs
 
-Initramfs builder with `cpio`/`pack` image generation plus a
-mkinitcpio-style hook pipeline for kernel modules, binaries, and files.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS-initramfs — SigmaOS initramfs component following standard Linux initramfs conventions. Ordered execution plan: validated steps executed fail-fast, first error aborts. Principles: single responsibility, fail-fast, defensive programming, component isolation, stable API, deterministic tests. Initramfs builder with two layers:
 
-- `newc` cpio archive writer and deterministic directory-tree packer
-- TOML hook definitions with `depends` and `order`
-- Deterministic topological ordering (Kahn's algorithm)
-- Cycle and missing-dependency detection
-- JSON build plan for `sigmaos-rebuild` to execute
-- `--dry-run` / `--json` CLI output
-- `--rootfs <dir> --out <img>` packs a directory into a cpio `newc` image
-- `--compress none|gzip|zstd` compresses the packed image (flate2/zstd) —
-  `zstd` is the configured default in `InitramfsConfig`; `xz` is not yet
-  supported by the packer
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `2`, Stability: `beta`)
+- **Modules (`src/lib.rs`):** `cpio`, `pack`
+- **Key Structs:** `Plan`
+- **Key Enums:** `PlanError`
+- **Public Functions:** `new`, `add_step`, `len`, `is_empty`, `validate`, `run`
+- **Provides:** `component`
 
-## Interconnectivity
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-| Repo | Relationship |
-|------|-------------|
-| `sigmaos-rebuild` | Consumes initramfs build plans during rebuild |
-| `sigmaos-dkms` | DKMS modules feed hook `modules` lists |
-| `sigmaos-ISO` | ISO build embeds the resulting image |
+## CLI Reference
+- **Binary:** `sigmaos_initramfs`
 
-## Status
+```sh
+cargo run -- --config /etc/sigmaos/initramfs.toml --dry-run
+cargo run -- --config initramfs.toml --json
+cargo run -- --rootfs /path/to/rootfs --out /boot/initramfs.img
+```
 
-Implemented and pushed to `SigmaOS-initramfs/main` (merged with the
-canonical cpio/pack history; 20 tests passing).
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-initramfs`
+- `component.tier` = `2`
+- `component.stability` = `beta`
+- `component.language` = `rust`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1`)
+- `serde_json` (`1`)
+- `toml` (`0.8`)
+- `thiserror` (`2`)
+- `clap` (`4`)
+- `env_logger` (`0.11`)
+- `log` (`0.4`)
+- `directories` (`6`)
+- `flate2` (`1`)
+- `zstd` (`0.14`)
+
+## Testing
+Run the Rust test suite and Clippy checks:
+
+```sh
+cargo build
+cargo test
+cargo clippy --all-targets -- -D warnings
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

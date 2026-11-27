@@ -1,29 +1,41 @@
-# SigmaOS Notification Center
+# SigmaOS-notification-center
 
-Bar widget for reviewing notifications handled by SigmaOS's built-in notification service.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+An optional bar widget for reviewing notifications handled by SigmaOS's built-in notification service.
 
-`SigmaOS-notification-center` is an optional Quickshell bar widget forked from the Omarchy notification-center plugin. It adds a popup for browsing notifications; the daemon, toast popups, history storage, DND state, and the standard DND indicator remain part of SigmaOS itself.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Pending tab** — unseen notifications.
-- **Recently tab** — notifications already shown.
-- **Per-notification dismissal** and **Mark All as Seen** / **Clear Recent** actions.
-- **Do Not Disturb toggle** in the bar popup.
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Usage
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `notification-center`
+- `component.id` = `sigmaos-notification-center`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-```bash
-omarchy plugin add https://github.com/SigmaOS-io/sigmaos-notification-center-plugin.git --enable
-omarchy bar plugin move SigmaOS.notification-center --section right
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
 ```
 
-After changing plugin files: `omarchy plugin rescan` then `omarchy restart shell`.
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-notification-center)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

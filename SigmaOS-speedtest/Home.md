@@ -1,28 +1,61 @@
-# SigmaOS Speedtest
+# SigmaOS-speedtest
 
-Network latency and throughput measurement for SigmaOS — dependency-free
-(std + serde only), safe code only.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS speedtest — network latency and throughput measurement. Measures TCP connect latency and download throughput against a target host. Uses only std::net — no external deps, safe code only. SigmaOS component inspired by the corresponding SigmaOS repository.
 
-`SigmaOS-speedtest` measures TCP connect latency (`ping`) and download
-throughput (`download`, capped at `max_bytes`) against a host:port,
-plus `ping_stats` for min/avg/max over N samples. Results are serde-
-serializable structs (`PingResult`, `ThroughputResult`). All sockets
-use `connect_timeout`/`set_read_timeout` so tests and CLI runs are
-bounded.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `PingResult`, `ThroughputResult`
+- **Key Enums:** `SpeedtestError`
+- **Public Functions:** `ping`, `download`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **TCP ping**: connect latency in ms with typed errors
-  (`InvalidAddr`, `NoAddr`, `Timeout`)
-- **Throughput**: bytes downloaded, duration, and computed Mbps
-- **Statistics**: min/avg/max latency over repeated pings
-- **Tests**: 5 unit tests run entirely on loopback listeners — no
-  external network required
+## CLI Reference
+- **Binary:** `sigmaos-speedtest`
+- **Subcommands / Actions:** `ping`, `download`
 
-## Links
+```sh
+sigmaos-speedtest --help
+```
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-speedtest)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `speedtest`
+- `component.id` = `sigmaos-speedtest`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

@@ -1,20 +1,47 @@
-# SigmaOS Aether
+# SigmaOS-aether
 
-Lightweight window management and desktop environment utilities for SigmaOS.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+A visual theming application for SigmaOS. Extract colors from wallpapers and apply cohesive themes across your entire desktop.
 
-SigmaOS Aether provides lightweight window management tools and desktop environment utilities designed for SigmaOS, focusing on efficiency and minimal resource usage.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `Makefile`, `assets/`, `build/`, `cli/`, `contrib/`, `docs/`, `examples/`, `frontend/`, `go.mod`, `install.sh`, `internal/`, `ipc/`, `package.json`, `templates/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Window management**: Efficient window tiling and positioning
-- **Desktop utilities**: Essential desktop environment tools
-- **Lightweight design**: Minimal resource footprint
-- **Keyboard-driven**: Keyboard-centric workflow
+## CLI Reference
 
-## Links
+```sh
+aether --generate ~/wallpaper.jpg
+aether --apply-blueprint "My Theme"
+aether --list-blueprints
+```
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-aether)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `aether`
+- `component.id` = `sigmaos-aether`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+Go toolchain (see `go.mod` for module dependencies).
+
+## Testing
+Run the test suite and linter:
+
+```sh
+make
+make test
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

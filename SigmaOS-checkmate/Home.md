@@ -1,23 +1,42 @@
-# SigmaOS Checkmate
+# SigmaOS-checkmate
 
-Chess game and chess engine for SigmaOS - play chess with AI or multiplayer.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+3D chess for SigmaOS. Play a friend on the same computer or the built-in opponent, on four original sculpted sets. Built with C++ and Qt Quick 3D, following SigmaOS's theme and language.
 
-SigmaOS Checkmate provides a chess game interface with AI opponent and multiplayer capabilities for SigmaOS.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `bin/`, `screenshots/`, `share/`, `src/`, `tests/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Chess engine**: Built-in chess AI opponent
-- **Multiplayer**: Play against other players locally or online
-- **Game analysis**: Analyze games and suggest moves
-- **Puzzle mode**: Chess puzzles and challenges
-- **Time controls**: Various time control options
-- **PGN support**: Import/export games in PGN format
-- **Themes**: Customizable board and piece themes
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `checkmate`
+- `component.id` = `sigmaos-checkmate`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-checkmate)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

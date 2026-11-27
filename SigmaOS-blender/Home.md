@@ -1,41 +1,18 @@
-# SigmaOS Blender
+# SigmaOS-blender
 
-Blender integration for SigmaOS - 3D creation suite.
+Blender project/file manager for SigmaOS — reads `.blend` file metadata including magic bytes and version information.
 
 ## Overview
 
-SigmaOS Blender provides a comprehensive 3D creation suite for modeling, rendering, animation, and more. Integrated with SigmaOS theme system and performance optimizations.
+`SigmaOS-blender` provides a Rust library and CLI for extracting Blender file metadata without loading the full file.
 
 ## Features
 
-- **Modeling**: Polygon, curve, and sculpt modeling
-- **Rendering**: Cycles and Eevee render engines
-- **Animation**: Keyframe animation and rigging
-- **Sculpting**: Digital sculpting tools
-- **Video editing**: Video sequence editor
-- **Compositing**: Node-based compositing
-- **Scripting**: Python API
-- **Add-ons**: Extensible add-on system
-
-## Installation
-
-```bash
-sudo pacman -S sigmaos-blender
-```
-
-## Configuration
-
-Blender is configured to use the SigmaOS theme system. Additional add-ons can be installed via Blender preferences.
-
-## Usage
-
-```bash
-# Start Blender
-sigmaos-blender
-```
+- Validates `.blend` magic bytes
+- Extracts pointer size (32/64-bit), endianness, and version
+- CLI for quick metadata inspection
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-blender)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)

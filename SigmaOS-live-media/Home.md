@@ -1,30 +1,62 @@
-# SigmaOS Live Media
+# SigmaOS-live-media
 
-Live wallpaper / animated background manager for the SigmaOS desktop —
-declarative TOML config, atomic apply, battery-saver pause policy.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS live-media — live wallpaper / animated background manager. Manages animated wallpapers (video, shader, or image-sequence) for the SigmaOS desktop. Declarative TOML configuration, atomic apply, pause on battery saver. SigmaOS component: **live-media** — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
 
-`SigmaOS-live-media` manages animated wallpapers of four kinds:
-`video` (mp4/webm), `shader` (GLSL), `sequence` (image frame
-directory), and `image` (static fallback). A `LiveMediaConfig` lists
-wallpapers with per-entry `Playback` options (loop, volume,
-pause-on-battery). Config is TOML, validated on load (non-empty
-list, known active wallpaper, non-empty names), and `apply` writes it
-atomically (temp file + rename) to the XDG config dir.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Playback`, `Wallpaper`, `LiveMediaConfig`
+- **Key Enums:** `LiveMediaError`, `MediaKind`
+- **Public Functions:** `load`, `validate`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Validation**: rejects empty wallpaper lists, unknown `active`
-  names, and empty wallpaper names
-- **Path resolution**: relative media paths join `wallpapers_dir`,
-  absolute paths pass through
-- **Persistence**: `to_toml`/`load`/`apply` roundtrip
-- **Tests**: 4 unit tests cover validation, resolution, and the
-  TOML/apply/load roundtrip
+## CLI Reference
+- **Binary:** `sigmaos-live-media`
+- **Subcommands / Actions:** `validate`, `list`, `default`, `apply`
 
-## Links
+```sh
+sigmaos-live-media --help
+```
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-live-media)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `live-media`
+- `component.id` = `sigmaos-live-media`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `toml` (`0.8`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

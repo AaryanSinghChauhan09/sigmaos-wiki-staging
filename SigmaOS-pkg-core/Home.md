@@ -1,33 +1,55 @@
-# SigmaOS Package Core
+# SigmaOS-pkg-core
 
-pacman-style package database core — package records, version
-constraints, dependency resolution, and install/remove bookkeeping.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS pkg-core — package management core. Provides a local package database, dependency resolution, and transaction planning for the SigmaOS package manager. Backed by JSON on disk. SigmaOS component: **pkg-core** — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
 
-- `Package` model: name/arch/version/description + `depends`,
-  `provides`, `conflicts` (Arch PKGBUILD-style fields)
-- `Version` + `Constraint`: `=`, `>=`, `<`, `<=`, `^` (caret), `~`
-  (tilde) matching, `parse_dep` splits `name>=1.2` style entries
-- `PackageDb`: JSON-persisted `packages` + `installed` maps with
-  atomic save/load
-- `install` — conflict check against installed packages
-- `remove` — refuses removal while an installed package depends on it
-- `resolve` — dependency order honoring version constraints (cycle
-  detection, skips satisfied installed deps)
-- `orphans` — installed packages nothing depends on (pacman `-Qtd`)
-- `search`, `list_installed`, `topo_order`
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Package`, `Version`
+- **Key Enums:** `PkgError`, `Constraint`
+- **Public Functions:** `valid_name`, `parse`, `matches`
 
-## Commands
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-```bash
-sigmaos-pkg-core list | search <q> | deps <name> | add <file.json>
-sigmaos-pkg-core install <name> <version> | remove <name>
-sigmaos-pkg-core orphans | path
-# global: --db <path> overrides the default data-dir db.json
+## CLI Reference
+- **Binary:** `sigmaos-pkg-core`
+- **Subcommands / Actions:** `list`, `search`, `deps`, `add`, `install`, `remove`, `orphans`, `path`
+
+```sh
+sigmaos-pkg-core --help
 ```
 
-## Build & Test
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `pkg-core`
+- `component.id` = `sigmaos-pkg-core`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
@@ -36,14 +58,5 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-8 unit tests (dep parsing, constraint matching, resolution, orphans).
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-pkg-core)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

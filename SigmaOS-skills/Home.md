@@ -1,33 +1,51 @@
-# SigmaOS Skills
+# SigmaOS-skills
 
-AI agent skills and capabilities for SigmaOS - extensible skill system for AI agents and automation.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS-skills: Universal Agent Skill Registry and Execution Engine. Provides deterministic cataloging, capability matching, trigger resolution, and event lifecycle tracking for AI and developer agent skills. Skills component for SigmaOS
 
-SigmaOS Skills provides an extensible skill system for AI agents, enabling automation, code review, data analysis, and other AI-powered capabilities.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `2`, Stability: `beta`)
+- **Key Structs:** `Skill`
+- **Key Enums:** `SkillCategory`
+- **Public Functions:** `as_str`, `new`, `with_capability`, `with_trigger`
+- **Provides:** `component`
+- **Component Dependencies:** `SigmaOS-system`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Extensible skills**: Add custom skills for AI agents
-- **Code review**: Automated code review capabilities
-- **Data analysis**: Data analysis and ML skills
-- **Development tools**: Development and debugging skills
-- **Documentation**: Documentation generation skills
-- **Testing**: Automated testing skills
-- **Integration**: Integration with various tools and APIs
+## CLI Reference
+- **Binary:** `SigmaOS-skills`
 
-## Skill Categories
+```sh
+SigmaOS-skills --help
+```
 
-- Code review and linting
-- Data analysis and ML
-- Development tools
-- Documentation
-- Testing
-- Security auditing
-- Performance optimization
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-skills`
+- `component.tier` = `2`
+- `component.stability` = `beta`
+- `component.language` = `rust`
 
-## Links
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-skills)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

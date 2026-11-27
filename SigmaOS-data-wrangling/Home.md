@@ -1,37 +1,62 @@
-# SigmaOS Data Wrangling
+# SigmaOS-data-wrangling
 
-Data wrangling and ETL tools for SigmaOS - Apache Airflow, Apache NiFi, dbt, Pandas, Polars, and Talend Open Studio integration.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS data-wrangling — ETL pipeline engine. Declarative pipelines over JSON records: filter, map, aggregate, sort, limit, dedup. Sources read JSON files/arrays; sinks write JSON. SigmaOS component: **data-wrangling**.
 
-SigmaOS Data Wrangling provides a comprehensive toolkit for data extraction, transformation, and loading (ETL), enabling data pipeline development and data processing on SigmaOS.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Pipeline`
+- **Key Enums:** `WrangleError`, `Transform`
+- **Public Functions:** `apply_step`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Apache Airflow**: Workflow orchestration for data pipelines
-- **Apache NiFi**: Data flow automation and integration
-- **dbt**: Data build tool for transformation
-- **Pandas**: Python data manipulation library
-- **Polars**: High-performance data processing
-- **Talend Open Studio**: Open source ETL tool
-- **Pipeline management**: End-to-end data pipeline support
-- **Data connectors**: Integration with various data sources
+## CLI Reference
+- **Binary:** `sigmaos-data-wrangling`
+- **Subcommands / Actions:** `run`, `transform`, `show`, `savetemplate`
 
-## Supported Tools
+```sh
+sigmaos-data-wrangling --help
+```
 
-- Apache Airflow
-- Apache NiFi
-- dbt
-- Pandas
-- Polars
-- Talend Open Studio
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `data-wrangling`
+- `component.id` = `sigmaos-data-wrangling`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Links
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-data-wrangling)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+**Dev Dependencies:** `tempfile`
 
-ETL pipeline engine: filter/map/sort/limit/dedup/countBy/sum over
-JSON records. Fixed CountBy/Dedup group keys (strings were
-JSON-quoted). 7 lib tests.
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

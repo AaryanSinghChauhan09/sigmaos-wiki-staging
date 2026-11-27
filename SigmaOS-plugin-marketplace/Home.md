@@ -1,19 +1,41 @@
-# SigmaOS Plugin Marketplace
+# SigmaOS-plugin-marketplace
 
-Component definition and contract specification for the SigmaOS plugin marketplace (applet/desklet/extension marketplace).
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS-plugin-marketplace — plugin catalog & installer. A marketplace is a catalog of available plugins (metadata + download info) with search, install, update, and uninstall workflows. It delegates actual installation to a `MarketBackend` (which typically wraps the plugin-registry + a fetch source). Keeps an install history and supports pinned versions.
 
-This repository defines the marketplace contracts between SigmaOS components. It provides the component manifest and metadata for plugin marketplace integration.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `3`, Stability: `active`)
+- **Key Structs:** `CatalogEntry`, `InstalledEntry`, `HostBackend`
+- **Key Enums:** `MarketError`
+- **Traits:** `MarketBackend`
 
-## Component Details
+## Design Principles
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Category:** Desktop/UI
-- **Engine:** theme_marketplace
-- **Language:** Rust
-- **License:** GPL-3.0-or-later
+## CLI Reference
+- **Binary:** `SigmaOS-plugin-marketplace`
 
-## Build & Test
+```sh
+SigmaOS-plugin-marketplace --help
+```
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-plugin-marketplace`
+- `component.tier` = `3`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1`)
+- `serde_json` (`1`)
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
@@ -22,25 +44,5 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-## Architecture
-
-The SigmaOS plugin marketplace ecosystem consists of:
-
-- **SigmaOS-plugin-marketplace** (this repository): Component definition and contract specification
-- **SigmaOS-plugin-registry**: Rails control plane for plugin registry (plugins.sigmaos.org)
-- **SigmaOS-plugin-marketplace-tools**: Consolidated repository containing:
-  - `site/`: Static marketplace frontend
-  - `worker/`: Cloudflare Worker engagement backend
-  - `registry.json`: Curated registry data
-  - `scripts/`: Build scripts, security baseline scanning, verification
-
-## Related Repositories
-
-- [SigmaOS-plugin-registry](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-registry)
-- [SigmaOS-plugin-marketplace-tools](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace-tools)
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-plugin-marketplace)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

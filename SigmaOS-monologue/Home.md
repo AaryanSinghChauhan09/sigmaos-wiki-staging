@@ -1,31 +1,42 @@
-# SigmaOS Monologue
+# SigmaOS-monologue
 
-Voice-to-text and speech recognition for SigmaOS - convert speech to text with local processing.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+A simple webcam recorder for SigmaOS. Choose your camera and microphone once, then press **Space** to record. Press again to pause or resume the same take. Stop the take and it opens right away in a built-in editor: trim either end, cut ranges out of the middle, then **Save**.
 
-SigmaOS Monologue provides voice-to-text and speech recognition capabilities for SigmaOS, with local processing for privacy and offline use.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `bin/`, `pkgbuild/`, `src/`, `tests/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Voice-to-text**: Convert speech to text
-- **Local processing**: Privacy-focused local processing
-- **Offline capability**: Works without internet
-- **Multiple languages**: Support for multiple languages
-- **Real-time**: Real-time transcription
-- **Custom models**: Custom model training
-- **Integration**: Integration with SigmaOS applications
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Use Cases
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `monologue`
+- `component.id` = `sigmaos-monologue`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- Dictation
-- Voice commands
-- Meeting transcription
-- Accessibility
-- Note-taking
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
 
-## Links
+## Testing
+Verify component integrity and scripts in the repository root:
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-monologue)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

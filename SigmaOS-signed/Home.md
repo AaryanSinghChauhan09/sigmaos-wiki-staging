@@ -1,23 +1,42 @@
-# SigmaOS Signed
+# SigmaOS-signed
 
-Code signing and verification tools for SigmaOS - sign packages and verify signatures.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Sign PDFs and fill them in. Open a PDF, drop your signature, a line of text, or today's date anywhere on a page, move and size them, and save a signed copy, optionally sealed with a digital certificate so any later change to it shows. Modeled on the signing tools in Apple's Preview, and nothing more. On SigmaOS, the interface follows your theme's accent color.
 
-SigmaOS Signed provides code signing and verification tools for SigmaOS packages and files.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `bin/`, `docs/`, `pkgbuild/`, `plans/`, `scripts/`, `src/`, `tests/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Code signing**: Sign packages and executables
-- **Signature verification**: Verify file signatures
-- **Key management**: Manage signing keys
-- **Batch signing**: Batch file signing
-- **Integration**: Integration with package manager
-- **Trust management**: Manage trusted keys
-- **Audit**: Signature audit logging
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `signed`
+- `component.id` = `sigmaos-signed`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-signed)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

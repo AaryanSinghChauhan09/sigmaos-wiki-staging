@@ -1,23 +1,42 @@
-# SigmaOS Oligarchy
+# SigmaOS-oligarchy
 
-System governance and policy management for SigmaOS - configuration management and policy enforcement.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+A Cloudflare Worker serving one static page for `oligarchy.fyi`: the OLIGARCHY banner over a tagline that rotates through the pitch for SigmaOS's patronage model — billionaire money in, free operating system out.
 
-SigmaOS Oligarchy provides system governance and policy management tools for SigmaOS, enabling centralized configuration and policy enforcement.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `bin/`, `public/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Policy management**: Define and enforce system policies
-- **Configuration management**: Centralized configuration control
-- **Compliance checking**: Verify system compliance
-- **Audit logging**: Maintain policy audit logs
-- **Automated enforcement**: Automatic policy enforcement
-- **Rollback**: Revert policy changes
-- **Reporting**: Generate compliance reports
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `oligarchy`
+- `component.id` = `sigmaos-oligarchy`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-oligarchy)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

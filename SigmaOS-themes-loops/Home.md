@@ -1,44 +1,42 @@
-# SigmaOS Themes Loops
+# SigmaOS-themes-loops
 
-The live background loops for the built-in SigmaOS themes: a quiet version of a theme's still that keeps moving, which the SigmaOS desktop plays in the still's place while animations are on.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+The live background loops for the built-in SigmaOS themes: a quiet version of a theme's still that keeps moving, which OWE plays in the still's place while animations are on. They ship as the `sigmaos-themes-loops` package, which installs `<theme>/<name>.mp4` here to `/usr/share/sigmaos/themes/<theme>/backgrounds/loops/<name>.mp4`.
 
-The loops ship as the `sigmaos-themes-loops` package, which installs `<theme>/<name>.mp4` to `/usr/share/sigmaos/themes/<theme>/backgrounds/loops/<name>.mp4`.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `bin/`, `catppuccin/`, `catppuccin-latte/`, `hackerman/`, `lumon/`, `ristretto/`, `rose-pine/`, `vantablack/`, `white/`
 
-## How Loops Work
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-A loop plays in place of the still with the same name in that theme's `backgrounds/` in the SigmaOS desktop, so `lumon/01-united-in-severance.mp4` belongs to `themes/lumon/backgrounds/01-united-in-severance.webp`. Its first frame is that still and its last frame leads straight back into it.
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Loop Requirements
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `themes-loops`
+- `component.id` = `sigmaos-themes-loops`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-The `bin/check` script holds every loop to the format the SigmaOS desktop asks for, so the hand-over from the still and each restart stay seamless:
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-- H.264 with no B-frames
-- One keyframe
-- Colour tags
-- Twenty seconds or less
-- The still's shape at no larger than its size
+## Testing
+Verify component integrity and scripts in the repository root:
 
-## Add or Change a Loop
+```sh
+# Check repository scripts and configuration
+ls -la
+```
 
-To add or change a loop, open a pull request in this repository. Once it merges, cut a release tagged with the date, `vYYYY.MM.DD` (or `vYYYY.MM.DD.1` for a second one that day). The SigmaOS package repository picks the release up and updates `sigmaos-themes-loops` to it.
-
-## Available Themes
-
-This repository includes loops for the following built-in SigmaOS themes:
-
-- catppuccin
-- catppuccin-latte
-- hackerman
-- lumon
-- ristretto
-- rose-pine
-- vantablack
-- white
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-themes-loops)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

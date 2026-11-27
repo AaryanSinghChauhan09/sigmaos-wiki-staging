@@ -1,30 +1,52 @@
-# SigmaOS ML/DL
+# SigmaOS-ml-dl
 
-Machine Learning and Deep Learning tools for SigmaOS - PyTorch, scikit-learn, Statsmodels, and TensorFlow integration.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS ML/DL component — foundational ML primitives. Linear regression with batch gradient descent, feature standardization, and regression metrics. Pure Rust, deterministic, no unsafe code. SigmaOS component: **ml-dl**.
 
-SigmaOS ML/DL provides a comprehensive suite of machine learning and deep learning tools for SigmaOS.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Scaler`, `LinearRegression`
+- **Key Enums:** `MlError`
+- **Public Functions:** `fit`, `transform`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **PyTorch**: Deep learning framework
-- **scikit-learn**: Machine learning library
-- **Statsmodels**: Statistical modeling
-- **TensorFlow**: Deep learning framework
-- **GPU acceleration**: CUDA/ROCm support
-- **Jupyter integration**: Notebook support
-- **Model deployment**: Deploy models as APIs
+## CLI Reference
+- **Binary:** `sigmaos-ml-dl`
 
-## Supported Frameworks
+```sh
+sigmaos-ml-dl --help
+```
 
-- PyTorch
-- scikit-learn
-- Statsmodels
-- TensorFlow
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `ml-dl`
+- `component.id` = `sigmaos-ml-dl`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Links
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-ml-dl)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

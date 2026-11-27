@@ -1,44 +1,53 @@
-# SigmaOS Deskland
+# SigmaOS-deskland
 
-Deskland integration for SigmaOS - desktop environment framework.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Desktop environment built on Wayland/Hyprland with a modular Rust configuration engine for SigmaOS.
 
-SigmaOS Deskland provides a desktop environment framework for building custom desktop experiences. Integration with SigmaOS UI kit and theme system.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `MonitorConfig`, `WorkspaceRule`, `Keybind`
+- **Key Enums:** `DesklandError`, `WorkspaceLayout`, `Modifier`
+- **Public Functions:** `to_hypr_line`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Desktop framework**: Build custom desktop environments
-- **UI components**: Reusable UI components
-- **Theme integration**: SigmaOS theme support
-- **Plugin system**: Extensible plugin architecture
-- **Window management**: Integrated window management
-- **Panel system**: Customizable panels and widgets
-- **Launcher**: Application launcher
-- **Settings**: System settings integration
+## CLI Reference
+- **Binary:** `sigmaos-deskland`
 
-## Installation
-
-```bash
-sudo pacman -S sigmaos-deskland
+```sh
+cargo run -- init-default
+cargo run -- render
+cargo test
 ```
 
 ## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-deskland`
+- `component.language` = `rust`
+- `component.license` = `GPL-3.0-or-later`
 
-Deskland is configured to use the SigmaOS theme system. Configuration is stored in `~/.config/deskland/`.
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`2.0`)
+- `toml` (`0.8`)
 
-## Usage
+## Testing
+Run the Rust test suite and Clippy checks:
 
-```bash
-# Start Deskland
-sigmaos-deskland
-
-# Configure Deskland
-sigmaos-deskland-config
+```sh
+cargo build
+cargo test
+cargo clippy --all-targets -- -D warnings
 ```
 
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-deskland)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

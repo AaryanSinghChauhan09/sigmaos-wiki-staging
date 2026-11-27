@@ -1,27 +1,46 @@
-# SigmaOS Bootloader (sigma-bootloader)
+# SigmaOS-sigma-bootloader
 
-Multiboot2 boot header and tag generator embedded in the kernel image,
-plus a Multiboot1 header for loaders such as QEMU `-kernel`.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS bootloader — Multiboot2 boot header and tag generation. Produces the MB2 header embedded in the kernel image: magic, arch, header length, checksum, and header tags requesting framebuffer, memory map, and module loading. SigmaOS sigma-bootloader - modular Rust crate for the SigmaOS system
 
-- `Mb2Header::sigmaos_default()` — builds header requesting memory map,
-  framebuffer, cmdline, and boot loader name
-- Framebuffer request tag (any resolution, 32bpp)
-- Kernel address tag + module tags (initramfs etc.)
-- Checksum verification, 8-byte tag alignment
-- `Mb1Header` — magic/flags/checksum serialization for Multiboot1
-- `to_bytes()` serialization for linking into the kernel ELF
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `2`, Stability: `scaffold`)
+- **Key Structs:** `Module`, `Mb2Header`
+- **Key Enums:** `BootError`
+- **Public Functions:** `sigmaos_default`
+- **Provides:** `component`
 
-## Interconnectivity
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-| Repo | Relationship |
-|------|-------------|
-| `sigmaos-sigma-kernel` | Kernel parses the MB2 info this requests |
-| `sigmaos-initramfs` | Produces module payloads referenced by module tags |
-| `sigmaos-ISO` | ISO build links the header into the boot image |
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Status
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-sigma-bootloader`
+- `component.tier` = `2`
+- `component.stability` = `scaffold`
+- `component.language` = `rust`
+- **Feature flags:** `default`
 
-Real implementation (was stub). 10 tests passing, `#![no_std]`,
-`#![forbid(unsafe_code)]`, GPL-3.0.
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Run the Rust test suite and Clippy checks:
+
+```sh
+cargo build
+cargo test
+cargo clippy --all-targets -- -D warnings
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

@@ -1,27 +1,58 @@
-# SigmaOS Rebuild
+# SigmaOS-rebuild
 
-System rebuild and recompilation tools for SigmaOS - rebuild packages and system components from source.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS rebuild — system rebuild orchestrator. Plans and executes ordered system rebuild steps (initramfs, kernel modules, DKMS modules, bootloader, initramfs tools) with dry-run support and per-step status tracking. SigmaOS component: **rebuild** — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
 
-SigmaOS Rebuild provides tools for rebuilding packages and system components from source, useful for optimization, debugging, and applying custom patches.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `RebuildStep`, `StepRecord`, `RebuildPlan`
+- **Key Enums:** `RebuildError`, `StepStatus`
+- **Public Functions:** `standard`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Package rebuild**: Rebuild individual packages
-- **System rebuild**: Rebuild entire system from source
-- **Optimization**: Apply compiler optimizations
-- **Debug symbols**: Build with debug symbols
-- **Custom flags**: Apply custom compiler flags
-- **Dependency tracking**: Track rebuild dependencies
-- **Verification**: Verify rebuild integrity
+## CLI Reference
+- **Binary:** `sigmaos-rebuild`
 
-## Links
+```sh
+sigmaos-rebuild --help
+```
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-rebuild)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `rebuild`
+- `component.id` = `sigmaos-rebuild`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-Rebuild orchestrator: ordered steps (dkms/initramfs/bootloader) with
-dry-run, per-step records, required-vs-optional failure semantics.
-8 lib tests.
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

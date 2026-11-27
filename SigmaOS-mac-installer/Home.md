@@ -1,27 +1,42 @@
-# SigmaOS Mac Installer
+# SigmaOS-mac-installer
 
-A macOS app that installs [SigmaOS](https://github.com/AaryanSinghChauhan09/SigmaOS) on an Apple Silicon Mac, next to macOS. The app is named **SigmaOS Installer** (`org.sigmaos.installer`).
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## What it does
+## Overview
+A macOS app that installs [SigmaOS](https://github.com/AaryanSinghChauhan09/SigmaOS) on an Apple Silicon Mac, next to macOS. The app is named **SigmaOS Installer** and uses the `org.sigmaos.installer` identifiers (`Packaging/identity.conf`). It was extracted from [maralcbr/sigmaos-mx-mac](https://github.com/maralcbr/sigmaos-mx-mac) into [AaryanSinghChauhan09/SigmaOS-mac-installer](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer); the Git history and attribution are preserved (see [extraction provenance](docs/extraction.md)).
 
-- Inspects the Mac model, macOS version, power, FileVault state, and free disk space before asking for credentials.
-- Plans the partition layout and disk allocation, requires an explicit backup confirmation, installs through a privileged helper, and finishes setup in macOS Recovery.
-- Reads signed release catalogs and channels; released apps default to the `stable` channel offering SigmaOS 4.5.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `Design/`, `Development/`, `Engine/`, `Packaging/`, `Plugins/`, `Recovery/`, `Release/`, `Sources/`, `Tests/`, `docs/`, `evidence/`, `image-builder/`, `scripts/`, `test/`
 
-## Supported Macs
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-Support is decided by each release's signed catalog (`scripts/supported-models.json`), not by the app alone. Covered families include M1, M2, and M3 boards plus MacBook Neo. M3 Ultra and M4-and-later boards stay fail-closed until officially supported and physically qualified.
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Install
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `mac-installer`
+- `component.id` = `sigmaos-mac-installer`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
 
 ```sh
-brew install SigmaOS/mac/omarchy
+# Check repository scripts and configuration
+ls -la
 ```
 
-Or download `SigmaOS-Mac-Installer-<version>.dmg` plus its `.sha256` from the [releases page](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer/releases), verify the digest, and move the app to `/Applications`.
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

@@ -1,47 +1,18 @@
-# SigmaOS DuckDB
+# SigmaOS-duckdb
 
-DuckDB integration for SigmaOS with enhanced configuration and desktop integration.
+DuckDB integration layer — query planner wrappers and embedded analytics in Rust for SigmaOS.
 
 ## Overview
 
-SigmaOS DuckDB provides DuckDB in-process SQL database with SigmaOS integration, optimized configuration, and compatibility with data science workflows.
+`SigmaOS-duckdb` provides typed query plan construction, schema validation, SQL rendering, and cost estimation for embedded analytical queries.
 
 ## Features
 
-- DuckDB database engine
-- In-process SQL
-- Python and R integration
-- Parquet/CSV support
-- SigmaOS integration
-- Optimized performance
-
-## Installation
-
-Install via SigmaOS package manager:
-
-```bash
-sigmaos install duckdb
-```
-
-## Components
-
-DuckDB includes:
-
-- **DuckDB Core**: In-process SQL database
-- **Python Extensions**: pandas, arrow integration
-- **R Extensions**: dplyr, arrow integration
-- **SQL Dialect**: PostgreSQL-compatible SQL
-
-## Configuration
-
-DuckDB is pre-configured with:
-- SigmaOS memory settings
-- Optimized query execution
-- Desktop file picker integration
-- Extension manager
+- `AnalyticsSession` for registering table schemas and validating query plans
+- `QueryPlan` builder with projections, filters, `GROUP BY`, `ORDER BY`, and `LIMIT`
+- Identifier sanitization and deterministic SQL generation
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-duckdb)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)

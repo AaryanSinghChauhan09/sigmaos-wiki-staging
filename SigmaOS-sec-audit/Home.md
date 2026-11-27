@@ -1,35 +1,61 @@
-# SigmaOS Security Audit
+# SigmaOS-sec-audit
 
-Read-only security scanner for SigmaOS — walks a directory tree and
-reports permission and secret-hygiene findings. No writes, no deps
-beyond walkdir/serde/thiserror.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS sec-audit — security audit scanner. Scans directories for common security issues: world-writable files, private keys with loose permissions, hardcoded secrets in configs, and setuid/setgid binaries. Read-only; reports findings. SigmaOS component: **sec-audit** — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
 
-`SigmaOS-sec-audit` recursively scans a root and emits an
-`AuditReport` of `Finding`s with `Info`/`Warning`/`Critical`
-severity:
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Finding`, `AuditReport`
+- **Key Enums:** `AuditError`, `Severity`
+- **Public Functions:** `has_critical`, `count`, `scan`
 
-- **permissions**: world-writable files (warning); private-key file
-  names (`id_rsa`, `id_ed25519`, `.pem`, …) readable by group/other
-  (critical); setuid/setgid bits (info)
-- **secrets**: text files ≤ 1 MiB containing patterns like
-  `PRIVATE KEY-----`, `aws_secret_access_key`, `api_key =`,
-  `password =` (warning, one finding per file)
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-`AuditReport::has_critical`/`count` summarize results and
-`render_text` produces a human-readable report.
+## CLI Reference
+- **Binary:** `sigmaos-sec-audit`
 
-## Features
+```sh
+sigmaos-sec-audit --help
+```
 
-- **Recursive scan** via walkdir (no symlink following)
-- **Severity model** with per-category counts
-- **Tests**: 6 unit tests cover world-writable warnings, loose vs
-  tight private-key perms, secret detection, setuid info findings,
-  clean trees, and report rendering
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `sec-audit`
+- `component.id` = `sigmaos-sec-audit`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-## Links
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `walkdir` (`2.5`)
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-sec-audit)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

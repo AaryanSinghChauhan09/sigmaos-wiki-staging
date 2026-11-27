@@ -1,31 +1,43 @@
-# SigmaOS Browser
+# SigmaOS-browser
 
-Browser component for SigmaOS - web browsing capabilities integrated with the SigmaOS desktop environment.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS-browser: browser component model. Browser component for SigmaOS
 
-SigmaOS Browser provides web browsing functionality as part of the SigmaOS desktop environment, built with Rust for performance and security.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `2`, Stability: `beta`)
+- **Key Structs:** `BrowserItem`, `BrowserConfig`, `BrowserManager`
+- **Key Enums:** `BrowserError`
+- **Public Functions:** `new`, `add_item`, `get_item`, `count`, `add_config`, `config_count`, `set_enabled`
+- **Provides:** `component`
+- **Component Dependencies:** `SigmaOS-system`
 
-## Features
+## Design Principles
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Fast rendering**: Rust-based engine for performance
-- **Privacy-focused**: Built-in privacy protections
-- **SigmaOS integration**: Seamless integration with SigmaOS themes and settings
-- **Security**: Modern security features and sandboxing
+## CLI Reference
+- **Binary:** `sigmaos-browser`
 
-## Category
+```sh
+sigmaos-browser --help
+```
 
-Developer Tools
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-browser`
+- `component.tier` = `2`
+- `component.stability` = `beta`
+- `component.language` = `rust`
 
-## Engine
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-common_lib
-
-## Language
-
-Rust
-
-## Build & Test
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
@@ -34,12 +46,5 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-browser)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

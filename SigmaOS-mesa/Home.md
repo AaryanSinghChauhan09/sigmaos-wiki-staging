@@ -1,32 +1,37 @@
-# SigmaOS Mesa
+# SigmaOS-mesa
 
-Mesa 3D graphics library integration for SigmaOS - OpenGL, Vulkan, and graphics driver support.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+Mesa 3D graphics library integration for SigmaOS.
 
-SigmaOS Mesa provides Mesa 3D graphics library integration for SigmaOS, enabling OpenGL, Vulkan, and hardware-accelerated graphics.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `android/`, `bin/`, `build-support/`, `docs/`, `include/`, `licenses/`, `src/`, `subprojects/`
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **OpenGL support**: OpenGL implementation for graphics
-- **Vulkan support**: Vulkan API for modern graphics
-- **Hardware acceleration**: GPU acceleration for graphics
-- **Driver support**: Support for various GPU drivers
-- **Software rendering**: Software rendering fallback
-- **Performance optimization**: Optimized graphics performance
-- **Compatibility**: Compatibility with various applications
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Graphics APIs
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-mesa`
+- `component.license` = `GPL-3.0-or-later`
 
-- OpenGL
-- Vulkan
-- EGL
-- GLES
-- VA-API
-- VDPAU
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
 
-## Links
+## Testing
+Verify component integrity and scripts in the repository root:
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-mesa)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

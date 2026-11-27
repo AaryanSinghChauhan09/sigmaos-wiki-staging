@@ -1,38 +1,12 @@
-# SigmaOS Brave
+# SigmaOS-brave
 
-Brave web browser configured for SigmaOS with privacy by default.
+Brave browser integration and launcher profile manager in Rust for SigmaOS.
 
 ## Overview
 
-SigmaOS Brave provides Brave browser with SigmaOS theming, built-in ad blocking, and privacy features.
-
-## Features
-
-- Brave browser
-- Built-in ad blocking
-- Privacy protections
-- SigmaOS theme integration
-- Crypto wallet features
-- Tor integration
-
-## Installation
-
-Install via SigmaOS package manager:
-
-```bash
-sigmaos install brave
-```
-
-## Configuration
-
-Brave is pre-configured with:
-- SigmaOS theme support
-- Shields enabled
-- Privacy features active
-- Custom fingerprinting protection
+`SigmaOS-brave` manages Brave browser profiles, privacy/Shields policies, and launch arguments cleanly from Rust.
 
 ## Links
 
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-brave)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)

@@ -1,21 +1,41 @@
-# SigmaOS Configurator
+# SigmaOS-configurator
 
-System configuration tool for SigmaOS - provides a graphical interface for managing system settings and preferences.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+This has been rolled into the [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO) project.
 
-SigmaOS Configurator offers a user-friendly graphical interface for configuring SigmaOS system settings, including desktop environment, hardware, and system preferences.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Graphical interface**: Easy-to-use configuration UI
-- **System settings**: Desktop, hardware, and system preferences
-- **Theme management**: Configure SigmaOS themes and appearance
-- **User management**: User account settings and permissions
-- **Network configuration**: Network and connectivity settings
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `configurator`
+- `component.id` = `sigmaos-configurator`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-configurator)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

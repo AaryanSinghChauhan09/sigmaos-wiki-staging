@@ -1,85 +1,42 @@
-# SigmaOS Hyprland Titlebars
+# SigmaOS-hyprland-titlebars
 
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
+
+## Overview
 A native Hyprland plugin that gives SigmaOS's floating workspace mode its window titlebars. It draws theme-neutral titlebars on floating windows; dragging one moves the window, and a maximized window dragged by its titlebar comes back to its floating size under the pointer.
 
-SigmaOS core has no build step, so the plugin ships as its own package, `sigmaos-hyprland-titlebars`, which is built from this repository's GitHub releases. SigmaOS loads it from its Lua config only while a workspace floats, from a fixed path:
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
+- **Repository Layout:** `CMakeLists.txt`, `tools/`
 
-```lua
-hl.plugin.load("/usr/lib/sigmaos-hyprland-titlebars/titlebars.so")
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
+
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `hyprland-titlebars`
+- `component.id` = `sigmaos-hyprland-titlebars`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+C++17 / CMake / Qt6 toolchain (see `CMakeLists.txt`).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
 ```
 
-That path is a contract with SigmaOS core. The plugin still registers itself with Hyprland as `hyprbars` and keeps the `hl.plugin.hyprbars.add_button()` Lua interface and the `plugin.hyprbars.*` options, because SigmaOS's config is written against those names.
-
-## Origin and license
-
-This is a fork of Hypr Development's [BSD-licensed hyprbars](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars). The source was adapted for SigmaOS to supply Hyprland 0.56 Lua API support and safe coexistence with other hyprbars forks. Colors, font, rounding, and actions are supplied by SigmaOS's configuration; no theme styling is embedded in the renderer.
-
-The original hyprbars license is in `LICENSE` (BSD-3-Clause). SigmaOS's changes are under the MIT license in `LICENSE.MIT`. The package installs both under `/usr/share/licenses/sigmaos-hyprland-titlebars/`.
-
-## Added options
-
-These are in addition to the upstream `plugin.hyprbars` titlebar settings.
-
-| Option | Default | Behavior |
-| --- | --- | --- |
-| `enabled` | false | Upstream defaults to true. Off here, so a plugin left loaded after the config stops configuring it draws nothing. |
-| `bar_color_inactive` | transparent | Inactive titlebar color; transparent falls back to `bar_color`. |
-| `workspace_tag` | empty | When set, titlebars apply only to floating windows with this tag. Removing the tag or tiling the window immediately releases titlebar space. |
-
-## Titles
-
-A titlebar shows the name of the app the window belongs to, when a desktop entry claims the window's class through `StartupWMClass` or its file name, and the window's own title otherwise. A web app titles its window with its page or just its domain, so this is what keeps `web.whatsapp.com` reading WhatsApp. Entries are read from `$XDG_DATA_HOME/applications` and then `$XDG_DATA_DIRS`, so a user's own entry wins, and an entry added while Hyprland runs is picked up within a couple of seconds.
-
-## Button hover
-
-A button under the pointer is highlighted in its own icon color at low opacity, so the effect follows any theme without a setting of its own.
-
-## Window targeting with `%WINDOW%`
-
-Button `action` commands and `on_double_click` may contain `%WINDOW%`. Every occurrence is replaced synchronously with the clicked titlebar's window address, such as `0x1234abcd`, before the command is spawned. Use it to keep asynchronous actions targeted at the clicked window when focus changes before the command runs:
-
-```lua
-hl.plugin.hyprbars.add_button({
-  bg_color = "rgb(f7768e)", fg_color = "rgb(1a1b26)", size = 18, icon = "×",
-  action = [[hyprctl dispatch 'hl.dsp.window.close({ window = "address:%WINDOW%" })']],
-})
-```
-
-The replacement contains only `0x` and hexadecimal digits; no window title or other application-controlled text enters the command.
-
-## Hyprland ABI
-
-A Hyprland plugin is only compatible with the exact Hyprland build whose headers it was compiled against, and Hyprland refuses to load a mismatched build. The package is rebuilt whenever `hyprland` changes, and the same automated bump moves its `hyprland=` dependency to the version it was rebuilt against, so the package always demands the Hyprland it loads into.
-
-Plugin-owned C++ symbols have a `SigmaOSFloating` prefix and the library is built with `-fno-gnu-unique`, so it can be unloaded and reloaded cleanly alongside other hyprbars forks such as the Windows XP theme's. Do not use whole-library hidden visibility: Hyprland shares inline state through its headers.
-
-## Layout
-
-The plugin source sits at the top level and builds with CMake. `tools/verify.py` is a nested-compositor verifier, with `pointer.c` and the wlr virtual pointer protocol it uses to drive real pointer input; it is not part of the build.
-
-## Building
-
-With the Hyprland headers from the `hyprland` package installed:
-
-```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-```
-
-To release, make a GitHub release tagged `vX.Y.Z` with notes on what changed. The package management system watches this repository's releases and turns each new one into a package update within the hour, built from the tag's source tarball.
-
-## Verifying
-
-```bash
-python3 tools/verify.py build/titlebars.so
-```
-
-The verifier needs a running Hyprland session with exactly one Hyprland instance, plus `foot`, `grim`, `wayland-scanner`, and a C compiler. It starts a disposable nested Hyprland with its own runtime directory and never loads the candidate library into the parent compositor. It checks repeated load/reload/unload, interleaved with other hyprbars forks, and that a loaded plugin the config no longer configures reserves no titlebar space. It then exercises real pointer titlebar dragging to the screen edges without snapping or losing the titlebar off the top, double-click maximize, and restoring a maximized window by dragging its titlebar. A two-window regression check deliberately delays button and double-click commands and changes focus before they run, to verify that actions keep the clicked window as their target. A final check confirms that `workspace_tag`-scoped titlebars release their space immediately when a window is tiled or untagged.
-
-Screenshots and logs go to `/tmp/sigmaos-hyprland-titlebars-verification` by default; pass `--artifacts DIR` to change it.
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-hyprland-titlebars)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

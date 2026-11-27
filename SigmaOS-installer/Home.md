@@ -1,21 +1,42 @@
-# SigmaOS Installer
+# SigmaOS-installer
 
-Installer component for SigmaOS — installation state machine for the partition/copy/bootloader flow.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS-installer — installer component for SigmaOS Installer component for SigmaOS — installation state machine for the partition/copy/bootloader flow. Disk operations are future work.
 
-`SigmaOS-installer` is a Rust library that models the installation flow as an explicit state machine: `Welcome → Language → Location → Partitioning → UserSetup → Installation → Complete`, with `Failed` and `Cancelled` terminal states. It tracks per-installation configuration (language, timezone, keyboard, hostname, username, partitioning mode, target disk, filesystem) and progress.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `2`, Stability: `beta`)
+- **Modules (`src/lib.rs`):** `sigmainstaller`
+- **Key Structs:** `Component`
+- **Key Enums:** `ComponentError`
+- **Public Functions:** `new`, `init`, `is_ready`, `run`, `name`, `reset`
+- **Provides:** `system-installer`, `disk-partitioner`, `luks-encryption-wizard`
+- **Component Dependencies:** `SigmaOS-ISO`, `SigmaOS-system`
 
-This is the installer backend/state layer. Actual disk partitioning, file copy, and bootloader installation are future work; see `COMPONENT.toml` (`next_milestone = "Hardware and runtime integration"`).
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-## Features
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-- **State machine**: explicit install states with `advance_step`, `start_installation`, `update_progress`, `complete_installation`, `cancel_installation`, `fail_installation`.
-- **Config tracking**: per-installation `InstallConfig` with partitioning mode, target disk, filesystem, and progress.
-- **Global instance**: `init_sigmainstaller` / `get_sigmainstaller` singleton for embedding in the desktop or live environment.
-- **Safe Rust**: `#![forbid(unsafe_code)]`, `missing_docs` warnings enabled.
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-installer`
+- `component.tier` = `2`
+- `component.stability` = `beta`
+- `component.language` = `rust`
 
-## Build & Test
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `thiserror` (`1`)
+
+## Testing
+Run the test suite and linter:
 
 ```sh
 cargo build
@@ -24,24 +45,5 @@ cargo clippy -- -D warnings
 cargo fmt --check
 ```
 
-## Category
-
-Utilities
-
-## Engine
-
-installer
-
-## Language
-
-Rust
-
-## License
-
-GPL-3.0-or-later
-
-## Links
-
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-installer)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

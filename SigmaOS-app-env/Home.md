@@ -1,16 +1,62 @@
-# SigmaOS App Environment
+# SigmaOS-app-env
 
-Sandboxed application environment profiles for SigmaOS — env vars, filesystem mounts, network access, and resource hints that render into launch commands.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-## Capabilities
+## Overview
+SigmaOS app-env — application runtime environment manager. Defines sandboxed app environment profiles: env vars, filesystem mounts, network access, and resource hints. Generates launch commands/env. SigmaOS component: **app-env**.
 
-- `AppProfile`: command argv, `KEY=VALUE` env map, `Mount`s (ro/rw), network flag, workdir
-- `ProfileStore`: add (validates non-empty id + command), get/remove/list, `render_launch` → `LaunchSpec`
-- `LaunchSpec::to_shell()` renders `env KEY='quoted' ... cmd args` with proper single-quote escaping (commit `e147048` added tests covering quoting edge cases)
-- `save`/`load` atomic JSON persistence; `builtin_profiles()` seeds browser/terminal/files
-- 5 unit tests; `#![forbid(unsafe_code)]`
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Mount`, `AppProfile`, `ProfileStore`
+- **Key Enums:** `AppEnvError`
+- **Public Functions:** `add`, `get`, `remove`
 
-## Links
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-app-env)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
+## CLI Reference
+- **Binary:** `sigmaos-app-env`
+- **Subcommands / Actions:** `list`, `show`, `add`, `remove`, `path`
+
+```sh
+sigmaos-app-env --help
+```
+
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `app-env`
+- `component.id` = `sigmaos-app-env`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

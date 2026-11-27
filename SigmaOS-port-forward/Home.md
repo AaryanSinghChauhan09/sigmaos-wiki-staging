@@ -1,23 +1,41 @@
-# SigmaOS Port Forward
+# SigmaOS-port-forward
 
-Port forwarding and tunneling tools for SigmaOS - network port forwarding and secure tunneling.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+A little bar widget for managing SSH port forwards without keeping a terminal open. Define forwards once, then flip them on/off from the bar.
 
-SigmaOS Port Forward provides port forwarding and tunneling tools for SigmaOS, enabling network access to services.
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
 
-## Features
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Port forwarding**: Forward ports to local services
-- **Tunneling**: Secure SSH tunneling
-- **Reverse tunnels**: Reverse port forwarding
-- **SOCKS proxy**: SOCKS proxy support
-- **Auto-discovery**: Service auto-discovery
-- **Configuration**: Easy configuration management
-- **Security**: Secure tunnel establishment
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-## Links
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `port-forward`
+- `component.id` = `sigmaos-port-forward`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-port-forward)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

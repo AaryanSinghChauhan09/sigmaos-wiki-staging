@@ -1,16 +1,44 @@
-# SigmaOS Notifications (Archived)
+# SigmaOS-notifications
 
-> **Archived.** This scaffold repository is superseded and archived on GitHub.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
-`SigmaOS-notifications` was a placeholder for a unified notification daemon, but it never grew beyond a stub (`src/lib.rs` + `docs/SPEC.md`). SigmaOS's notification surface is covered by:
+## Overview
+SigmaOS Notifications - unified notification daemon core. In-process notification manager inspired by mako/dunst: apps post notifications, the daemon tracks active ones, keeps a bounded history, expires stale entries on `tick`, and notifies registered observers so a shell widget can render them. Unified notification daemon for SigmaOS with libnotify compatibility.
 
-- SigmaOS core — notification daemon, toast popups, history storage, and Do Not Disturb state.
-- [`SigmaOS-notification-center`](https://github.com/AaryanSinghChauhan09/SigmaOS-notification-center) — bar widget for browsing pending/recent notifications.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `Notification`, `NotificationDaemon`
+- **Key Enums:** `Priority`
+- **Traits:** `Observer`
+- **Public Functions:** `new`, `notify`, `dismiss`
+- **Provides:** `notifications`, `notification-daemon`, `urgency-levels`
 
-If a standalone daemon is needed later, recreate it as a real component rather than reviving this scaffold.
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-## Links
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-- [Archived repository](https://github.com/AaryanSinghChauhan09/SigmaOS-notifications)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `SigmaOS-notifications`
+- `component.language` = `rust`
+
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

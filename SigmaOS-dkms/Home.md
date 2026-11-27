@@ -1,30 +1,62 @@
-# SigmaOS DKMS
+# SigmaOS-dkms
 
-Dynamic Kernel Module Support state tracker for SigmaOS — records
-out-of-tree kernel modules and their per-kernel-release build status.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+SigmaOS dkms — kernel module (DKMS) manager. Tracks third-party kernel modules, their versions, and build status per kernel release. JSON-backed state; build/install delegated to dkms(8). SigmaOS component: **dkms** — see docs/FUTURE_PLAN_DISTROS.md in the main SigmaOS repository for rationale.
 
-`SigmaOS-dkms` is a Rust library + CLI (`sigmaos-dkms`) that tracks
-DKMS-managed modules: each `KernelModule` has a name, version, and a
-map of kernel release → status (`none`/`built`/`installed`/`failed`).
-The database is JSON-backed with atomic save (write-temp-then-rename)
-and lives under the XDG data dir by default. Actual build/install is
-delegated to `dkms(8)` — this component owns the state database.
+## Architecture
+- **Language / Runtime:** `rust` (Tier: `standard`, Stability: `active`)
+- **Key Structs:** `KernelModule`, `DkmsDb`
+- **Key Enums:** `DkmsError`, `ModuleStatus`
+- **Public Functions:** `add_module`, `remove_module`, `set_status`, `missing_for_kernel`
 
-## Features
+## Design Principles
+- **Memory Safety:** Enforces `#![forbid(unsafe_code)]` at the crate root.
+- **Fail-Fast Error Handling:** Uses typed error enums (`thiserror`) and explicit `Result` propagation without silent failures.
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-- **Module registry**: add/remove modules with validation
-- **Per-kernel status**: set/query build status for each kernel release
-- **Gap detection**: `missing_for_kernel` lists modules not built or
-  installed for a given release (failed and absent both count as
-  missing)
-- **Persistence**: `save`/`load` JSON roundtrip
-- **Tests**: 3 unit tests cover the module lifecycle, per-kernel
-  status semantics, `missing_for_kernel`, and persistence
+## CLI Reference
+- **Binary:** `sigmaos-dkms`
+- **Subcommands / Actions:** `built`, `installed`, `failed`, `list`, `add`, `remove`, `status`, `missing`, `path`
 
-## Links
+```sh
+sigmaos-dkms --help
+```
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-dkms)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `dkms`
+- `component.id` = `sigmaos-dkms`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+**Rust Crates (`Cargo.toml`):**
+- `serde` (`1.0`)
+- `serde_json` (`1.0`)
+- `thiserror` (`1.0`)
+- `log` (`0.4`)
+- `env_logger` (`0.10`)
+- `clap` (`4.0`)
+- `directories` (`5.0`)
+
+**Dev Dependencies:** `tempfile`
+
+## Testing
+Run the test suite and linter:
+
+```sh
+cargo build
+cargo test
+cargo clippy -- -D warnings
+cargo fmt --check
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)

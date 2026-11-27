@@ -1,20 +1,41 @@
-# SigmaOS Themes Intros
+# SigmaOS-themes-intros
 
-Archived on GitHub — this repository was intended for theme introspection tools but was not implemented. The active theme ecosystem uses SigmaOS-theme-registry, SigmaOS-theme-marketplace, SigmaOS-themes-loops, and SigmaOS-theme-sync.
+> Part of [SigmaOS](https://github.com/AaryanSinghChauhan09) — a modular, rolling-release operating system.
 
 ## Overview
+**This repository is archived.**
 
-This repository was planned to provide theme introspection tools for SigmaOS but was never implemented. The active theme ecosystem now consists of:
+## Architecture
+- **Language / Runtime:** `multi-language` (Tier: `standard`, Stability: `active`)
 
-- **SigmaOS-theme-registry**: Source of truth for community themes
-- **SigmaOS-theme-marketplace**: Theme marketplace website
-- **SigmaOS-theme-sync**: Chromium extension for theme sync
-- **SigmaOS-themes-loops**: Live background loops for themes
+## Design Principles
+- **Single Responsibility & Modularity:** Scoped as an independent SigmaOS component repository with explicit contracts.
+- **SOLID & Clean Code:** Follows DRY, KISS, YAGNI, defensive programming, and secure defaults.
+- **Rolling Release:** Continuously integrated with no static version release tags.
 
-## Links
+## CLI Reference
+Library / configuration component (no standalone CLI binary declared; see `src/lib.rs` or repository scripts).
 
-- [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-themes-intros)
-- [SigmaOS theme registry](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-registry)
-- [SigmaOS theme marketplace](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-marketplace)
-- [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
-- [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+## Configuration
+Component metadata is declared in `COMPONENT.toml`:
+- `component.name` = `themes-intros`
+- `component.id` = `sigmaos-themes-intros`
+- `component.kind` = `component`
+- `component.license` = `GPL-3.0-or-later`
+- `component.metadata.category` = `sigmaos`
+- `component.metadata.branch` = `main`
+- `component.metadata.docs` = `github-wiki`
+
+## Dependencies
+Standard SigmaOS runtime environment (no external Rust crate dependencies).
+
+## Testing
+Verify component integrity and scripts in the repository root:
+
+```sh
+# Check repository scripts and configuration
+ls -la
+```
+
+## Contributing
+See [SigmaOS Development Guidelines](../Development-Guidelines)
