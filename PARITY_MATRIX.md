@@ -399,3 +399,5 @@ Generated: 2026-10-15
   version. QEMU-verified.
 - KERNEL DMESG(36): 16KiB log ring in arch::log + log_read; sigma-sys
   dmesg()/DMESG_CAP; sigma-sh `dmesg` builtin. QEMU-verified.
+- sigma-sh builtins: id/whoami/groups/tty/printenv/set/yes added.
+  QEMU-verified (id -> uid=0(root), whoami -> root).
