@@ -18,3 +18,7 @@ SigmaOS Site is the official website for the SigmaOS project, providing the down
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-site)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+
+Static site builder: markdown-ish content -> HTML via template
+substitution, verbatim asset copying, auto index generation.
+9 lib tests.
