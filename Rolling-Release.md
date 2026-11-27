@@ -12,8 +12,11 @@ SigmaOS follows a **pure rolling-release model**:
 
 | Component | Role in Rolling Release |
 | :--- | :--- |
-| **`SigmaOS-mirror`** | Hosts synchronized `edge`, `rc`, and `stable` package repository snapshots. |
+| **`SigmaOS-mirror`** / **`SigmaOS-pkg-mirror`** | Hosts and syncs `edge`, `rc`, and `stable` package repository snapshots. |
 | **`SigmaOS-update-system`** | Orchestrates rolling system updates with pre-flight checks and transaction logging. |
+| **`SigmaOS-atomic-root`** | Manages A/B root slots so updates write to the inactive slot without mutating the running OS. |
+| **`SigmaOS-generations`** | Tracks immutable system generations with atomic activation and bounded retention. |
+| **`SigmaOS-efi-boot`** | Generates and selects EFI boot entries for generation switching. |
 | **`SigmaOS-rebuild`** | Rebuilds system images, initramfs plans, and declarative profiles deterministically. |
 | **`SigmaOS-zfs-integration`** | Creates pre-update ZFS filesystem snapshots automatically. |
 | **`SigmaOS-rollback`** | Restores the system to a known-good snapshot if an update fails. |
