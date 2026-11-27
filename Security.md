@@ -29,3 +29,9 @@ Report security issues privately through the repository's security advisory chan
 - **[SigmaOS-audit-log](SigmaOS-audit-log)** — cryptographically signed audit event journal; tamper-evident log ring with SHA-256 chaining
 - **[SigmaOS-crypto-keys](SigmaOS-crypto-keys)** — PKI key management: generate, store, rotate Ed25519/RSA keys under `/etc/sigma/pki`
 - **[SigmaOS-wayland-portal](SigmaOS-wayland-portal)** — Wayland XDG portal integration; enforces sandboxed file/screen access for desktop apps
+- **[SigmaOS-boot-verify](SigmaOS-boot-verify)** — Measured boot verifier; validates kernel, initramfs, and rootfs hashes against signed manifest before boot
+- **[SigmaOS-app-sandbox](SigmaOS-app-sandbox)** — Application sandbox engine; enforces read-only rootfs, network isolation, and per-app capability allowlists
+- **[SigmaOS-mount-namespace](SigmaOS-mount-namespace)** — Mount namespace isolation tracker; models per-namespace mount tables and prevents mount conflicts
+- **[SigmaOS-process-isolator](SigmaOS-process-isolator)** — Per-process capability and namespace isolation policy manager (PID, net, mount, read-only root)
+- **[SigmaOS-oom-guardian](SigmaOS-oom-guardian)** — Out-of-memory policy guard; protects critical system daemons while enforcing deterministic OOM reclamation
+- **[SigmaOS-network-filter](SigmaOS-network-filter)** — Stateless packet filter rule engine for ordered TCP/UDP/ICMP Allow/Deny/Log policies

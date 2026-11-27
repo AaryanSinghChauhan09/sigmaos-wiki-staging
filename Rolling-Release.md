@@ -17,6 +17,9 @@ SigmaOS follows a **pure rolling-release model**:
 | **`SigmaOS-atomic-root`** | Manages A/B root slots so updates write to the inactive slot without mutating the running OS. |
 | **`SigmaOS-generations`** | Tracks immutable system generations with atomic activation and bounded retention. |
 | **`SigmaOS-efi-boot`** | Generates and selects EFI boot entries for generation switching. |
+| **`SigmaOS-boot-verify`** | Verifies kernel, initramfs, and rootfs SHA-256 measurements before boot handoff. |
+| **`SigmaOS-service-supervisor`** | Supervises core daemons with dependency-ordered startup and health checks. |
+| **`SigmaOS-live-patch`** | Applies hot kernel/userspace security patches without requiring a full reboot. |
 | **`SigmaOS-rebuild`** | Rebuilds system images, initramfs plans, and declarative profiles deterministically. |
 | **`SigmaOS-zfs-integration`** | Creates pre-update ZFS filesystem snapshots automatically. |
 | **`SigmaOS-rollback`** | Restores the system to a known-good snapshot if an update fails. |
