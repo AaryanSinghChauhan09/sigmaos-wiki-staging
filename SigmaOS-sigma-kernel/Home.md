@@ -153,6 +153,15 @@ Cooperative multitasking with per-process isolation — Linux
   prefix covering `path` and returns `(FsKind, node_count)` — the
   statfs(2)/df analogue. kind codes: 1=initramfs, 2=fat32, 3=other.
   QEMU-verified via sigma-sh `df` (`df /bin` -> initramfs, 10 nodes).
+- **MOUNT/UMOUNT/MOUNTLIST**: MOUNT(27) maps the fstype string to
+  `FsKind` (initramfs/fat32/vfat/msdos/other) and records the mount
+  via `Vfs::mount` (target must be an existing directory); UMOUNT(28)
+  removes it (root protected); MOUNTLIST(38) dumps `{kind, dev,
+  path[64]}` records — the `/proc/mounts` analogue. File data still
+  routes through the single VFS tree; mounts are bookkeeping +
+  per-mount statfs, not separate backing stores yet. QEMU-verified:
+  `mount /dev/sda1 /mnt fat32` -> `mount` lists it, `df /mnt` reports
+  fat32, `umount /mnt` removes it.
 - `USER_PML4`/`USER_BRK` swap per-process on every `switch_to`, so
   each process owns its page tables and heap break.
 - `/child` (`sigma-child` in sigma-sh): minimal `no_std` test binary

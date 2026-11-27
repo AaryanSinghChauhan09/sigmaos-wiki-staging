@@ -412,3 +412,7 @@ Generated: 2026-10-15
 - KERNEL STATFS(37): Vfs::statfs longest-prefix mount lookup ->
   (FsKind, node_count); sigma-sys statfs(); sigma-sh `df [path]`.
   QEMU-verified (`df /bin` -> initramfs, 10 nodes).
+- KERNEL MOUNT(27)/UMOUNT(28)/MOUNTLIST(38): real VFS mount table —
+  fstype->FsKind mapping, mount-point validation, mount listing.
+  sigma-sh `mount`/`umount` builtins. QEMU-verified full cycle
+  (mount -> list -> df per-mount kind -> umount).
