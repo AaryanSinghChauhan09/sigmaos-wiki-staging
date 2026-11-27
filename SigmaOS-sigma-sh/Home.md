@@ -145,7 +145,7 @@ and nested `${...}` matching. Commit `18c5580` adds affix trimming
 `${var#pat}`/`${var%pat}`/`${var##pat}`/`${var%%pat}` (shortest/longest
 glob affix removal). Commit `5e07223` adds `readonly` (immutable vars
 across assignment/export/unset/${}:=) and `local` (function-scoped
-vars restored on return via local_stack). `select` loops and `. FILE`/`source FILE` script execution added (vars/functions persist). QEMU-verified. 66 lib tests.
+vars restored on return via local_stack). `select` loops and `. FILE`/`source FILE` script execution added (vars/functions persist). QEMU-verified. `hostname`/`arch` builtins added; initramfs now ships /etc/hostname and /etc/os-release. 67 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
