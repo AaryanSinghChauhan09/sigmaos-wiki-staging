@@ -23,3 +23,9 @@
 
 ## Reporting Vulnerabilities
 Report security issues privately through the repository's security advisory channel without exposing exploit details in public issues.
+
+## Capability-Based Security (Added 2026-11)
+- **[SigmaOS-pledge-caps](SigmaOS-pledge-caps)** — pledge/unveil-style capability confinement; processes declare required capabilities at startup
+- **[SigmaOS-audit-log](SigmaOS-audit-log)** — cryptographically signed audit event journal; tamper-evident log ring with SHA-256 chaining
+- **[SigmaOS-crypto-keys](SigmaOS-crypto-keys)** — PKI key management: generate, store, rotate Ed25519/RSA keys under `/etc/sigma/pki`
+- **[SigmaOS-wayland-portal](SigmaOS-wayland-portal)** — Wayland XDG portal integration; enforces sandboxed file/screen access for desktop apps

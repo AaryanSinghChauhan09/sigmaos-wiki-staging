@@ -11,7 +11,13 @@
 - [Distro Comparison](./Distro-Comparison) — How SigmaOS compares to Arch, Omarchy, Debian, and Linux Mint
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
-## Implemented Component Repositories (326)
+## Implemented Component Repositories (331)
+
+### Hardware (1)
+- [SigmaOS-hw-detect](./SigmaOS-hw-detect)
+
+### Networking (1)
+- [SigmaOS-dns-resolver](./SigmaOS-dns-resolver)
 
 ### Other Components (24)
 - [SigmaOS-ISO](./SigmaOS-ISO/Home)
@@ -39,8 +45,17 @@
 - [SigmaOS-update-system](./SigmaOS-update-system/Home)
 - [SigmaOS-xtask](./SigmaOS-xtask/Home)
 
+### Packaging (1)
+- [SigmaOS-pkg-mirror](./SigmaOS-pkg-mirror)
+
+### System (1)
+- [SigmaOS-time-sync](./SigmaOS-time-sync)
+
 ### System Services (1)
 - [SigmaOS-notifications](./SigmaOS-notifications/Home)
+
+### Virtualization (1)
+- [SigmaOS-container-engine](./SigmaOS-container-engine)
 
 ### api-tools (1)
 - [SigmaOS-iloveapi](./SigmaOS-iloveapi/Home)
