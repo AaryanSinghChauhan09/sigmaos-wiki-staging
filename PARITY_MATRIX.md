@@ -390,3 +390,7 @@ Generated: 2026-10-15
   `exec /child` replaced shell pid 3 -> sigma-child, exit 42 reaped.
 - sigma-sh fork + exec builtins (Sys::fork/exec -> sigma-sys).
   68 lib tests.
+- KERNEL wait-any + reap fix: WAIT(u64::MAX) waits for any child;
+  blocked-wait children are now reaped at exit (was leaking page
+  tables/frames/slot). QEMU-verified via bare `wait`.
+- sigma-sh bare `wait` -> Sys::wait_any -> sigma_sys::wait_any.
