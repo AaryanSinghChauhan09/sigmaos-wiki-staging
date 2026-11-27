@@ -6,7 +6,7 @@ SigmaOS combines the rolling freshness of Arch, the curated Wayland desktop poli
 
 | Capability | SigmaOS | Arch Linux | Omarchy | Debian | Linux Mint |
 |---|---|---|---|---|---|
-| **Architecture** | **351+ modular component repos** | Monolithic PKGBUILD tree | Dotfiles/script overlay on Arch | Monolithic `.deb` archive | Ubuntu/Debian derivative |
+| **Architecture** | **354+ modular component repos** | Monolithic PKGBUILD tree | Dotfiles/script overlay on Arch | Monolithic `.deb` archive | Ubuntu/Debian derivative |
 | **Memory Safety** | **`#![forbid(unsafe_code)]` Rust core** | C / Bash scripts | Bash / C / QML | C / Shell | C / Python |
 | **Atomic Rollback** | **Built-in (`SigmaOS-rollback`, `SigmaOS-generations`, `SigmaOS-atomic-root`, `SigmaOS-zfs-integration`)** | Manual snapshots only | Manual snapshots | None by default | Timeshift (external) |
 | **Declarative Config** | **Built-in (`SigmaOS-sys-declare`, `SigmaOS-config-system`)** | Imperative | Imperative | Imperative | Imperative |
@@ -29,7 +29,7 @@ SigmaOS combines the rolling freshness of Arch, the curated Wayland desktop poli
 2. **True Atomic Recovery**: Updates target the inactive A/B root (`SigmaOS-atomic-root`) and record a new generation (`SigmaOS-generations`) with ZFS snapshot integration (`SigmaOS-zfs-integration`) and EFI boot selection (`SigmaOS-efi-boot`).
 3. **Secure by Default**: Processes drop privileges via `SigmaOS-pledge-caps`, run isolated in `SigmaOS-jails`, mediate desktop access via `SigmaOS-wayland-portal`, and traverse a default-deny `SigmaOS-pf-firewall`. Every audit event is SHA-256 chained via `SigmaOS-audit-log`.
 4. **Full Native Identity**: Independent SigmaOS tooling (`sigma-pkg`, `sigma-build`, `sigma-initramfs`, `sigma-gen`, `sigma-pf`, `sigma-mirror-*`) — no wrapped foreign distro package managers.
-5. **Complete Subsystem Coverage**: 351+ dedicated component repos covering power, display, input, filesystem, locale, containers, DNS, time, hardware, mirrors — each independently tested with 6+ AAA tests.
+5. **Complete Subsystem Coverage**: 354+ dedicated component repos covering power, display, input, filesystem, locale, containers, DNS, time, hardware, mirrors — each independently tested with 6+ AAA tests.
 
 ## Component Coverage by Domain
 
