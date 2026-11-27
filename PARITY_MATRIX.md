@@ -406,3 +406,4 @@ Generated: 2026-10-15
   expansion). QEMU-verified alias; 70 lib tests.
 - sigma-sh echo -n/-e/-E/-- + escapes; pushd/popd/dirs + alias.
   QEMU-verified.
+- sigma-sh fc/times builtins. QEMU-verified fc rerun.
