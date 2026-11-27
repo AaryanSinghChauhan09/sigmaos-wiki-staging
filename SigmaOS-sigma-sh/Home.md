@@ -133,7 +133,12 @@ substitution so nested `$(( ))` doesn't split args. QEMU-verified
 counting `while` loops (`i=$((i+1))`). Commit `69dcc3a` adds
 `case WORD in pat[|pat]) LIST ;; ... esac` — glob patterns via
 glob_match, `|` alternation, `$`-expanded word, bodies through the
-full executor. QEMU-verified. 61 lib tests.
+full executor. QEMU-verified. Commit `322cad9` adds the `read`
+builtin (line-at-a-time from pipes or console, multi-var field
+splitting, POSIX EOF semantics) and compound pipeline stages —
+`prod | while read l; do ...; done` now works via a persistent
+`stdin_rest` cursor and pre-`;` pipeline detection. QEMU-verified.
+62 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
