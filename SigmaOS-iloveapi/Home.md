@@ -28,3 +28,7 @@ SigmaOS iLoveAPI provides integration with iLoveAPI services for document conver
 - [Repository](https://github.com/AaryanSinghChauhan09/SigmaOS-iloveapi)
 - [SigmaOS project](https://github.com/AaryanSinghChauhan09/Sigma)
 - [SigmaOS ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO)
+
+Conversion job manager: provider-agnostic ConvertJob lifecycle
+(queued/processing/done/failed) with CopyProvider mock, status-filtered
+listing, JSON persistence. 6 lib tests.
