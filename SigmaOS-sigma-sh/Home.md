@@ -117,6 +117,15 @@ Commit `6d11343` adds shell functions: `name() { ...; }` defs
 `shift`, and positional params `$1..$N`/`$#`/`$@`/`$*` — bodies run
 through the full executor so pipelines/substitution compose.
 Also fixed trailing `;`/`&&`/`||` leaking into args. 54 lib tests.
+Commit `11853ca` adds compound commands: `if/then/elif/else/fi`,
+`for VAR [in items]; do ...; done` (bare `for VAR` iterates `$@`,
+the loop var is a shell env var), `while`/`until ...; do ...; done`
+with a 100k-iteration safety cap, and `break`/`continue` scoped by
+loop depth. Compounds parse into a CNode tree via a recursive-descent
+parser over quote-aware `;`-tokens; nesting works (`then for ...`,
+`if` inside `for` bodies), and trailing `; cmd` after `fi`/`done`
+runs as a sibling. Whole-line `VAR=value [VAR2=value2]` assignments
+set env vars with `$`/`$()` expansion. 59 lib tests.
 All three user binaries link non-PIE at image base 0x600000
 (`.cargo/config.toml`) and use naked `_start` stubs that align RSP
 to 16 bytes before calling Rust main. 43 lib tests.
