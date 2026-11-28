@@ -504,3 +504,11 @@ to GitHub, and documented in the wiki:
   clippy/fmt clean.
 
 Component count: 357 -> 359.
+
+## Update — generations component (2026-11-28)
+
+- **SigmaOS-generations** (new repo, pushed) — NixOS-generation-style
+  immutable system generations per FUTURE_LINUX_BSD_PLAN: monotonic
+  generation records, atomic activate pointer, rollback, active-guard
+  removal, max_keep GC, atomic JSON persistence, `sigma-gen` CLI.
+  10 unit tests; clippy/fmt clean. Component count 359 -> 360.
