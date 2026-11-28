@@ -483,3 +483,24 @@ real multitasking OS:
 
 Verified in QEMU: kernel boots PVH -> initramfs -> ring-3 sigma-init ->
 interactive shell with working syscalls, process spawning, and pipes.
+
+## Update — distro-parity package tooling (2026-11-28)
+
+Two missing DISTRO_INSPIRATION_PLAN candidates implemented, pushed
+to GitHub, and documented in the wiki:
+
+- **SigmaOS-pkg-solver** (new repo) — apt/edsp-style backtracking
+  dependency solver over pkg-core `Package` records: multi-version
+  candidates, virtual `provides`, two-way conflicts, unit propagation
+  + MRV branching (newest-first), minimal-change keep rules for
+  installed packages, root upgrade semantics, node budget, apt-style
+  unsat explanations. 15 unit tests; clippy/fmt clean. Wired to
+  pkg-core via path dependency per ecosystem convention.
+- **SigmaOS-pockets** (new repo) — Debian-style release pockets:
+  stable/testing/unstable/experimental + updates/security/backports/
+  proposed-updates with apt-style pin priorities (package/pocket/
+  version-scoped globs), `apt policy` reporting, whole-db candidate
+  view for update-system, JSON persistence, CLI. 8 unit tests;
+  clippy/fmt clean.
+
+Component count: 357 -> 359.

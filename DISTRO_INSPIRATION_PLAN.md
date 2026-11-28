@@ -47,15 +47,22 @@ plan new components inspired by other Linux/BSD distros.
 
 ## Near-term candidates (need repos when quota resets)
 
-1. `sigmaos-pkg-solver` — SAT/heuristic dependency solver split from pkg-core
-2. `sigmaos-system-profile` — NixOS-style declarative whole-system config
-3. `sigmaos-initramfs` — mkinitcpio-style hook pipeline
-4. `sigmaos-pockets` — Debian-style release pockets for updates
-5. `sigmaos-jails` — BSD-jail-inspired sandbox profiles for app-env
+~~1. `sigmaos-pkg-solver`~~ — DONE (backtracking solver, pushed)
+2. `sigmaos-system-profile` — DONE (declarative `system.toml`, pushed)
+3. `sigmaos-initramfs` — DONE (mkinitcpio hooks + cpio builder, pushed)
+~~4. `sigmaos-pockets`~~ — DONE (release pockets + pins, pushed)
+5. `sigmaos-jails` — DONE (sandbox profiles for app-env, pushed)
 
 ## Progress
 
 - `sigmaos-system-profile` — IMPLEMENTED and pushed to GitHub
   (candidate #2 above; declarative `system.toml` profile).
+- `sigmaos-pkg-solver` — IMPLEMENTED and pushed to GitHub
+  (candidate #1 above; backtracking solver over pkg-core records:
+  version selection, virtual provides, conflicts, MRV branching,
+  minimal-change keep rules, apt-style errors; 15 tests).
+- `sigmaos-pockets` — IMPLEMENTED and pushed to GitHub
+  (candidate #4 above; Debian-style release pockets with apt-style
+  pin priorities, `apt policy` view, candidate selection; 8 tests).
 - `sigmaos-initramfs` — IMPLEMENTED and pushed (Arch mkinitcpio hooks
   merged with cpio/pack image builder).
