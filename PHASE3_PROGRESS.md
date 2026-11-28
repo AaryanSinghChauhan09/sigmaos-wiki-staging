@@ -512,3 +512,10 @@ Component count: 357 -> 359.
   generation records, atomic activate pointer, rollback, active-guard
   removal, max_keep GC, atomic JSON persistence, `sigma-gen` CLI.
   10 unit tests; clippy/fmt clean. Component count 359 -> 360.
+
+## Update — ab-boot component (2026-11-28)
+
+- **SigmaOS-ab-boot** (new repo, pushed) — A/B bootloader slots with
+  try-boot budget, mark_good/mark_bad, automatic rollback to the
+  last-known-good slot, atomic JSON persistence, `sigma-ab` CLI.
+  8 unit tests; clippy/fmt clean. Component count 360 -> 361.

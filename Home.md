@@ -11,7 +11,7 @@
 - [Distro Comparison](./Distro-Comparison) — How SigmaOS compares to Arch, Omarchy, Debian, and Linux Mint
 - [Linux & BSD Future Architecture Plan](./FUTURE_LINUX_BSD_PLAN) — Next-generation OS capabilities & roadmap
 
-## Implemented Component Repositories (360)
+## Implemented Component Repositories (361)
 
 ### Desktop (7)
 - [SigmaOS-clipboard-manager](./SigmaOS-clipboard-manager)
