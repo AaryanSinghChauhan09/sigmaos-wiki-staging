@@ -585,3 +585,9 @@ Component count: 357 -> 359.
   staged locally in sigmaos-work.
 - `SigmaOS-pockets` gained `upgradable` (apt-style upgrade list,
   Version-ordered compare) + CLI; pushed.
+
+- `SigmaOS-update-system` gained `UpdateChannel::pocket_name()`
+  (stable/beta/nightly -> stable/testing/unstable pocket names) —
+  bridges update channels onto sigmaos-pockets vocabulary. Pushed.
+- Background retry loop (/tmp/publish-queued.sh) now attempts
+  `gh repo create` for the 5 queued components every 30 min.
