@@ -556,3 +556,8 @@ Component count: 357 -> 359.
   catalog, SHA-256 verified staging, provenance, sigma-fw CLI;
   5 tests, clippy/fmt clean). Repo creation still rate-limited;
   queued with ports-tree and zfs-snapshots.
+
+- **SigmaOS-btrfs-subvols** — implemented locally (subvolume records,
+  quotas, ro/rw snapshots, sigma-btrfs CLI; 7 tests, clippy/fmt
+  clean). Repo creation still rate-limited; queued with the other
+  three staged components.
