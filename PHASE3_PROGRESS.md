@@ -529,3 +529,11 @@ Component count: 357 -> 359.
   signature metadata + require-signatures policy, hit counters,
   atomic writes, `sigma-bincache` CLI. 7 unit tests; clippy/fmt
   clean. Component count 361 -> 362.
+
+## Update — ports-tree staged, repo creation rate-limited (2026-11-28)
+
+- **SigmaOS-ports-tree** — implemented locally in sigmaos-work
+  (BSD-ports-style index: categories, pkg-descr metadata, MOVES
+  history, duplicate detection, sigma-ports CLI; 7 tests, clippy/fmt
+  clean). GitHub repo creation hit the account rate limit; push
+  queued for the next window.
