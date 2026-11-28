@@ -578,3 +578,8 @@ Component count: 357 -> 359.
   a new dependency. 9 tests; pushed.
 - GitHub repo creation still rate-limited; 5 Phase-2 components
   remain staged locally.
+
+- `SigmaOS-generations` CLI gained `rollback` alias + `show` command
+  (NixOS-style ergonomics). Pushed; clippy/fmt clean.
+- Repo-creation rate limit persists; 5 Phase-2 components remain
+  staged locally in sigmaos-work.
