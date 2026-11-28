@@ -537,3 +537,10 @@ Component count: 357 -> 359.
   history, duplicate detection, sigma-ports CLI; 7 tests, clippy/fmt
   clean). GitHub repo creation hit the account rate limit; push
   queued for the next window.
+
+## Update — wiki coverage audit + ports-tree still queued (2026-11-28)
+
+- Audited staging coverage against manifest: all tracked component
+  names have wiki pages (only false-positive misses).
+- `SigmaOS-ports-tree` repo creation still blocked by GitHub
+  rate limit; local implementation ready in sigmaos-work.
