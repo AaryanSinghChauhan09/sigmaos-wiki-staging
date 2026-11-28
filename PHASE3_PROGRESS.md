@@ -597,3 +597,6 @@ Component count: 357 -> 359.
   the install pipeline is now pockets -> solver -> installer plan.
   5 tests; pushed.
 - `SigmaOS-update-system` CI fixed (notify-send best-effort).
+- `SigmaOS-pkg-core` fix: install()/remove() now keep the
+  Package.installed flag in sync with the installed map (was stale,
+  could mislead solver/pockets consumers). Pushed.
