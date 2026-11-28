@@ -568,3 +568,13 @@ Component count: 357 -> 359.
   gaps now staged; repo creation still rate-limited (5 repos queued:
   ports-tree, zfs-snapshots, firmware-hub, btrfs-subvols,
   pipewire-studio).
+
+## Update — pockets -> solver bridge (2026-11-28)
+
+- `SigmaOS-pockets` gained `solver_repo_json()` + `export` CLI:
+  pocket-selected candidates + installed set serialize directly into
+  sigmaos-pkg-solver's `{candidates, installed}` repo format, wiring
+  the Debian-style pocket layer into the backtracking solver without
+  a new dependency. 9 tests; pushed.
+- GitHub repo creation still rate-limited; 5 Phase-2 components
+  remain staged locally.
