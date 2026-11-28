@@ -583,3 +583,5 @@ Component count: 357 -> 359.
   (NixOS-style ergonomics). Pushed; clippy/fmt clean.
 - Repo-creation rate limit persists; 5 Phase-2 components remain
   staged locally in sigmaos-work.
+- `SigmaOS-pockets` gained `upgradable` (apt-style upgrade list,
+  Version-ordered compare) + CLI; pushed.
