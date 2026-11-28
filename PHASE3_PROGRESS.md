@@ -600,3 +600,31 @@ Component count: 357 -> 359.
 - `SigmaOS-pkg-core` fix: install()/remove() now keep the
   Package.installed flag in sync with the installed map (was stale,
   could mislead solver/pockets consumers). Pushed.
+
+## Update — package-management depth pass (2026-11-28)
+
+Distro-parity features added across the pkg pipeline:
+
+- `sigmaos-pkg-solver`: apt-mark-style `held` packages — held
+  installed packages may only select their installed version;
+  repo JSON gains a `held` field. 16 tests.
+- `sigmaos-pockets`: first-class `holds` set + hold/unhold/holds
+  CLI; `solver_repo_json` emits held names automatically;
+  `export --held` override. `upgradable` command (apt-style
+  upgrade list, Version-ordered). 10 tests.
+- `sigmaos-pkg-core`: `PackageDb::check()` (apt-get check
+  analogue, provides-aware), `rdepends()` (apt-cache rdepends),
+  `install()/remove()` now keep Package.installed flag in sync.
+  `sigma-pkg check` + `sigma-pkg rdepends` CLI. 19 tests.
+- `sigmaos-ab-boot`: `confirm(slot)` generalizes mark_good for
+  booted fallback slots. 9 tests.
+- `sigmaos-installer`: `package_plan` module consumes solver
+  --json into ordered PackageSteps — pockets -> solver ->
+  installer pipeline complete.
+- `sigmaos-generations`: rollback alias, show, notes in list.
+- `sigmaos-update-system`: UpdateChannel::pocket_name() bridge;
+  notify-send made best-effort (fixed CI).
+- `sigmaos-bin-cache`: stats command.
+
+Repo-creation rate limit persists; 5 Phase-2 components remain
+staged locally with a 30-min background retry loop.
