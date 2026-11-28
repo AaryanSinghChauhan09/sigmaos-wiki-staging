@@ -23,6 +23,7 @@ Debian-style release pockets for SigmaOS: packages live in named pockets (`stabl
 | `PocketDb::priority_of` | pin-then-default priority resolution |
 | `Pin::matches` | glob + version-scoped pin matching |
 | `pocket::*` | well-known pocket name constants |
+| `PocketDb::solver_repo_json` | export in pkg-solver `{candidates,installed}` format |
 
 ## CLI
 
@@ -31,11 +32,15 @@ sigmaos-pockets --db pockets.json policy firefox
 sigmaos-pockets --db pockets.json candidate firefox
 sigmaos-pockets --db pockets.json add stable packages.json
 sigmaos-pockets --db pockets.json pin --package 'linux*' --pocket security --priority 1000
+
+# Feed pocket-selected candidates into the dependency solver:
+sigmaos-pockets --db pockets.json export --installed installed.json --out repo.json
+sigmaos-pkg-solver --repo repo.json solve firefox 'kernel>=6.0'
 ```
 
 ## Tests
 
-8 AAA unit tests: default ordering, pin override, security-update priority, policy listing, glob pins, version-scoped pins, save/load round-trip, whole-db candidate view.
+9 AAA unit tests: default ordering, pin override, security-update priority, policy listing, glob pins, version-scoped pins, save/load round-trip, whole-db candidate view.
 
 ## See Also
 
