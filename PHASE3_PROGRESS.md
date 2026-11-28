@@ -561,3 +561,10 @@ Component count: 357 -> 359.
   quotas, ro/rw snapshots, sigma-btrfs CLI; 7 tests, clippy/fmt
   clean). Repo creation still rate-limited; queued with the other
   three staged components.
+
+- **SigmaOS-pipewire-studio** — implemented locally (audio graph:
+  nodes/ports/links, direction enforcement, glob routing policies,
+  sigma-pw CLI; 7 tests, clippy/fmt clean). All Phase-2 component
+  gaps now staged; repo creation still rate-limited (5 repos queued:
+  ports-tree, zfs-snapshots, firmware-hub, btrfs-subvols,
+  pipewire-studio).
