@@ -544,3 +544,10 @@ Component count: 357 -> 359.
   names have wiki pages (only false-positive misses).
 - `SigmaOS-ports-tree` repo creation still blocked by GitHub
   rate limit; local implementation ready in sigmaos-work.
+
+## Update — zfs-snapshots staged locally (2026-11-28)
+
+- **SigmaOS-zfs-snapshots** — implemented locally (CoW snapshot
+  records, scheduled policies + keep-N retention, sigma-zfs CLI;
+  8 tests, clippy/fmt clean). GitHub creation still rate-limited;
+  queued with ports-tree.
