@@ -591,3 +591,9 @@ Component count: 357 -> 359.
   bridges update channels onto sigmaos-pockets vocabulary. Pushed.
 - Background retry loop (/tmp/publish-queued.sh) now attempts
   `gh repo create` for the 5 queued components every 30 min.
+
+- `SigmaOS-installer` gained `package_plan` module: parses
+  sigmaos-pkg-solver `--json` output into ordered PackageSteps —
+  the install pipeline is now pockets -> solver -> installer plan.
+  5 tests; pushed.
+- `SigmaOS-update-system` CI fixed (notify-send best-effort).
