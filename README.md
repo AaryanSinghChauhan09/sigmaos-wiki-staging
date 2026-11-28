@@ -193,3 +193,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## License
 
 GPL-3.0-or-later
+
+## Per-repository wikis
+
+Each `SigmaOS-<component>/` directory in this repository contains the
+wiki pages (`Home.md`, `Architecture.md`, `Development.md`) generated
+from that component's actual repository contents.
+
+GitHub requires a repository's wiki to be initialized once via the web
+UI (Wiki → "Create the first page") before `.wiki.git` accepts pushes.
+Until that one-time step is done per repo, the canonical wiki content
+for every component lives here. A sync script can push these pages to
+`<repo>.wiki.git` afterwards.
