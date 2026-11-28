@@ -551,3 +551,8 @@ Component count: 357 -> 359.
   records, scheduled policies + keep-N retention, sigma-zfs CLI;
   8 tests, clippy/fmt clean). GitHub creation still rate-limited;
   queued with ports-tree.
+
+- **SigmaOS-firmware-hub** — implemented locally (firmware/initramfs
+  catalog, SHA-256 verified staging, provenance, sigma-fw CLI;
+  5 tests, clippy/fmt clean). Repo creation still rate-limited;
+  queued with ports-tree and zfs-snapshots.
