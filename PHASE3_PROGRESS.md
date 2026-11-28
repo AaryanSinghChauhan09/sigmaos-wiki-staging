@@ -519,3 +519,13 @@ Component count: 357 -> 359.
   try-boot budget, mark_good/mark_bad, automatic rollback to the
   last-known-good slot, atomic JSON persistence, `sigma-ab` CLI.
   8 unit tests; clippy/fmt clean. Component count 360 -> 361.
+
+## Update — bin-cache component (2026-11-28)
+
+- **SigmaOS-bin-cache** (new repo, pushed) — signed reproducible
+  binary package cache per FUTURE_LINUX_BSD_PLAN: content-addressed
+  payload store keyed by (pkg, version, arch, source_rev, toolchain,
+  flags), SHA-256 verified fetches with corruption eviction, detached
+  signature metadata + require-signatures policy, hit counters,
+  atomic writes, `sigma-bincache` CLI. 7 unit tests; clippy/fmt
+  clean. Component count 361 -> 362.
