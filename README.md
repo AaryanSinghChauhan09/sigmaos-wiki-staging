@@ -1,5 +1,22 @@
 # SigmaOS Wiki
 
+## Start Here
+
+SigmaOS is an Arch-based, rolling-release desktop distribution: stock Arch
+packages and pacman inside the image, a Hyprland/Wayland desktop, and a
+modular fleet of `SigmaOS-*` component repositories around it.
+
+- **Download**: the shipping image is the rolling release on
+  [SigmaOS-ISO](https://github.com/AaryanSinghChauhan09/SigmaOS-ISO/releases/tag/sigmaos-rolling)
+  (BIOS + UEFI, split `.part` assets — reassemble with
+  `scripts/reassemble-iso.sh`; a Secure-Boot-signed variant and CA cert
+  are included when signing succeeds).
+- **Install**: boot the ISO and run `sigmaos-install` (see the ISO
+  repository README / wiki for the verified vs experimental boundary).
+- **Update**: `sigmaos-update` on the installed system (pacman-based).
+- **Component docs**: every `SigmaOS-*` directory below is that
+  component's wiki — generated from the repository's actual contents.
+
 ## Overview
 
 This repository contains the centralized Wiki staging for SigmaOS, documenting all components, features, and architectural decisions. This Wiki serves as the single source of truth for SigmaOS documentation.
